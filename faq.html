@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="faq">FAQ<a aria-hidden="true" tabindex="-1" href="#faq"><span class="icon icon-link"></span></a></h1>
+<h2 id="table-of-contents">Table of Contents<a aria-hidden="true" tabindex="-1" href="#table-of-contents"><span class="icon icon-link"></span></a></h2>
+<ul>
+<li><a href="#how-do-i-stop-logging">How do I stop logging?</a></li>
+<li><a href="#can-i-use-a-proxy">Can I use a proxy?</a></li>
+</ul>
+<h2 id="how-do-i-stop-logging">How do I stop logging?<a aria-hidden="true" tabindex="-1" href="#how-do-i-stop-logging"><span class="icon icon-link"></span></a></h2>
+<p>logging is enabled by default to the most verbose option.to remove it you can do the following</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Logger } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/extensions'</span>);
+Logger.setLevel(<span class="hljs-string">'none'</span>); <span class="hljs-comment">// no logging</span>
+Logger.setLevel(<span class="hljs-string">'error'</span>); <span class="hljs-comment">// only errors</span>
+Logger.setLevel(<span class="hljs-string">'none'</span>); <span class="hljs-comment">// warnings too</span>
+Logger.setLevel(<span class="hljs-string">'none'</span>); <span class="hljs-comment">// info too</span>
+Logger.setLevel(<span class="hljs-string">'debug'</span>); <span class="hljs-comment">// everything</span>
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Logger } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/extensions'</span>;
+Logger.setLevel(<span class="hljs-string">'none'</span>); <span class="hljs-comment">// no logging</span>
+Logger.setLevel(<span class="hljs-string">'error'</span>); <span class="hljs-comment">// only errors</span>
+Logger.setLevel(<span class="hljs-string">'none'</span>); <span class="hljs-comment">// warnings too</span>
+Logger.setLevel(<span class="hljs-string">'none'</span>); <span class="hljs-comment">// info too</span>
+Logger.setLevel(<span class="hljs-string">'debug'</span>); <span class="hljs-comment">// everything</span>
+</code></pre></div></div>
+<h2 id="can-i-use-a-proxy">Can I use a proxy?<a aria-hidden="true" tabindex="-1" href="#can-i-use-a-proxy"><span class="icon icon-link"></span></a></h2>
+<p>Sadly no, GramJS is meant to be used in both browser and Node.js ecosystem, and as far as I know, there is no way to use proxies in browsers so it's not currently possible.</p></div></body></html>
