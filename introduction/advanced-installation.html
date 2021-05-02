@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="advanced-installation">Advanced Installation<a aria-hidden="true" tabindex="-1" href="#advanced-installation"><span class="icon icon-link"></span></a></h1>
+<p>This page will walk you through various types of installation</p>
+<h2 id="table-of-contents">Table of Contents<a aria-hidden="true" tabindex="-1" href="#table-of-contents"><span class="icon icon-link"></span></a></h2>
+<ul>
+<li><a href="#nodejs">Node.js</a></li>
+<li><a href="#browser">Browser</a></li>
+</ul>
+<h2 id="nodejs">Node.js<a aria-hidden="true" tabindex="-1" href="#nodejs"><span class="icon icon-link"></span></a></h2>
+<p>GramJS works out of the box in node and can be installed from npm:</p>
+<pre><code class="hljs language-bash">$ npm i telegram
+</code></pre>
+<blockquote>
+<p>The package name is telegram not gramjs.</p>
+</blockquote>
+<p>You can also install it from github where you will find the latest changes (possibly not stable):</p>
+<pre><code class="hljs language-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/gram-js/gramjs
+$ tsc
+</code></pre>
+<h2 id="browser">Browser<a aria-hidden="true" tabindex="-1" href="#browser"><span class="icon icon-link"></span></a></h2>
+<p>GramJS uses webpack to provide a browser file if needed. You can also import it into your project and it will compile fine.</p>
+<p>To get a JS file first clone the repo and install all dev dependencies then simply use</p>
+<pre><code class="hljs language-bash">$ webpack
+</code></pre>
+<p>you will find the bundle file in the <code>browser</code> folder.</p>
+<p>Currently, bundle files aren't provided separately and need to be compiled. GramJS has <a href="https://t.me/GramJSChat">a telegram group</a> where you can ask for a file if building is out of the option for you.</p></div></body></html>

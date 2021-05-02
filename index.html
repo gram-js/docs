@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="quick-start">Quick Start<a aria-hidden="true" tabindex="-1" href="#quick-start"><span class="icon icon-link"></span></a></h1>
+<p>This should set you up in no time!</p>
+<h2 id="table-of-contents">Table of Contents<a aria-hidden="true" tabindex="-1" href="#table-of-contents"><span class="icon icon-link"></span></a></h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#full-api">Full API</a></li>
+</ul>
+<h2 id="installation">Installation<a aria-hidden="true" tabindex="-1" href="#installation"><span class="icon icon-link"></span></a></h2>
+<p>Installing GramJS is a straight forward process:</p>
+<pre><code class="hljs language-bash">$ npm i telegram
+</code></pre>
+<blockquote>
+<p>If you want to use GramJS in a browser please check the advanced installation page.</p>
+</blockquote>
+<p>Once you've installed GramJS, you'll need an API ID and an API hash (read more in <a href="./getting-started/authorization">Authorization</a>). Get them from <a href="https://my.telegram.org/apps">https://my.telegram.org/apps</a>:</p>
+<p>Afterward, you can use the following code to send a message to yourself.</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<span class="hljs-keyword">const</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'input'</span>); <span class="hljs-comment">// npm i input</span>
+
+<span class="hljs-keyword">const</span> apiId = <span class="hljs-number">123456</span>;
+<span class="hljs-keyword">const</span> apiHash = <span class="hljs-string">'123456abcdfg'</span>;
+<span class="hljs-keyword">const</span> stringSession = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>); <span class="hljs-comment">// fill this later with the value from session.save()</span>
+
+(<span class="hljs-keyword">async</span> () => {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Loading interactive example...'</span>);
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(stringSession, apiId, apiHash, {
+        <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
+    });
+    <span class="hljs-keyword">await</span> client.start({
+        <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'number ?'</span>),
+        <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'password?'</span>),
+        <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'Code ?'</span>),
+        <span class="hljs-attr">onError</span>: <span class="hljs-function"><span class="hljs-params">err</span> =></span> <span class="hljs-built_in">console</span>.log(err),
+    });
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'You should now be connected.'</span>);
+    <span class="hljs-built_in">console</span>.log(client.session.save()); <span class="hljs-comment">// Save this string to avoid logging in again</span>
+    <span class="hljs-keyword">await</span> client.sendMessage(<span class="hljs-string">'me'</span>, { <span class="hljs-attr">message</span>: <span class="hljs-string">'Hello!'</span> });
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+<span class="hljs-keyword">import</span> input <span class="hljs-keyword">from</span> <span class="hljs-string">'input'</span>; <span class="hljs-comment">// npm i input</span>
+
+<span class="hljs-keyword">const</span> apiId = <span class="hljs-number">123456</span>;
+<span class="hljs-keyword">const</span> apiHash = <span class="hljs-string">'123456abcdfg'</span>;
+<span class="hljs-keyword">const</span> stringSession = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>); <span class="hljs-comment">// fill this later with the value from session.save()</span>
+
+(<span class="hljs-keyword">async</span> () => {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Loading interactive example...'</span>);
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(stringSession, apiId, apiHash, {
+        <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
+    });
+    <span class="hljs-keyword">await</span> client.start({
+        <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'number ?'</span>),
+        <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'password?'</span>),
+        <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'Code ?'</span>),
+        <span class="hljs-attr">onError</span>: <span class="hljs-function"><span class="hljs-params">err</span> =></span> <span class="hljs-built_in">console</span>.log(err),
+    });
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'You should now be connected.'</span>);
+    <span class="hljs-built_in">console</span>.log(client.session.save()); <span class="hljs-comment">// Save this string to avoid logging in again</span>
+    <span class="hljs-keyword">await</span> client.sendMessage(<span class="hljs-string">'me'</span>, { <span class="hljs-attr">message</span>: <span class="hljs-string">'Hello!'</span> });
+})();
+</code></pre></div></div>
+<p>Using session strings is the most reliable way to save your session for now.</p>
+<h2 id="full-api">Full API<a aria-hidden="true" tabindex="-1" href="#full-api"><span class="icon icon-link"></span></a></h2>
+<p>GramJS is still in its early stages but it can access all API methods from telegram using the following</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/tl'</span>);
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+    <span class="hljs-keyword">new</span> Api.channels.CheckUsername({
+        <span class="hljs-attr">username</span>: <span class="hljs-string">'testing'</span>,
+    }),
+);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Result is '</span>, result);
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/tl'</span>;
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+    <span class="hljs-keyword">new</span> Api.channels.CheckUsername({
+        <span class="hljs-attr">username</span>: <span class="hljs-string">'testing'</span>,
+    }),
+);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Result is '</span>, result);
+</code></pre></div></div>
+<p>All methods and classes are accessible under Api. for a full list of them check out <a href="https://gram.js.org/">https://gram.js.org/</a></p></div></body></html>

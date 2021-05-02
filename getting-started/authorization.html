@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="authentication">Authentication<a aria-hidden="true" tabindex="-1" href="#authentication"><span class="icon icon-link"></span></a></h1>
+<p>Signing in</p>
+<h2 id="table-of-contents">Table of Contents<a aria-hidden="true" tabindex="-1" href="#table-of-contents"><span class="icon icon-link"></span></a></h2>
+<ul>
+<li><a href="#getting-api-id-and-api-hash">Getting API ID and API HASH</a></li>
+<li><a href="#logging-in-as-a-bot">Logging in as a Bot</a></li>
+<li><a href="#logging-in-as-a-user">Logging in as a User</a></li>
+<li><a href="#persistent-session">Persistent Session</a></li>
+<li><a href="#string-session">String Session</a></li>
+<li><a href="#store-session">Store Session</a></li>
+</ul>
+<h2 id="getting-api-id-and-api-hash">Getting API ID and API HASH<a aria-hidden="true" tabindex="-1" href="#getting-api-id-and-api-hash"><span class="icon icon-link"></span></a></h2>
+<p>Before working with Telegram’s API, you need to get your own API ID and hash:</p>
+<ol>
+<li><a href="https://my.telegram.org/">Login to your Telegram account</a> with the phone number of the developer account to use.</li>
+<li>Click under API Development tools.</li>
+<li>A <em>Create new application</em> window will appear. Fill in your application details. There is no need to enter any <em>URL</em>, and only the first two fields (<em>App title</em> and <em>Short name</em>) can currently be changed later.</li>
+<li>Click on <em>Create application</em> at the end. Remember that your <strong>API hash is secret</strong> and Telegram won't let you revoke it. Don’t post it anywhere!</li>
+</ol>
+<h2 id="logging-in-as-a-bot">Logging in as a Bot<a aria-hidden="true" tabindex="-1" href="#logging-in-as-a-bot"><span class="icon icon-link"></span></a></h2>
+<p>Using GramJS you can use a bot token to log in. Doing this is simple</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> stringSession = <span class="hljs-string">''</span>; <span class="hljs-comment">// leave this empty for now</span>
+<span class="hljs-keyword">const</span> BOT_TOKEN = <span class="hljs-string">''</span>; <span class="hljs-comment">// put your bot token here</span>
+
+(<span class="hljs-keyword">async</span> () => {
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(
+        <span class="hljs-keyword">new</span> StringSession(stringSession),
+        apiId,
+        apiHash,
+        { <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span> },
+    );
+    <span class="hljs-keyword">await</span> client.start({
+        <span class="hljs-attr">botAuthToken</span>: BOT_TOKEN,
+    });
+    <span class="hljs-built_in">console</span>.log(client.session.save());
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> stringSession = <span class="hljs-string">''</span>; <span class="hljs-comment">// leave this empty for now</span>
+<span class="hljs-keyword">const</span> BOT_TOKEN = <span class="hljs-string">''</span>; <span class="hljs-comment">// put your bot token here</span>
+
+(<span class="hljs-keyword">async</span> () => {
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(
+        <span class="hljs-keyword">new</span> StringSession(stringSession),
+        apiId,
+        apiHash,
+        { <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span> },
+    );
+    <span class="hljs-keyword">await</span> client.start({
+        <span class="hljs-attr">botAuthToken</span>: BOT_TOKEN,
+    });
+    <span class="hljs-built_in">console</span>.log(client.session.save());
+})();
+</code></pre></div></div>
+<p>Underneath this is just calling the RAW function <code>ImportBotAuthorization</code>. you can leave the string session empty for now.</p>
+<h2 id="logging-in-as-a-user">Logging in as a User<a aria-hidden="true" tabindex="-1" href="#logging-in-as-a-user"><span class="icon icon-link"></span></a></h2>
+<p>Logging in as a user is a bit more complex because you'll need to provide callbacks for when you receive the code from telegram. you can use the <a href="https://www.npmjs.com/package/input">input</a> package to manage that on Node or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt">prompt</a> on the browser</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<span class="hljs-keyword">const</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'input'</span>); <span class="hljs-comment">// npm i input</span>
+
+<span class="hljs-keyword">const</span> apiId = <span class="hljs-number">123456</span>;
+<span class="hljs-keyword">const</span> apiHash = <span class="hljs-string">'123456abcdfg'</span>;
+<span class="hljs-keyword">const</span> stringSession = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>); <span class="hljs-comment">// fill this later with the value from session.save()</span>
+
+(<span class="hljs-keyword">async</span> () => {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Loading interactive example...'</span>);
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(stringSession, apiId, apiHash, {
+        <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
+    });
+    <span class="hljs-keyword">await</span> client.start({
+        <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'number ?'</span>),
+        <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'password?'</span>),
+        <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'Code ?'</span>),
+        <span class="hljs-attr">onError</span>: <span class="hljs-function"><span class="hljs-params">err</span> =></span> <span class="hljs-built_in">console</span>.log(err),
+    });
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'You should now be connected.'</span>);
+    <span class="hljs-built_in">console</span>.log(client.session.save()); <span class="hljs-comment">// Save this string to avoid logging in again</span>
+    <span class="hljs-keyword">await</span> client.sendMessage(<span class="hljs-string">'me'</span>, { <span class="hljs-attr">message</span>: <span class="hljs-string">'Hello!'</span> });
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+<span class="hljs-keyword">import</span> input <span class="hljs-keyword">from</span> <span class="hljs-string">'input'</span>; <span class="hljs-comment">// npm i input</span>
+
+<span class="hljs-keyword">const</span> apiId = <span class="hljs-number">123456</span>;
+<span class="hljs-keyword">const</span> apiHash = <span class="hljs-string">'123456abcdfg'</span>;
+<span class="hljs-keyword">const</span> stringSession = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>); <span class="hljs-comment">// fill this later with the value from session.save()</span>
+
+(<span class="hljs-keyword">async</span> () => {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Loading interactive example...'</span>);
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(stringSession, apiId, apiHash, {
+        <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
+    });
+    <span class="hljs-keyword">await</span> client.start({
+        <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'number ?'</span>),
+        <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'password?'</span>),
+        <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">'Code ?'</span>),
+        <span class="hljs-attr">onError</span>: <span class="hljs-function"><span class="hljs-params">err</span> =></span> <span class="hljs-built_in">console</span>.log(err),
+    });
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'You should now be connected.'</span>);
+    <span class="hljs-built_in">console</span>.log(client.session.save()); <span class="hljs-comment">// Save this string to avoid logging in again</span>
+    <span class="hljs-keyword">await</span> client.sendMessage(<span class="hljs-string">'me'</span>, { <span class="hljs-attr">message</span>: <span class="hljs-string">'Hello!'</span> });
+})();
+</code></pre></div></div>
+<h2 id="persistent-session">Persistent Session<a aria-hidden="true" tabindex="-1" href="#persistent-session"><span class="icon icon-link"></span></a></h2>
+<p>To avoid having to logging each time you'll need to save the session after logging in. There are multiple types of sessions with the easiest being <code>StringSession</code> that will provide an Authorization string for you to use again. You can create your own Session by subclassing the <code>MemorySession</code> class.</p>
+<p>If you have async logic in your custom session put it in the <code>load()</code> function that's called before loading a session.</p>
+<h2 id="string-session">String Session<a aria-hidden="true" tabindex="-1" href="#string-session"><span class="icon icon-link"></span></a></h2>
+<p>You can import it from <code>telegram/session</code></p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div></div>
+<p>If you're using it for the first login you need to provide an empty String to the constructor</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> stringSession = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+</code></pre>
+<p>After logging in you'll need to call the <code>.save()</code> method to receive the string</p>
+<p>You can either do that by calling it directly on the <code>stringSession</code> variable or by using <code>client.session</code></p>
+<pre><code class="hljs language-js"><span class="hljs-built_in">console</span>.log(client.session.save());
+<span class="hljs-built_in">console</span>.log(stringSession.save());
+</code></pre>
+<h2 id="store-session">Store Session<a aria-hidden="true" tabindex="-1" href="#store-session"><span class="icon icon-link"></span></a></h2>
+<p>Store session uses <a href="https://www.npmjs.com/package/store2">store2</a> with the help of <a href="https://www.npmjs.com/search?q=node-localstorage">node-localstorage</a> to save the session automatically in files. it's useful to save entities so you can access them later with just their ID and lowers the amount of requests needed to the telegram server. You just need to provide a session name to save it with</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<span class="hljs-keyword">const</span> storeSession = <span class="hljs-keyword">new</span> StoreSession(<span class="hljs-string">'my_session'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(storeSession, apiId, apiHash, {
+    <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
+});
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+<span class="hljs-keyword">const</span> storeSession = <span class="hljs-keyword">new</span> StoreSession(<span class="hljs-string">'my_session'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(storeSession, apiId, apiHash, {
+    <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
+});
+</code></pre></div></div>
+<p>This session is still in Alpha and not tested that much so it might break. use carefully.</p></div></body></html>
