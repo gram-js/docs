@@ -82,10 +82,10 @@ Yes
 
 ## Related pages
 
-#### [boolTrue](https://core.telegram.org/constructor/boolTrue)
+### [boolTrue](https://core.telegram.org/constructor/boolTrue)
 
 The constructor can be interpreted as a **boolean**true value.
 
-#### [userStatusOffline](https://core.telegram.org/constructor/userStatusOffline)
+### [userStatusOffline](https://core.telegram.org/constructor/userStatusOffline)
 
 The user's offline status.

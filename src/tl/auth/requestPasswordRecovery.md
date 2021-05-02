@@ -81,6 +81,6 @@ Yes
 
 ## Related pages
 
-#### [Two-factor authentication](https://core.telegram.org/api/srp)
+### [Two-factor authentication](https://core.telegram.org/api/srp)
 
 How to login to a user's account if they have enabled 2FA, how to change password.

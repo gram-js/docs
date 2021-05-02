@@ -80,10 +80,10 @@ Yes
 
 ## Related pages
 
-#### [Working with Updates](https://core.telegram.org/api/updates)
+### [Working with Updates](https://core.telegram.org/api/updates)
 
 How to subscribe to updates and handle them properly.
 
-#### [Uploading and Downloading Files](https://core.telegram.org/api/files)
+### [Uploading and Downloading Files](https://core.telegram.org/api/files)
 
 How to transfer large data batches correctly.

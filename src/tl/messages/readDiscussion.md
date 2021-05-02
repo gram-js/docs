@@ -88,6 +88,6 @@ Yes
 
 ## Related pages
 
-#### [Threads](https://core.telegram.org/api/threads)
+### [Threads](https://core.telegram.org/api/threads)
 
 Telegram allows commenting on a [channel post](https://core.telegram.org/api/channel) or on a generic [supergroup message](https://core.telegram.org/api/channel), thanks to message threads.

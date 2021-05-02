@@ -82,6 +82,6 @@ Yes
 
 ## Related pages
 
-#### [account.registerDevice](https://core.telegram.org/method/account.registerDevice)
+### [account.registerDevice](https://core.telegram.org/method/account.registerDevice)
 
 Register device to receive [PUSH notifications](https://core.telegram.org/api/push-updates)

@@ -102,14 +102,14 @@ Yes
 
 ## Related pages
 
-#### [messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice)
+### [messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice)
 
 Incomplete list of messages and auxiliary data.
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.
 
-#### [message](https://core.telegram.org/constructor/message)
+### [message](https://core.telegram.org/constructor/message)
 
 A message

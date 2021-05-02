@@ -84,14 +84,14 @@ Yes
 
 ## Related pages
 
-#### [Channels](https://core.telegram.org/api/channel)
+### [Channels](https://core.telegram.org/api/channel)
 
 How to handle channels, supergroups, groups, and what's the difference between them.
 
-#### [Threads](https://core.telegram.org/api/threads)
+### [Threads](https://core.telegram.org/api/threads)
 
 Telegram allows commenting on a [channel post](https://core.telegram.org/api/channel) or on a generic [supergroup message](https://core.telegram.org/api/channel), thanks to message threads.
 
-#### [Discussion groups](https://core.telegram.org/api/discussion)
+### [Discussion groups](https://core.telegram.org/api/discussion)
 
 [Groups](https://core.telegram.org/api/channel) can be associated to a [channel](https://core.telegram.org/api/channel) as a [discussion group](https://telegram.org/blog/privacy-discussions-web-bots), to allow users to discuss about posts.

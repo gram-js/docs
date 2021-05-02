@@ -90,6 +90,6 @@ Yes
 
 ## Related pages
 
-#### [Top peer rating](https://core.telegram.org/api/top-rating)
+### [Top peer rating](https://core.telegram.org/api/top-rating)
 
 If enabled, the rating of top peers indicates the relevance of a frequently used peer in a certain category (frequently messaged users, frequently used bots, inline bots, frequently visited channels and so on).

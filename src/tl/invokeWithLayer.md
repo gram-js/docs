@@ -93,6 +93,6 @@ Yes
 
 ## Related pages
 
-#### [Calling API Methods](https://core.telegram.org/api/invoking)
+### [Calling API Methods](https://core.telegram.org/api/invoking)
 
 Additional options for calling methods.

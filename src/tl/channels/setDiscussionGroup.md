@@ -92,6 +92,6 @@ Yes
 
 ## Related pages
 
-#### [Discussion groups](https://core.telegram.org/api/discussion)
+### [Discussion groups](https://core.telegram.org/api/discussion)
 
 [Groups](https://core.telegram.org/api/channel) can be associated to a [channel](https://core.telegram.org/api/channel) as a [discussion group](https://telegram.org/blog/privacy-discussions-web-bots), to allow users to discuss about posts.

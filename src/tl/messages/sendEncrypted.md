@@ -96,6 +96,6 @@ Yes
 
 ## Related pages
 
-#### [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage)
+### [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage)
 
 Object describes the contents of an encrypted message.

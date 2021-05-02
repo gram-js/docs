@@ -103,4 +103,4 @@ Yes
 
 ## Related pages
 
-#### [End-to-End Encrypted Voice Calls](https://core.telegram.org/api/end-to-end/voice-calls)
+### [End-to-End Encrypted Voice Calls](https://core.telegram.org/api/end-to-end/voice-calls)

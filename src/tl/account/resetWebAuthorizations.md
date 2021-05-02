@@ -73,4 +73,4 @@ Yes
 
 ## Related pages
 
-#### [Telegram Login Widget](https://core.telegram.org/widgets/login)
+### [Telegram Login Widget](https://core.telegram.org/widgets/login)

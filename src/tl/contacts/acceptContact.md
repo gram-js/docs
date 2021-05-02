@@ -90,6 +90,6 @@ Yes
 
 ## Related pages
 
-#### [peerSettings](https://core.telegram.org/constructor/peerSettings)
+### [peerSettings](https://core.telegram.org/constructor/peerSettings)
 
 Peer settings

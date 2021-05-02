@@ -85,10 +85,10 @@ Yes
 
 ## Related pages
 
-#### [statsGraphAsync](https://core.telegram.org/constructor/statsGraphAsync)
+### [statsGraphAsync](https://core.telegram.org/constructor/statsGraphAsync)
 
 This [channel statistics graph](https://core.telegram.org/api/stats) must be generated asynchronously using [stats.loadAsyncGraph](https://core.telegram.org/method/stats.loadAsyncGraph) to reduce server load
 
-#### [Channel statistics](https://core.telegram.org/api/stats)
+### [Channel statistics](https://core.telegram.org/api/stats)
 
 Telegram offers detailed channel statistics for channels and supergroups.

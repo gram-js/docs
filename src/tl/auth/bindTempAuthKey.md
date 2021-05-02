@@ -84,26 +84,26 @@ Yes
 
 ## Related pages
 
-#### [Perfect Forward Secrecy](https://core.telegram.org/api/pfs)
+### [Perfect Forward Secrecy](https://core.telegram.org/api/pfs)
 
 Binding temporary authorization key to permanent ones.
 
-#### [long](https://core.telegram.org/type/long)
+### [long](https://core.telegram.org/type/long)
 
 A basic bare type, elements of which correspond to two-element sequences, representing 64-bit signed numbers (little-endian).
 
-#### [int](https://core.telegram.org/type/int)
+### [int](https://core.telegram.org/type/int)
 
 A basic bare type, the values of which correspond to single-element sequences, i.e. numbers from -2^31 to 2^31-1 which in this case represent themselves.
 
-#### [﻿Mobile Protocol: Detailed Description](https://core.telegram.org/mtproto/description)
+### [﻿Mobile Protocol: Detailed Description](https://core.telegram.org/mtproto/description)
 
 Additional options for calling methods.
 
-#### [Calling API Methods](https://core.telegram.org/api/invoking)
+### [Calling API Methods](https://core.telegram.org/api/invoking)
 
 Additional options for calling methods.
 
-#### [initConnection](https://core.telegram.org/method/initConnection)
+### [initConnection](https://core.telegram.org/method/initConnection)
 
 Initialize connection

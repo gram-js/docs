@@ -71,6 +71,6 @@ Yes
 
 ## Related pages
 
-#### [Message drafts](https://core.telegram.org/api/drafts)
+### [Message drafts](https://core.telegram.org/api/drafts)
 
 How to handle message drafts

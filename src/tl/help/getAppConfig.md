@@ -74,6 +74,6 @@ Yes
 
 ## Related pages
 
-#### [Client configuration](https://core.telegram.org/api/config)
+### [Client configuration](https://core.telegram.org/api/config)
 
 The MTProto API has multiple configuration parameters that can be fetched with the appropriate methods.

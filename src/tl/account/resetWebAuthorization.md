@@ -78,8 +78,8 @@ Yes
 
 ## Related pages
 
-#### [webAuthorization](https://core.telegram.org/constructor/webAuthorization)
+### [webAuthorization](https://core.telegram.org/constructor/webAuthorization)
 
 Represents a bot logged in using the [Telegram login widget](https://core.telegram.org/widgets/login)
 
-#### [Telegram Login Widget](https://core.telegram.org/widgets/login)
+### [Telegram Login Widget](https://core.telegram.org/widgets/login)

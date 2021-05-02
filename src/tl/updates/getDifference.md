@@ -98,10 +98,10 @@ Yes
 
 ## Related pages
 
-#### [Working with Updates](https://core.telegram.org/api/updates)
+### [Working with Updates](https://core.telegram.org/api/updates)
 
 How to subscribe to updates and handle them properly.
 
-#### [updates.differenceTooLong](https://core.telegram.org/constructor/updates.differenceTooLong)
+### [updates.differenceTooLong](https://core.telegram.org/constructor/updates.differenceTooLong)
 
 The difference is [too long](https://core.telegram.org/api/updates#recovering-gaps), and the specified state must be used to refetch updates.

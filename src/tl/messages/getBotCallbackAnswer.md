@@ -105,10 +105,10 @@ Yes
 
 ## Related pages
 
-#### [keyboardButtonCallback](https://core.telegram.org/constructor/keyboardButtonCallback)
+### [keyboardButtonCallback](https://core.telegram.org/constructor/keyboardButtonCallback)
 
 Callback button
 
-#### [Two-factor authentication](https://core.telegram.org/api/srp)
+### [Two-factor authentication](https://core.telegram.org/api/srp)
 
 How to login to a user's account if they have enabled 2FA, how to change password.

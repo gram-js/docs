@@ -104,10 +104,10 @@ Yes
 
 ## Related pages
 
-#### [Styled text with message entities](https://core.telegram.org/api/entities)
+### [Styled text with message entities](https://core.telegram.org/api/entities)
 
 How to create styled text with message entities
 
-#### [Message drafts](https://core.telegram.org/api/drafts)
+### [Message drafts](https://core.telegram.org/api/drafts)
 
 How to handle message drafts

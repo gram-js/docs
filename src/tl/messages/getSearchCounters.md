@@ -91,6 +91,6 @@ Yes
 
 ## Related pages
 
-#### [messages.search](https://core.telegram.org/method/messages.search)
+### [messages.search](https://core.telegram.org/method/messages.search)
 
 Gets back found messages

@@ -85,8 +85,8 @@ Yes
 
 ## Related pages
 
-#### [account.sendVerifyPhoneCode](https://core.telegram.org/method/account.sendVerifyPhoneCode)
+### [account.sendVerifyPhoneCode](https://core.telegram.org/method/account.sendVerifyPhoneCode)
 
 Send the verification phone code for telegram [passport](https://core.telegram.org/passport).
 
-#### [Telegram Passport Manual](https://core.telegram.org/passport)
+### [Telegram Passport Manual](https://core.telegram.org/passport)

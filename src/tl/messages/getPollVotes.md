@@ -98,6 +98,6 @@ Yes
 
 ## Related pages
 
-#### [messages.votesList](https://core.telegram.org/constructor/messages.votesList)
+### [messages.votesList](https://core.telegram.org/constructor/messages.votesList)
 
 How users voted in a poll

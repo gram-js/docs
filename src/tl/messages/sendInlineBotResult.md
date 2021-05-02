@@ -136,14 +136,14 @@ Yes
 
 ## Related pages
 
-#### [Message drafts](https://core.telegram.org/api/drafts)
+### [Message drafts](https://core.telegram.org/api/drafts)
 
 How to handle message drafts
 
-#### [config](https://core.telegram.org/constructor/config)
+### [config](https://core.telegram.org/constructor/config)
 
 Current configuration
 
-#### [messages.getInlineBotResults](https://core.telegram.org/method/messages.getInlineBotResults)
+### [messages.getInlineBotResults](https://core.telegram.org/method/messages.getInlineBotResults)
 
 Query an inline bot

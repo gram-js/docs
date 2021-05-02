@@ -83,6 +83,6 @@ Yes
 
 ## Related pages
 
-#### [Account deletion](https://core.telegram.org/api/account-deletion)
+### [Account deletion](https://core.telegram.org/api/account-deletion)
 
 How to reset an account if the 2FA password was forgotten.

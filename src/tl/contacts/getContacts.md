@@ -78,10 +78,10 @@ Yes
 
 ## Related pages
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.
 
-#### [contacts.contactsNotModified](https://core.telegram.org/constructor/contacts.contactsNotModified)
+### [contacts.contactsNotModified](https://core.telegram.org/constructor/contacts.contactsNotModified)
 
 Contact list on the server is the same as the list on the client.

@@ -85,10 +85,10 @@ Yes
 
 ## Related pages
 
-#### [Channels](https://core.telegram.org/api/channel)
+### [Channels](https://core.telegram.org/api/channel)
 
 How to handle channels, supergroups, groups, and what's the difference between them.
 
-#### [Channel statistics](https://core.telegram.org/api/stats)
+### [Channel statistics](https://core.telegram.org/api/stats)
 
 Telegram offers detailed channel statistics for channels and supergroups.

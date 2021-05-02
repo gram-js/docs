@@ -94,10 +94,10 @@ Yes
 
 ## Related pages
 
-#### [boolTrue](https://core.telegram.org/constructor/boolTrue)
+### [boolTrue](https://core.telegram.org/constructor/boolTrue)
 
 The constructor can be interpreted as a **boolean**true value.
 
-#### [boolFalse](https://core.telegram.org/constructor/boolFalse)
+### [boolFalse](https://core.telegram.org/constructor/boolFalse)
 
 Constructor may be interpreted as a **boolean**false value.

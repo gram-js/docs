@@ -80,4 +80,4 @@ Yes
 
 ## Related pages
 
-#### [Encrypted CDNs for Speed and Security](https://core.telegram.org/cdn)
+### [Encrypted CDNs for Speed and Security](https://core.telegram.org/cdn)

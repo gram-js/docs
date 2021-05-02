@@ -97,6 +97,6 @@ Yes
 
 ## Related pages
 
-#### [Uploading and Downloading Files](https://core.telegram.org/api/files)
+### [Uploading and Downloading Files](https://core.telegram.org/api/files)
 
 How to transfer large data batches correctly.

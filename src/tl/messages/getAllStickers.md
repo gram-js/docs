@@ -78,6 +78,6 @@ Yes
 
 ## Related pages
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.

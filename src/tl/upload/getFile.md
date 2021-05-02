@@ -107,10 +107,10 @@ Yes
 
 ## Related pages
 
-#### [Encrypted CDNs for Speed and Security](https://core.telegram.org/cdn)
+### [Encrypted CDNs for Speed and Security](https://core.telegram.org/cdn)
 
 How to handle file references.
 
-#### [File references](https://core.telegram.org/api/file_reference)
+### [File references](https://core.telegram.org/api/file_reference)
 
 How to handle file references.

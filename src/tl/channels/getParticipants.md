@@ -102,10 +102,10 @@ Yes
 
 ## Related pages
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.
 
-#### [Channels](https://core.telegram.org/api/channel)
+### [Channels](https://core.telegram.org/api/channel)
 
 How to handle channels, supergroups, groups, and what's the difference between them.

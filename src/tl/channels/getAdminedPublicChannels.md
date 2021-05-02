@@ -85,18 +85,18 @@ Yes
 
 ## Related pages
 
-#### [Channels](https://core.telegram.org/api/channel)
+### [Channels](https://core.telegram.org/api/channel)
 
 How to handle channels, supergroups, groups, and what's the difference between them.
 
-#### [channels.checkUsername](https://core.telegram.org/method/channels.checkUsername)
+### [channels.checkUsername](https://core.telegram.org/method/channels.checkUsername)
 
 Check if a username is free and can be assigned to a channel/supergroup
 
-#### [channels.updateUsername](https://core.telegram.org/method/channels.updateUsername)
+### [channels.updateUsername](https://core.telegram.org/method/channels.updateUsername)
 
 Change the username of a supergroup/channel
 
-#### [config](https://core.telegram.org/constructor/config)
+### [config](https://core.telegram.org/constructor/config)
 
 Current configuration

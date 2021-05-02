@@ -176,10 +176,10 @@ Yes
 
 ## Related pages
 
-#### [Styled text with message entities](https://core.telegram.org/api/entities)
+### [Styled text with message entities](https://core.telegram.org/api/entities)
 
 How to create styled text with message entities
 
-#### [Scheduled messages](https://core.telegram.org/api/scheduled-messages)
+### [Scheduled messages](https://core.telegram.org/api/scheduled-messages)
 
 Telegram allows scheduling messages

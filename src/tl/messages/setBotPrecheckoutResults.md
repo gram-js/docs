@@ -90,6 +90,6 @@ Yes
 
 ## Related pages
 
-#### [updateBotPrecheckoutQuery](https://core.telegram.org/constructor/updateBotPrecheckoutQuery)
+### [updateBotPrecheckoutQuery](https://core.telegram.org/constructor/updateBotPrecheckoutQuery)
 
 This object contains information about an incoming pre-checkout query.

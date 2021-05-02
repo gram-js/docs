@@ -81,6 +81,6 @@ Yes
 
 ## Related pages
 
-#### [Pinned messages](https://core.telegram.org/api/pin)
+### [Pinned messages](https://core.telegram.org/api/pin)
 
 Telegram allows pinning multiple messages on top of a specific chat.

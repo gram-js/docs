@@ -120,10 +120,10 @@ Yes
 
 ## Related pages
 
-#### [Message drafts](https://core.telegram.org/api/drafts)
+### [Message drafts](https://core.telegram.org/api/drafts)
 
 How to handle message drafts
 
-#### [Uploading and Downloading Files](https://core.telegram.org/api/files)
+### [Uploading and Downloading Files](https://core.telegram.org/api/files)
 
 How to transfer large data batches correctly.

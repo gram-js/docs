@@ -114,10 +114,10 @@ Yes
 
 ## Related pages
 
-#### [inputPeerEmpty](https://core.telegram.org/constructor/inputPeerEmpty)
+### [inputPeerEmpty](https://core.telegram.org/constructor/inputPeerEmpty)
 
 An empty constructor, no user or chat is defined.
 
-#### [Uploading and Downloading Files](https://core.telegram.org/api/files)
+### [Uploading and Downloading Files](https://core.telegram.org/api/files)
 
 How to transfer large data batches correctly.

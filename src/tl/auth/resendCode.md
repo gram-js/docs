@@ -83,10 +83,10 @@ Yes
 
 ## Related pages
 
-#### [auth.sendCode](https://core.telegram.org/method/auth.sendCode)
+### [auth.sendCode](https://core.telegram.org/method/auth.sendCode)
 
 Send the verification code for login
 
-#### [User Authorization](https://core.telegram.org/api/auth)
+### [User Authorization](https://core.telegram.org/api/auth)
 
 How to register a user's phone to start using the API.

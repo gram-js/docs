@@ -115,14 +115,14 @@ Yes
 
 ## Related pages
 
-#### [Folders](https://core.telegram.org/api/folders)
+### [Folders](https://core.telegram.org/api/folders)
 
 Telegram allows placing chats into folders, based on their type, mute status, or other custom criteria, thanks to folder blacklists and whitelists.
 
-#### [messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice)
+### [messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice)
 
 Incomplete list of messages and auxiliary data.
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.

@@ -107,4 +107,4 @@ Yes
 
 ## Related pages
 
-#### [Bots: An introduction for developers](https://core.telegram.org/bots)
+### [Bots: An introduction for developers](https://core.telegram.org/bots)

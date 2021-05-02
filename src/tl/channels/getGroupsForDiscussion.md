@@ -73,14 +73,14 @@ Yes
 
 ## Related pages
 
-#### [Discussion groups](https://core.telegram.org/api/discussion)
+### [Discussion groups](https://core.telegram.org/api/discussion)
 
 [Groups](https://core.telegram.org/api/channel) can be associated to a [channel](https://core.telegram.org/api/channel) as a [discussion group](https://telegram.org/blog/privacy-discussions-web-bots), to allow users to discuss about posts.
 
-#### [Channels](https://core.telegram.org/api/channel)
+### [Channels](https://core.telegram.org/api/channel)
 
 How to handle channels, supergroups, groups, and what's the difference between them.
 
-#### [channels.togglePreHistoryHidden](https://core.telegram.org/method/channels.togglePreHistoryHidden)
+### [channels.togglePreHistoryHidden](https://core.telegram.org/method/channels.togglePreHistoryHidden)
 
 Hide/unhide message history for new channel/supergroup users

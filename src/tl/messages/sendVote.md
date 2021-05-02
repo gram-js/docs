@@ -98,6 +98,6 @@ Yes
 
 ## Related pages
 
-#### [poll](https://core.telegram.org/constructor/poll)
+### [poll](https://core.telegram.org/constructor/poll)
 
 Poll

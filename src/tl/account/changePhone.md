@@ -86,6 +86,6 @@ Yes
 
 ## Related pages
 
-#### [account.sendChangePhoneCode](https://core.telegram.org/method/account.sendChangePhoneCode)
+### [account.sendChangePhoneCode](https://core.telegram.org/method/account.sendChangePhoneCode)
 
 Verify a new phone number to associate to the current account

@@ -139,14 +139,14 @@ Yes
 
 ## Related pages
 
-#### [inputPeerEmpty](https://core.telegram.org/constructor/inputPeerEmpty)
+### [inputPeerEmpty](https://core.telegram.org/constructor/inputPeerEmpty)
 
 An empty constructor, no user or chat is defined.
 
-#### [Threads](https://core.telegram.org/api/threads)
+### [Threads](https://core.telegram.org/api/threads)
 
 Telegram allows commenting on a [channel post](https://core.telegram.org/api/channel) or on a generic [supergroup message](https://core.telegram.org/api/channel), thanks to message threads.
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.

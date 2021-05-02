@@ -92,10 +92,10 @@ Yes
 
 ## Related pages
 
-#### [MessageReactionsList](https://core.telegram.org/type/MessageReactionsList)
+### [MessageReactionsList](https://core.telegram.org/type/MessageReactionsList)
 
 List of message reactions
 
-#### [Pagination in the API](https://core.telegram.org/api/offsets)
+### [Pagination in the API](https://core.telegram.org/api/offsets)
 
 How to fetch results from large lists of objects.

@@ -89,6 +89,6 @@ Yes
 
 ## Related pages
 
-#### [Channel statistics](https://core.telegram.org/api/stats)
+### [Channel statistics](https://core.telegram.org/api/stats)
 
 Telegram offers detailed channel statistics for channels and supergroups.

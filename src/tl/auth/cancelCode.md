@@ -83,6 +83,6 @@ Yes
 
 ## Related pages
 
-#### [auth.sendCode](https://core.telegram.org/method/auth.sendCode)
+### [auth.sendCode](https://core.telegram.org/method/auth.sendCode)
 
 Send the verification code for login

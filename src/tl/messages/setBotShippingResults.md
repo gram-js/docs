@@ -94,6 +94,6 @@ Yes
 
 ## Related pages
 
-#### [updateBotShippingQuery](https://core.telegram.org/constructor/updateBotShippingQuery)
+### [updateBotShippingQuery](https://core.telegram.org/constructor/updateBotShippingQuery)
 
 This object contains information about an incoming shipping query.

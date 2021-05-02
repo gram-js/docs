@@ -85,6 +85,6 @@ Yes
 
 ## Related pages
 
-#### [contacts.addContact](https://core.telegram.org/method/contacts.addContact)
+### [contacts.addContact](https://core.telegram.org/method/contacts.addContact)
 
 Add an existing telegram user as contact.

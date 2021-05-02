@@ -93,6 +93,6 @@ Yes
 
 ## Related pages
 
-#### [payments.ValidatedRequestedInfo](https://core.telegram.org/constructor/payments.validatedRequestedInfo)
+### [payments.ValidatedRequestedInfo](https://core.telegram.org/constructor/payments.validatedRequestedInfo)
 
 Validated user-provided info

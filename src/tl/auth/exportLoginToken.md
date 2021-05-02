@@ -83,6 +83,6 @@ Yes
 
 ## Related pages
 
-#### [Login via QR code](https://core.telegram.org/api/qr-login)
+### [Login via QR code](https://core.telegram.org/api/qr-login)
 
 QR code login flow

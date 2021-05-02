@@ -85,6 +85,6 @@ Yes
 
 ## Related pages
 
-#### [Seamless Telegram Login](https://core.telegram.org/api/url-authorization)
+### [Seamless Telegram Login](https://core.telegram.org/api/url-authorization)
 
 Handle Seamless Telegram Login URL authorization requests.

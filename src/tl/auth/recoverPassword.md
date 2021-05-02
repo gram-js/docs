@@ -79,10 +79,10 @@ Yes
 
 ## Related pages
 
-#### [Two-factor authentication](https://core.telegram.org/api/srp)
+### [Two-factor authentication](https://core.telegram.org/api/srp)
 
 How to login to a user's account if they have enabled 2FA, how to change password.
 
-#### [auth.requestPasswordRecovery](https://core.telegram.org/method/auth.requestPasswordRecovery)
+### [auth.requestPasswordRecovery](https://core.telegram.org/method/auth.requestPasswordRecovery)
 
 Request recovery code of a [2FA password](https://core.telegram.org/api/srp), only for accounts with a [recovery email configured](https://core.telegram.org/api/srp#email-verification).

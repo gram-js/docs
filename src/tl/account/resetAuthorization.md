@@ -80,6 +80,6 @@ Yes
 
 ## Related pages
 
-#### [User Authorization](https://core.telegram.org/api/auth)
+### [User Authorization](https://core.telegram.org/api/auth)
 
 How to register a user's phone to start using the API.

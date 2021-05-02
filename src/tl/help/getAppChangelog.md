@@ -85,10 +85,10 @@ Yes
 
 ## Related pages
 
-#### [Updates](https://core.telegram.org/constructor/updates)
+### [Updates](https://core.telegram.org/constructor/updates)
 
 Full constructor of updates
 
-#### [updateServiceNotification](https://core.telegram.org/constructor/updateServiceNotification)
+### [updateServiceNotification](https://core.telegram.org/constructor/updateServiceNotification)
 
 A service message for the user.

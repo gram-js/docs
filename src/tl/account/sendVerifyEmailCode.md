@@ -77,4 +77,4 @@ Yes
 
 ## Related pages
 
-#### [Telegram Passport Manual](https://core.telegram.org/passport)
+### [Telegram Passport Manual](https://core.telegram.org/passport)

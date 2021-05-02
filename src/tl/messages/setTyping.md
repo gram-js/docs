@@ -105,14 +105,14 @@ Yes
 
 ## Related pages
 
-#### [Threads](https://core.telegram.org/api/threads)
+### [Threads](https://core.telegram.org/api/threads)
 
 Telegram allows commenting on a [channel post](https://core.telegram.org/api/channel) or on a generic [supergroup message](https://core.telegram.org/api/channel), thanks to message threads.
 
-#### [Layers](https://core.telegram.org/api/layers)
+### [Layers](https://core.telegram.org/api/layers)
 
 Below you will find information on scheme changes. For more details on the use of layers, see [Invoking API methods](https://core.telegram.org/api/invoking#layers).
 
-#### [SendMessageAction](https://core.telegram.org/type/SendMessageAction)
+### [SendMessageAction](https://core.telegram.org/type/SendMessageAction)
 
 User actions. Use this to provide users with detailed info about their chat partners' actions: typing or sending attachments of all kinds.

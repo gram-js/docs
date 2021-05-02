@@ -95,10 +95,10 @@ Yes
 
 ## Related pages
 
-#### [Two-factor authentication](https://core.telegram.org/api/srp)
+### [Two-factor authentication](https://core.telegram.org/api/srp)
 
 How to login to a user's account if they have enabled 2FA, how to change password.
 
-#### [account.verifyEmail](https://core.telegram.org/method/account.verifyEmail)
+### [account.verifyEmail](https://core.telegram.org/method/account.verifyEmail)
 
 Verify an email address for telegram [passport](https://core.telegram.org/passport).

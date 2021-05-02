@@ -82,6 +82,6 @@ Yes
 
 ## Related pages
 
-#### [messages.dhConfig](https://core.telegram.org/constructor/messages.dhConfig)
+### [messages.dhConfig](https://core.telegram.org/constructor/messages.dhConfig)
 
 New set of configuring parameters.

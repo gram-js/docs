@@ -99,10 +99,10 @@ Yes
 
 ## Related pages
 
-#### [upload.saveFilePart](https://core.telegram.org/method/upload.saveFilePart)
+### [upload.saveFilePart](https://core.telegram.org/method/upload.saveFilePart)
 
 Saves a part of file for futher sending to one of the methods.
 
-#### [Uploading and Downloading Files](https://core.telegram.org/api/files)
+### [Uploading and Downloading Files](https://core.telegram.org/api/files)
 
 How to transfer large data batches correctly.

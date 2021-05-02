@@ -101,6 +101,6 @@ Yes
 
 ## Related pages
 
-#### [Handling PUSH-notifications](https://core.telegram.org/api/push-updates)
+### [Handling PUSH-notifications](https://core.telegram.org/api/push-updates)
 
 How to subscribe to and handle PUSH notifications
