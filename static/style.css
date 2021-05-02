@@ -1,0 +1,174 @@
+:root {
+    --icon-link-path: url(/docs/static/link.svg);
+}
+
+:target {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background: #0d1117;
+    color: #e8e6e3;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#table-of-contents + ul p {
+    margin: 0;
+}
+
+table {
+    display: block;
+    overflow: auto;
+}
+
+th {
+    border-bottom: 2px solid hsl(208, 28%, 15%);
+    color: #b2aba1;
+    font-weight: normal;
+}
+
+th,
+td {
+    padding: 0.5rem;
+}
+
+td {
+    border-bottom: 1px solid hsl(208, 28%, 13%);
+}
+
+th:not([align]),
+td:not([align]) {
+    text-align: left;
+}
+
+td strong {
+    color: #bdb7ae;
+}
+
+a {
+    text-decoration: none;
+    color: #03d1eb;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.icon-link {
+    margin-left: 0.5rem;
+}
+
+.icon-link::before {
+    content: '';
+    opacity: 0;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: var(--icon-link-path);
+    transition: opacity 0.2s ease-in-out;
+}
+
+h1:hover .icon-link::before,
+h2:hover .icon-link::before,
+h3:hover .icon-link::before,
+h4:hover .icon-link::before,
+h5:hover .icon-link::before,
+h6:hover .icon-link::before {
+    opacity: 1;
+}
+
+.tabs-title {
+    display: flex;
+    gap: 1rem;
+}
+
+.tab.hidden {
+    display: none;
+}
+
+/* container (source: bootstrap) */
+
+.container {
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* code blocks */
+
+pre {
+    background: #161b22;
+    color: #c9d1d9;
+    padding: 0.75em 1.5em;
+    overflow: auto;
+}
+
+pre ::selection {
+    background: #3e4451;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.hljs-keyword,
+.hljs-operator,
+.hljs-type {
+    color: #ff7b72;
+}
+
+.hljs-built_in,
+.hljs-title {
+    color: #d2a8ff;
+}
+
+.hljs-comment,
+.hljs-doctag {
+    color: #8b949e;
+}
+
+.hljs-attr,
+.hljs-literal,
+.hljs-number,
+.hljs-property {
+    color: #79c0ff;
+}
+
+.hljs-string {
+    color: #a5d6ff;
+}
