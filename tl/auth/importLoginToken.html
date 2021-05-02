@@ -40,11 +40,11 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">auth</span>.loginToken#<span class="hljs-number">629</span>f<span class="hljs-number">1980</span> expires:int token:bytes = auth.LoginToken;
-<span class="hljs-attribute">auth</span>.loginTokenMigrateTo#<span class="hljs-number">68</span>e<span class="hljs-number">9916</span> dc_id:int token:bytes = auth.LoginToken;
-<span class="hljs-attribute">auth</span>.loginTokenSuccess#<span class="hljs-number">390</span>d<span class="hljs-number">5</span>c<span class="hljs-number">5</span>e authorization:auth.Authorization = auth.LoginToken;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">auth</span>.importLoginToken#<span class="hljs-number">95</span>ac<span class="hljs-number">5</span>ce<span class="hljs-number">4</span> token:bytes = auth.LoginToken;
+<pre><code class="hljs language-txt">auth.loginToken#629f1980 expires:int token:bytes = auth.LoginToken;
+auth.loginTokenMigrateTo#68e9916 dc_id:int token:bytes = auth.LoginToken;
+auth.loginTokenSuccess#390d5c5e authorization:auth.Authorization = auth.LoginToken;
+---functions---
+auth.importLoginToken#95ac5ce4 token:bytes = auth.LoginToken;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

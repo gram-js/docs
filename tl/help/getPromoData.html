@@ -34,10 +34,10 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">help</span>.promoDataEmpty#<span class="hljs-number">98</span>f6ac75 expire<span class="hljs-variable">s:int</span> = <span class="hljs-keyword">help</span>.PromoData;
-<span class="hljs-keyword">help</span>.promoData#<span class="hljs-number">8</span>c39793f flag<span class="hljs-variable">s:</span># proxy:flags.<span class="hljs-number">0</span>?true expire<span class="hljs-variable">s:int</span> peer:Peer chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> psa_type:flags.<span class="hljs-number">1</span>?<span class="hljs-built_in">string</span> psa_message:flags.<span class="hljs-number">2</span>?<span class="hljs-built_in">string</span> = <span class="hljs-keyword">help</span>.PromoData;
+<pre><code class="hljs language-txt">help.promoDataEmpty#98f6ac75 expires:int = help.PromoData;
+help.promoData#8c39793f flags:# proxy:flags.0?true expires:int peer:Peer chats:Vector&#x3C;Chat> users:Vector&#x3C;User> psa_type:flags.1?string psa_message:flags.2?string = help.PromoData;
 ---functions---
-<span class="hljs-keyword">help</span>.getPromoData#c0977421 = <span class="hljs-keyword">help</span>.PromoData;
+help.getPromoData#c0977421 = help.PromoData;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

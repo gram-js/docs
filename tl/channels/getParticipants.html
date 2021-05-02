@@ -46,10 +46,10 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim">channels.channelParticipants#f56ee2a8 coun<span class="hljs-variable">t:int</span> participant<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;ChannelParticipant></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = channels.ChannelParticipants;
+<pre><code class="hljs language-txt">channels.channelParticipants#f56ee2a8 count:int participants:Vector&#x3C;ChannelParticipant> users:Vector&#x3C;User> = channels.ChannelParticipants;
 channels.channelParticipantsNotModified#f0173fe9 = channels.ChannelParticipants;
 ---functions---
-channels.getParticipants#<span class="hljs-number">123</span>e05e9 channe<span class="hljs-variable">l:InputChannel</span> <span class="hljs-built_in">filter</span>:ChannelParticipantsFilter offse<span class="hljs-variable">t:int</span> limi<span class="hljs-variable">t:int</span> hash:<span class="hljs-keyword">int</span> = channels.ChannelParticipants;
+channels.getParticipants#123e05e9 channel:InputChannel filter:ChannelParticipantsFilter offset:int limit:int hash:int = channels.ChannelParticipants;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

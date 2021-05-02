@@ -42,10 +42,10 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.recentStickersNotModified#b17f890 = <span class="hljs-keyword">messages</span>.RecentStickers;
-<span class="hljs-keyword">messages</span>.recentStickers#<span class="hljs-number">22</span>f3afb3 hash:<span class="hljs-keyword">int</span> pack<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;StickerPack></span> sticker<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Document></span> date<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;int></span> = <span class="hljs-keyword">messages</span>.RecentStickers;
+<pre><code class="hljs language-txt">messages.recentStickersNotModified#b17f890 = messages.RecentStickers;
+messages.recentStickers#22f3afb3 hash:int packs:Vector&#x3C;StickerPack> stickers:Vector&#x3C;Document> dates:Vector&#x3C;int> = messages.RecentStickers;
 ---functions---
-<span class="hljs-keyword">messages</span>.getRecentStickers#<span class="hljs-number">5</span>ea192c9 flag<span class="hljs-variable">s:</span># attached:flags.<span class="hljs-number">0</span>?true hash:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.RecentStickers;
+messages.getRecentStickers#5ea192c9 flags:# attached:flags.0?true hash:int = messages.RecentStickers;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

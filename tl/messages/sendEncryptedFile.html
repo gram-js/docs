@@ -46,10 +46,10 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.sentEncryptedMessage#<span class="hljs-number">560</span>f8935 date:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.SentEncryptedMessage;
-<span class="hljs-keyword">messages</span>.sentEncryptedFile#<span class="hljs-number">9493</span>ff32 date:<span class="hljs-keyword">int</span> <span class="hljs-keyword">file</span>:EncryptedFile = <span class="hljs-keyword">messages</span>.SentEncryptedMessage;
+<pre><code class="hljs language-txt">messages.sentEncryptedMessage#560f8935 date:int = messages.SentEncryptedMessage;
+messages.sentEncryptedFile#9493ff32 date:int file:EncryptedFile = messages.SentEncryptedMessage;
 ---functions---
-<span class="hljs-keyword">messages</span>.sendEncryptedFile#<span class="hljs-number">5559481</span>d flag<span class="hljs-variable">s:</span># silen<span class="hljs-variable">t:flags</span>.<span class="hljs-number">0</span>?true peer:InputEncryptedChat random_id:long dat<span class="hljs-variable">a:bytes</span> <span class="hljs-keyword">file</span>:InputEncryptedFile = <span class="hljs-keyword">messages</span>.SentEncryptedMessage;
+messages.sendEncryptedFile#5559481d flags:# silent:flags.0?true peer:InputEncryptedChat random_id:long data:bytes file:InputEncryptedFile = messages.SentEncryptedMessage;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

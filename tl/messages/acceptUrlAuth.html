@@ -44,11 +44,11 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">urlAuthResultRequest</span>#<span class="hljs-number">92</span>d<span class="hljs-number">33</span>a<span class="hljs-number">0</span>e flags:# request_write_access:flags.<span class="hljs-number">0</span>?true bot:User domain:string = UrlAuthResult;
-<span class="hljs-attribute">urlAuthResultAccepted</span>#<span class="hljs-number">8</span>f<span class="hljs-number">8</span>c<span class="hljs-number">0</span>e<span class="hljs-number">4</span>e url:string = UrlAuthResult;
-<span class="hljs-attribute">urlAuthResultDefault</span>#a<span class="hljs-number">9</span>d<span class="hljs-number">6</span>db<span class="hljs-number">1</span>f = UrlAuthResult;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">messages</span>.acceptUrlAuth#f<span class="hljs-number">729</span>ea<span class="hljs-number">98</span> flags:# write_allowed:flags.<span class="hljs-number">0</span>?true peer:InputPeer msg_id:int button_id:int = UrlAuthResult;
+<pre><code class="hljs language-txt">urlAuthResultRequest#92d33a0e flags:# request_write_access:flags.0?true bot:User domain:string = UrlAuthResult;
+urlAuthResultAccepted#8f8c0e4e url:string = UrlAuthResult;
+urlAuthResultDefault#a9d6db1f = UrlAuthResult;
+---functions---
+messages.acceptUrlAuth#f729ea98 flags:# write_allowed:flags.0?true peer:InputPeer msg_id:int button_id:int = UrlAuthResult;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

@@ -42,9 +42,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">payments</span>.validatedRequestedInfo#d<span class="hljs-number">1451883</span> flags:# id:flags.<span class="hljs-number">0</span>?string shipping_options:flags.<span class="hljs-number">1</span>?Vector&#x3C;ShippingOption> = payments.ValidatedRequestedInfo;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">payments</span>.validateRequestedInfo#<span class="hljs-number">770</span>a<span class="hljs-number">8</span>e<span class="hljs-number">74</span> flags:# save:flags.<span class="hljs-number">0</span>?true msg_id:int info:PaymentRequestedInfo = payments.ValidatedRequestedInfo;
+<pre><code class="hljs language-txt">payments.validatedRequestedInfo#d1451883 flags:# id:flags.0?string shipping_options:flags.1?Vector&#x3C;ShippingOption> = payments.ValidatedRequestedInfo;
+---functions---
+payments.validateRequestedInfo#770a8e74 flags:# save:flags.0?true msg_id:int info:PaymentRequestedInfo = payments.ValidatedRequestedInfo;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

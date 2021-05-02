@@ -44,10 +44,10 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim">photos.photos#<span class="hljs-number">8</span>dca6aa5 photo<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Photo></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = photos.Photos;
-photos.photosSlice#<span class="hljs-number">15051</span>f54 coun<span class="hljs-variable">t:int</span> photo<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Photo></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = photos.Photos;
+<pre><code class="hljs language-txt">photos.photos#8dca6aa5 photos:Vector&#x3C;Photo> users:Vector&#x3C;User> = photos.Photos;
+photos.photosSlice#15051f54 count:int photos:Vector&#x3C;Photo> users:Vector&#x3C;User> = photos.Photos;
 ---functions---
-photos.getUserPhotos#<span class="hljs-number">91</span>cd32a8 user_id:InputUser offse<span class="hljs-variable">t:int</span> max_id:long limi<span class="hljs-variable">t:int</span> = photos.Photos;
+photos.getUserPhotos#91cd32a8 user_id:InputUser offset:int max_id:long limit:int = photos.Photos;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

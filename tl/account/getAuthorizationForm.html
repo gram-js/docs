@@ -44,9 +44,9 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim">account.authorizationForm#ad2e1cd8 flag<span class="hljs-variable">s:</span># required_type<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;SecureRequiredType></span> value<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;SecureValue></span> error<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;SecureValueError></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> privacy_policy_ur<span class="hljs-variable">l:flags</span>.<span class="hljs-number">0</span>?<span class="hljs-built_in">string</span> = account.AuthorizationForm;
+<pre><code class="hljs language-txt">account.authorizationForm#ad2e1cd8 flags:# required_types:Vector&#x3C;SecureRequiredType> values:Vector&#x3C;SecureValue> errors:Vector&#x3C;SecureValueError> users:Vector&#x3C;User> privacy_policy_url:flags.0?string = account.AuthorizationForm;
 ---functions---
-account.getAuthorizationForm#b86ba8e1 bot_id:<span class="hljs-keyword">int</span> scope:<span class="hljs-built_in">string</span> public_key:<span class="hljs-built_in">string</span> = account.AuthorizationForm;
+account.getAuthorizationForm#b86ba8e1 bot_id:int scope:string public_key:string = account.AuthorizationForm;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

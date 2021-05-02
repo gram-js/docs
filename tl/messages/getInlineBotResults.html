@@ -46,9 +46,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.botResults#<span class="hljs-number">947</span>ca848 flag<span class="hljs-variable">s:</span># gallery:flags.<span class="hljs-number">0</span>?true query_id:long next_offse<span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?<span class="hljs-built_in">string</span> switch_pm:flags.<span class="hljs-number">2</span>?InlineBotSwitchPM result<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;BotInlineResult></span> cache_time:<span class="hljs-keyword">int</span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.BotResults;
+<pre><code class="hljs language-txt">messages.botResults#947ca848 flags:# gallery:flags.0?true query_id:long next_offset:flags.1?string switch_pm:flags.2?InlineBotSwitchPM results:Vector&#x3C;BotInlineResult> cache_time:int users:Vector&#x3C;User> = messages.BotResults;
 ---functions---
-<span class="hljs-keyword">messages</span>.getInlineBotResults#<span class="hljs-number">514</span>e999d flag<span class="hljs-variable">s:</span># <span class="hljs-keyword">bo</span><span class="hljs-variable">t:InputUser</span> peer:InputPeer geo_poin<span class="hljs-variable">t:flags</span>.<span class="hljs-number">0</span>?InputGeoPoint query:<span class="hljs-built_in">string</span> offse<span class="hljs-variable">t:string</span> = <span class="hljs-keyword">messages</span>.BotResults;
+messages.getInlineBotResults#514e999d flags:# bot:InputUser peer:InputPeer geo_point:flags.0?InputGeoPoint query:string offset:string = messages.BotResults;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

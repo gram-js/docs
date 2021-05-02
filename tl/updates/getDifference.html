@@ -46,12 +46,12 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim">updates.differenceEmpty#<span class="hljs-number">5</span>d75a138 date:<span class="hljs-keyword">int</span> seq:<span class="hljs-keyword">int</span> = updates.Difference;
-updates.difference#f49ca0 new_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> new_encrypted_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;EncryptedMessage></span> other_update<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Update></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> state:updates.State = updates.Difference;
-updates.differenceSlice#a8fb1981 new_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> new_encrypted_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;EncryptedMessage></span> other_update<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Update></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> intermediate_state:updates.State = updates.Difference;
-updates.differenceTooLong#<span class="hljs-number">4</span>afe8f6d <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> = updates.Difference;
+<pre><code class="hljs language-txt">updates.differenceEmpty#5d75a138 date:int seq:int = updates.Difference;
+updates.difference#f49ca0 new_messages:Vector&#x3C;Message> new_encrypted_messages:Vector&#x3C;EncryptedMessage> other_updates:Vector&#x3C;Update> chats:Vector&#x3C;Chat> users:Vector&#x3C;User> state:updates.State = updates.Difference;
+updates.differenceSlice#a8fb1981 new_messages:Vector&#x3C;Message> new_encrypted_messages:Vector&#x3C;EncryptedMessage> other_updates:Vector&#x3C;Update> chats:Vector&#x3C;Chat> users:Vector&#x3C;User> intermediate_state:updates.State = updates.Difference;
+updates.differenceTooLong#4afe8f6d pts:int = updates.Difference;
 ---functions---
-updates.getDifference#<span class="hljs-number">25939651</span> flag<span class="hljs-variable">s:</span># <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> pts_total_limi<span class="hljs-variable">t:flags</span>.<span class="hljs-number">0</span>?<span class="hljs-keyword">int</span> date:<span class="hljs-keyword">int</span> qt<span class="hljs-variable">s:int</span> = updates.Difference;
+updates.getDifference#25939651 flags:# pts:int pts_total_limit:flags.0?int date:int qts:int = updates.Difference;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

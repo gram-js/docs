@@ -50,9 +50,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim">channels.adminLogResults#ed8af74d event<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;ChannelAdminLogEvent></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = channels.AdminLogResults;
+<pre><code class="hljs language-txt">channels.adminLogResults#ed8af74d events:Vector&#x3C;ChannelAdminLogEvent> chats:Vector&#x3C;Chat> users:Vector&#x3C;User> = channels.AdminLogResults;
 ---functions---
-channels.getAdminLog#<span class="hljs-number">33</span>ddf480 flag<span class="hljs-variable">s:</span># channe<span class="hljs-variable">l:InputChannel</span> q:<span class="hljs-built_in">string</span> events_filter:flags.<span class="hljs-number">0</span>?ChannelAdminLogEventsFilter admin<span class="hljs-variable">s:flags</span>.<span class="hljs-number">1</span>?Vector<span class="hljs-symbol">&#x3C;InputUser></span> max_id:long min_id:long limi<span class="hljs-variable">t:int</span> = channels.AdminLogResults;
+channels.getAdminLog#33ddf480 flags:# channel:InputChannel q:string events_filter:flags.0?ChannelAdminLogEventsFilter admins:flags.1?Vector&#x3C;InputUser> max_id:long min_id:long limit:int = channels.AdminLogResults;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

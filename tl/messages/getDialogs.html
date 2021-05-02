@@ -50,11 +50,11 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.dialogs#<span class="hljs-number">15</span>ba6c40 dialog<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Dialog></span> message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.Dialogs;
-<span class="hljs-keyword">messages</span>.dialogsSlice#<span class="hljs-number">71</span>e094f3 coun<span class="hljs-variable">t:int</span> dialog<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Dialog></span> message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.Dialogs;
-<span class="hljs-keyword">messages</span>.dialogsNotModified#f0e3e596 coun<span class="hljs-variable">t:int</span> = <span class="hljs-keyword">messages</span>.Dialogs;
+<pre><code class="hljs language-txt">messages.dialogs#15ba6c40 dialogs:Vector&#x3C;Dialog> messages:Vector&#x3C;Message> chats:Vector&#x3C;Chat> users:Vector&#x3C;User> = messages.Dialogs;
+messages.dialogsSlice#71e094f3 count:int dialogs:Vector&#x3C;Dialog> messages:Vector&#x3C;Message> chats:Vector&#x3C;Chat> users:Vector&#x3C;User> = messages.Dialogs;
+messages.dialogsNotModified#f0e3e596 count:int = messages.Dialogs;
 ---functions---
-<span class="hljs-keyword">messages</span>.getDialogs#a0ee3b73 flag<span class="hljs-variable">s:</span># exclude_pinned:flags.<span class="hljs-number">0</span>?true folder_id:flags.<span class="hljs-number">1</span>?<span class="hljs-keyword">int</span> offset_date:<span class="hljs-keyword">int</span> offset_id:<span class="hljs-keyword">int</span> offset_peer:InputPeer limi<span class="hljs-variable">t:int</span> hash:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.Dialogs;
+messages.getDialogs#a0ee3b73 flags:# exclude_pinned:flags.0?true folder_id:flags.1?int offset_date:int offset_id:int offset_peer:InputPeer limit:int hash:int = messages.Dialogs;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

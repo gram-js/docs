@@ -40,9 +40,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.discussionMessage#f5dd8f9d flag<span class="hljs-variable">s:</span># message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> max_id:flags.<span class="hljs-number">0</span>?<span class="hljs-keyword">int</span> read_inbox_max_id:flags.<span class="hljs-number">1</span>?<span class="hljs-keyword">int</span> read_outbox_max_id:flags.<span class="hljs-number">2</span>?<span class="hljs-keyword">int</span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.DiscussionMessage;
+<pre><code class="hljs language-txt">messages.discussionMessage#f5dd8f9d flags:# messages:Vector&#x3C;Message> max_id:flags.0?int read_inbox_max_id:flags.1?int read_outbox_max_id:flags.2?int chats:Vector&#x3C;Chat> users:Vector&#x3C;User> = messages.DiscussionMessage;
 ---functions---
-<span class="hljs-keyword">messages</span>.getDiscussionMessage#<span class="hljs-number">446972</span>fd peer:InputPeer msg_id:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.DiscussionMessage;
+messages.getDiscussionMessage#446972fd peer:InputPeer msg_id:int = messages.DiscussionMessage;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

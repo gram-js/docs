@@ -44,10 +44,10 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">payments</span>.paymentResult#<span class="hljs-number">4</span>e<span class="hljs-number">5</span>f<span class="hljs-number">810</span>d updates:Updates = payments.PaymentResult;
-<span class="hljs-attribute">payments</span>.paymentVerificationNeeded#d<span class="hljs-number">8411139</span> url:string = payments.PaymentResult;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">payments</span>.sendPaymentForm#<span class="hljs-number">2</span>b<span class="hljs-number">8879</span>b<span class="hljs-number">3</span> flags:# msg_id:int requested_info_id:flags.<span class="hljs-number">0</span>?string shipping_option_id:flags.<span class="hljs-number">1</span>?string credentials:InputPaymentCredentials = payments.PaymentResult;
+<pre><code class="hljs language-txt">payments.paymentResult#4e5f810d updates:Updates = payments.PaymentResult;
+payments.paymentVerificationNeeded#d8411139 url:string = payments.PaymentResult;
+---functions---
+payments.sendPaymentForm#2b8879b3 flags:# msg_id:int requested_info_id:flags.0?string shipping_option_id:flags.1?string credentials:InputPaymentCredentials = payments.PaymentResult;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

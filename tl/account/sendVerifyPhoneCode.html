@@ -40,9 +40,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">auth</span>.sentCode#<span class="hljs-number">5</span>e<span class="hljs-number">002502</span> flags:# type:auth.SentCodeType phone_code_hash:string next_type:flags.<span class="hljs-number">1</span>?auth.CodeType timeout:flags.<span class="hljs-number">2</span>?int = auth.SentCode;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">account</span>.sendVerifyPhoneCode#a<span class="hljs-number">5</span>a<span class="hljs-number">356</span>f<span class="hljs-number">9</span> phone_number:string settings:CodeSettings = auth.SentCode;
+<pre><code class="hljs language-txt">auth.sentCode#5e002502 flags:# type:auth.SentCodeType phone_code_hash:string next_type:flags.1?auth.CodeType timeout:flags.2?int = auth.SentCode;
+---functions---
+account.sendVerifyPhoneCode#a5a356f9 phone_number:string settings:CodeSettings = auth.SentCode;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

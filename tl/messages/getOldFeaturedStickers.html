@@ -44,10 +44,10 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.featuredStickersNotModified#c6dc0c66 coun<span class="hljs-variable">t:int</span> = <span class="hljs-keyword">messages</span>.FeaturedStickers;
-<span class="hljs-keyword">messages</span>.featuredStickers#b6abc341 hash:<span class="hljs-keyword">int</span> coun<span class="hljs-variable">t:int</span> <span class="hljs-keyword">set</span><span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;StickerSetCovered></span> unread:Vector<span class="hljs-symbol">&#x3C;long></span> = <span class="hljs-keyword">messages</span>.FeaturedStickers;
+<pre><code class="hljs language-txt">messages.featuredStickersNotModified#c6dc0c66 count:int = messages.FeaturedStickers;
+messages.featuredStickers#b6abc341 hash:int count:int sets:Vector&#x3C;StickerSetCovered> unread:Vector&#x3C;long> = messages.FeaturedStickers;
 ---functions---
-<span class="hljs-keyword">messages</span>.getOldFeaturedStickers#<span class="hljs-number">5</span>fe7025b offse<span class="hljs-variable">t:int</span> limi<span class="hljs-variable">t:int</span> hash:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.FeaturedStickers;
+messages.getOldFeaturedStickers#5fe7025b offset:int limit:int hash:int = messages.FeaturedStickers;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

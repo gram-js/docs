@@ -38,9 +38,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-oxygene">peerSettings<span class="hljs-string">#733</span>f2961 <span class="hljs-keyword">flags</span>:# report_spam:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?<span class="hljs-keyword">true</span> add_contact:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> block_contact:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?<span class="hljs-keyword">true</span> share_contact:<span class="hljs-keyword">flags</span>.<span class="hljs-number">3</span>?<span class="hljs-keyword">true</span> need_contacts_exception:<span class="hljs-keyword">flags</span>.<span class="hljs-number">4</span>?<span class="hljs-keyword">true</span> report_geo:<span class="hljs-keyword">flags</span>.<span class="hljs-number">5</span>?<span class="hljs-keyword">true</span> autoarchived:<span class="hljs-keyword">flags</span>.<span class="hljs-number">7</span>?<span class="hljs-keyword">true</span> invite_members:<span class="hljs-keyword">flags</span>.<span class="hljs-number">8</span>?<span class="hljs-keyword">true</span> geo_distance:<span class="hljs-keyword">flags</span>.<span class="hljs-number">6</span>?int = PeerSettings;
+<pre><code class="hljs language-txt">peerSettings#733f2961 flags:# report_spam:flags.0?true add_contact:flags.1?true block_contact:flags.2?true share_contact:flags.3?true need_contacts_exception:flags.4?true report_geo:flags.5?true autoarchived:flags.7?true invite_members:flags.8?true geo_distance:flags.6?int = PeerSettings;
 ---functions---
-messages.getPeerSettings<span class="hljs-string">#3672</span>e09c peer:InputPeer = PeerSettings;
+messages.getPeerSettings#3672e09c peer:InputPeer = PeerSettings;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

@@ -46,9 +46,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.votesList#<span class="hljs-number">823</span>f649 flag<span class="hljs-variable">s:</span># coun<span class="hljs-variable">t:int</span> vote<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;MessageUserVote></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> next_offse<span class="hljs-variable">t:flags</span>.<span class="hljs-number">0</span>?<span class="hljs-built_in">string</span> = <span class="hljs-keyword">messages</span>.VotesList;
+<pre><code class="hljs language-txt">messages.votesList#823f649 flags:# count:int votes:Vector&#x3C;MessageUserVote> users:Vector&#x3C;User> next_offset:flags.0?string = messages.VotesList;
 ---functions---
-<span class="hljs-keyword">messages</span>.getPollVotes#b86e380e flag<span class="hljs-variable">s:</span># peer:InputPeer id:<span class="hljs-keyword">int</span> option:flags.<span class="hljs-number">0</span>?bytes offse<span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?<span class="hljs-built_in">string</span> limi<span class="hljs-variable">t:int</span> = <span class="hljs-keyword">messages</span>.VotesList;
+messages.getPollVotes#b86e380e flags:# peer:InputPeer id:int option:flags.0?bytes offset:flags.1?string limit:int = messages.VotesList;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

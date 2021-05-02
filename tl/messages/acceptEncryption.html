@@ -42,13 +42,13 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-clojure">encryptedChatEmpty#ab<span class="hljs-number">7</span>ec<span class="hljs-number">0</span>a<span class="hljs-number">0</span> id<span class="hljs-symbol">:int</span> = EncryptedChat<span class="hljs-comment">;</span>
-encryptedChatWaiting#<span class="hljs-number">3</span>bf<span class="hljs-number">703</span>dc id<span class="hljs-symbol">:int</span> access_hash<span class="hljs-symbol">:long</span> date<span class="hljs-symbol">:int</span> admin_id<span class="hljs-symbol">:int</span> participant_id<span class="hljs-symbol">:int</span> = EncryptedChat<span class="hljs-comment">;</span>
-encryptedChatRequested#<span class="hljs-number">62718</span>a<span class="hljs-number">82</span> flags<span class="hljs-symbol">:#</span> folder_id<span class="hljs-symbol">:flags.0?int</span> id<span class="hljs-symbol">:int</span> access_hash<span class="hljs-symbol">:long</span> date<span class="hljs-symbol">:int</span> admin_id<span class="hljs-symbol">:int</span> participant_id<span class="hljs-symbol">:int</span> g_a<span class="hljs-symbol">:bytes</span> = EncryptedChat<span class="hljs-comment">;</span>
-encryptedChat#fa<span class="hljs-number">56</span>ce<span class="hljs-number">36</span> id<span class="hljs-symbol">:int</span> access_hash<span class="hljs-symbol">:long</span> date<span class="hljs-symbol">:int</span> admin_id<span class="hljs-symbol">:int</span> participant_id<span class="hljs-symbol">:int</span> g_a_or_b<span class="hljs-symbol">:bytes</span> key_fingerprint<span class="hljs-symbol">:long</span> = EncryptedChat<span class="hljs-comment">;</span>
-encryptedChatDiscarded#<span class="hljs-number">13</span>d<span class="hljs-number">6</span>dd<span class="hljs-number">27</span> id<span class="hljs-symbol">:int</span> = EncryptedChat<span class="hljs-comment">;</span>
+<pre><code class="hljs language-txt">encryptedChatEmpty#ab7ec0a0 id:int = EncryptedChat;
+encryptedChatWaiting#3bf703dc id:int access_hash:long date:int admin_id:int participant_id:int = EncryptedChat;
+encryptedChatRequested#62718a82 flags:# folder_id:flags.0?int id:int access_hash:long date:int admin_id:int participant_id:int g_a:bytes = EncryptedChat;
+encryptedChat#fa56ce36 id:int access_hash:long date:int admin_id:int participant_id:int g_a_or_b:bytes key_fingerprint:long = EncryptedChat;
+encryptedChatDiscarded#13d6dd27 id:int = EncryptedChat;
 ---functions---
-messages.acceptEncryption#<span class="hljs-number">3</span>dbc<span class="hljs-number">0415</span> peer<span class="hljs-symbol">:InputEncryptedChat</span> g_b<span class="hljs-symbol">:bytes</span> key_fingerprint<span class="hljs-symbol">:long</span> = EncryptedChat<span class="hljs-comment">;</span>
+messages.acceptEncryption#3dbc0415 peer:InputEncryptedChat g_b:bytes key_fingerprint:long = EncryptedChat;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

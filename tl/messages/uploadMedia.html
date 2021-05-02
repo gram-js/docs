@@ -40,21 +40,21 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">messageMediaEmpty</span>#<span class="hljs-number">3</span>ded<span class="hljs-number">6320</span> = MessageMedia;
-<span class="hljs-attribute">messageMediaPhoto</span>#<span class="hljs-number">695150</span>d<span class="hljs-number">7</span> flags:# photo:flags.<span class="hljs-number">0</span>?Photo ttl_seconds:flags.<span class="hljs-number">2</span>?int = MessageMedia;
-<span class="hljs-attribute">messageMediaGeo</span>#<span class="hljs-number">56</span>e<span class="hljs-number">0</span>d<span class="hljs-number">474</span> geo:GeoPoint = MessageMedia;
-<span class="hljs-attribute">messageMediaContact</span>#cbf<span class="hljs-number">24940</span> phone_number:string first_name:string last_name:string vcard:string user_id:int = MessageMedia;
-<span class="hljs-attribute">messageMediaUnsupported</span>#<span class="hljs-number">9</span>f<span class="hljs-number">84</span>f<span class="hljs-number">49</span>e = MessageMedia;
-<span class="hljs-attribute">messageMediaDocument</span>#<span class="hljs-number">9</span>cb<span class="hljs-number">070</span>d<span class="hljs-number">7</span> flags:# document:flags.<span class="hljs-number">0</span>?Document ttl_seconds:flags.<span class="hljs-number">2</span>?int = MessageMedia;
-<span class="hljs-attribute">messageMediaWebPage</span>#a<span class="hljs-number">32</span>dd<span class="hljs-number">600</span> webpage:WebPage = MessageMedia;
-<span class="hljs-attribute">messageMediaVenue</span>#<span class="hljs-number">2</span>ec<span class="hljs-number">0533</span>f geo:GeoPoint title:string address:string provider:string venue_id:string venue_type:string = MessageMedia;
-<span class="hljs-attribute">messageMediaGame</span>#fdb<span class="hljs-number">19008</span> game:Game = MessageMedia;
-<span class="hljs-attribute">messageMediaInvoice</span>#<span class="hljs-number">84551347</span> flags:# shipping_address_requested:flags.<span class="hljs-number">1</span>?true test:flags.<span class="hljs-number">3</span>?true title:string description:string photo:flags.<span class="hljs-number">0</span>?WebDocument receipt_msg_id:flags.<span class="hljs-number">2</span>?int currency:string total_amount:long start_param:string = MessageMedia;
-<span class="hljs-attribute">messageMediaGeoLive</span>#b<span class="hljs-number">940</span>c<span class="hljs-number">666</span> flags:# geo:GeoPoint heading:flags.<span class="hljs-number">0</span>?int period:int proximity_notification_radius:flags.<span class="hljs-number">1</span>?int = MessageMedia;
-<span class="hljs-attribute">messageMediaPoll</span>#<span class="hljs-number">4</span>bd<span class="hljs-number">6</span>e<span class="hljs-number">798</span> poll:Poll results:PollResults = MessageMedia;
-<span class="hljs-attribute">messageMediaDice</span>#<span class="hljs-number">3</span>f<span class="hljs-number">7</span>ee<span class="hljs-number">58</span>b value:int emoticon:string = MessageMedia;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">messages</span>.uploadMedia#<span class="hljs-number">519</span>bc<span class="hljs-number">2</span>b<span class="hljs-number">1</span> peer:InputPeer media:InputMedia = MessageMedia;
+<pre><code class="hljs language-txt">messageMediaEmpty#3ded6320 = MessageMedia;
+messageMediaPhoto#695150d7 flags:# photo:flags.0?Photo ttl_seconds:flags.2?int = MessageMedia;
+messageMediaGeo#56e0d474 geo:GeoPoint = MessageMedia;
+messageMediaContact#cbf24940 phone_number:string first_name:string last_name:string vcard:string user_id:int = MessageMedia;
+messageMediaUnsupported#9f84f49e = MessageMedia;
+messageMediaDocument#9cb070d7 flags:# document:flags.0?Document ttl_seconds:flags.2?int = MessageMedia;
+messageMediaWebPage#a32dd600 webpage:WebPage = MessageMedia;
+messageMediaVenue#2ec0533f geo:GeoPoint title:string address:string provider:string venue_id:string venue_type:string = MessageMedia;
+messageMediaGame#fdb19008 game:Game = MessageMedia;
+messageMediaInvoice#84551347 flags:# shipping_address_requested:flags.1?true test:flags.3?true title:string description:string photo:flags.0?WebDocument receipt_msg_id:flags.2?int currency:string total_amount:long start_param:string = MessageMedia;
+messageMediaGeoLive#b940c666 flags:# geo:GeoPoint heading:flags.0?int period:int proximity_notification_radius:flags.1?int = MessageMedia;
+messageMediaPoll#4bd6e798 poll:Poll results:PollResults = MessageMedia;
+messageMediaDice#3f7ee58b value:int emoticon:string = MessageMedia;
+---functions---
+messages.uploadMedia#519bc2b1 peer:InputPeer media:InputMedia = MessageMedia;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

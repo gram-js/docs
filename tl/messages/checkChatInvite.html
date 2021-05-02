@@ -40,11 +40,11 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">chatInviteAlready</span>#<span class="hljs-number">5</span>a<span class="hljs-number">686</span>d<span class="hljs-number">7</span>c chat:Chat = ChatInvite;
-<span class="hljs-attribute">chatInvite</span>#dfc<span class="hljs-number">2</span>f<span class="hljs-number">58</span>e flags:# channel:flags.<span class="hljs-number">0</span>?true broadcast:flags.<span class="hljs-number">1</span>?true public:flags.<span class="hljs-number">2</span>?true megagroup:flags.<span class="hljs-number">3</span>?true title:string photo:Photo participants_count:int participants:flags.<span class="hljs-number">4</span>?Vector&#x3C;User> = ChatInvite;
-<span class="hljs-attribute">chatInvitePeek</span>#<span class="hljs-number">61695</span>cb<span class="hljs-number">0</span> chat:Chat expires:int = ChatInvite;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">messages</span>.checkChatInvite#<span class="hljs-number">3</span>eadb<span class="hljs-number">1</span>bb hash:string = ChatInvite;
+<pre><code class="hljs language-txt">chatInviteAlready#5a686d7c chat:Chat = ChatInvite;
+chatInvite#dfc2f58e flags:# channel:flags.0?true broadcast:flags.1?true public:flags.2?true megagroup:flags.3?true title:string photo:Photo participants_count:int participants:flags.4?Vector&#x3C;User> = ChatInvite;
+chatInvitePeek#61695cb0 chat:Chat expires:int = ChatInvite;
+---functions---
+messages.checkChatInvite#3eadb1bb hash:string = ChatInvite;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

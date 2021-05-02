@@ -42,8 +42,8 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-oxygene">wallPaper#a437c3ed id:long <span class="hljs-keyword">flags</span>:# creator:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?<span class="hljs-keyword">true</span> <span class="hljs-keyword">default</span>:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> pattern:<span class="hljs-keyword">flags</span>.<span class="hljs-number">3</span>?<span class="hljs-keyword">true</span> dark:<span class="hljs-keyword">flags</span>.<span class="hljs-number">4</span>?<span class="hljs-keyword">true</span> access_hash:long slug:string document:Document settings:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?WallPaperSettings = WallPaper;
-wallPaperNoFile<span class="hljs-string">#8</span>af40b25 <span class="hljs-keyword">flags</span>:# <span class="hljs-keyword">default</span>:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> dark:<span class="hljs-keyword">flags</span>.<span class="hljs-number">4</span>?<span class="hljs-keyword">true</span> settings:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?WallPaperSettings = WallPaper;
+<pre><code class="hljs language-txt">wallPaper#a437c3ed id:long flags:# creator:flags.0?true default:flags.1?true pattern:flags.3?true dark:flags.4?true access_hash:long slug:string document:Document settings:flags.2?WallPaperSettings = WallPaper;
+wallPaperNoFile#8af40b25 flags:# default:flags.1?true dark:flags.4?true settings:flags.2?WallPaperSettings = WallPaper;
 ---functions---
 account.uploadWallPaper#dd853661 file:InputFile mime_type:string settings:WallPaperSettings = WallPaper;
 </code></pre>

@@ -38,9 +38,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-apache"><span class="hljs-attribute">peerNotifySettings</span>#af<span class="hljs-number">509</span>d<span class="hljs-number">20</span> flags:# show_previews:flags.<span class="hljs-number">0</span>?Bool silent:flags.<span class="hljs-number">1</span>?Bool mute_until:flags.<span class="hljs-number">2</span>?int sound:flags.<span class="hljs-number">3</span>?string = PeerNotifySettings;
----<span class="hljs-attribute">functions</span>---
-<span class="hljs-attribute">account</span>.getNotifySettings#<span class="hljs-number">12</span>b<span class="hljs-number">3</span>ad<span class="hljs-number">31</span> peer:InputNotifyPeer = PeerNotifySettings;
+<pre><code class="hljs language-txt">peerNotifySettings#af509d20 flags:# show_previews:flags.0?Bool silent:flags.1?Bool mute_until:flags.2?int sound:flags.3?string = PeerNotifySettings;
+---functions---
+account.getNotifySettings#12b3ad31 peer:InputNotifyPeer = PeerNotifySettings;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

@@ -42,10 +42,10 @@
 })();
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.chats#<span class="hljs-number">64</span>ff9fd5 chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> = <span class="hljs-keyword">messages</span>.Chats;
-<span class="hljs-keyword">messages</span>.chatsSlice#<span class="hljs-number">9</span>cd81144 coun<span class="hljs-variable">t:int</span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> = <span class="hljs-keyword">messages</span>.Chats;
+<pre><code class="hljs language-txt">messages.chats#64ff9fd5 chats:Vector&#x3C;Chat> = messages.Chats;
+messages.chatsSlice#9cd81144 count:int chats:Vector&#x3C;Chat> = messages.Chats;
 ---functions---
-channels.getAdminedPublicChannels#f8b036af flag<span class="hljs-variable">s:</span># by_location:flags.<span class="hljs-number">0</span>?true check_limi<span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true = <span class="hljs-keyword">messages</span>.Chats;
+channels.getAdminedPublicChannels#f8b036af flags:# by_location:flags.0?true check_limit:flags.1?true = messages.Chats;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 

@@ -46,9 +46,9 @@
 
 </code></pre></div></div>
 <h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
-<pre><code class="hljs language-oxygene">messages.botCallbackAnswer<span class="hljs-string">#36585</span>ea4 <span class="hljs-keyword">flags</span>:# alert:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> has_url:<span class="hljs-keyword">flags</span>.<span class="hljs-number">3</span>?<span class="hljs-keyword">true</span> native_ui:<span class="hljs-keyword">flags</span>.<span class="hljs-number">4</span>?<span class="hljs-keyword">true</span> message:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?string url:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?string cache_time:int = messages.BotCallbackAnswer;
+<pre><code class="hljs language-txt">messages.botCallbackAnswer#36585ea4 flags:# alert:flags.1?true has_url:flags.3?true native_ui:flags.4?true message:flags.0?string url:flags.2?string cache_time:int = messages.BotCallbackAnswer;
 ---functions---
-messages.getBotCallbackAnswer<span class="hljs-string">#9342</span>ca07 <span class="hljs-keyword">flags</span>:# game:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> peer:InputPeer msg_id:int data:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?bytes password:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?InputCheckPasswordSRP = messages.BotCallbackAnswer;
+messages.getBotCallbackAnswer#9342ca07 flags:# game:flags.1?true peer:InputPeer msg_id:int data:flags.0?bytes password:flags.2?InputCheckPasswordSRP = messages.BotCallbackAnswer;
 </code></pre>
 <h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
 
