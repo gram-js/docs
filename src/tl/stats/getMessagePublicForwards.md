@@ -27,7 +27,6 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 		}));
     console.log(result); // prints the result
 })();
-
 ```
 
 :::
@@ -52,7 +51,6 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 		}));
     console.log(result); // prints the result
 })();
-
 ```
 
 :::
