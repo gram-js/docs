@@ -1,0 +1,98 @@
+# messages.addChatUser
+
+Adds a user to a chat and sends a service message on it.
+
+## Example
+
+::::tabs
+:::tab{title="JavaScript"}
+
+```js
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
+
+const session = new StringSession('');
+const client = new TelegramClient(session, apiId, apiHash, {});
+
+(async function run() {
+    const result = await client.invoke(new Api.messages.addChatUser({
+		chatId: 1537502,
+		userId: new Api.InputUser({...}),
+		fwdLimit: 9717987,
+		}));
+    console.log(result); // prints the result
+})();
+
+```
+
+:::
+
+:::tab{title="TypeScript"}
+
+```ts
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
+
+const session = new StringSession('');
+const client = new TelegramClient(session, apiId, apiHash, {});
+
+(async function run() {
+    const result: Api.messages.StatedMessage = await client.invoke(new Api.messages.addChatUser({
+		chatId: 1537502,
+		userId: new Api.InputUser({...}),
+		fwdLimit: 9717987,
+		}));
+    console.log(result); // prints the result
+})();
+
+```
+
+:::
+::::
+
+## TL schema
+
+```
+updatesTooLong#e317af7e = Updates;
+updateShortMessage#2296d2c8 flags:# out:flags.1?true mentioned:flags.4?true media_unread:flags.5?true silent:flags.13?true id:int user_id:int message:string pts:int pts_count:int date:int fwd_from:flags.2?MessageFwdHeader via_bot_id:flags.11?int reply_to:flags.3?MessageReplyHeader entities:flags.7?Vector<MessageEntity> = Updates;
+updateShortChatMessage#402d5dbb flags:# out:flags.1?true mentioned:flags.4?true media_unread:flags.5?true silent:flags.13?true id:int from_id:int chat_id:int message:string pts:int pts_count:int date:int fwd_from:flags.2?MessageFwdHeader via_bot_id:flags.11?int reply_to:flags.3?MessageReplyHeader entities:flags.7?Vector<MessageEntity> = Updates;
+updateShort#78d4dec1 update:Update date:int = Updates;
+updatesCombined#725b04c3 updates:Vector<Update> users:Vector<User> chats:Vector<Chat> date:int seq_start:int seq:int = Updates;
+updates#74ae4240 updates:Vector<Update> users:Vector<User> chats:Vector<Chat> date:int seq:int = Updates;
+updateShortSentMessage#11f1331c flags:# out:flags.1?true id:int pts:int pts_count:int date:int media:flags.9?MessageMedia entities:flags.7?Vector<MessageEntity> = Updates;
+---functions---
+messages.addChatUser#f9a0aa09 chat_id:int user_id:InputUser fwd_limit:int = Updates;
+```
+
+## Parameters
+
+|     Name      | Type                                                  | Description                             |
+| :-----------: | ----------------------------------------------------- | --------------------------------------- |
+|  **chat_id**  | [int](https://core.telegram.org/type/int)             | Chat ID                                 |
+|  **user_id**  | [InputUser](https://core.telegram.org/type/InputUser) | User ID to be added                     |
+| **fwd_limit** | [int](https://core.telegram.org/type/int)             | Number of last messages to be forwarded |
+
+## Result
+
+[messages.StatedMessage](https://core.telegram.org/type/messages.StatedMessage)
+
+## Possible errors
+
+| Code | Type                     | Description                                                                   |
+| :--: | ------------------------ | ----------------------------------------------------------------------------- |
+| 400  | CHAT_ADMIN_REQUIRED      | You must be an admin in this chat to do this                                  |
+| 400  | CHAT_ID_INVALID          | The provided chat id is invalid                                               |
+| 403  | CHAT_WRITE_FORBIDDEN     | You can't write in this chat                                                  |
+| 400  | INPUT_USER_DEACTIVATED   | The specified user was deleted                                                |
+| 400  | PEER_ID_INVALID          | The provided peer id is invalid                                               |
+| 400  | USERS_TOO_MUCH           | The maximum number of users has been exceeded (to create a chat, for example) |
+| 400  | USER_ALREADY_PARTICIPANT | The user is already in the group                                              |
+| 400  | USER_ID_INVALID          | The provided user ID is invalid                                               |
+| 403  | USER_NOT_MUTUAL_CONTACT  | The provided user is not a mutual contact                                     |
+| 403  | USER_PRIVACY_RESTRICTED  | The user's privacy settings do not allow you to do this                       |
+
+## Can bots use this method?
+
+Yes
+
+## Related pages

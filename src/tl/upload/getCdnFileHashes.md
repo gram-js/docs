@@ -1,0 +1,84 @@
+# upload.getCdnFileHashes
+
+Get SHA256 hashes for verifying downloaded [CDN](https://core.telegram.org/cdn) files
+
+## Example
+
+::::tabs
+:::tab{title="JavaScript"}
+
+```js
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
+
+const session = new StringSession('');
+const client = new TelegramClient(session, apiId, apiHash, {});
+
+(async function run() {
+    const result = await client.invoke(
+        new Api.upload.getCdnFileHashes({
+            fileToken: Buffer.from('some bytes here'),
+            offset: 1930220,
+        }),
+    );
+    console.log(result); // prints the result
+})();
+```
+
+:::
+
+:::tab{title="TypeScript"}
+
+```ts
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
+
+const session = new StringSession('');
+const client = new TelegramClient(session, apiId, apiHash, {});
+
+(async function run() {
+    const result: Api.Vector<FileHash> = await client.invoke(
+        new Api.upload.getCdnFileHashes({
+            fileToken: Buffer.from('some bytes here'),
+            offset: 1930220,
+        }),
+    );
+    console.log(result); // prints the result
+})();
+```
+
+:::
+::::
+
+## TL schema
+
+```
+---functions---
+upload.getCdnFileHashes#4da54231 file_token:bytes offset:int = Vector<FileHash>;
+```
+
+## Parameters
+
+|      Name      | Type                                          | Description                               |
+| :------------: | --------------------------------------------- | ----------------------------------------- |
+| **file_token** | [bytes](https://core.telegram.org/type/bytes) | File                                      |
+|   **offset**   | [int](https://core.telegram.org/type/int)     | Offset from which to start getting hashes |
+
+## Result
+
+[Vector](https://core.telegram.org/type/Vector%20t)<[FileHash](https://core.telegram.org/type/FileHash)>
+
+## Possible errors
+
+| Code | Type               | Description                            |
+| :--: | ------------------ | -------------------------------------- |
+| 400  | CDN_METHOD_INVALID | You can't call this method in a CDN DC |
+| 400  | RSA_DECRYPT_FAILED | Internal RSA decryption failed         |
+
+## Can bots use this method?
+
+Yes
+
+## Related pages
+
+#### [Encrypted CDNs for Speed and Security](https://core.telegram.org/cdn)
