@@ -10,30 +10,42 @@
     <body><div class="container"><h1 id="stickerssetstickersetthumb">stickers.setStickerSetThumb<a aria-hidden="true" tabindex="-1" href="#stickerssetstickersetthumb"><span class="icon icon-link"></span></a></h1>
 <p>Set stickerset thumbnail</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.stickers.setStickerSetThumb({
-		<span class="hljs-attr">stickerset</span>: <span class="hljs-keyword">new</span> Api.InputStickerSet({...}),
-		<span class="hljs-attr">thumb</span>: <span class="hljs-keyword">new</span> Api.InputDocument({...}),
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.stickers.setStickerSetThumb({
+            <span class="hljs-attr">stickerset</span>: <span class="hljs-keyword">new</span> Api.InputStickerSet({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">thumb</span>: <span class="hljs-keyword">new</span> Api.InputDocument({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.messages.StickerSet = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.stickers.setStickerSetThumb({
-		<span class="hljs-attr">stickerset</span>: <span class="hljs-keyword">new</span> Api.InputStickerSet({...}),
-		<span class="hljs-attr">thumb</span>: <span class="hljs-keyword">new</span> Api.InputDocument({...}),
-		}));
+    <span class="hljs-keyword">const</span> result: Api.messages.StickerSet = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.stickers.setStickerSetThumb({
+            <span class="hljs-attr">stickerset</span>: <span class="hljs-keyword">new</span> Api.InputStickerSet({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">thumb</span>: <span class="hljs-keyword">new</span> Api.InputDocument({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>

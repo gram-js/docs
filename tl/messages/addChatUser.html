@@ -19,7 +19,7 @@
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.addChatUser({
 		<span class="hljs-attr">chatId</span>: <span class="hljs-number">1537502</span>,
-		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
+		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({ <span class="hljs-comment">/* ... */</span> }... */ }),
 		<span class="hljs-attr">fwdLimit</span>: <span class="hljs-number">9717987</span>,
 		}));
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
@@ -33,7 +33,7 @@
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">const</span> result: Api.messages.StatedMessage = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.addChatUser({
 		<span class="hljs-attr">chatId</span>: <span class="hljs-number">1537502</span>,
-		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
+		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({ <span class="hljs-comment">/* ... */</span> }... */ }),
 		<span class="hljs-attr">fwdLimit</span>: <span class="hljs-number">9717987</span>,
 		}));
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>

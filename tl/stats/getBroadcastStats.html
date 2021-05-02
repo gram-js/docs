@@ -10,30 +10,38 @@
     <body><div class="container"><h1 id="statsgetbroadcaststats">stats.getBroadcastStats<a aria-hidden="true" tabindex="-1" href="#statsgetbroadcaststats"><span class="icon icon-link"></span></a></h1>
 <p>Get <a href="https://core.telegram.org/api/stats">channel statistics</a></p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.stats.getBroadcastStats({
-		<span class="hljs-attr">dark</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.stats.getBroadcastStats({
+            <span class="hljs-attr">dark</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.stats.BroadcastStats = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.stats.getBroadcastStats({
-		<span class="hljs-attr">dark</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
-		}));
+    <span class="hljs-keyword">const</span> result: Api.stats.BroadcastStats = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.stats.getBroadcastStats({
+            <span class="hljs-attr">dark</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -106,5 +114,5 @@ stats.getBroadcastStats#ab42441a flags:# dark:flags.0?true channel:InputChannel 
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="channel-statistics"><a href="https://core.telegram.org/api/stats">Channel statistics</a><a aria-hidden="true" tabindex="-1" href="#channel-statistics"><span class="icon icon-link"></span></a></h4>
+<h3 id="channel-statistics"><a href="https://core.telegram.org/api/stats">Channel statistics</a><a aria-hidden="true" tabindex="-1" href="#channel-statistics"><span class="icon icon-link"></span></a></h3>
 <p>Telegram offers detailed channel statistics for channels and supergroups.</p></div></body></html>

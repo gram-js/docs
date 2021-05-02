@@ -10,28 +10,40 @@
     <body><div class="container"><h1 id="folderseditpeerfolders">folders.editPeerFolders<a aria-hidden="true" tabindex="-1" href="#folderseditpeerfolders"><span class="icon icon-link"></span></a></h1>
 <p>Edit peers in <a href="https://core.telegram.org/api/folders#peer-folders">peer folder</a></p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.folders.editPeerFolders({
-		<span class="hljs-attr">folderPeers</span>: [<span class="hljs-keyword">new</span> Api.InputFolderPeer({...})],
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.folders.editPeerFolders({
+            <span class="hljs-attr">folderPeers</span>: [
+                <span class="hljs-keyword">new</span> Api.InputFolderPeer({
+                    <span class="hljs-comment">/* ... */</span>
+                }),
+            ],
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.folders.editPeerFolders({
-		<span class="hljs-attr">folderPeers</span>: [<span class="hljs-keyword">new</span> Api.InputFolderPeer({...})],
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.folders.editPeerFolders({
+            <span class="hljs-attr">folderPeers</span>: [
+                <span class="hljs-keyword">new</span> Api.InputFolderPeer({
+                    <span class="hljs-comment">/* ... */</span>
+                }),
+            ],
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -85,5 +97,5 @@ folders.editPeerFolders#6847d0ab folder_peers:Vector&#x3C;InputFolderPeer> = Upd
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="folders"><a href="https://core.telegram.org/api/folders">Folders</a><a aria-hidden="true" tabindex="-1" href="#folders"><span class="icon icon-link"></span></a></h4>
+<h3 id="folders"><a href="https://core.telegram.org/api/folders">Folders</a><a aria-hidden="true" tabindex="-1" href="#folders"><span class="icon icon-link"></span></a></h3>
 <p>Telegram allows placing chats into folders, based on their type, mute status, or other custom criteria, thanks to folder blacklists and whitelists.</p></div></body></html>

@@ -10,36 +10,48 @@
     <body><div class="container"><h1 id="phonerequestcall">phone.requestCall<a aria-hidden="true" tabindex="-1" href="#phonerequestcall"><span class="icon icon-link"></span></a></h1>
 <p>Start a telegram phone call</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.phone.requestCall({
-		<span class="hljs-attr">video</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
-		<span class="hljs-attr">randomId</span>: <span class="hljs-number">3511366</span>,
-		<span class="hljs-attr">gAHash</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
-		<span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({...}),
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.phone.requestCall({
+            <span class="hljs-attr">video</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">randomId</span>: <span class="hljs-number">3511366</span>,
+            <span class="hljs-attr">gAHash</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+            <span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.phone.PhoneCall = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.phone.requestCall({
-		<span class="hljs-attr">video</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
-		<span class="hljs-attr">randomId</span>: <span class="hljs-number">3511366</span>,
-		<span class="hljs-attr">gAHash</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
-		<span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({...}),
-		}));
+    <span class="hljs-keyword">const</span> result: Api.phone.PhoneCall = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.phone.requestCall({
+            <span class="hljs-attr">video</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">randomId</span>: <span class="hljs-number">3511366</span>,
+            <span class="hljs-attr">gAHash</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+            <span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -132,4 +144,4 @@ phone.requestCall#42ff96ed flags:# video:flags.0?true user_id:InputUser random_i
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="end-to-end-encrypted-voice-calls"><a href="https://core.telegram.org/api/end-to-end/voice-calls">End-to-End Encrypted Voice Calls</a><a aria-hidden="true" tabindex="-1" href="#end-to-end-encrypted-voice-calls"><span class="icon icon-link"></span></a></h4></div></body></html>
+<h3 id="end-to-end-encrypted-voice-calls"><a href="https://core.telegram.org/api/end-to-end/voice-calls">End-to-End Encrypted Voice Calls</a><a aria-hidden="true" tabindex="-1" href="#end-to-end-encrypted-voice-calls"><span class="icon icon-link"></span></a></h3></div></body></html>

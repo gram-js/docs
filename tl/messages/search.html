@@ -10,52 +10,68 @@
     <body><div class="container"><h1 id="messagessearch">messages.search<a aria-hidden="true" tabindex="-1" href="#messagessearch"><span class="icon icon-link"></span></a></h1>
 <p>Gets back found messages</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.search({
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">fromId</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">topMsgId</span>: <span class="hljs-number">4881049</span>,
-		<span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.MessagesFilter({...}),
-		<span class="hljs-attr">minDate</span>: <span class="hljs-number">7108524</span>,
-		<span class="hljs-attr">maxDate</span>: <span class="hljs-number">3588179</span>,
-		<span class="hljs-attr">offsetId</span>: <span class="hljs-number">840380</span>,
-		<span class="hljs-attr">addOffset</span>: <span class="hljs-number">3671533</span>,
-		<span class="hljs-attr">limit</span>: <span class="hljs-number">6577178</span>,
-		<span class="hljs-attr">maxId</span>: <span class="hljs-number">7375544</span>,
-		<span class="hljs-attr">minId</span>: <span class="hljs-number">9351693</span>,
-		<span class="hljs-attr">hash</span>: <span class="hljs-number">7383860</span>,
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.search({
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">fromId</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">topMsgId</span>: <span class="hljs-number">4881049</span>,
+            <span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.MessagesFilter({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">minDate</span>: <span class="hljs-number">7108524</span>,
+            <span class="hljs-attr">maxDate</span>: <span class="hljs-number">3588179</span>,
+            <span class="hljs-attr">offsetId</span>: <span class="hljs-number">840380</span>,
+            <span class="hljs-attr">addOffset</span>: <span class="hljs-number">3671533</span>,
+            <span class="hljs-attr">limit</span>: <span class="hljs-number">6577178</span>,
+            <span class="hljs-attr">maxId</span>: <span class="hljs-number">7375544</span>,
+            <span class="hljs-attr">minId</span>: <span class="hljs-number">9351693</span>,
+            <span class="hljs-attr">hash</span>: <span class="hljs-number">7383860</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.messages.Messages = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.search({
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">fromId</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">topMsgId</span>: <span class="hljs-number">4881049</span>,
-		<span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.MessagesFilter({...}),
-		<span class="hljs-attr">minDate</span>: <span class="hljs-number">7108524</span>,
-		<span class="hljs-attr">maxDate</span>: <span class="hljs-number">3588179</span>,
-		<span class="hljs-attr">offsetId</span>: <span class="hljs-number">840380</span>,
-		<span class="hljs-attr">addOffset</span>: <span class="hljs-number">3671533</span>,
-		<span class="hljs-attr">limit</span>: <span class="hljs-number">6577178</span>,
-		<span class="hljs-attr">maxId</span>: <span class="hljs-number">7375544</span>,
-		<span class="hljs-attr">minId</span>: <span class="hljs-number">9351693</span>,
-		<span class="hljs-attr">hash</span>: <span class="hljs-number">7383860</span>,
-		}));
+    <span class="hljs-keyword">const</span> result: Api.messages.Messages = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.search({
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">fromId</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">topMsgId</span>: <span class="hljs-number">4881049</span>,
+            <span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.MessagesFilter({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">minDate</span>: <span class="hljs-number">7108524</span>,
+            <span class="hljs-attr">maxDate</span>: <span class="hljs-number">3588179</span>,
+            <span class="hljs-attr">offsetId</span>: <span class="hljs-number">840380</span>,
+            <span class="hljs-attr">addOffset</span>: <span class="hljs-number">3671533</span>,
+            <span class="hljs-attr">limit</span>: <span class="hljs-number">6577178</span>,
+            <span class="hljs-attr">maxId</span>: <span class="hljs-number">7375544</span>,
+            <span class="hljs-attr">minId</span>: <span class="hljs-number">9351693</span>,
+            <span class="hljs-attr">hash</span>: <span class="hljs-number">7383860</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -216,9 +232,9 @@ messages.search#c352eec flags:# peer:InputPeer q:string from_id:flags.0?InputPee
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="inputpeerempty"><a href="https://core.telegram.org/constructor/inputPeerEmpty">inputPeerEmpty</a><a aria-hidden="true" tabindex="-1" href="#inputpeerempty"><span class="icon icon-link"></span></a></h4>
+<h3 id="inputpeerempty"><a href="https://core.telegram.org/constructor/inputPeerEmpty">inputPeerEmpty</a><a aria-hidden="true" tabindex="-1" href="#inputpeerempty"><span class="icon icon-link"></span></a></h3>
 <p>An empty constructor, no user or chat is defined.</p>
-<h4 id="threads"><a href="https://core.telegram.org/api/threads">Threads</a><a aria-hidden="true" tabindex="-1" href="#threads"><span class="icon icon-link"></span></a></h4>
+<h3 id="threads"><a href="https://core.telegram.org/api/threads">Threads</a><a aria-hidden="true" tabindex="-1" href="#threads"><span class="icon icon-link"></span></a></h3>
 <p>Telegram allows commenting on a <a href="https://core.telegram.org/api/channel">channel post</a> or on a generic <a href="https://core.telegram.org/api/channel">supergroup message</a>, thanks to message threads.</p>
-<h4 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h4>
+<h3 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h3>
 <p>How to fetch results from large lists of objects.</p></div></body></html>

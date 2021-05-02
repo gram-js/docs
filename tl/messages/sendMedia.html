@@ -10,48 +10,72 @@
     <body><div class="container"><h1 id="messagessendmedia">messages.sendMedia<a aria-hidden="true" tabindex="-1" href="#messagessendmedia"><span class="icon icon-link"></span></a></h1>
 <p>Send a media</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.sendMedia({
-		<span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2388882</span>,
-		<span class="hljs-attr">media</span>: <span class="hljs-keyword">new</span> Api.InputMedia({...}),
-		<span class="hljs-attr">message</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">randomId</span>: <span class="hljs-number">9782360</span>,
-		<span class="hljs-attr">replyMarkup</span>: <span class="hljs-keyword">new</span> Api.ReplyMarkup({...}),
-		<span class="hljs-attr">entities</span>: [<span class="hljs-keyword">new</span> Api.MessageEntity({...})],
-		<span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5175296</span>,
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.sendMedia({
+            <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2388882</span>,
+            <span class="hljs-attr">media</span>: <span class="hljs-keyword">new</span> Api.InputMedia({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">message</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">randomId</span>: <span class="hljs-number">9782360</span>,
+            <span class="hljs-attr">replyMarkup</span>: <span class="hljs-keyword">new</span> Api.ReplyMarkup({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">entities</span>: [
+                <span class="hljs-keyword">new</span> Api.MessageEntity({
+                    <span class="hljs-comment">/* ... */</span>
+                }),
+            ],
+            <span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5175296</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.sendMedia({
-		<span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2388882</span>,
-		<span class="hljs-attr">media</span>: <span class="hljs-keyword">new</span> Api.InputMedia({...}),
-		<span class="hljs-attr">message</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">randomId</span>: <span class="hljs-number">9782360</span>,
-		<span class="hljs-attr">replyMarkup</span>: <span class="hljs-keyword">new</span> Api.ReplyMarkup({...}),
-		<span class="hljs-attr">entities</span>: [<span class="hljs-keyword">new</span> Api.MessageEntity({...})],
-		<span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5175296</span>,
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.sendMedia({
+            <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2388882</span>,
+            <span class="hljs-attr">media</span>: <span class="hljs-keyword">new</span> Api.InputMedia({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">message</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">randomId</span>: <span class="hljs-number">9782360</span>,
+            <span class="hljs-attr">replyMarkup</span>: <span class="hljs-keyword">new</span> Api.ReplyMarkup({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">entities</span>: [
+                <span class="hljs-keyword">new</span> Api.MessageEntity({
+                    <span class="hljs-comment">/* ... */</span>
+                }),
+            ],
+            <span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5175296</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -365,7 +389,7 @@ messages.sendMedia#3491eba9 flags:# silent:flags.5?true background:flags.6?true 
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="styled-text-with-message-entities"><a href="https://core.telegram.org/api/entities">Styled text with message entities</a><a aria-hidden="true" tabindex="-1" href="#styled-text-with-message-entities"><span class="icon icon-link"></span></a></h4>
+<h3 id="styled-text-with-message-entities"><a href="https://core.telegram.org/api/entities">Styled text with message entities</a><a aria-hidden="true" tabindex="-1" href="#styled-text-with-message-entities"><span class="icon icon-link"></span></a></h3>
 <p>How to create styled text with message entities</p>
-<h4 id="scheduled-messages"><a href="https://core.telegram.org/api/scheduled-messages">Scheduled messages</a><a aria-hidden="true" tabindex="-1" href="#scheduled-messages"><span class="icon icon-link"></span></a></h4>
+<h3 id="scheduled-messages"><a href="https://core.telegram.org/api/scheduled-messages">Scheduled messages</a><a aria-hidden="true" tabindex="-1" href="#scheduled-messages"><span class="icon icon-link"></span></a></h3>
 <p>Telegram allows scheduling messages</p></div></body></html>

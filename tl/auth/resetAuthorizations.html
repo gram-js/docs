@@ -10,28 +10,36 @@
     <body><div class="container"><h1 id="authresetauthorizations">auth.resetAuthorizations<a aria-hidden="true" tabindex="-1" href="#authresetauthorizations"><span class="icon icon-link"></span></a></h1>
 <p>Terminates all user's authorized sessions except for the current one.</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.auth.resetAuthorizations({
-		<span class="hljs-number">406</span>: <span class="hljs-keyword">new</span> Api.FRESH_RESET_AUTHORISATION_FORBIDDEN({...}),
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.auth.resetAuthorizations({
+            <span class="hljs-number">406</span>: <span class="hljs-keyword">new</span> Api.FRESH_RESET_AUTHORISATION_FORBIDDEN({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Bool = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.auth.resetAuthorizations({
-		<span class="hljs-number">406</span>: <span class="hljs-keyword">new</span> Api.FRESH_RESET_AUTHORISATION_FORBIDDEN({...}),
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Bool = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.auth.resetAuthorizations({
+            <span class="hljs-number">406</span>: <span class="hljs-keyword">new</span> Api.FRESH_RESET_AUTHORISATION_FORBIDDEN({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -73,5 +81,5 @@ auth.resetAuthorizations#9fab0d1a = Bool;
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="accountregisterdevice"><a href="https://core.telegram.org/method/account.registerDevice">account.registerDevice</a><a aria-hidden="true" tabindex="-1" href="#accountregisterdevice"><span class="icon icon-link"></span></a></h4>
+<h3 id="accountregisterdevice"><a href="https://core.telegram.org/method/account.registerDevice">account.registerDevice</a><a aria-hidden="true" tabindex="-1" href="#accountregisterdevice"><span class="icon icon-link"></span></a></h3>
 <p>Register device to receive <a href="https://core.telegram.org/api/push-updates">PUSH notifications</a></p></div></body></html>

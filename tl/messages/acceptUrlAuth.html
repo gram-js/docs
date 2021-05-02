@@ -19,7 +19,7 @@
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.acceptUrlAuth({
 		<span class="hljs-attr">writeAllowed</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({ <span class="hljs-comment">/* ... */</span> }... */ }),
 		<span class="hljs-attr">msgId</span>: <span class="hljs-number">9723223</span>,
 		<span class="hljs-attr">buttonId</span>: <span class="hljs-number">3768630</span>,
 		}));
@@ -34,7 +34,7 @@
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">const</span> result: Api.UrlAuthResult = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.acceptUrlAuth({
 		<span class="hljs-attr">writeAllowed</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({ <span class="hljs-comment">/* ... */</span> }... */ }),
 		<span class="hljs-attr">msgId</span>: <span class="hljs-number">9723223</span>,
 		<span class="hljs-attr">buttonId</span>: <span class="hljs-number">3768630</span>,
 		}));
@@ -100,5 +100,5 @@ messages.acceptUrlAuth#f729ea98 flags:# write_allowed:flags.0?true peer:InputPee
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="seamless-telegram-login"><a href="https://core.telegram.org/api/url-authorization">Seamless Telegram Login</a><a aria-hidden="true" tabindex="-1" href="#seamless-telegram-login"><span class="icon icon-link"></span></a></h4>
+<h3 id="seamless-telegram-login"><a href="https://core.telegram.org/api/url-authorization">Seamless Telegram Login</a><a aria-hidden="true" tabindex="-1" href="#seamless-telegram-login"><span class="icon icon-link"></span></a></h3>
 <p>Handle Seamless Telegram Login URL authorization requests.</p></div></body></html>

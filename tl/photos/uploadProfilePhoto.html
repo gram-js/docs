@@ -10,32 +10,44 @@
     <body><div class="container"><h1 id="photosuploadprofilephoto">photos.uploadProfilePhoto<a aria-hidden="true" tabindex="-1" href="#photosuploadprofilephoto"><span class="icon icon-link"></span></a></h1>
 <p>Updates current user profile photo.</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.photos.uploadProfilePhoto({
-		<span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
-		<span class="hljs-attr">video</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
-		<span class="hljs-attr">videoStartTs</span>: <span class="hljs-number">8374801</span>,
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.photos.uploadProfilePhoto({
+            <span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputFile({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">video</span>: <span class="hljs-keyword">new</span> Api.InputFile({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">videoStartTs</span>: <span class="hljs-number">8374801</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.photos.Photo = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.photos.uploadProfilePhoto({
-		<span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
-		<span class="hljs-attr">video</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
-		<span class="hljs-attr">videoStartTs</span>: <span class="hljs-number">8374801</span>,
-		}));
+    <span class="hljs-keyword">const</span> result: Api.photos.Photo = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.photos.uploadProfilePhoto({
+            <span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputFile({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">video</span>: <span class="hljs-keyword">new</span> Api.InputFile({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">videoStartTs</span>: <span class="hljs-number">8374801</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -128,7 +140,7 @@ photos.uploadProfilePhoto#89f30f69 flags:# file:flags.0?InputFile video:flags.1?
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="uploadsavefilepart"><a href="https://core.telegram.org/method/upload.saveFilePart">upload.saveFilePart</a><a aria-hidden="true" tabindex="-1" href="#uploadsavefilepart"><span class="icon icon-link"></span></a></h4>
+<h3 id="uploadsavefilepart"><a href="https://core.telegram.org/method/upload.saveFilePart">upload.saveFilePart</a><a aria-hidden="true" tabindex="-1" href="#uploadsavefilepart"><span class="icon icon-link"></span></a></h3>
 <p>Saves a part of file for futher sending to one of the methods.</p>
-<h4 id="uploading-and-downloading-files"><a href="https://core.telegram.org/api/files">Uploading and Downloading Files</a><a aria-hidden="true" tabindex="-1" href="#uploading-and-downloading-files"><span class="icon icon-link"></span></a></h4>
+<h3 id="uploading-and-downloading-files"><a href="https://core.telegram.org/api/files">Uploading and Downloading Files</a><a aria-hidden="true" tabindex="-1" href="#uploading-and-downloading-files"><span class="icon icon-link"></span></a></h3>
 <p>How to transfer large data batches correctly.</p></div></body></html>

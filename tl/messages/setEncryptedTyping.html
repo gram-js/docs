@@ -10,30 +10,42 @@
     <body><div class="container"><h1 id="messagessetencryptedtyping">messages.setEncryptedTyping<a aria-hidden="true" tabindex="-1" href="#messagessetencryptedtyping"><span class="icon icon-link"></span></a></h1>
 <p>Send typing event by the current user to a secret chat.</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.setEncryptedTyping({
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({...}),
-		<span class="hljs-attr">typing</span>: <span class="hljs-keyword">new</span> Api.Bool({...}),
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.setEncryptedTyping({
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">typing</span>: <span class="hljs-keyword">new</span> Api.Bool({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Bool = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.setEncryptedTyping({
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({...}),
-		<span class="hljs-attr">typing</span>: <span class="hljs-keyword">new</span> Api.Bool({...}),
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Bool = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.setEncryptedTyping({
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">typing</span>: <span class="hljs-keyword">new</span> Api.Bool({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -90,7 +102,7 @@ messages.setEncryptedTyping#791451ed peer:InputEncryptedChat typing:Bool = Bool;
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="booltrue"><a href="https://core.telegram.org/constructor/boolTrue">boolTrue</a><a aria-hidden="true" tabindex="-1" href="#booltrue"><span class="icon icon-link"></span></a></h4>
+<h3 id="booltrue"><a href="https://core.telegram.org/constructor/boolTrue">boolTrue</a><a aria-hidden="true" tabindex="-1" href="#booltrue"><span class="icon icon-link"></span></a></h3>
 <p>The constructor can be interpreted as a <strong>boolean</strong>true value.</p>
-<h4 id="boolfalse"><a href="https://core.telegram.org/constructor/boolFalse">boolFalse</a><a aria-hidden="true" tabindex="-1" href="#boolfalse"><span class="icon icon-link"></span></a></h4>
+<h3 id="boolfalse"><a href="https://core.telegram.org/constructor/boolFalse">boolFalse</a><a aria-hidden="true" tabindex="-1" href="#boolfalse"><span class="icon icon-link"></span></a></h3>
 <p>Constructor may be interpreted as a <strong>boolean</strong>false value.</p></div></body></html>

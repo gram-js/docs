@@ -10,36 +10,48 @@
     <body><div class="container"><h1 id="messagesgetbotcallbackanswer">messages.getBotCallbackAnswer<a aria-hidden="true" tabindex="-1" href="#messagesgetbotcallbackanswer"><span class="icon icon-link"></span></a></h1>
 <p>Press an inline callback button and get a callback answer from the bot</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.getBotCallbackAnswer({
-		<span class="hljs-attr">game</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">msgId</span>: <span class="hljs-number">4437344</span>,
-		<span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
-		<span class="hljs-attr">password</span>: <span class="hljs-keyword">new</span> Api.InputCheckPasswordSRP({...}),
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getBotCallbackAnswer({
+            <span class="hljs-attr">game</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">msgId</span>: <span class="hljs-number">4437344</span>,
+            <span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+            <span class="hljs-attr">password</span>: <span class="hljs-keyword">new</span> Api.InputCheckPasswordSRP({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.messages.BotCallbackAnswer = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.getBotCallbackAnswer({
-		<span class="hljs-attr">game</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">msgId</span>: <span class="hljs-number">4437344</span>,
-		<span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
-		<span class="hljs-attr">password</span>: <span class="hljs-keyword">new</span> Api.InputCheckPasswordSRP({...}),
-		}));
+    <span class="hljs-keyword">const</span> result: Api.messages.BotCallbackAnswer = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getBotCallbackAnswer({
+            <span class="hljs-attr">game</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">msgId</span>: <span class="hljs-number">4437344</span>,
+            <span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+            <span class="hljs-attr">password</span>: <span class="hljs-keyword">new</span> Api.InputCheckPasswordSRP({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -142,7 +154,7 @@ messages.getBotCallbackAnswer#9342ca07 flags:# game:flags.1?true peer:InputPeer 
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="keyboardbuttoncallback"><a href="https://core.telegram.org/constructor/keyboardButtonCallback">keyboardButtonCallback</a><a aria-hidden="true" tabindex="-1" href="#keyboardbuttoncallback"><span class="icon icon-link"></span></a></h4>
+<h3 id="keyboardbuttoncallback"><a href="https://core.telegram.org/constructor/keyboardButtonCallback">keyboardButtonCallback</a><a aria-hidden="true" tabindex="-1" href="#keyboardbuttoncallback"><span class="icon icon-link"></span></a></h3>
 <p>Callback button</p>
-<h4 id="two-factor-authentication"><a href="https://core.telegram.org/api/srp">Two-factor authentication</a><a aria-hidden="true" tabindex="-1" href="#two-factor-authentication"><span class="icon icon-link"></span></a></h4>
+<h3 id="two-factor-authentication"><a href="https://core.telegram.org/api/srp">Two-factor authentication</a><a aria-hidden="true" tabindex="-1" href="#two-factor-authentication"><span class="icon icon-link"></span></a></h3>
 <p>How to login to a user's account if they have enabled 2FA, how to change password.</p></div></body></html>

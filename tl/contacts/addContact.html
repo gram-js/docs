@@ -10,36 +10,44 @@
     <body><div class="container"><h1 id="contactsaddcontact">contacts.addContact<a aria-hidden="true" tabindex="-1" href="#contactsaddcontact"><span class="icon icon-link"></span></a></h1>
 <p>Add an existing telegram user as contact.</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.contacts.addContact({
-		<span class="hljs-attr">addPhonePrivacyException</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">id</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
-		<span class="hljs-attr">firstName</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">lastName</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">phone</span>: <span class="hljs-string">'random string here'</span>,
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.contacts.addContact({
+            <span class="hljs-attr">addPhonePrivacyException</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">id</span>: <span class="hljs-keyword">new</span> Api.InputUser({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">firstName</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">lastName</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">phone</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.contacts.addContact({
-		<span class="hljs-attr">addPhonePrivacyException</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">id</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
-		<span class="hljs-attr">firstName</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">lastName</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">phone</span>: <span class="hljs-string">'random string here'</span>,
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.contacts.addContact({
+            <span class="hljs-attr">addPhonePrivacyException</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">id</span>: <span class="hljs-keyword">new</span> Api.InputUser({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">firstName</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">lastName</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">phone</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -128,5 +136,5 @@ contacts.addContact#e8f463d0 flags:# add_phone_privacy_exception:flags.0?true id
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="contactsimportcontacts"><a href="https://core.telegram.org/method/contacts.importContacts">contacts.importContacts</a><a aria-hidden="true" tabindex="-1" href="#contactsimportcontacts"><span class="icon icon-link"></span></a></h4>
+<h3 id="contactsimportcontacts"><a href="https://core.telegram.org/method/contacts.importContacts">contacts.importContacts</a><a aria-hidden="true" tabindex="-1" href="#contactsimportcontacts"><span class="icon icon-link"></span></a></h3>
 <p>Imports contacts: saves a full list on the server, adds already registered contacts to the contact list, returns added contacts and their info.</p></div></body></html>

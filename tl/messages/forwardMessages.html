@@ -10,42 +10,54 @@
     <body><div class="container"><h1 id="messagesforwardmessages">messages.forwardMessages<a aria-hidden="true" tabindex="-1" href="#messagesforwardmessages"><span class="icon icon-link"></span></a></h1>
 <p>Forwards messages by their IDs.</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.forwardMessages({
-		<span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">withMyScore</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">fromPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">id</span>: [<span class="hljs-number">3594049</span>],
-		<span class="hljs-attr">randomId</span>: [<span class="hljs-number">2616332</span>],
-		<span class="hljs-attr">toPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">46082</span>,
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.forwardMessages({
+            <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">withMyScore</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">fromPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">id</span>: [<span class="hljs-number">3594049</span>],
+            <span class="hljs-attr">randomId</span>: [<span class="hljs-number">2616332</span>],
+            <span class="hljs-attr">toPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">46082</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.forwardMessages({
-		<span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">withMyScore</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">fromPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">id</span>: [<span class="hljs-number">3594049</span>],
-		<span class="hljs-attr">randomId</span>: [<span class="hljs-number">2616332</span>],
-		<span class="hljs-attr">toPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">46082</span>,
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.forwardMessages({
+            <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">withMyScore</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">fromPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">id</span>: [<span class="hljs-number">3594049</span>],
+            <span class="hljs-attr">randomId</span>: [<span class="hljs-number">2616332</span>],
+            <span class="hljs-attr">toPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">46082</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>

@@ -10,46 +10,54 @@
     <body><div class="container"><h1 id="messagessendinlinebotresult">messages.sendInlineBotResult<a aria-hidden="true" tabindex="-1" href="#messagessendinlinebotresult"><span class="icon icon-link"></span></a></h1>
 <p>Send a result obtained using <a href="https://core.telegram.org/method/messages.getInlineBotResults">messages.getInlineBotResults</a>.</p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
-<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.sendInlineBotResult({
-		<span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">hideVia</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2934528</span>,
-		<span class="hljs-attr">randomId</span>: <span class="hljs-number">7448617</span>,
-		<span class="hljs-attr">queryId</span>: <span class="hljs-number">388190</span>,
-		<span class="hljs-attr">id</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5444600</span>,
-		}));
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.sendInlineBotResult({
+            <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">hideVia</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2934528</span>,
+            <span class="hljs-attr">randomId</span>: <span class="hljs-number">7448617</span>,
+            <span class="hljs-attr">queryId</span>: <span class="hljs-number">388190</span>,
+            <span class="hljs-attr">id</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5444600</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
-<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
 
 <span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.sendInlineBotResult({
-		<span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">hideVia</span>: <span class="hljs-literal">true</span>,
-		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
-		<span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2934528</span>,
-		<span class="hljs-attr">randomId</span>: <span class="hljs-number">7448617</span>,
-		<span class="hljs-attr">queryId</span>: <span class="hljs-number">388190</span>,
-		<span class="hljs-attr">id</span>: <span class="hljs-string">'random string here'</span>,
-		<span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5444600</span>,
-		}));
+    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.sendInlineBotResult({
+            <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">background</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">clearDraft</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">hideVia</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({
+                <span class="hljs-comment">/* ... */</span>
+            }),
+            <span class="hljs-attr">replyToMsgId</span>: <span class="hljs-number">2934528</span>,
+            <span class="hljs-attr">randomId</span>: <span class="hljs-number">7448617</span>,
+            <span class="hljs-attr">queryId</span>: <span class="hljs-number">388190</span>,
+            <span class="hljs-attr">id</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">scheduleDate</span>: <span class="hljs-number">5444600</span>,
+        }),
+    );
     <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div></div>
@@ -253,9 +261,9 @@ messages.sendInlineBotResult#220815b0 flags:# silent:flags.5?true background:fla
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
 <p>Yes</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
-<h4 id="message-drafts"><a href="https://core.telegram.org/api/drafts">Message drafts</a><a aria-hidden="true" tabindex="-1" href="#message-drafts"><span class="icon icon-link"></span></a></h4>
+<h3 id="message-drafts"><a href="https://core.telegram.org/api/drafts">Message drafts</a><a aria-hidden="true" tabindex="-1" href="#message-drafts"><span class="icon icon-link"></span></a></h3>
 <p>How to handle message drafts</p>
-<h4 id="config"><a href="https://core.telegram.org/constructor/config">config</a><a aria-hidden="true" tabindex="-1" href="#config"><span class="icon icon-link"></span></a></h4>
+<h3 id="config"><a href="https://core.telegram.org/constructor/config">config</a><a aria-hidden="true" tabindex="-1" href="#config"><span class="icon icon-link"></span></a></h3>
 <p>Current configuration</p>
-<h4 id="messagesgetinlinebotresults"><a href="https://core.telegram.org/method/messages.getInlineBotResults">messages.getInlineBotResults</a><a aria-hidden="true" tabindex="-1" href="#messagesgetinlinebotresults"><span class="icon icon-link"></span></a></h4>
+<h3 id="messagesgetinlinebotresults"><a href="https://core.telegram.org/method/messages.getInlineBotResults">messages.getInlineBotResults</a><a aria-hidden="true" tabindex="-1" href="#messagesgetinlinebotresults"><span class="icon icon-link"></span></a></h3>
 <p>Query an inline bot</p></div></body></html>
