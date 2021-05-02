@@ -56,7 +56,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 phone.phoneCall#ec82e140 phone_call:PhoneCall users:Vector<User> = phone.PhoneCall;
 ---functions---
 phone.requestCall#42ff96ed flags:# video:flags.0?true user_id:InputUser random_id:int g_a_hash:bytes protocol:PhoneCallProtocol = phone.PhoneCall;

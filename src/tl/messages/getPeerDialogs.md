@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.peerDialogs#3371c354 dialogs:Vector<Dialog> messages:Vector<Message> chats:Vector<Chat> users:Vector<User> state:updates.State = messages.PeerDialogs;
 ---functions---
 messages.getPeerDialogs#e470bcfd peers:Vector<InputDialogPeer> = messages.PeerDialogs;

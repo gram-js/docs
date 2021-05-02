@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 help.termsOfServiceUpdateEmpty#e3309f7f expires:int = help.TermsOfServiceUpdate;
 help.termsOfServiceUpdate#28ecf961 expires:int terms_of_service:help.TermsOfService = help.TermsOfServiceUpdate;
 ---functions---
@@ -57,8 +57,8 @@ help.getTermsOfServiceUpdate#2ca51fd1 = help.TermsOfServiceUpdate;
 
 ## Parameters
 
-| Name  | Type | Description |
-| :---: | ---- | ----------- |
+| Name | Type | Description |
+| :--: | ---- | ----------- |
 
 ## Result
 
@@ -66,8 +66,8 @@ help.getTermsOfServiceUpdate#2ca51fd1 = help.TermsOfServiceUpdate;
 
 ## Possible errors
 
-| Code  | Type | Description |
-| :---: | ---- | ----------- |
+| Code | Type | Description |
+| :--: | ---- | ----------- |
 
 ## Can bots use this method?
 

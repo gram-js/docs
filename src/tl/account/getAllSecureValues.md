@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 account.getAllSecureValues#b288bc7d = Vector<SecureValue>;
 ```

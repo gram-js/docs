@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 invokeWithLayer#da9b0d0d {X:Type} layer:int query:!X = X;
 ```

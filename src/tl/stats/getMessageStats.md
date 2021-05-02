@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 stats.messageStats#8999f295 views_graph:StatsGraph = stats.MessageStats;
 ---functions---
 stats.getMessageStats#b6e0a3f5 flags:# dark:flags.0?true channel:InputChannel msg_id:int = stats.MessageStats;

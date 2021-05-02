@@ -70,7 +70,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 contacts.topPeersNotModified#de266ef5 = contacts.TopPeers;
 contacts.topPeers#70b772a8 categories:Vector<TopPeerCategoryPeers> chats:Vector<Chat> users:Vector<User> = contacts.TopPeers;
 contacts.topPeersDisabled#b52c939d = contacts.TopPeers;

@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.stickersNotModified#f1749a22 = messages.Stickers;
 messages.stickers#e4599bbd hash:int stickers:Vector<Document> = messages.Stickers;
 ---functions---

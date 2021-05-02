@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.chatFull#e5d7d19c full_chat:ChatFull chats:Vector<Chat> users:Vector<User> = messages.ChatFull;
 ---functions---
 messages.getFullChat#3b831c66 chat_id:int = messages.ChatFull;

@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 payments.paymentResult#4e5f810d updates:Updates = payments.PaymentResult;
 payments.paymentVerificationNeeded#d8411139 url:string = payments.PaymentResult;
 ---functions---

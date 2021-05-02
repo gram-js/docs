@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 encryptedFileEmpty#c21f497e = EncryptedFile;
 encryptedFile#4a70994c id:long access_hash:long size:int dc_id:int key_fingerprint:int = EncryptedFile;
 ---functions---

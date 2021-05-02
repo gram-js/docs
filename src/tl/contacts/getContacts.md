@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 contacts.contactsNotModified#b74ba9d2 = contacts.Contacts;
 contacts.contacts#eae87e42 contacts:Vector<Contact> saved_count:int users:Vector<User> = contacts.Contacts;
 ---functions---

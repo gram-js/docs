@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 contacts.getStatuses#c4a353ee = Vector<ContactStatus>;
 ```

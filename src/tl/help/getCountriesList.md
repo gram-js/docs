@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 help.countriesListNotModified#93cc1f32 = help.CountriesList;
 help.countriesList#87d0759e countries:Vector<help.Country> hash:int = help.CountriesList;
 ---functions---

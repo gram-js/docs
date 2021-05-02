@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 accountDaysTTL#b8d0afdf days:int = AccountDaysTTL;
 ---functions---
 account.getAccountTTL#8fc711d = AccountDaysTTL;

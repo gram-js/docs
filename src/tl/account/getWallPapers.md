@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 account.wallPapersNotModified#1c199183 = account.WallPapers;
 account.wallPapers#702b65a9 hash:int wallpapers:Vector<WallPaper> = account.WallPapers;
 ---functions---

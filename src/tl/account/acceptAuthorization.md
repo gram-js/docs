@@ -56,7 +56,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 boolFalse#bc799737 = Bool;
 boolTrue#997275b5 = Bool;
 ---functions---

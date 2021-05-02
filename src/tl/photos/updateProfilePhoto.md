@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 photos.photo#20212ca8 photo:Photo users:Vector<User> = photos.Photo;
 ---functions---
 photos.updateProfilePhoto#72d4742c id:InputPhoto = photos.Photo;

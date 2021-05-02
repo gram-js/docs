@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 langPackDifference#f385c1f6 lang_code:string from_version:int version:int strings:Vector<LangPackString> = LangPackDifference;
 ---functions---
 langpack.getDifference#cd984aa5 lang_pack:string lang_code:string from_version:int = LangPackDifference;

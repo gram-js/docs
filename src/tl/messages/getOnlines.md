@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 chatOnlines#f041e250 onlines:int = ChatOnlines;
 ---functions---
 messages.getOnlines#6e2be050 peer:InputPeer = ChatOnlines;

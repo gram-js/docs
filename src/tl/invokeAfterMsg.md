@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 invokeAfterMsg#cb9f372d {X:Type} msg_id:long query:!X = X;
 ```

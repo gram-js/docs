@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.affectedHistory#b45c69d1 pts:int pts_count:int offset:int = messages.AffectedHistory;
 ---functions---
 channels.deleteUserHistory#d10dd71b channel:InputChannel user_id:InputUser = messages.AffectedHistory;

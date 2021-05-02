@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 boolFalse#bc799737 = Bool;
 boolTrue#997275b5 = Bool;
 ---functions---
@@ -67,8 +67,8 @@ help.acceptTermsOfService#ee72f79a id:DataJSON = Bool;
 
 ## Possible errors
 
-| Code  | Type | Description |
-| :---: | ---- | ----------- |
+| Code | Type | Description |
+| :--: | ---- | ----------- |
 
 ## Can bots use this method?
 

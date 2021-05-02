@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 account.themesNotModified#f41eb622 = account.Themes;
 account.themes#7f676421 hash:int themes:Vector<Theme> = account.Themes;
 ---functions---

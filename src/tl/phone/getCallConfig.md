@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 dataJSON#7d748d04 data:string = DataJSON;
 ---functions---
 phone.getCallConfig#55451fa9 = DataJSON;

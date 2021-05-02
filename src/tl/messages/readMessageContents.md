@@ -49,7 +49,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.affectedMessages#84d19185 pts:int pts_count:int = messages.AffectedMessages;
 ---functions---
 messages.readMessageContents#36a73f77 id:Vector<int> = messages.AffectedMessages;

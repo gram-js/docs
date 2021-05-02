@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.messageEditData#26b5dde6 flags:# caption:flags.0?true = messages.MessageEditData;
 ---functions---
 messages.getMessageEditData#fda68d36 peer:InputPeer id:int = messages.MessageEditData;

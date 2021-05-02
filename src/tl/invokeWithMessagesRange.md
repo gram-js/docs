@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 invokeWithMessagesRange#365275f2 {X:Type} range:MessageRange query:!X = X;
 ```

@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 users.getUsers#d91a548 id:Vector<InputUser> = Vector<User>;
 ```

@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 exportedMessageLink#5dab1af4 link:string html:string = ExportedMessageLink;
 ---functions---
 channels.exportMessageLink#e63fadeb flags:# grouped:flags.0?true thread:flags.1?true channel:InputChannel id:int = ExportedMessageLink;

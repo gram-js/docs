@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 photos.photos#8dca6aa5 photos:Vector<Photo> users:Vector<User> = photos.Photos;
 photos.photosSlice#15051f54 count:int photos:Vector<Photo> users:Vector<User> = photos.Photos;
 ---functions---

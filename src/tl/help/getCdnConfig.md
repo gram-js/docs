@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 cdnConfig#5725e40a public_keys:Vector<CdnPublicKey> = CdnConfig;
 ---functions---
 help.getCdnConfig#52029342 = CdnConfig;

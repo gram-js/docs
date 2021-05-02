@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 invokeWithoutUpdates#bf9459b7 {X:Type} query:!X = X;
 ```

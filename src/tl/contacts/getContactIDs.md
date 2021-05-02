@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 contacts.getContactIDs#2caa4a42 hash:int = Vector<int>;
 ```

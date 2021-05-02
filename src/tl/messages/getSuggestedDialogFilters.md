@@ -46,7 +46,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 messages.getSuggestedDialogFilters#a29cd42c = Vector<DialogFilterSuggested>;
 ```

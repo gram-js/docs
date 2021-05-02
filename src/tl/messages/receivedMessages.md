@@ -49,7 +49,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 messages.receivedMessages#5a954c0 max_id:int = Vector<ReceivedNotifyMessage>;
 ```

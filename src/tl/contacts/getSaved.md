@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 contacts.getSaved#82f1e39f = Vector<SavedContact>;
 ```

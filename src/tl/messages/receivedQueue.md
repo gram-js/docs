@@ -49,7 +49,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 messages.receivedQueue#55a5bb66 max_qts:int = Vector<long>;
 ```

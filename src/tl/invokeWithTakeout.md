@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 invokeWithTakeout#aca9fd2e {X:Type} takeout_id:long query:!X = X;
 ```

@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.savedGifsNotModified#e8025ca2 = messages.SavedGifs;
 messages.savedGifs#2e0709a5 hash:int gifs:Vector<Document> = messages.SavedGifs;
 ---functions---

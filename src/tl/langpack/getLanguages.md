@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 langpack.getLanguages#42c6978f lang_pack:string = Vector<LangPackLanguage>;
 ```

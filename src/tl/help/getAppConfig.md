@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 jsonNull#3f6d7b68 = JSONValue;
 jsonBool#c7345e6a value:Bool = JSONValue;
 jsonNumber#2be0dfa4 value:double = JSONValue;

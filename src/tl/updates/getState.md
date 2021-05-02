@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 updates.state#a56c2a3e pts:int qts:int date:int seq:int unread_count:int = updates.State;
 ---functions---
 updates.getState#edd4882a = updates.State;

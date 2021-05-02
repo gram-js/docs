@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 upload.getFileHashes#c7025931 location:InputFileLocation offset:int = Vector<FileHash>;
 ```

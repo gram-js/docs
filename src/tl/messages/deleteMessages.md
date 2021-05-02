@@ -51,7 +51,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.affectedMessages#84d19185 pts:int pts_count:int = messages.AffectedMessages;
 ---functions---
 messages.deleteMessages#e58e95d2 flags:# revoke:flags.0?true id:Vector<int> = messages.AffectedMessages;

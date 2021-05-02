@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 account.sentEmailCode#811f854f email_pattern:string length:int = account.SentEmailCode;
 ---functions---
 account.sendVerifyEmailCode#7011509f email:string = account.SentEmailCode;

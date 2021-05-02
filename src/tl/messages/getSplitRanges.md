@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 messages.getSplitRanges#1cff7e08 = Vector<MessageRange>;
 ```

@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 emojiURL#a575739d url:string = EmojiURL;
 ---functions---
 messages.getEmojiURL#d5b10c26 lang_code:string = EmojiURL;

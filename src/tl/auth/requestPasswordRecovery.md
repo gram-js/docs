@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 auth.passwordRecovery#137948a5 email_pattern:string = auth.PasswordRecovery;
 ---functions---
 auth.requestPasswordRecovery#d897bc66 = auth.PasswordRecovery;

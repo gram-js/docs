@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.chats#64ff9fd5 chats:Vector<Chat> = messages.Chats;
 messages.chatsSlice#9cd81144 count:int chats:Vector<Chat> = messages.Chats;
 ---functions---

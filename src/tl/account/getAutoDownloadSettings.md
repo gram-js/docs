@@ -46,7 +46,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 account.autoDownloadSettings#63cacf26 low:AutoDownloadSettings medium:AutoDownloadSettings high:AutoDownloadSettings = account.AutoDownloadSettings;
 ---functions---
 account.getAutoDownloadSettings#56da0b3f = account.AutoDownloadSettings;

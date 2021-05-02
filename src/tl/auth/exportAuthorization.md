@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 auth.exportedAuthorization#df969c2d id:int bytes:bytes = auth.ExportedAuthorization;
 ---functions---
 auth.exportAuthorization#e5bfffcd dc_id:int = auth.ExportedAuthorization;

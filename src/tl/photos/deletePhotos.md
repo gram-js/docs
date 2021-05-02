@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 photos.deletePhotos#87cf7f2f id:Vector<InputPhoto> = Vector<long>;
 ```

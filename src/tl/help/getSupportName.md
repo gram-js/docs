@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 help.supportName#8c05f1c9 name:string = help.SupportName;
 ---functions---
 help.getSupportName#d360e72c = help.SupportName;

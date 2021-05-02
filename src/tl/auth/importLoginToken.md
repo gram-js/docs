@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 auth.loginToken#629f1980 expires:int token:bytes = auth.LoginToken;
 auth.loginTokenMigrateTo#68e9916 dc_id:int token:bytes = auth.LoginToken;
 auth.loginTokenSuccess#390d5c5e authorization:auth.Authorization = auth.LoginToken;

@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 statsGraphAsync#4a27eb2d token:string = StatsGraph;
 statsGraphError#bedc9822 error:string = StatsGraph;
 statsGraph#8ea464b6 flags:# json:DataJSON zoom_token:flags.0?string = StatsGraph;

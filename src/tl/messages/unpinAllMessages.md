@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.affectedHistory#b45c69d1 pts:int pts_count:int offset:int = messages.AffectedHistory;
 ---functions---
 messages.unpinAllMessages#f025bc8b peer:InputPeer = messages.AffectedHistory;

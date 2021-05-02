@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 nearestDc#8e1a1775 country:string this_dc:int nearest_dc:int = NearestDc;
 ---functions---
 help.getNearestDc#1fb33026 = NearestDc;

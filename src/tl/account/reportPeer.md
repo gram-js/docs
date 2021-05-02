@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 boolFalse#bc799737 = Bool;
 boolTrue#997275b5 = Bool;
 ---functions---
@@ -70,10 +70,10 @@ account.reportPeer#ae189d5f peer:InputPeer reason:ReportReason = Bool;
 
 ## Possible errors
 
-| Code  | Type            | Description                                |
-| :---: | --------------- | ------------------------------------------ |
-|  400  | CHANNEL_PRIVATE | You haven't joined this channel/supergroup |
-|  400  | PEER_ID_INVALID | The provided peer id is invalid            |
+| Code | Type            | Description                                |
+| :--: | --------------- | ------------------------------------------ |
+| 400  | CHANNEL_PRIVATE | You haven't joined this channel/supergroup |
+| 400  | PEER_ID_INVALID | The provided peer id is invalid            |
 
 ## Can bots use this method?
 

@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 help.passportConfigNotModified#bfb9f457 = help.PassportConfig;
 help.passportConfig#a098d6af hash:int countries_langs:DataJSON = help.PassportConfig;
 ---functions---

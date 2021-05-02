@@ -50,7 +50,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 dataJSON#7d748d04 data:string = DataJSON;
 ---functions---
 bots.sendCustomRequest#aa2769ed custom_method:string params:DataJSON = DataJSON;

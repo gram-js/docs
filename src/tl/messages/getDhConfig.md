@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 messages.dhConfigNotModified#c0e24635 random:bytes = messages.DhConfig;
 messages.dhConfig#2c221edd g:int p:bytes version:int random:bytes = messages.DhConfig;
 ---functions---

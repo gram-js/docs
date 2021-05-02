@@ -44,7 +44,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 help.inviteText#18cb9f78 message:string = help.InviteText;
 ---functions---
 help.getInviteText#4d392343 = help.InviteText;

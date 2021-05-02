@@ -46,7 +46,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 messages.getDialogUnreadMarks#22e24e22 = Vector<DialogPeer>;
 ```

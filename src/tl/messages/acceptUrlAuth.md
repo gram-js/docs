@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 urlAuthResultRequest#92d33a0e flags:# request_write_access:flags.0?true bot:User domain:string = UrlAuthResult;
 urlAuthResultAccepted#8f8c0e4e url:string = UrlAuthResult;
 urlAuthResultDefault#a9d6db1f = UrlAuthResult;

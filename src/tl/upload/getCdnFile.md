@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 upload.cdnFileReuploadNeeded#eea8e46e request_token:bytes = upload.CdnFile;
 upload.cdnFile#a99fca4f bytes:bytes = upload.CdnFile;
 ---functions---

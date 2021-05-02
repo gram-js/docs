@@ -46,7 +46,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 account.webAuthorizations#ed56c9fc authorizations:Vector<WebAuthorization> users:Vector<User> = account.WebAuthorizations;
 ---functions---
 account.getWebAuthorizations#182e6d6f = account.WebAuthorizations;

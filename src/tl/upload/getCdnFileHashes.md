@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## TL schema
 
-```
+```txt
 ---functions---
 upload.getCdnFileHashes#4da54231 file_token:bytes offset:int = Vector<FileHash>;
 ```
