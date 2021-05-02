@@ -129,6 +129,15 @@ h6:hover .icon-link::before {
 
 /* code blocks */
 
+code:not(.hljs) {
+    font-family: 'Source Code Pro', monospace;
+    padding: 3px 5px;
+    background: rgba(3, 209, 235, 0.1);
+    color: #03d1eb;
+    line-height: 20px;
+    font-size: 0.75rem;
+}
+
 pre {
     background: #161b22;
     color: #c9d1d9;
@@ -140,9 +149,9 @@ pre ::selection {
     background: #3e4451;
 }
 
-code {
+pre code {
     font-family: 'Source Code Pro', monospace;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 20px;
 }
 
