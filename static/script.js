@@ -5,8 +5,6 @@ tabSections.forEach(section => {
     const selectedTab = tabs[0].dataset.title;
     const titleSection = document.createElement('div');
 
-    section.dataset.selectedTab = selectedTab;
-
     tabs.forEach(tab => {
         if (tab.dataset.title !== selectedTab) {
             tab.classList.add('hidden');
@@ -36,12 +34,7 @@ document.body.addEventListener('click', event => {
             return;
         }
 
-        const { parentElement } = target.parentElement;
-        if (!parentElement.classList.contains('tabs')) {
-            return;
-        }
-
-        const tabs = Array.from(parentElement.querySelectorAll('.tab'));
+        const tabs = Array.from(document.querySelectorAll('.tab'));
 
         tabs.forEach(tab => {
             tab.classList.toggle('hidden', tab.dataset.title !== title);
