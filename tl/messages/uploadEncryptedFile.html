@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesuploadencryptedfile">messages.uploadEncryptedFile<a aria-hidden="true" tabindex="-1" href="#messagesuploadencryptedfile"><span class="icon icon-link"></span></a></h1>
+<p>Upload encrypted file and associate it to a secret chat</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.uploadEncryptedFile({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({...}),
+		<span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedFile({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.EncryptedFile = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.uploadEncryptedFile({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({...}),
+		<span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedFile({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-clojure">encryptedFileEmpty#c<span class="hljs-number">21</span>f<span class="hljs-number">497</span>e = EncryptedFile<span class="hljs-comment">;</span>
+encryptedFile#<span class="hljs-number">4</span>a<span class="hljs-number">70994</span>c id<span class="hljs-symbol">:long</span> access_hash<span class="hljs-symbol">:long</span> size<span class="hljs-symbol">:int</span> dc_id<span class="hljs-symbol">:int</span> key_fingerprint<span class="hljs-symbol">:int</span> = EncryptedFile<span class="hljs-comment">;</span>
+---functions---
+messages.uploadEncryptedFile#<span class="hljs-number">5057</span>c<span class="hljs-number">497</span> peer<span class="hljs-symbol">:InputEncryptedChat</span> file<span class="hljs-symbol">:InputEncryptedFile</span> = EncryptedFile<span class="hljs-comment">;</span>
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputEncryptedChat">InputEncryptedChat</a></td><td>The secret chat to associate the file to</td></tr><tr><td align="center"><strong>file</strong></td><td><a href="https://core.telegram.org/type/InputEncryptedFile">InputEncryptedFile</a></td><td>The file</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/EncryptedFile">EncryptedFile</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2></div></body></html>

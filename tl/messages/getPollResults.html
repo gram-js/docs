@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesgetpollresults">messages.getPollResults<a aria-hidden="true" tabindex="-1" href="#messagesgetpollresults"><span class="icon icon-link"></span></a></h1>
+<p>Get poll results</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.getPollResults({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">msgId</span>: <span class="hljs-number">4239487</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.Updates = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.getPollResults({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">msgId</span>: <span class="hljs-number">4239487</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim">updatesTooLong#e317af7e = Updates;
+updateShortMessage#<span class="hljs-number">2296</span>d2c8 flag<span class="hljs-variable">s:</span># <span class="hljs-keyword">ou</span><span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true mentioned:flags.<span class="hljs-number">4</span>?true media_unread:flags.<span class="hljs-number">5</span>?true silen<span class="hljs-variable">t:flags</span>.<span class="hljs-number">13</span>?true id:<span class="hljs-keyword">int</span> user_id:<span class="hljs-keyword">int</span> message:<span class="hljs-built_in">string</span> <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> pts_coun<span class="hljs-variable">t:int</span> date:<span class="hljs-keyword">int</span> fwd_from:flags.<span class="hljs-number">2</span>?MessageFwdHeader via_bot_id:flags.<span class="hljs-number">11</span>?<span class="hljs-keyword">int</span> reply_to:flags.<span class="hljs-number">3</span>?MessageReplyHeader entitie<span class="hljs-variable">s:flags</span>.<span class="hljs-number">7</span>?Vector<span class="hljs-symbol">&#x3C;MessageEntity></span> = Updates;
+updateShortChatMessage#<span class="hljs-number">402</span>d5dbb flag<span class="hljs-variable">s:</span># <span class="hljs-keyword">ou</span><span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true mentioned:flags.<span class="hljs-number">4</span>?true media_unread:flags.<span class="hljs-number">5</span>?true silen<span class="hljs-variable">t:flags</span>.<span class="hljs-number">13</span>?true id:<span class="hljs-keyword">int</span> from_id:<span class="hljs-keyword">int</span> chat_id:<span class="hljs-keyword">int</span> message:<span class="hljs-built_in">string</span> <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> pts_coun<span class="hljs-variable">t:int</span> date:<span class="hljs-keyword">int</span> fwd_from:flags.<span class="hljs-number">2</span>?MessageFwdHeader via_bot_id:flags.<span class="hljs-number">11</span>?<span class="hljs-keyword">int</span> reply_to:flags.<span class="hljs-number">3</span>?MessageReplyHeader entitie<span class="hljs-variable">s:flags</span>.<span class="hljs-number">7</span>?Vector<span class="hljs-symbol">&#x3C;MessageEntity></span> = Updates;
+updateShort#<span class="hljs-number">78</span>d4dec1 <span class="hljs-keyword">update</span>:Update date:<span class="hljs-keyword">int</span> = Updates;
+updatesCombined#<span class="hljs-number">725</span>b04c3 <span class="hljs-keyword">update</span><span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Update></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> date:<span class="hljs-keyword">int</span> seq_star<span class="hljs-variable">t:int</span> seq:<span class="hljs-keyword">int</span> = Updates;
+updates#<span class="hljs-number">74</span>ae4240 <span class="hljs-keyword">update</span><span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Update></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> date:<span class="hljs-keyword">int</span> seq:<span class="hljs-keyword">int</span> = Updates;
+updateShortSentMessage#<span class="hljs-number">11</span>f1331c flag<span class="hljs-variable">s:</span># <span class="hljs-keyword">ou</span><span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true id:<span class="hljs-keyword">int</span> <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> pts_coun<span class="hljs-variable">t:int</span> date:<span class="hljs-keyword">int</span> medi<span class="hljs-variable">a:flags</span>.<span class="hljs-number">9</span>?MessageMedia entitie<span class="hljs-variable">s:flags</span>.<span class="hljs-number">7</span>?Vector<span class="hljs-symbol">&#x3C;MessageEntity></span> = Updates;
+---functions---
+<span class="hljs-keyword">messages</span>.getPollResults#<span class="hljs-number">73</span>bb643b peer:InputPeer msg_id:<span class="hljs-keyword">int</span> = Updates;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputPeer">InputPeer</a></td><td>Peer where the poll was found</td></tr><tr><td align="center"><strong>msg_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Message ID of poll message</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/Updates">Updates</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>MESSAGE_ID_INVALID</td><td>The provided message id is invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2></div></body></html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="authbindtempauthkey">auth.bindTempAuthKey<a aria-hidden="true" tabindex="-1" href="#authbindtempauthkey"><span class="icon icon-link"></span></a></h1>
+<p>Binds a temporary authorization key temp_auth_key_id to the permanent authorization key perm_auth_key_id. Each permanent key may only be bound to one temporary key at a time, binding a new temporary key overwrites the previous one.</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.auth.bindTempAuthKey({
+            <span class="hljs-attr">permAuthKeyId</span>: <span class="hljs-number">4315316</span>,
+            <span class="hljs-attr">nonce</span>: <span class="hljs-number">281486</span>,
+            <span class="hljs-attr">expiresAt</span>: <span class="hljs-number">5653333</span>,
+            <span class="hljs-attr">encryptedMessage</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.Bool = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.auth.bindTempAuthKey({
+            <span class="hljs-attr">permAuthKeyId</span>: <span class="hljs-number">4315316</span>,
+            <span class="hljs-attr">nonce</span>: <span class="hljs-number">281486</span>,
+            <span class="hljs-attr">expiresAt</span>: <span class="hljs-number">5653333</span>,
+            <span class="hljs-attr">encryptedMessage</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-ebnf"><span class="hljs-attribute">temp_auth_key_id</span>
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>perm_auth_key_id</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>Permanent auth_key_id to bind to</td></tr><tr><td align="center"><strong>nonce</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>Random long from <a href="https://core.telegram.org#binding-message-contents">Binding message contents</a></td></tr><tr><td align="center"><strong>expires_at</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Unix timestamp to invalidate temporary key, see <a href="https://core.telegram.org#binding-message-contents">Binding message contents</a></td></tr><tr><td align="center"><strong>encrypted_message</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td>See <a href="https://core.telegram.org#generating-encrypted-message">Generating encrypted_message</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/Bool">Bool</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="perfect-forward-secrecy"><a href="https://core.telegram.org/api/pfs">Perfect Forward Secrecy</a><a aria-hidden="true" tabindex="-1" href="#perfect-forward-secrecy"><span class="icon icon-link"></span></a></h4>
+<p>Binding temporary authorization key to permanent ones.</p>
+<h4 id="long"><a href="https://core.telegram.org/type/long">long</a><a aria-hidden="true" tabindex="-1" href="#long"><span class="icon icon-link"></span></a></h4>
+<p>A basic bare type, elements of which correspond to two-element sequences, representing 64-bit signed numbers (little-endian).</p>
+<h4 id="int"><a href="https://core.telegram.org/type/int">int</a><a aria-hidden="true" tabindex="-1" href="#int"><span class="icon icon-link"></span></a></h4>
+<p>A basic bare type, the values of which correspond to single-element sequences, i.e. numbers from -2^31 to 2^31-1 which in this case represent themselves.</p>
+<h4 id="mobile-protocol-detailed-description"><a href="https://core.telegram.org/mtproto/description">﻿Mobile Protocol: Detailed Description</a><a aria-hidden="true" tabindex="-1" href="#mobile-protocol-detailed-description"><span class="icon icon-link"></span></a></h4>
+<p>Additional options for calling methods.</p>
+<h4 id="calling-api-methods"><a href="https://core.telegram.org/api/invoking">Calling API Methods</a><a aria-hidden="true" tabindex="-1" href="#calling-api-methods"><span class="icon icon-link"></span></a></h4>
+<p>Additional options for calling methods.</p>
+<h4 id="initconnection"><a href="https://core.telegram.org/method/initConnection">initConnection</a><a aria-hidden="true" tabindex="-1" href="#initconnection"><span class="icon icon-link"></span></a></h4>
+<p>Initialize connection</p></div></body></html>

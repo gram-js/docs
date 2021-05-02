@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesgetwebpage">messages.getWebPage<a aria-hidden="true" tabindex="-1" href="#messagesgetwebpage"><span class="icon icon-link"></span></a></h1>
+<p>Get <a href="https://instantview.telegram.org">instant view</a> page</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getWebPage({
+            <span class="hljs-attr">url</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">hash</span>: <span class="hljs-number">1631224</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.WebPage = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getWebPage({
+            <span class="hljs-attr">url</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">hash</span>: <span class="hljs-number">1631224</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-apache"><span class="hljs-attribute">webPageEmpty</span>#eb<span class="hljs-number">1477</span>e<span class="hljs-number">8</span> id:long = WebPage;
+<span class="hljs-attribute">webPagePending</span>#c<span class="hljs-number">586</span>da<span class="hljs-number">1</span>c id:long date:int = WebPage;
+<span class="hljs-attribute">webPage</span>#e<span class="hljs-number">89</span>c<span class="hljs-number">45</span>b<span class="hljs-number">2</span> flags:# id:long url:string display_url:string hash:int type:flags.<span class="hljs-number">0</span>?string site_name:flags.<span class="hljs-number">1</span>?string title:flags.<span class="hljs-number">2</span>?string description:flags.<span class="hljs-number">3</span>?string photo:flags.<span class="hljs-number">4</span>?Photo embed_url:flags.<span class="hljs-number">5</span>?string embed_type:flags.<span class="hljs-number">5</span>?string embed_width:flags.<span class="hljs-number">6</span>?int embed_height:flags.<span class="hljs-number">6</span>?int duration:flags.<span class="hljs-number">7</span>?int author:flags.<span class="hljs-number">8</span>?string document:flags.<span class="hljs-number">9</span>?Document cached_page:flags.<span class="hljs-number">10</span>?Page attributes:flags.<span class="hljs-number">12</span>?Vector&#x3C;WebPageAttribute> = WebPage;
+<span class="hljs-attribute">webPageNotModified</span>#<span class="hljs-number">7311</span>ca<span class="hljs-number">11</span> flags:# cached_page_views:flags.<span class="hljs-number">0</span>?int = WebPage;
+---<span class="hljs-attribute">functions</span>---
+<span class="hljs-attribute">messages</span>.getWebPage#<span class="hljs-number">32</span>ca<span class="hljs-number">8</span>f<span class="hljs-number">91</span> url:string hash:int = WebPage;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>url</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>URL of IV page to fetch</td></tr><tr><td align="center"><strong>hash</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets#hash-generation">Hash for pagination, for more info click here</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/WebPage">WebPage</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>WC_CONVERT_URL_INVALID</td><td>WC convert URL invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h4>
+<p>How to fetch results from large lists of objects.</p></div></body></html>

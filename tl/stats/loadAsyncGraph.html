@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="statsloadasyncgraph">stats.loadAsyncGraph<a aria-hidden="true" tabindex="-1" href="#statsloadasyncgraph"><span class="icon icon-link"></span></a></h1>
+<p>Load <a href="https://core.telegram.org/api/stats">channel statistics graph</a> asynchronously</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.stats.loadAsyncGraph({
+            <span class="hljs-attr">token</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">x</span>: <span class="hljs-number">4115847</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.StatsGraph = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.stats.loadAsyncGraph({
+            <span class="hljs-attr">token</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">x</span>: <span class="hljs-number">4115847</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-apache"><span class="hljs-attribute">statsGraphAsync</span>#<span class="hljs-number">4</span>a<span class="hljs-number">27</span>eb<span class="hljs-number">2</span>d token:string = StatsGraph;
+<span class="hljs-attribute">statsGraphError</span>#bedc<span class="hljs-number">9822</span> error:string = StatsGraph;
+<span class="hljs-attribute">statsGraph</span>#<span class="hljs-number">8</span>ea<span class="hljs-number">464</span>b<span class="hljs-number">6</span> flags:# json:DataJSON zoom_token:flags.<span class="hljs-number">0</span>?string = StatsGraph;
+---<span class="hljs-attribute">functions</span>---
+<span class="hljs-attribute">stats</span>.loadAsyncGraph#<span class="hljs-number">621</span>d<span class="hljs-number">5</span>fa<span class="hljs-number">0</span> flags:# token:string x:flags.<span class="hljs-number">0</span>?long = StatsGraph;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>token</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Graph token from <a href="https://core.telegram.org/constructor/statsGraphAsync">statsGraphAsync</a> constructor</td></tr><tr><td align="center"><strong>x</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/long">long</a></td><td>Zoom value, if required</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/StatsGraph">StatsGraph</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>GRAPH_INVALID_RELOAD</td><td>Invalid graph token provided, please reload the stats and provide the updated token</td></tr><tr><td align="center">400</td><td>GRAPH_OUTDATED_RELOAD</td><td>The graph is outdated, please get a new async token using stats.getBroadcastStats</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="statsgraphasync"><a href="https://core.telegram.org/constructor/statsGraphAsync">statsGraphAsync</a><a aria-hidden="true" tabindex="-1" href="#statsgraphasync"><span class="icon icon-link"></span></a></h4>
+<p>This <a href="https://core.telegram.org/api/stats">channel statistics graph</a> must be generated asynchronously using <a href="https://core.telegram.org/method/stats.loadAsyncGraph">stats.loadAsyncGraph</a> to reduce server load</p>
+<h4 id="channel-statistics"><a href="https://core.telegram.org/api/stats">Channel statistics</a><a aria-hidden="true" tabindex="-1" href="#channel-statistics"><span class="icon icon-link"></span></a></h4>
+<p>Telegram offers detailed channel statistics for channels and supergroups.</p></div></body></html>

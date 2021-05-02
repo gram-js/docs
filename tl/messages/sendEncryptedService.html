@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagessendencryptedservice">messages.sendEncryptedService<a aria-hidden="true" tabindex="-1" href="#messagessendencryptedservice"><span class="icon icon-link"></span></a></h1>
+<p>Sends a service message to a secret chat.</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.sendEncryptedService({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({...}),
+		<span class="hljs-attr">randomId</span>: <span class="hljs-number">6741509</span>,
+		<span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.messages.SentEncryptedMessage = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.sendEncryptedService({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputEncryptedChat({...}),
+		<span class="hljs-attr">randomId</span>: <span class="hljs-number">6741509</span>,
+		<span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.sentEncryptedMessage#<span class="hljs-number">560</span>f8935 date:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.SentEncryptedMessage;
+<span class="hljs-keyword">messages</span>.sentEncryptedFile#<span class="hljs-number">9493</span>ff32 date:<span class="hljs-keyword">int</span> <span class="hljs-keyword">file</span>:EncryptedFile = <span class="hljs-keyword">messages</span>.SentEncryptedMessage;
+---functions---
+<span class="hljs-keyword">messages</span>.sendEncryptedService#<span class="hljs-number">32</span>d439a4 peer:InputEncryptedChat random_id:long dat<span class="hljs-variable">a:bytes</span> = <span class="hljs-keyword">messages</span>.SentEncryptedMessage;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputEncryptedChat">InputEncryptedChat</a></td><td>Secret chat ID</td></tr><tr><td align="center"><strong>random_id</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>Unique client message ID required to prevent message resending</td></tr><tr><td align="center"><strong>data</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td>TL-serialization of <a href="https://core.telegram.org/type/DecryptedMessage">DecryptedMessage</a> type, encrypted with a key generated during chat initialization</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/messages.SentEncryptedMessage">messages.SentEncryptedMessage</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>DATA_INVALID</td><td>Encrypted data invalid</td></tr><tr><td align="center">400</td><td>ENCRYPTION_DECLINED</td><td>The secret chat was declined</td></tr><tr><td align="center">400</td><td>ENCRYPTION_ID_INVALID</td><td>The provided secret chat ID is invalid</td></tr><tr><td align="center">400</td><td>MSG_WAIT_FAILED</td><td>A waiting call returned an error</td></tr><tr><td align="center">403</td><td>USER_IS_BLOCKED</td><td>You were blocked by this user</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="decryptedmessage"><a href="https://core.telegram.org/type/DecryptedMessage">DecryptedMessage</a><a aria-hidden="true" tabindex="-1" href="#decryptedmessage"><span class="icon icon-link"></span></a></h4>
+<p>Object describes the contents of an encrypted message.</p></div></body></html>

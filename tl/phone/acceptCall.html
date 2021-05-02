@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="phoneacceptcall">phone.acceptCall<a aria-hidden="true" tabindex="-1" href="#phoneacceptcall"><span class="icon icon-link"></span></a></h1>
+<p>Accept incoming call</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.phone.acceptCall({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPhoneCall({...}),
+		<span class="hljs-attr">gB</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		<span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.phone.PhoneCall = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.phone.acceptCall({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPhoneCall({...}),
+		<span class="hljs-attr">gB</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		<span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-apache"><span class="hljs-attribute">phone</span>.phoneCall#ec<span class="hljs-number">82</span>e<span class="hljs-number">140</span> phone_call:PhoneCall users:Vector&#x3C;User> = phone.PhoneCall;
+---<span class="hljs-attribute">functions</span>---
+<span class="hljs-attribute">phone</span>.acceptCall#<span class="hljs-number">3</span>bd<span class="hljs-number">2</span>b<span class="hljs-number">4</span>a<span class="hljs-number">0</span> peer:InputPhoneCall g_b:bytes protocol:PhoneCallProtocol = phone.PhoneCall;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputPhoneCall">InputPhoneCall</a></td><td>The call to accept</td></tr><tr><td align="center"><strong>g_b</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td><a href="https://core.telegram.org/api/end-to-end/voice-calls">Parameter for E2E encryption key exchange »</a></td></tr><tr><td align="center"><strong>protocol</strong></td><td><a href="https://core.telegram.org/type/PhoneCallProtocol">PhoneCallProtocol</a></td><td>Phone call settings</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/phone.PhoneCall">phone.PhoneCall</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CALL_ALREADY_ACCEPTED</td><td>The call was already accepted</td></tr><tr><td align="center">400</td><td>CALL_ALREADY_DECLINED</td><td>The call was already declined</td></tr><tr><td align="center">400</td><td>CALL_PEER_INVALID</td><td>The provided call peer object is invalid</td></tr><tr><td align="center">400</td><td>CALL_PROTOCOL_FLAGS_INVALID</td><td>Call protocol flags invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="end-to-end-encrypted-voice-calls"><a href="https://core.telegram.org/api/end-to-end/voice-calls">End-to-End Encrypted Voice Calls</a><a aria-hidden="true" tabindex="-1" href="#end-to-end-encrypted-voice-calls"><span class="icon icon-link"></span></a></h4></div></body></html>

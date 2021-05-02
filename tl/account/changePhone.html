@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="accountchangephone">account.changePhone<a aria-hidden="true" tabindex="-1" href="#accountchangephone"><span class="icon icon-link"></span></a></h1>
+<p>Change the phone number of the current account</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.account.changePhone({
+            <span class="hljs-attr">phoneNumber</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">phoneCodeHash</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">phoneCode</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.User = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.account.changePhone({
+            <span class="hljs-attr">phoneNumber</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">phoneCodeHash</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">phoneCode</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-oxygene">userEmpty<span class="hljs-string">#200250</span>ba id:int = User;
+user<span class="hljs-string">#938458</span>c1 <span class="hljs-keyword">flags</span>:# <span class="hljs-keyword">self</span>:<span class="hljs-keyword">flags</span>.<span class="hljs-number">10</span>?<span class="hljs-keyword">true</span> contact:<span class="hljs-keyword">flags</span>.<span class="hljs-number">11</span>?<span class="hljs-keyword">true</span> mutual_contact:<span class="hljs-keyword">flags</span>.<span class="hljs-number">12</span>?<span class="hljs-keyword">true</span> deleted:<span class="hljs-keyword">flags</span>.<span class="hljs-number">13</span>?<span class="hljs-keyword">true</span> bot:<span class="hljs-keyword">flags</span>.<span class="hljs-number">14</span>?<span class="hljs-keyword">true</span> bot_chat_history:<span class="hljs-keyword">flags</span>.<span class="hljs-number">15</span>?<span class="hljs-keyword">true</span> bot_nochats:<span class="hljs-keyword">flags</span>.<span class="hljs-number">16</span>?<span class="hljs-keyword">true</span> verified:<span class="hljs-keyword">flags</span>.<span class="hljs-number">17</span>?<span class="hljs-keyword">true</span> restricted:<span class="hljs-keyword">flags</span>.<span class="hljs-number">18</span>?<span class="hljs-keyword">true</span> min:<span class="hljs-keyword">flags</span>.<span class="hljs-number">20</span>?<span class="hljs-keyword">true</span> bot_inline_geo:<span class="hljs-keyword">flags</span>.<span class="hljs-number">21</span>?<span class="hljs-keyword">true</span> support:<span class="hljs-keyword">flags</span>.<span class="hljs-number">23</span>?<span class="hljs-keyword">true</span> scam:<span class="hljs-keyword">flags</span>.<span class="hljs-number">24</span>?<span class="hljs-keyword">true</span> apply_min_photo:<span class="hljs-keyword">flags</span>.<span class="hljs-number">25</span>?<span class="hljs-keyword">true</span> id:int access_hash:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?long first_name:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?string last_name:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?string username:<span class="hljs-keyword">flags</span>.<span class="hljs-number">3</span>?string phone:<span class="hljs-keyword">flags</span>.<span class="hljs-number">4</span>?string photo:<span class="hljs-keyword">flags</span>.<span class="hljs-number">5</span>?UserProfilePhoto status:<span class="hljs-keyword">flags</span>.<span class="hljs-number">6</span>?UserStatus bot_info_version:<span class="hljs-keyword">flags</span>.<span class="hljs-number">14</span>?int restriction_reason:<span class="hljs-keyword">flags</span>.<span class="hljs-number">18</span>?Vector&#x3C;RestrictionReason> bot_inline_placeholder:<span class="hljs-keyword">flags</span>.<span class="hljs-number">19</span>?string lang_code:<span class="hljs-keyword">flags</span>.<span class="hljs-number">22</span>?string = User;
+---functions---
+account.changePhone<span class="hljs-string">#70</span>c32edb phone_number:string phone_code_hash:string phone_code:string = User;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>phone_number</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>New phone number</td></tr><tr><td align="center"><strong>phone_code_hash</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Phone code hash received when calling <a href="https://core.telegram.org/method/account.sendChangePhoneCode">account.sendChangePhoneCode</a></td></tr><tr><td align="center"><strong>phone_code</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Phone code received when calling <a href="https://core.telegram.org/method/account.sendChangePhoneCode">account.sendChangePhoneCode</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/User">User</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>PHONE_CODE_EMPTY</td><td>phone_code is missing</td></tr><tr><td align="center">400</td><td>PHONE_NUMBER_INVALID</td><td>The phone number is invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="accountsendchangephonecode"><a href="https://core.telegram.org/method/account.sendChangePhoneCode">account.sendChangePhoneCode</a><a aria-hidden="true" tabindex="-1" href="#accountsendchangephonecode"><span class="icon icon-link"></span></a></h4>
+<p>Verify a new phone number to associate to the current account</p></div></body></html>

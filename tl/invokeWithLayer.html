@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="invokewithlayer">invokeWithLayer<a aria-hidden="true" tabindex="-1" href="#invokewithlayer"><span class="icon icon-link"></span></a></h1>
+<p>Invoke the specified query using the specified API <a href="https://core.telegram.org/api/invoking#layers">layer</a></p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.invokeWithLayer({
+		<span class="hljs-attr">layer</span>: <span class="hljs-number">2490042</span>,
+		<span class="hljs-attr">query</span>: <span class="hljs-keyword">new</span> Api.!X({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.X = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.invokeWithLayer({
+		<span class="hljs-attr">layer</span>: <span class="hljs-number">2490042</span>,
+		<span class="hljs-attr">query</span>: <span class="hljs-keyword">new</span> Api.!X({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-apache">---<span class="hljs-attribute">functions</span>---
+<span class="hljs-attribute">invokeWithLayer</span>#da<span class="hljs-number">9</span>b<span class="hljs-number">0</span>d<span class="hljs-number">0</span>d {X:Type} layer:int query:!X = X;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>layer</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>The layer to use</td></tr><tr><td align="center"><strong>query</strong></td><td>!X</td><td>The query</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p>X</p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>AUTH_BYTES_INVALID</td><td>The provided authorization is invalid</td></tr><tr><td align="center">400</td><td>CDN_METHOD_INVALID</td><td>You can't call this method in a CDN DC</td></tr><tr><td align="center">403</td><td>CHAT_WRITE_FORBIDDEN</td><td>You can't write in this chat</td></tr><tr><td align="center">400</td><td>CONNECTION_API_ID_INVALID</td><td>The provided API id is invalid</td></tr><tr><td align="center">400</td><td>CONNECTION_DEVICE_MODEL_EMPTY</td><td>Device model empty</td></tr><tr><td align="center">400</td><td>CONNECTION_LANG_PACK_INVALID</td><td>Language pack invalid</td></tr><tr><td align="center">400</td><td>CONNECTION_NOT_INITED</td><td>Connection not initialized</td></tr><tr><td align="center">400</td><td>CONNECTION_SYSTEM_EMPTY</td><td>Connection system empty</td></tr><tr><td align="center">400</td><td>INPUT_LAYER_INVALID</td><td>The provided layer is invalid</td></tr><tr><td align="center">400</td><td>INVITE_HASH_EXPIRED</td><td>The invite link has expired</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="calling-api-methods"><a href="https://core.telegram.org/api/invoking">Calling API Methods</a><a aria-hidden="true" tabindex="-1" href="#calling-api-methods"><span class="icon icon-link"></span></a></h4>
+<p>Additional options for calling methods.</p></div></body></html>

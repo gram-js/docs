@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="photosuploadprofilephoto">photos.uploadProfilePhoto<a aria-hidden="true" tabindex="-1" href="#photosuploadprofilephoto"><span class="icon icon-link"></span></a></h1>
+<p>Updates current user profile photo.</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.photos.uploadProfilePhoto({
+		<span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
+		<span class="hljs-attr">video</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
+		<span class="hljs-attr">videoStartTs</span>: <span class="hljs-number">8374801</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.photos.Photo = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.photos.uploadProfilePhoto({
+		<span class="hljs-attr">file</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
+		<span class="hljs-attr">video</span>: <span class="hljs-keyword">new</span> Api.InputFile({...}),
+		<span class="hljs-attr">videoStartTs</span>: <span class="hljs-number">8374801</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-apache"><span class="hljs-attribute">photos</span>.photo#<span class="hljs-number">20212</span>ca<span class="hljs-number">8</span> photo:Photo users:Vector&#x3C;User> = photos.Photo;
+---<span class="hljs-attribute">functions</span>---
+<span class="hljs-attribute">photos</span>.uploadProfilePhoto#<span class="hljs-number">89</span>f<span class="hljs-number">30</span>f<span class="hljs-number">69</span> flags:# file:flags.<span class="hljs-number">0</span>?InputFile video:flags.<span class="hljs-number">1</span>?InputFile video_start_ts:flags.<span class="hljs-number">2</span>?double = photos.Photo;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>file</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/InputFile">InputFile</a></td><td>File saved in parts by means of <a href="https://core.telegram.org/method/upload.saveFilePart">upload.saveFilePart</a> method</td></tr><tr><td align="center"><strong>video</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.1?<a href="https://core.telegram.org/type/InputFile">InputFile</a></td><td><a href="https://core.telegram.org/api/files#animated-profile-pictures">Animated profile picture</a> video</td></tr><tr><td align="center"><strong>video_start_ts</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.2?<a href="https://core.telegram.org/type/double">double</a></td><td>Floating point UNIX timestamp in seconds, indicating the frame of the video that should be used as static preview.</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/photos.Photo">photos.Photo</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>FILE_PARTS_INVALID</td><td>The number of file parts is invalid</td></tr><tr><td align="center">400</td><td>IMAGE_PROCESS_FAILED</td><td>Failure while processing image</td></tr><tr><td align="center">400</td><td>PHOTO_CROP_FILE_MISSING</td><td>Photo crop file missing</td></tr><tr><td align="center">400</td><td>PHOTO_CROP_SIZE_SMALL</td><td>Photo is too small</td></tr><tr><td align="center">400</td><td>PHOTO_EXT_INVALID</td><td>The extension of the photo is invalid</td></tr><tr><td align="center">400</td><td>PHOTO_FILE_MISSING</td><td>Profile photo file missing</td></tr><tr><td align="center">400</td><td>VIDEO_FILE_INVALID</td><td>The specified video file is invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="uploadsavefilepart"><a href="https://core.telegram.org/method/upload.saveFilePart">upload.saveFilePart</a><a aria-hidden="true" tabindex="-1" href="#uploadsavefilepart"><span class="icon icon-link"></span></a></h4>
+<p>Saves a part of file for futher sending to one of the methods.</p>
+<h4 id="uploading-and-downloading-files"><a href="https://core.telegram.org/api/files">Uploading and Downloading Files</a><a aria-hidden="true" tabindex="-1" href="#uploading-and-downloading-files"><span class="icon icon-link"></span></a></h4>
+<p>How to transfer large data batches correctly.</p></div></body></html>

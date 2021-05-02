@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="channelsgetparticipants">channels.getParticipants<a aria-hidden="true" tabindex="-1" href="#channelsgetparticipants"><span class="icon icon-link"></span></a></h1>
+<p>Get the participants of a <a href="https://core.telegram.org/api/channel">supergroup/channel</a></p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.channels.getParticipants({
+		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
+		<span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.ChannelParticipantsFilter({...}),
+		<span class="hljs-attr">offset</span>: <span class="hljs-number">8575241</span>,
+		<span class="hljs-attr">limit</span>: <span class="hljs-number">8740833</span>,
+		<span class="hljs-attr">hash</span>: <span class="hljs-number">2176980</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.channels.ChannelParticipants = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.channels.getParticipants({
+		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
+		<span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.ChannelParticipantsFilter({...}),
+		<span class="hljs-attr">offset</span>: <span class="hljs-number">8575241</span>,
+		<span class="hljs-attr">limit</span>: <span class="hljs-number">8740833</span>,
+		<span class="hljs-attr">hash</span>: <span class="hljs-number">2176980</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim">channels.channelParticipants#f56ee2a8 coun<span class="hljs-variable">t:int</span> participant<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;ChannelParticipant></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = channels.ChannelParticipants;
+channels.channelParticipantsNotModified#f0173fe9 = channels.ChannelParticipants;
+---functions---
+channels.getParticipants#<span class="hljs-number">123</span>e05e9 channe<span class="hljs-variable">l:InputChannel</span> <span class="hljs-built_in">filter</span>:ChannelParticipantsFilter offse<span class="hljs-variable">t:int</span> limi<span class="hljs-variable">t:int</span> hash:<span class="hljs-keyword">int</span> = channels.ChannelParticipants;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>channel</strong></td><td><a href="https://core.telegram.org/type/InputChannel">InputChannel</a></td><td>Channel</td></tr><tr><td align="center"><strong>filter</strong></td><td><a href="https://core.telegram.org/type/ChannelParticipantsFilter">ChannelParticipantsFilter</a></td><td>Which participant types to fetch</td></tr><tr><td align="center"><strong>offset</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets">Offset</a></td></tr><tr><td align="center"><strong>limit</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets">Limit</a></td></tr><tr><td align="center"><strong>hash</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets">Hash</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/channels.ChannelParticipants">channels.ChannelParticipants</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CHANNEL_INVALID</td><td>The provided channel is invalid</td></tr><tr><td align="center">400</td><td>CHANNEL_PRIVATE</td><td>You haven't joined this channel/supergroup</td></tr><tr><td align="center">400</td><td>CHAT_ADMIN_REQUIRED</td><td>You must be an admin in this chat to do this</td></tr><tr><td align="center">400</td><td>INPUT_CONSTRUCTOR_INVALID</td><td>The provided constructor is invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h4>
+<p>How to fetch results from large lists of objects.</p>
+<h4 id="channels"><a href="https://core.telegram.org/api/channel">Channels</a><a aria-hidden="true" tabindex="-1" href="#channels"><span class="icon icon-link"></span></a></h4>
+<p>How to handle channels, supergroups, groups, and what's the difference between them.</p></div></body></html>

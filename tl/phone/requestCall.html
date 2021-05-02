@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="phonerequestcall">phone.requestCall<a aria-hidden="true" tabindex="-1" href="#phonerequestcall"><span class="icon icon-link"></span></a></h1>
+<p>Start a telegram phone call</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.phone.requestCall({
+		<span class="hljs-attr">video</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
+		<span class="hljs-attr">randomId</span>: <span class="hljs-number">3511366</span>,
+		<span class="hljs-attr">gAHash</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		<span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.phone.PhoneCall = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.phone.requestCall({
+		<span class="hljs-attr">video</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
+		<span class="hljs-attr">randomId</span>: <span class="hljs-number">3511366</span>,
+		<span class="hljs-attr">gAHash</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		<span class="hljs-attr">protocol</span>: <span class="hljs-keyword">new</span> Api.PhoneCallProtocol({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-clojure">phone.phoneCall#ec<span class="hljs-number">82</span>e<span class="hljs-number">140</span> phone_call<span class="hljs-symbol">:PhoneCall</span> users<span class="hljs-symbol">:Vector&#x3C;User></span> = phone.PhoneCall<span class="hljs-comment">;</span>
+---functions---
+phone.requestCall#<span class="hljs-number">42</span>ff<span class="hljs-number">96</span>ed flags<span class="hljs-symbol">:#</span> video<span class="hljs-symbol">:flags.0?true</span> user_id<span class="hljs-symbol">:InputUser</span> random_id<span class="hljs-symbol">:int</span> g_a_hash<span class="hljs-symbol">:bytes</span> protocol<span class="hljs-symbol">:PhoneCallProtocol</span> = phone.PhoneCall<span class="hljs-comment">;</span>
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>video</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to start a video call</td></tr><tr><td align="center"><strong>user_id</strong></td><td><a href="https://core.telegram.org/type/InputUser">InputUser</a></td><td>Destination of the phone call</td></tr><tr><td align="center"><strong>random_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Random ID to avoid resending the same object</td></tr><tr><td align="center"><strong>g_a_hash</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td><a href="https://core.telegram.org/api/end-to-end/voice-calls">Parameter for E2E encryption key exchange »</a></td></tr><tr><td align="center"><strong>protocol</strong></td><td><a href="https://core.telegram.org/type/PhoneCallProtocol">PhoneCallProtocol</a></td><td>Phone call settings</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/phone.PhoneCall">phone.PhoneCall</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CALL_PROTOCOL_FLAGS_INVALID</td><td>Call protocol flags invalid</td></tr><tr><td align="center">400</td><td>PARTICIPANT_VERSION_OUTDATED</td><td>The other participant does not use an up to date telegram client with support for calls</td></tr><tr><td align="center">400</td><td>USER_ID_INVALID</td><td>The provided user ID is invalid</td></tr><tr><td align="center">403</td><td>USER_IS_BLOCKED</td><td>You were blocked by this user</td></tr><tr><td align="center">403</td><td>USER_PRIVACY_RESTRICTED</td><td>The user's privacy settings do not allow you to do this</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="end-to-end-encrypted-voice-calls"><a href="https://core.telegram.org/api/end-to-end/voice-calls">End-to-End Encrypted Voice Calls</a><a aria-hidden="true" tabindex="-1" href="#end-to-end-encrypted-voice-calls"><span class="icon icon-link"></span></a></h4></div></body></html>

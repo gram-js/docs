@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesaccepturlauth">messages.acceptUrlAuth<a aria-hidden="true" tabindex="-1" href="#messagesaccepturlauth"><span class="icon icon-link"></span></a></h1>
+<p>Use this to accept a Seamless Telegram Login authorization request, for more info <a href="https://core.telegram.org/api/url-authorization">click here »</a></p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.acceptUrlAuth({
+		<span class="hljs-attr">writeAllowed</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">msgId</span>: <span class="hljs-number">9723223</span>,
+		<span class="hljs-attr">buttonId</span>: <span class="hljs-number">3768630</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.UrlAuthResult = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.acceptUrlAuth({
+		<span class="hljs-attr">writeAllowed</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">msgId</span>: <span class="hljs-number">9723223</span>,
+		<span class="hljs-attr">buttonId</span>: <span class="hljs-number">3768630</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-apache"><span class="hljs-attribute">urlAuthResultRequest</span>#<span class="hljs-number">92</span>d<span class="hljs-number">33</span>a<span class="hljs-number">0</span>e flags:# request_write_access:flags.<span class="hljs-number">0</span>?true bot:User domain:string = UrlAuthResult;
+<span class="hljs-attribute">urlAuthResultAccepted</span>#<span class="hljs-number">8</span>f<span class="hljs-number">8</span>c<span class="hljs-number">0</span>e<span class="hljs-number">4</span>e url:string = UrlAuthResult;
+<span class="hljs-attribute">urlAuthResultDefault</span>#a<span class="hljs-number">9</span>d<span class="hljs-number">6</span>db<span class="hljs-number">1</span>f = UrlAuthResult;
+---<span class="hljs-attribute">functions</span>---
+<span class="hljs-attribute">messages</span>.acceptUrlAuth#f<span class="hljs-number">729</span>ea<span class="hljs-number">98</span> flags:# write_allowed:flags.<span class="hljs-number">0</span>?true peer:InputPeer msg_id:int button_id:int = UrlAuthResult;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>write_allowed</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Set this flag to allow the bot to send messages to you (if requested)</td></tr><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputPeer">InputPeer</a></td><td>The location of the message</td></tr><tr><td align="center"><strong>msg_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Message ID of the message with the login button</td></tr><tr><td align="center"><strong>button_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>ID of the login button</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/UrlAuthResult">UrlAuthResult</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="seamless-telegram-login"><a href="https://core.telegram.org/api/url-authorization">Seamless Telegram Login</a><a aria-hidden="true" tabindex="-1" href="#seamless-telegram-login"><span class="icon icon-link"></span></a></h4>
+<p>Handle Seamless Telegram Login URL authorization requests.</p></div></body></html>

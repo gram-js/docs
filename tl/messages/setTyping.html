@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagessettyping">messages.setTyping<a aria-hidden="true" tabindex="-1" href="#messagessettyping"><span class="icon icon-link"></span></a></h1>
+<p>Sends a current user typing event (see <a href="https://core.telegram.org/type/SendMessageAction">SendMessageAction</a> for all event types) to a conversation partner or group.</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.setTyping({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">topMsgId</span>: <span class="hljs-number">6046220</span>,
+		<span class="hljs-attr">action</span>: <span class="hljs-keyword">new</span> Api.SendMessageAction({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.Bool = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.setTyping({
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">topMsgId</span>: <span class="hljs-number">6046220</span>,
+		<span class="hljs-attr">action</span>: <span class="hljs-keyword">new</span> Api.SendMessageAction({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-maxima">boolFalse#bc799737 = Bool;
+boolTrue#<span class="hljs-number">997275b5</span> = Bool;
+---<span class="hljs-built_in">functions</span>---
+messages.setTyping#58943ee2 flags:# peer:InputPeer top_msg_id:flags<span class="hljs-number">.0</span>?int action:SendMessageAction = Bool;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputPeer">InputPeer</a></td><td>Target user or group</td></tr><tr><td align="center"><strong>top_msg_id</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/threads">Thread ID</a></td></tr><tr><td align="center"><strong>action</strong></td><td><a href="https://core.telegram.org/type/SendMessageAction">SendMessageAction</a></td><td>Type of action</td></tr><tr><td align="center">Parameter added in <a href="https://core.telegram.org/api/layers#layer-17">Layer 17</a>.</td><td></td><td></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/Bool">Bool</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CHANNEL_INVALID</td><td>The provided channel is invalid</td></tr><tr><td align="center">400</td><td>CHANNEL_PRIVATE</td><td>You haven't joined this channel/supergroup</td></tr><tr><td align="center">400</td><td>CHAT_ADMIN_REQUIRED</td><td>You must be an admin in this chat to do this</td></tr><tr><td align="center">400</td><td>CHAT_ID_INVALID</td><td>The provided chat id is invalid</td></tr><tr><td align="center">403</td><td>CHAT_WRITE_FORBIDDEN</td><td>You can't write in this chat</td></tr><tr><td align="center">400</td><td>INPUT_USER_DEACTIVATED</td><td>The specified user was deleted</td></tr><tr><td align="center">400</td><td>MSG_ID_INVALID</td><td>Invalid message ID provided</td></tr><tr><td align="center">400</td><td>PEER_ID_INVALID</td><td>The provided peer id is invalid</td></tr><tr><td align="center">400</td><td>USER_BANNED_IN_CHANNEL</td><td>You're banned from sending messages in supergroups/channels</td></tr><tr><td align="center">400</td><td>USER_IS_BLOCKED</td><td>You were blocked by this user</td></tr><tr><td align="center">400</td><td>USER_IS_BOT</td><td>Bots can't send messages to other bots</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="threads"><a href="https://core.telegram.org/api/threads">Threads</a><a aria-hidden="true" tabindex="-1" href="#threads"><span class="icon icon-link"></span></a></h4>
+<p>Telegram allows commenting on a <a href="https://core.telegram.org/api/channel">channel post</a> or on a generic <a href="https://core.telegram.org/api/channel">supergroup message</a>, thanks to message threads.</p>
+<h4 id="layers"><a href="https://core.telegram.org/api/layers">Layers</a><a aria-hidden="true" tabindex="-1" href="#layers"><span class="icon icon-link"></span></a></h4>
+<p>Below you will find information on scheme changes. For more details on the use of layers, see <a href="https://core.telegram.org/api/invoking#layers">Invoking API methods</a>.</p>
+<h4 id="sendmessageaction"><a href="https://core.telegram.org/type/SendMessageAction">SendMessageAction</a><a aria-hidden="true" tabindex="-1" href="#sendmessageaction"><span class="icon icon-link"></span></a></h4>
+<p>User actions. Use this to provide users with detailed info about their chat partners' actions: typing or sending attachments of all kinds.</p></div></body></html>

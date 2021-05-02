@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesgetbotcallbackanswer">messages.getBotCallbackAnswer<a aria-hidden="true" tabindex="-1" href="#messagesgetbotcallbackanswer"><span class="icon icon-link"></span></a></h1>
+<p>Press an inline callback button and get a callback answer from the bot</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.getBotCallbackAnswer({
+		<span class="hljs-attr">game</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">msgId</span>: <span class="hljs-number">4437344</span>,
+		<span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		<span class="hljs-attr">password</span>: <span class="hljs-keyword">new</span> Api.InputCheckPasswordSRP({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.messages.BotCallbackAnswer = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.getBotCallbackAnswer({
+		<span class="hljs-attr">game</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">peer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">msgId</span>: <span class="hljs-number">4437344</span>,
+		<span class="hljs-attr">data</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+		<span class="hljs-attr">password</span>: <span class="hljs-keyword">new</span> Api.InputCheckPasswordSRP({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-oxygene">messages.botCallbackAnswer<span class="hljs-string">#36585</span>ea4 <span class="hljs-keyword">flags</span>:# alert:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> has_url:<span class="hljs-keyword">flags</span>.<span class="hljs-number">3</span>?<span class="hljs-keyword">true</span> native_ui:<span class="hljs-keyword">flags</span>.<span class="hljs-number">4</span>?<span class="hljs-keyword">true</span> message:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?string url:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?string cache_time:int = messages.BotCallbackAnswer;
+---functions---
+messages.getBotCallbackAnswer<span class="hljs-string">#9342</span>ca07 <span class="hljs-keyword">flags</span>:# game:<span class="hljs-keyword">flags</span>.<span class="hljs-number">1</span>?<span class="hljs-keyword">true</span> peer:InputPeer msg_id:int data:<span class="hljs-keyword">flags</span>.<span class="hljs-number">0</span>?bytes password:<span class="hljs-keyword">flags</span>.<span class="hljs-number">2</span>?InputCheckPasswordSRP = messages.BotCallbackAnswer;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>game</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.1?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether this is a "play game" button</td></tr><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputPeer">InputPeer</a></td><td>Where was the inline keyboard sent</td></tr><tr><td align="center"><strong>msg_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>ID of the Message with the inline keyboard</td></tr><tr><td align="center"><strong>data</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/bytes">bytes</a></td><td>Callback data</td></tr><tr><td align="center"><strong>password</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.2?<a href="https://core.telegram.org/type/InputCheckPasswordSRP">InputCheckPasswordSRP</a></td><td>For buttons <a href="https://core.telegram.org/constructor/keyboardButtonCallback">requiring you to verify your identity with your 2FA password</a>, the SRP payload generated using <a href="https://core.telegram.org/api/srp">SRP</a>.</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/messages.BotCallbackAnswer">messages.BotCallbackAnswer</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>BOT_RESPONSE_TIMEOUT</td><td>A timeout occurred while fetching data from the bot</td></tr><tr><td align="center">400</td><td>CHANNEL_INVALID</td><td>The provided channel is invalid</td></tr><tr><td align="center">400</td><td>CHANNEL_PRIVATE</td><td>You haven't joined this channel/supergroup</td></tr><tr><td align="center">400</td><td>DATA_INVALID</td><td>Encrypted data invalid</td></tr><tr><td align="center">400</td><td>MESSAGE_ID_INVALID</td><td>The provided message id is invalid</td></tr><tr><td align="center">400</td><td>PEER_ID_INVALID</td><td>The provided peer id is invalid</td></tr><tr><td align="center">-503</td><td>Timeout</td><td>Timeout while fetching data</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="keyboardbuttoncallback"><a href="https://core.telegram.org/constructor/keyboardButtonCallback">keyboardButtonCallback</a><a aria-hidden="true" tabindex="-1" href="#keyboardbuttoncallback"><span class="icon icon-link"></span></a></h4>
+<p>Callback button</p>
+<h4 id="two-factor-authentication"><a href="https://core.telegram.org/api/srp">Two-factor authentication</a><a aria-hidden="true" tabindex="-1" href="#two-factor-authentication"><span class="icon icon-link"></span></a></h4>
+<p>How to login to a user's account if they have enabled 2FA, how to change password.</p></div></body></html>

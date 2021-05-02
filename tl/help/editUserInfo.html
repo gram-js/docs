@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="helpedituserinfo">help.editUserInfo<a aria-hidden="true" tabindex="-1" href="#helpedituserinfo"><span class="icon icon-link"></span></a></h1>
+<p>Internal use</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.help.editUserInfo({
+		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
+		<span class="hljs-attr">message</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">entities</span>: [<span class="hljs-keyword">new</span> Api.MessageEntity({...})],
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.help.UserInfo = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.help.editUserInfo({
+		<span class="hljs-attr">userId</span>: <span class="hljs-keyword">new</span> Api.InputUser({...}),
+		<span class="hljs-attr">message</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">entities</span>: [<span class="hljs-keyword">new</span> Api.MessageEntity({...})],
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim"><span class="hljs-keyword">help</span>.userInfoEmpty#f3ae2eed = <span class="hljs-keyword">help</span>.UserInfo;
+<span class="hljs-keyword">help</span>.userInfo#<span class="hljs-number">1</span>eb3758 message:<span class="hljs-built_in">string</span> entitie<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;MessageEntity></span> author:<span class="hljs-built_in">string</span> date:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">help</span>.UserInfo;
+---functions---
+<span class="hljs-keyword">help</span>.editUserInfo#<span class="hljs-number">66</span>b91b70 user_id:InputUser message:<span class="hljs-built_in">string</span> entitie<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;MessageEntity></span> = <span class="hljs-keyword">help</span>.UserInfo;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>user_id</strong></td><td><a href="https://core.telegram.org/type/InputUser">InputUser</a></td><td>User</td></tr><tr><td align="center"><strong>message</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Message</td></tr><tr><td align="center"><strong>entities</strong></td><td><a href="https://core.telegram.org/type/Vector%20t">Vector</a> &#x3C; <a href="https://core.telegram.org/type/MessageEntity">MessageEntity</a> ></td><td><a href="https://core.telegram.org/api/entities">Message entities for styled text</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/help.UserInfo">help.UserInfo</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="styled-text-with-message-entities"><a href="https://core.telegram.org/api/entities">Styled text with message entities</a><a aria-hidden="true" tabindex="-1" href="#styled-text-with-message-entities"><span class="icon icon-link"></span></a></h4>
+<p>How to create styled text with message entities</p></div></body></html>

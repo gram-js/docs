@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="paymentsgetpaymentform">payments.getPaymentForm<a aria-hidden="true" tabindex="-1" href="#paymentsgetpaymentform"><span class="icon icon-link"></span></a></h1>
+<p>Get a payment form</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.payments.getPaymentForm({
+            <span class="hljs-attr">msgId</span>: <span class="hljs-number">8022817</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.payments.PaymentForm = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.payments.getPaymentForm({
+            <span class="hljs-attr">msgId</span>: <span class="hljs-number">8022817</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-clojure">payments.paymentForm#<span class="hljs-number">3</span>f<span class="hljs-number">56</span>aea<span class="hljs-number">3</span> flags<span class="hljs-symbol">:#</span> can_save_credentials<span class="hljs-symbol">:flags.2?true</span> password_missing<span class="hljs-symbol">:flags.3?true</span> bot_id<span class="hljs-symbol">:int</span> invoice<span class="hljs-symbol">:Invoice</span> provider_id<span class="hljs-symbol">:int</span> url<span class="hljs-symbol">:string</span> native_provider<span class="hljs-symbol">:flags.4?string</span> native_params<span class="hljs-symbol">:flags.4?DataJSON</span> saved_info<span class="hljs-symbol">:flags.0?PaymentRequestedInfo</span> saved_credentials<span class="hljs-symbol">:flags.1?PaymentSavedCredentials</span> users<span class="hljs-symbol">:Vector&#x3C;User></span> = payments.PaymentForm<span class="hljs-comment">;</span>
+---functions---
+payments.getPaymentForm#<span class="hljs-number">99</span>f<span class="hljs-number">09745</span> msg_id<span class="hljs-symbol">:int</span> = payments.PaymentForm<span class="hljs-comment">;</span>
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>msg_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Message ID of payment form</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/payments.PaymentForm">payments.PaymentForm</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>MESSAGE_ID_INVALID</td><td>The provided message id is invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2></div></body></html>

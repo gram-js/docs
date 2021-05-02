@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagessearchglobal">messages.searchGlobal<a aria-hidden="true" tabindex="-1" href="#messagessearchglobal"><span class="icon icon-link"></span></a></h1>
+<p>Search for messages and peers globally</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.searchGlobal({
+		<span class="hljs-attr">folderId</span>: <span class="hljs-number">9421634</span>,
+		<span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.MessagesFilter({...}),
+		<span class="hljs-attr">minDate</span>: <span class="hljs-number">9329785</span>,
+		<span class="hljs-attr">maxDate</span>: <span class="hljs-number">7418948</span>,
+		<span class="hljs-attr">offsetRate</span>: <span class="hljs-number">6917823</span>,
+		<span class="hljs-attr">offsetPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">offsetId</span>: <span class="hljs-number">9896393</span>,
+		<span class="hljs-attr">limit</span>: <span class="hljs-number">6987313</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.messages.Messages = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.messages.searchGlobal({
+		<span class="hljs-attr">folderId</span>: <span class="hljs-number">9421634</span>,
+		<span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">filter</span>: <span class="hljs-keyword">new</span> Api.MessagesFilter({...}),
+		<span class="hljs-attr">minDate</span>: <span class="hljs-number">9329785</span>,
+		<span class="hljs-attr">maxDate</span>: <span class="hljs-number">7418948</span>,
+		<span class="hljs-attr">offsetRate</span>: <span class="hljs-number">6917823</span>,
+		<span class="hljs-attr">offsetPeer</span>: <span class="hljs-keyword">new</span> Api.InputPeer({...}),
+		<span class="hljs-attr">offsetId</span>: <span class="hljs-number">9896393</span>,
+		<span class="hljs-attr">limit</span>: <span class="hljs-number">6987313</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.messages#<span class="hljs-number">8</span>c718e87 message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.Messages;
+<span class="hljs-keyword">messages</span>.messagesSlice#<span class="hljs-number">3</span>a54685e flag<span class="hljs-variable">s:</span># inexac<span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true coun<span class="hljs-variable">t:int</span> next_rate:flags.<span class="hljs-number">0</span>?<span class="hljs-keyword">int</span> offset_id_offse<span class="hljs-variable">t:flags</span>.<span class="hljs-number">2</span>?<span class="hljs-keyword">int</span> message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.Messages;
+<span class="hljs-keyword">messages</span>.channelMessages#<span class="hljs-number">64479808</span> flag<span class="hljs-variable">s:</span># inexac<span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> coun<span class="hljs-variable">t:int</span> offset_id_offse<span class="hljs-variable">t:flags</span>.<span class="hljs-number">2</span>?<span class="hljs-keyword">int</span> message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = <span class="hljs-keyword">messages</span>.Messages;
+<span class="hljs-keyword">messages</span>.messagesNotModified#<span class="hljs-number">74535</span>f21 coun<span class="hljs-variable">t:int</span> = <span class="hljs-keyword">messages</span>.Messages;
+---functions---
+<span class="hljs-keyword">messages</span>.searchGlobal#<span class="hljs-number">4</span>bc6589a flag<span class="hljs-variable">s:</span># folder_id:flags.<span class="hljs-number">0</span>?<span class="hljs-keyword">int</span> q:<span class="hljs-built_in">string</span> <span class="hljs-built_in">filter</span>:MessagesFilter min_date:<span class="hljs-keyword">int</span> max_date:<span class="hljs-keyword">int</span> offset_rate:<span class="hljs-keyword">int</span> offset_peer:InputPeer offset_id:<span class="hljs-keyword">int</span> limi<span class="hljs-variable">t:int</span> = <span class="hljs-keyword">messages</span>.Messages;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>folder_id</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/folders#peer-folders">Peer folder ID, for more info click here</a></td></tr><tr><td align="center"><strong>q</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Query</td></tr><tr><td align="center"><strong>filter</strong></td><td><a href="https://core.telegram.org/type/MessagesFilter">MessagesFilter</a></td><td>Global search filter</td></tr><tr><td align="center"><strong>min_date</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>If a positive value was specified, the method will return only messages with date bigger than min_date</td></tr><tr><td align="center"><strong>max_date</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>If a positive value was transferred, the method will return only messages with date smaller than max_date</td></tr><tr><td align="center"><strong>offset_rate</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Initially 0, then set to the <a href="https://core.telegram.org/constructor/messages.messagesSlice">next_rate parameter of messages.messagesSlice</a></td></tr><tr><td align="center"><strong>offset_peer</strong></td><td><a href="https://core.telegram.org/type/InputPeer">InputPeer</a></td><td><a href="https://core.telegram.org/api/offsets">Offsets for pagination, for more info click here</a></td></tr><tr><td align="center"><strong>offset_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets">Offsets for pagination, for more info click here</a></td></tr><tr><td align="center"><strong>limit</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets">Offsets for pagination, for more info click here</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/messages.Messages">messages.Messages</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>FOLDER_ID_INVALID</td><td>Invalid folder ID</td></tr><tr><td align="center">400</td><td>SEARCH_QUERY_EMPTY</td><td>The search query is empty</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="folders"><a href="https://core.telegram.org/api/folders">Folders</a><a aria-hidden="true" tabindex="-1" href="#folders"><span class="icon icon-link"></span></a></h4>
+<p>Telegram allows placing chats into folders, based on their type, mute status, or other custom criteria, thanks to folder blacklists and whitelists.</p>
+<h4 id="messagesmessagesslice"><a href="https://core.telegram.org/constructor/messages.messagesSlice">messages.messagesSlice</a><a aria-hidden="true" tabindex="-1" href="#messagesmessagesslice"><span class="icon icon-link"></span></a></h4>
+<p>Incomplete list of messages and auxiliary data.</p>
+<h4 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h4>
+<p>How to fetch results from large lists of objects.</p></div></body></html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="authimportbotauthorization">auth.importBotAuthorization<a aria-hidden="true" tabindex="-1" href="#authimportbotauthorization"><span class="icon icon-link"></span></a></h1>
+<p>Login as a bot</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.auth.importBotAuthorization({
+            <span class="hljs-attr">flags</span>: <span class="hljs-number">8379541</span>,
+            <span class="hljs-attr">apiId</span>: <span class="hljs-number">8032379</span>,
+            <span class="hljs-attr">apiHash</span>: <span class="hljs-string">'random string here'</span>,
+            <span class="hljs-attr">botAuthToken</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.Returns an auth.Authorization <span class="hljs-built_in">object</span> <span class="hljs-keyword">with</span> information on the <span class="hljs-keyword">new</span> authorization. = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.auth.importBotAuthorization({
+		<span class="hljs-attr">flags</span>: <span class="hljs-number">8379541</span>,
+		<span class="hljs-attr">apiId</span>: <span class="hljs-number">8032379</span>,
+		<span class="hljs-attr">apiHash</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">botAuthToken</span>: <span class="hljs-string">'random string here'</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-pgsql">auth.<span class="hljs-keyword">authorization</span>#cd050916 flags:# tmp_sessions:flags<span class="hljs-number">.0</span>?<span class="hljs-type">int</span> <span class="hljs-keyword">user</span>:<span class="hljs-keyword">User</span> = auth.<span class="hljs-keyword">Authorization</span>;
+auth.authorizationSignUpRequired#<span class="hljs-number">44747e9</span>a flags:# terms_of_service:flags<span class="hljs-number">.0</span>?help.TermsOfService = auth.<span class="hljs-keyword">Authorization</span>;
+<span class="hljs-comment">---functions---</span>
+auth.importBotAuthorization#<span class="hljs-number">67</span>a3ff2c flags:<span class="hljs-type">int</span> api_id:<span class="hljs-type">int</span> api_hash:string bot_auth_token:string = auth.<span class="hljs-keyword">Authorization</span>;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Reserved for future use</td></tr><tr><td align="center"><strong>api_id</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Application identifier (see. <a href="https://core.telegram.org/myapp">App configuration</a>)</td></tr><tr><td align="center"><strong>api_hash</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Application identifier hash (see. <a href="https://core.telegram.org/myapp">App configuration</a>)</td></tr><tr><td align="center"><strong>bot_auth_token</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Bot token (see <a href="https://core.telegram.org/bots">bots</a>)</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p>Returns an <a href="https://core.telegram.org/type/auth.Authorization">auth.Authorization</a> object with information on the new authorization.</p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>ACCESS_TOKEN_EXPIRED</td><td>Bot token expired</td></tr><tr><td align="center">400</td><td>ACCESS_TOKEN_INVALID</td><td>The provided token is not valid</td></tr><tr><td align="center">400</td><td>API_ID_INVALID</td><td>The api_id/api_hash combination is invalid</td></tr><tr><td align="center">401</td><td>AUTH_KEY_INVALID</td><td>Auth key invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="bots-an-introduction-for-developers"><a href="https://core.telegram.org/bots">Bots: An introduction for developers</a><a aria-hidden="true" tabindex="-1" href="#bots-an-introduction-for-developers"><span class="icon icon-link"></span></a></h4></div></body></html>

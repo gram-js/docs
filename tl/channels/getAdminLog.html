@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="channelsgetadminlog">channels.getAdminLog<a aria-hidden="true" tabindex="-1" href="#channelsgetadminlog"><span class="icon icon-link"></span></a></h1>
+<p>Get the admin log of a <a href="https://core.telegram.org/api/channel">channel/supergroup</a></p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.channels.getAdminLog({
+		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
+		<span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">eventsFilter</span>: <span class="hljs-keyword">new</span> Api.ChannelAdminLogEventsFilter({...}),
+		<span class="hljs-attr">admins</span>: [<span class="hljs-keyword">new</span> Api.InputUser({...})],
+		<span class="hljs-attr">maxId</span>: <span class="hljs-number">9964589</span>,
+		<span class="hljs-attr">minId</span>: <span class="hljs-number">9259142</span>,
+		<span class="hljs-attr">limit</span>: <span class="hljs-number">2782051</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.channels.AdminLogResults = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.channels.getAdminLog({
+		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
+		<span class="hljs-attr">q</span>: <span class="hljs-string">'random string here'</span>,
+		<span class="hljs-attr">eventsFilter</span>: <span class="hljs-keyword">new</span> Api.ChannelAdminLogEventsFilter({...}),
+		<span class="hljs-attr">admins</span>: [<span class="hljs-keyword">new</span> Api.InputUser({...})],
+		<span class="hljs-attr">maxId</span>: <span class="hljs-number">9964589</span>,
+		<span class="hljs-attr">minId</span>: <span class="hljs-number">9259142</span>,
+		<span class="hljs-attr">limit</span>: <span class="hljs-number">2782051</span>,
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim">channels.adminLogResults#ed8af74d event<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;ChannelAdminLogEvent></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> = channels.AdminLogResults;
+---functions---
+channels.getAdminLog#<span class="hljs-number">33</span>ddf480 flag<span class="hljs-variable">s:</span># channe<span class="hljs-variable">l:InputChannel</span> q:<span class="hljs-built_in">string</span> events_filter:flags.<span class="hljs-number">0</span>?ChannelAdminLogEventsFilter admin<span class="hljs-variable">s:flags</span>.<span class="hljs-number">1</span>?Vector<span class="hljs-symbol">&#x3C;InputUser></span> max_id:long min_id:long limi<span class="hljs-variable">t:int</span> = channels.AdminLogResults;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>channel</strong></td><td><a href="https://core.telegram.org/type/InputChannel">InputChannel</a></td><td>Channel</td></tr><tr><td align="center"><strong>q</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Search query, can be empty</td></tr><tr><td align="center"><strong>events_filter</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/ChannelAdminLogEventsFilter">ChannelAdminLogEventsFilter</a></td><td>Event filter</td></tr><tr><td align="center"><strong>admins</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.1?<a href="https://core.telegram.org/type/Vector%20t">Vector</a> &#x3C; <a href="https://core.telegram.org/type/InputUser">InputUser</a> ></td><td>Only show events from these admins</td></tr><tr><td align="center"><strong>max_id</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>Maximum ID of message to return (see <a href="https://core.telegram.org/api/offsets">pagination</a>)</td></tr><tr><td align="center"><strong>min_id</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>Minimum ID of message to return (see <a href="https://core.telegram.org/api/offsets">pagination</a>)</td></tr><tr><td align="center"><strong>limit</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Maximum number of results to return, <a href="https://core.telegram.org/api/offsets">see pagination</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/channels.AdminLogResults">channels.AdminLogResults</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CHANNEL_INVALID</td><td>The provided channel is invalid</td></tr><tr><td align="center">400</td><td>CHANNEL_PRIVATE</td><td>You haven't joined this channel/supergroup</td></tr><tr><td align="center">400</td><td>CHAT_ADMIN_REQUIRED</td><td>You must be an admin in this chat to do this</td></tr><tr><td align="center">403</td><td>CHAT_WRITE_FORBIDDEN</td><td>You can't write in this chat</td></tr><tr><td align="center">400</td><td>MSG_ID_INVALID</td><td>Invalid message ID provided</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h4>
+<p>How to fetch results from large lists of objects.</p>
+<h4 id="channels"><a href="https://core.telegram.org/api/channel">Channels</a><a aria-hidden="true" tabindex="-1" href="#channels"><span class="icon icon-link"></span></a></h4>
+<p>How to handle channels, supergroups, groups, and what's the difference between them.</p></div></body></html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="channelsgetadminedpublicchannels">channels.getAdminedPublicChannels<a aria-hidden="true" tabindex="-1" href="#channelsgetadminedpublicchannels"><span class="icon icon-link"></span></a></h1>
+<p>Get <a href="https://core.telegram.org/api/channel">channels/supergroups/geogroups</a> we're admin in. Usually called when the user exceeds the <a href="https://core.telegram.org/constructor/config">limit</a> for owned public <a href="https://core.telegram.org/api/channel">channels/supergroups/geogroups</a>, and the user is given the choice to remove one of his channels/supergroups/geogroups.</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.channels.getAdminedPublicChannels({
+            <span class="hljs-attr">byLocation</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">checkLimit</span>: <span class="hljs-literal">true</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.messages.Chats = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.channels.getAdminedPublicChannels({
+            <span class="hljs-attr">byLocation</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">checkLimit</span>: <span class="hljs-literal">true</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.chats#<span class="hljs-number">64</span>ff9fd5 chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> = <span class="hljs-keyword">messages</span>.Chats;
+<span class="hljs-keyword">messages</span>.chatsSlice#<span class="hljs-number">9</span>cd81144 coun<span class="hljs-variable">t:int</span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> = <span class="hljs-keyword">messages</span>.Chats;
+---functions---
+channels.getAdminedPublicChannels#f8b036af flag<span class="hljs-variable">s:</span># by_location:flags.<span class="hljs-number">0</span>?true check_limi<span class="hljs-variable">t:flags</span>.<span class="hljs-number">1</span>?true = <span class="hljs-keyword">messages</span>.Chats;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>by_location</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Get geogroups</td></tr><tr><td align="center"><strong>check_limit</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.1?<a href="https://core.telegram.org/constructor/true">true</a></td><td>If set and the user has reached the limit of owned public <a href="https://core.telegram.org/api/channel">channels/supergroups/geogroups</a>, instead of returning the channel list one of the specified <a href="https://core.telegram.org#possible-errors">errors</a> will be returned.</td></tr><tr><td align="center">Useful to check if a new public channel can indeed be created, even before asking the user to enter a channel username to use in <a href="https://core.telegram.org/method/channels.checkUsername">channels.checkUsername</a>/<a href="https://core.telegram.org/method/channels.updateUsername">channels.updateUsername</a>.</td><td></td><td></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/messages.Chats">messages.Chats</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CHANNELS_ADMIN_LOCATED_TOO_MUCH</td><td>Returned if both the check_limit and the by_location flags are set and the user has reached the limit of public geogroups</td></tr><tr><td align="center">400</td><td>CHANNELS_ADMIN_PUBLIC_TOO_MUCH</td><td>Returned if the check_limit flag is set and the user has reached the limit of public channels/supergroups</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="channels"><a href="https://core.telegram.org/api/channel">Channels</a><a aria-hidden="true" tabindex="-1" href="#channels"><span class="icon icon-link"></span></a></h4>
+<p>How to handle channels, supergroups, groups, and what's the difference between them.</p>
+<h4 id="channelscheckusername"><a href="https://core.telegram.org/method/channels.checkUsername">channels.checkUsername</a><a aria-hidden="true" tabindex="-1" href="#channelscheckusername"><span class="icon icon-link"></span></a></h4>
+<p>Check if a username is free and can be assigned to a channel/supergroup</p>
+<h4 id="channelsupdateusername"><a href="https://core.telegram.org/method/channels.updateUsername">channels.updateUsername</a><a aria-hidden="true" tabindex="-1" href="#channelsupdateusername"><span class="icon icon-link"></span></a></h4>
+<p>Change the username of a supergroup/channel</p>
+<h4 id="config"><a href="https://core.telegram.org/constructor/config">config</a><a aria-hidden="true" tabindex="-1" href="#config"><span class="icon icon-link"></span></a></h4>
+<p>Current configuration</p></div></body></html>

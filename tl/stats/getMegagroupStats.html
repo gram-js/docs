@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="statsgetmegagroupstats">stats.getMegagroupStats<a aria-hidden="true" tabindex="-1" href="#statsgetmegagroupstats"><span class="icon icon-link"></span></a></h1>
+<p>Get <a href="https://core.telegram.org/api/stats">supergroup statistics</a></p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.stats.getMegagroupStats({
+		<span class="hljs-attr">dark</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> {Api, TelegramClient} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> {StringSession} <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.stats.MegagroupStats = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.stats.getMegagroupStats({
+		<span class="hljs-attr">dark</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-attr">channel</span>: <span class="hljs-keyword">new</span> Api.InputChannel({...}),
+		}));
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-clojure">stats.megagroupStats#ef<span class="hljs-number">7</span>ff<span class="hljs-number">916</span> period<span class="hljs-symbol">:StatsDateRangeDays</span> members<span class="hljs-symbol">:StatsAbsValueAndPrev</span> messages<span class="hljs-symbol">:StatsAbsValueAndPrev</span> viewers<span class="hljs-symbol">:StatsAbsValueAndPrev</span> posters<span class="hljs-symbol">:StatsAbsValueAndPrev</span> growth_graph<span class="hljs-symbol">:StatsGraph</span> members_graph<span class="hljs-symbol">:StatsGraph</span> new_members_by_source_graph<span class="hljs-symbol">:StatsGraph</span> languages_graph<span class="hljs-symbol">:StatsGraph</span> messages_graph<span class="hljs-symbol">:StatsGraph</span> actions_graph<span class="hljs-symbol">:StatsGraph</span> top_hours_graph<span class="hljs-symbol">:StatsGraph</span> weekdays_graph<span class="hljs-symbol">:StatsGraph</span> top_posters<span class="hljs-symbol">:Vector&#x3C;StatsGroupTopPoster></span> top_admins<span class="hljs-symbol">:Vector&#x3C;StatsGroupTopAdmin></span> top_inviters<span class="hljs-symbol">:Vector&#x3C;StatsGroupTopInviter></span> users<span class="hljs-symbol">:Vector&#x3C;User></span> = stats.MegagroupStats<span class="hljs-comment">;</span>
+---functions---
+stats.getMegagroupStats#dcdf<span class="hljs-number">8607</span> flags<span class="hljs-symbol">:#</span> dark<span class="hljs-symbol">:flags.0?true</span> channel<span class="hljs-symbol">:InputChannel</span> = stats.MegagroupStats<span class="hljs-comment">;</span>
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>dark</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to enable dark theme for graph colors</td></tr><tr><td align="center"><strong>channel</strong></td><td><a href="https://core.telegram.org/type/InputChannel">InputChannel</a></td><td><a href="https://core.telegram.org/api/channel">Supergroup ID</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/stats.MegagroupStats">stats.MegagroupStats</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="channels"><a href="https://core.telegram.org/api/channel">Channels</a><a aria-hidden="true" tabindex="-1" href="#channels"><span class="icon icon-link"></span></a></h4>
+<p>How to handle channels, supergroups, groups, and what's the difference between them.</p>
+<h4 id="channel-statistics"><a href="https://core.telegram.org/api/stats">Channel statistics</a><a aria-hidden="true" tabindex="-1" href="#channel-statistics"><span class="icon icon-link"></span></a></h4>
+<p>Telegram offers detailed channel statistics for channels and supergroups.</p></div></body></html>

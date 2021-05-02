@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="updatesgetdifference">updates.getDifference<a aria-hidden="true" tabindex="-1" href="#updatesgetdifference"><span class="icon icon-link"></span></a></h1>
+<p>Get new <a href="https://core.telegram.org/api/updates">updates</a>.</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.updates.getDifference({
+            <span class="hljs-attr">pts</span>: <span class="hljs-number">7870694</span>,
+            <span class="hljs-attr">ptsTotalLimit</span>: <span class="hljs-number">4676820</span>,
+            <span class="hljs-attr">date</span>: <span class="hljs-number">2319564</span>,
+            <span class="hljs-attr">qts</span>: <span class="hljs-number">8059435</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.updates.Difference = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.updates.getDifference({
+            <span class="hljs-attr">pts</span>: <span class="hljs-number">7870694</span>,
+            <span class="hljs-attr">ptsTotalLimit</span>: <span class="hljs-number">4676820</span>,
+            <span class="hljs-attr">date</span>: <span class="hljs-number">2319564</span>,
+            <span class="hljs-attr">qts</span>: <span class="hljs-number">8059435</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim">updates.differenceEmpty#<span class="hljs-number">5</span>d75a138 date:<span class="hljs-keyword">int</span> seq:<span class="hljs-keyword">int</span> = updates.Difference;
+updates.difference#f49ca0 new_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> new_encrypted_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;EncryptedMessage></span> other_update<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Update></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> state:updates.State = updates.Difference;
+updates.differenceSlice#a8fb1981 new_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Message></span> new_encrypted_message<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;EncryptedMessage></span> other_update<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Update></span> chat<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;Chat></span> user<span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;User></span> intermediate_state:updates.State = updates.Difference;
+updates.differenceTooLong#<span class="hljs-number">4</span>afe8f6d <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> = updates.Difference;
+---functions---
+updates.getDifference#<span class="hljs-number">25939651</span> flag<span class="hljs-variable">s:</span># <span class="hljs-keyword">pt</span><span class="hljs-variable">s:int</span> pts_total_limi<span class="hljs-variable">t:flags</span>.<span class="hljs-number">0</span>?<span class="hljs-keyword">int</span> date:<span class="hljs-keyword">int</span> qt<span class="hljs-variable">s:int</span> = updates.Difference;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>pts</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>PTS, see <a href="https://core.telegram.org/api/updates">updates</a>.</td></tr><tr><td align="center"><strong>pts_total_limit</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/type/int">int</a></td><td>For fast updating: if provided and pts + pts_total_limit &#x3C; remote pts, <a href="https://core.telegram.org/constructor/updates.differenceTooLong">updates.differenceTooLong</a> will be returned.</td></tr></tbody></table>
+<p>Simply tells the server to not return the difference if it is bigger than pts_total_limit<br>
+If the remote pts is too big (> ~4000000), this field will default to 1000000|
+|<strong>date</strong>|<a href="https://core.telegram.org/type/int">int</a>|date, see <a href="https://core.telegram.org/api/updates">updates</a>.|
+|<strong>qts</strong>|<a href="https://core.telegram.org/type/int">int</a>|QTS, see <a href="https://core.telegram.org/api/updates">updates</a>.|</p>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/updates.Difference">updates.Difference</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">401</td><td>AUTH_KEY_PERM_EMPTY</td><td>The temporary auth key must be binded to the permanent auth key to use these methods.</td></tr><tr><td align="center">400</td><td>CDN_METHOD_INVALID</td><td>You can't call this method in a CDN DC</td></tr><tr><td align="center">400</td><td>DATE_EMPTY</td><td>Date empty</td></tr><tr><td align="center">400</td><td>PERSISTENT_TIMESTAMP_EMPTY</td><td>Persistent timestamp empty</td></tr><tr><td align="center">400</td><td>PERSISTENT_TIMESTAMP_INVALID</td><td>Persistent timestamp invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="working-with-updates"><a href="https://core.telegram.org/api/updates">Working with Updates</a><a aria-hidden="true" tabindex="-1" href="#working-with-updates"><span class="icon icon-link"></span></a></h4>
+<p>How to subscribe to updates and handle them properly.</p>
+<h4 id="updatesdifferencetoolong"><a href="https://core.telegram.org/constructor/updates.differenceTooLong">updates.differenceTooLong</a><a aria-hidden="true" tabindex="-1" href="#updatesdifferencetoolong"><span class="icon icon-link"></span></a></h4>
+<p>The difference is <a href="https://core.telegram.org/api/updates#recovering-gaps">too long</a>, and the specified state must be used to refetch updates.</p></div></body></html>

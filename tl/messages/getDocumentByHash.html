@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesgetdocumentbyhash">messages.getDocumentByHash<a aria-hidden="true" tabindex="-1" href="#messagesgetdocumentbyhash"><span class="icon icon-link"></span></a></h1>
+<p>Get a document by its SHA256 hash, mainly used for gifs</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getDocumentByHash({
+            <span class="hljs-attr">sha256</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+            <span class="hljs-attr">size</span>: <span class="hljs-number">9452675</span>,
+            <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.Document = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getDocumentByHash({
+            <span class="hljs-attr">sha256</span>: Buffer.from(<span class="hljs-string">'some bytes here'</span>),
+            <span class="hljs-attr">size</span>: <span class="hljs-number">9452675</span>,
+            <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'random string here'</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-clojure">documentEmpty#<span class="hljs-number">36</span>f<span class="hljs-number">8</span>c<span class="hljs-number">871</span> id<span class="hljs-symbol">:long</span> = Document<span class="hljs-comment">;</span>
+document#<span class="hljs-number">1</span>e<span class="hljs-number">87342</span>b flags<span class="hljs-symbol">:#</span> id<span class="hljs-symbol">:long</span> access_hash<span class="hljs-symbol">:long</span> file_reference<span class="hljs-symbol">:bytes</span> date<span class="hljs-symbol">:int</span> mime_type<span class="hljs-symbol">:string</span> size<span class="hljs-symbol">:int</span> thumbs<span class="hljs-symbol">:flags.0?Vector&#x3C;PhotoSize></span> video_thumbs<span class="hljs-symbol">:flags.1?Vector&#x3C;VideoSize></span> dc_id<span class="hljs-symbol">:int</span> attributes<span class="hljs-symbol">:Vector&#x3C;DocumentAttribute></span> = Document<span class="hljs-comment">;</span>
+---functions---
+messages.getDocumentByHash#<span class="hljs-number">338</span>e<span class="hljs-number">2464</span> sha<span class="hljs-number">256</span><span class="hljs-symbol">:bytes</span> size<span class="hljs-symbol">:int</span> mime_type<span class="hljs-symbol">:string</span> = Document<span class="hljs-comment">;</span>
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>sha256</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td>SHA256 of file</td></tr><tr><td align="center"><strong>size</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Size of the file in bytes</td></tr><tr><td align="center"><strong>mime_type</strong></td><td><a href="https://core.telegram.org/type/string">string</a></td><td>Mime type</td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/Document">Document</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>SHA256_HASH_INVALID</td><td>The provided SHA256 hash is invalid</td></tr></tbody></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2></div></body></html>

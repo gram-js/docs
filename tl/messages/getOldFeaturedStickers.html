@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/docs/static/style.css">
+        <script src="/docs/static/script.js" defer></script>
+    </head>
+    <body><div class="container"><h1 id="messagesgetoldfeaturedstickers">messages.getOldFeaturedStickers<a aria-hidden="true" tabindex="-1" href="#messagesgetoldfeaturedstickers"><span class="icon icon-link"></span></a></h1>
+<p>Method for fetching previously featured stickers</p>
+<h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
+<span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getOldFeaturedStickers({
+            <span class="hljs-attr">offset</span>: <span class="hljs-number">8677441</span>,
+            <span class="hljs-attr">limit</span>: <span class="hljs-number">4805896</span>,
+            <span class="hljs-attr">hash</span>: <span class="hljs-number">4220830</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram'</span>;
+<span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">'telegram/sessions'</span>;
+
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">''</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
+
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> result: Api.messages.FeaturedStickers = <span class="hljs-keyword">await</span> client.invoke(
+        <span class="hljs-keyword">new</span> Api.messages.getOldFeaturedStickers({
+            <span class="hljs-attr">offset</span>: <span class="hljs-number">8677441</span>,
+            <span class="hljs-attr">limit</span>: <span class="hljs-number">4805896</span>,
+            <span class="hljs-attr">hash</span>: <span class="hljs-number">4220830</span>,
+        }),
+    );
+    <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
+})();
+</code></pre></div></div>
+<h2 id="tl-schema">TL schema<a aria-hidden="true" tabindex="-1" href="#tl-schema"><span class="icon icon-link"></span></a></h2>
+<pre><code class="hljs language-vim"><span class="hljs-keyword">messages</span>.featuredStickersNotModified#c6dc0c66 coun<span class="hljs-variable">t:int</span> = <span class="hljs-keyword">messages</span>.FeaturedStickers;
+<span class="hljs-keyword">messages</span>.featuredStickers#b6abc341 hash:<span class="hljs-keyword">int</span> coun<span class="hljs-variable">t:int</span> <span class="hljs-keyword">set</span><span class="hljs-variable">s:Vector</span><span class="hljs-symbol">&#x3C;StickerSetCovered></span> unread:Vector<span class="hljs-symbol">&#x3C;long></span> = <span class="hljs-keyword">messages</span>.FeaturedStickers;
+---functions---
+<span class="hljs-keyword">messages</span>.getOldFeaturedStickers#<span class="hljs-number">5</span>fe7025b offse<span class="hljs-variable">t:int</span> limi<span class="hljs-variable">t:int</span> hash:<span class="hljs-keyword">int</span> = <span class="hljs-keyword">messages</span>.FeaturedStickers;
+</code></pre>
+<h2 id="parameters">Parameters<a aria-hidden="true" tabindex="-1" href="#parameters"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>offset</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Offset</td></tr><tr><td align="center"><strong>limit</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>Maximum number of results to return, <a href="https://core.telegram.org/api/offsets">see pagination</a></td></tr><tr><td align="center"><strong>hash</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td><a href="https://core.telegram.org/api/offsets#hash-generation">Hash for pagination, for more info click here</a></td></tr></tbody></table>
+<h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://core.telegram.org/type/messages.FeaturedStickers">messages.FeaturedStickers</a></p>
+<h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead></table>
+<h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
+<p>Yes</p>
+<h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
+<h4 id="pagination-in-the-api"><a href="https://core.telegram.org/api/offsets">Pagination in the API</a><a aria-hidden="true" tabindex="-1" href="#pagination-in-the-api"><span class="icon icon-link"></span></a></h4>
+<p>How to fetch results from large lists of objects.</p></div></body></html>
