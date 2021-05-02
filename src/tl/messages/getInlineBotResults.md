@@ -8,20 +8,28 @@ Query an inline bot
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.getInlineBotResults({
-		bot: new Api.InputUser({...}),
-		peer: new Api.InputPeer({...}),
-		geoPoint: new Api.InputGeoPoint({...}),
-		query: 'random string here',
-		offset: 'random string here',
-		}));
+    const result = await client.invoke(
+        new Api.messages.getInlineBotResults({
+            bot: new Api.InputUser({
+                /* ... */
+            }),
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            geoPoint: new Api.InputGeoPoint({
+                /* ... */
+            }),
+            query: 'random string here',
+            offset: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -31,20 +39,28 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.BotResults = await client.invoke(new Api.messages.getInlineBotResults({
-		bot: new Api.InputUser({...}),
-		peer: new Api.InputPeer({...}),
-		geoPoint: new Api.InputGeoPoint({...}),
-		query: 'random string here',
-		offset: 'random string here',
-		}));
+    const result: Api.messages.BotResults = await client.invoke(
+        new Api.messages.getInlineBotResults({
+            bot: new Api.InputUser({
+                /* ... */
+            }),
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            geoPoint: new Api.InputGeoPoint({
+                /* ... */
+            }),
+            query: 'random string here',
+            offset: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

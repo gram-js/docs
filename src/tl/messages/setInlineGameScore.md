@@ -8,20 +8,26 @@ Use this method to set the score of the specified user in a game sent as an inli
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.setInlineGameScore({
-		editMessage: true,
-		force: true,
-		id: new Api.InputBotInlineMessageID({...}),
-		userId: new Api.InputUser({...}),
-		score: 3916422,
-		}));
+    const result = await client.invoke(
+        new Api.messages.setInlineGameScore({
+            editMessage: true,
+            force: true,
+            id: new Api.InputBotInlineMessageID({
+                /* ... */
+            }),
+            userId: new Api.InputUser({
+                /* ... */
+            }),
+            score: 3916422,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -31,20 +37,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Bool = await client.invoke(new Api.messages.setInlineGameScore({
-		editMessage: true,
-		force: true,
-		id: new Api.InputBotInlineMessageID({...}),
-		userId: new Api.InputUser({...}),
-		score: 3916422,
-		}));
+    const result: Api.Bool = await client.invoke(
+        new Api.messages.setInlineGameScore({
+            editMessage: true,
+            force: true,
+            id: new Api.InputBotInlineMessageID({
+                /* ... */
+            }),
+            userId: new Api.InputUser({
+                /* ... */
+            }),
+            score: 3916422,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

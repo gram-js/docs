@@ -8,19 +8,23 @@ Rate a call
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.phone.setCallRating({
-		userInitiative: true,
-		peer: new Api.InputPhoneCall({...}),
-		rating: 4475374,
-		comment: 'random string here',
-		}));
+    const result = await client.invoke(
+        new Api.phone.setCallRating({
+            userInitiative: true,
+            peer: new Api.InputPhoneCall({
+                /* ... */
+            }),
+            rating: 4475374,
+            comment: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -39,7 +43,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     const result: Api.Updates with info about the rating message sent to the official VoIP bot = await client.invoke(new Api.phone.setCallRating({
 		userInitiative: true,
-		peer: new Api.InputPhoneCall({...}),
+		peer: new Api.InputPhoneCall({ /* ... */ }),
 		rating: 4475374,
 		comment: 'random string here',
 		}));

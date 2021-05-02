@@ -8,25 +8,33 @@ Initialize connection
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.initConnection({
-		apiId: 8925113,
-		deviceModel: 'random string here',
-		systemVersion: 'random string here',
-		appVersion: 'random string here',
-		systemLangCode: 'random string here',
-		langPack: 'random string here',
-		langCode: 'random string here',
-		proxy: new Api.InputClientProxy({...}),
-		params: new Api.JSONValue({...}),
-		query: new Api.!X({...}),
-		}));
+    const result = await client.invoke(
+        new Api.initConnection({
+            apiId: 8925113,
+            deviceModel: 'random string here',
+            systemVersion: 'random string here',
+            appVersion: 'random string here',
+            systemLangCode: 'random string here',
+            langPack: 'random string here',
+            langCode: 'random string here',
+            proxy: new Api.InputClientProxy({
+                /* ... */
+            }),
+            params: new Api.JSONValue({
+                /* ... */
+            }),
+            query: new Api.AnyRequest({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -36,25 +44,33 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.X = await client.invoke(new Api.initConnection({
-		apiId: 8925113,
-		deviceModel: 'random string here',
-		systemVersion: 'random string here',
-		appVersion: 'random string here',
-		systemLangCode: 'random string here',
-		langPack: 'random string here',
-		langCode: 'random string here',
-		proxy: new Api.InputClientProxy({...}),
-		params: new Api.JSONValue({...}),
-		query: new Api.!X({...}),
-		}));
+    const result: Api.X = await client.invoke(
+        new Api.initConnection({
+            apiId: 8925113,
+            deviceModel: 'random string here',
+            systemVersion: 'random string here',
+            appVersion: 'random string here',
+            systemLangCode: 'random string here',
+            langPack: 'random string here',
+            langCode: 'random string here',
+            proxy: new Api.InputClientProxy({
+                /* ... */
+            }),
+            params: new Api.JSONValue({
+                /* ... */
+            }),
+            query: new Api.AnyRequest({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

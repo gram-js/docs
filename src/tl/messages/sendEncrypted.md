@@ -8,19 +8,23 @@ Sends a text message to a secret chat.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.sendEncrypted({
-		silent: true,
-		peer: new Api.InputEncryptedChat({...}),
-		randomId: 2927390,
-		data: Buffer.from('some bytes here'),
-		}));
+    const result = await client.invoke(
+        new Api.messages.sendEncrypted({
+            silent: true,
+            peer: new Api.InputEncryptedChat({
+                /* ... */
+            }),
+            randomId: 2927390,
+            data: Buffer.from('some bytes here'),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -30,19 +34,23 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.SentEncryptedMessage = await client.invoke(new Api.messages.sendEncrypted({
-		silent: true,
-		peer: new Api.InputEncryptedChat({...}),
-		randomId: 2927390,
-		data: Buffer.from('some bytes here'),
-		}));
+    const result: Api.messages.SentEncryptedMessage = await client.invoke(
+        new Api.messages.sendEncrypted({
+            silent: true,
+            peer: new Api.InputEncryptedChat({
+                /* ... */
+            }),
+            randomId: 2927390,
+            data: Buffer.from('some bytes here'),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

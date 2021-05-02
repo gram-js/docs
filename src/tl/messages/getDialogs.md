@@ -8,22 +8,26 @@ Returns the current user dialog list.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.getDialogs({
-		excludePinned: true,
-		folderId: 1470086,
-		offsetDate: 2226947,
-		offsetId: 483369,
-		offsetPeer: new Api.InputPeer({...}),
-		limit: 5241323,
-		hash: 7683946,
-		}));
+    const result = await client.invoke(
+        new Api.messages.getDialogs({
+            excludePinned: true,
+            folderId: 1470086,
+            offsetDate: 2226947,
+            offsetId: 483369,
+            offsetPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            limit: 5241323,
+            hash: 7683946,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -33,22 +37,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.Dialogs = await client.invoke(new Api.messages.getDialogs({
-		excludePinned: true,
-		folderId: 1470086,
-		offsetDate: 2226947,
-		offsetId: 483369,
-		offsetPeer: new Api.InputPeer({...}),
-		limit: 5241323,
-		hash: 7683946,
-		}));
+    const result: Api.messages.Dialogs = await client.invoke(
+        new Api.messages.getDialogs({
+            excludePinned: true,
+            folderId: 1470086,
+            offsetDate: 2226947,
+            offsetId: 483369,
+            offsetPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            limit: 5241323,
+            hash: 7683946,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

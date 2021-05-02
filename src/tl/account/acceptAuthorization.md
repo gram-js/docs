@@ -8,20 +8,28 @@ Sends a Telegram Passport authorization form, effectively sharing data with the 
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.account.acceptAuthorization({
-		botId: 2982749,
-		scope: 'random string here',
-		publicKey: 'random string here',
-		valueHashes: [new Api.SecureValueHash({...})],
-		credentials: new Api.SecureCredentialsEncrypted({...}),
-		}));
+    const result = await client.invoke(
+        new Api.account.acceptAuthorization({
+            botId: 2982749,
+            scope: 'random string here',
+            publicKey: 'random string here',
+            valueHashes: [
+                new Api.SecureValueHash({
+                    /* ... */
+                }),
+            ],
+            credentials: new Api.SecureCredentialsEncrypted({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -31,20 +39,28 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Bool = await client.invoke(new Api.account.acceptAuthorization({
-		botId: 2982749,
-		scope: 'random string here',
-		publicKey: 'random string here',
-		valueHashes: [new Api.SecureValueHash({...})],
-		credentials: new Api.SecureCredentialsEncrypted({...}),
-		}));
+    const result: Api.Bool = await client.invoke(
+        new Api.account.acceptAuthorization({
+            botId: 2982749,
+            scope: 'random string here',
+            publicKey: 'random string here',
+            valueHashes: [
+                new Api.SecureValueHash({
+                    /* ... */
+                }),
+            ],
+            credentials: new Api.SecureCredentialsEncrypted({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

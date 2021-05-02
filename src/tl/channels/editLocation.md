@@ -8,18 +8,24 @@ Edit location of geogroup
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.channels.editLocation({
-		channel: new Api.InputChannel({...}),
-		geoPoint: new Api.InputGeoPoint({...}),
-		address: 'random string here',
-		}));
+    const result = await client.invoke(
+        new Api.channels.editLocation({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            geoPoint: new Api.InputGeoPoint({
+                /* ... */
+            }),
+            address: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -29,18 +35,24 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Bool = await client.invoke(new Api.channels.editLocation({
-		channel: new Api.InputChannel({...}),
-		geoPoint: new Api.InputGeoPoint({...}),
-		address: 'random string here',
-		}));
+    const result: Api.Bool = await client.invoke(
+        new Api.channels.editLocation({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            geoPoint: new Api.InputGeoPoint({
+                /* ... */
+            }),
+            address: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

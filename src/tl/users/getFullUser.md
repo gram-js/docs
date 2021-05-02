@@ -8,16 +8,20 @@ Returns extended user info by ID.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.users.getFullUser({
-		id: new Api.InputUser({...}),
-		}));
+    const result = await client.invoke(
+        new Api.users.getFullUser({
+            id: new Api.InputUser({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -35,7 +39,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
     const result: Api.Returns a UserFull object containing user info. = await client.invoke(new Api.users.getFullUser({
-		id: new Api.InputUser({...}),
+		id: new Api.InputUser({ /* ... */ }),
 		}));
     console.log(result); // prints the result
 })();

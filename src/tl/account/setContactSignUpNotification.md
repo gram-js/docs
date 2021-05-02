@@ -8,16 +8,20 @@ Toggle contact sign up notifications
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.account.setContactSignUpNotification({
-		silent: new Api.Bool({...}),
-		}));
+    const result = await client.invoke(
+        new Api.account.setContactSignUpNotification({
+            silent: new Api.Bool({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -27,16 +31,20 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Bool = await client.invoke(new Api.account.setContactSignUpNotification({
-		silent: new Api.Bool({...}),
-		}));
+    const result: Api.Bool = await client.invoke(
+        new Api.account.setContactSignUpNotification({
+            silent: new Api.Bool({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

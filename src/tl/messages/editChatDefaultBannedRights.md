@@ -8,17 +8,23 @@ Edit the default banned rights of a [channel/supergroup/group](https://core.tele
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.editChatDefaultBannedRights({
-		peer: new Api.InputPeer({...}),
-		bannedRights: new Api.ChatBannedRights({...}),
-		}));
+    const result = await client.invoke(
+        new Api.messages.editChatDefaultBannedRights({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            bannedRights: new Api.ChatBannedRights({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +34,23 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.messages.editChatDefaultBannedRights({
-		peer: new Api.InputPeer({...}),
-		bannedRights: new Api.ChatBannedRights({...}),
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.messages.editChatDefaultBannedRights({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            bannedRights: new Api.ChatBannedRights({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

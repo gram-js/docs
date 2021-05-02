@@ -8,17 +8,21 @@ Toggle supergroup slow mode: if enabled, users will only be able to send one mes
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.channels.toggleSlowMode({
-		channel: new Api.InputChannel({...}),
-		seconds: 9916814,
-		}));
+    const result = await client.invoke(
+        new Api.channels.toggleSlowMode({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            seconds: 9916814,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +32,21 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.channels.toggleSlowMode({
-		channel: new Api.InputChannel({...}),
-		seconds: 9916814,
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.channels.toggleSlowMode({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            seconds: 9916814,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

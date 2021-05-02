@@ -8,17 +8,21 @@ Get [discussion message](https://core.telegram.org/api/threads) from the [associ
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.getDiscussionMessage({
-		peer: new Api.InputPeer({...}),
-		msgId: 5025473,
-		}));
+    const result = await client.invoke(
+        new Api.messages.getDiscussionMessage({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            msgId: 5025473,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +32,21 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.DiscussionMessage = await client.invoke(new Api.messages.getDiscussionMessage({
-		peer: new Api.InputPeer({...}),
-		msgId: 5025473,
-		}));
+    const result: Api.messages.DiscussionMessage = await client.invoke(
+        new Api.messages.getDiscussionMessage({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            msgId: 5025473,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

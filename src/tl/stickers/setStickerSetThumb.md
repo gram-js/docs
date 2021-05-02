@@ -8,17 +8,23 @@ Set stickerset thumbnail
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.stickers.setStickerSetThumb({
-		stickerset: new Api.InputStickerSet({...}),
-		thumb: new Api.InputDocument({...}),
-		}));
+    const result = await client.invoke(
+        new Api.stickers.setStickerSetThumb({
+            stickerset: new Api.InputStickerSet({
+                /* ... */
+            }),
+            thumb: new Api.InputDocument({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +34,23 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.StickerSet = await client.invoke(new Api.stickers.setStickerSetThumb({
-		stickerset: new Api.InputStickerSet({...}),
-		thumb: new Api.InputDocument({...}),
-		}));
+    const result: Api.messages.StickerSet = await client.invoke(
+        new Api.stickers.setStickerSetThumb({
+            stickerset: new Api.InputStickerSet({
+                /* ... */
+            }),
+            thumb: new Api.InputDocument({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

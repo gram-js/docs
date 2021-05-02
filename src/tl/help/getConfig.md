@@ -8,26 +8,50 @@ Returns current configuration, including data center configuration.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.help.getConfig({
-		400: new Api.CONNECTION_API_ID_INVALID({...}),
-		400: new Api.CONNECTION_APP_VERSION_EMPTY({...}),
-		400: new Api.CONNECTION_DEVICE_MODEL_EMPTY({...}),
-		400: new Api.CONNECTION_LANG_PACK_INVALID({...}),
-		400: new Api.CONNECTION_LAYER_INVALID({...}),
-		400: new Api.CONNECTION_NOT_INITED({...}),
-		400: new Api.CONNECTION_SYSTEM_EMPTY({...}),
-		400: new Api.CONNECTION_SYSTEM_LANG_CODE_EMPTY({...}),
-		400: new Api.DATA_INVALID({...}),
-		400: new Api.INPUT_LAYER_INVALID({...}),
-		400: new Api.MSG_ID_INVALID({...}),
-		}));
+    const result = await client.invoke(
+        new Api.help.getConfig({
+            400: new Api.CONNECTION_API_ID_INVALID({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_APP_VERSION_EMPTY({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_DEVICE_MODEL_EMPTY({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_LANG_PACK_INVALID({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_LAYER_INVALID({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_NOT_INITED({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_SYSTEM_EMPTY({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_SYSTEM_LANG_CODE_EMPTY({
+                /* ... */
+            }),
+            400: new Api.DATA_INVALID({
+                /* ... */
+            }),
+            400: new Api.INPUT_LAYER_INVALID({
+                /* ... */
+            }),
+            400: new Api.MSG_ID_INVALID({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -37,26 +61,50 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Config = await client.invoke(new Api.help.getConfig({
-		400: new Api.CONNECTION_API_ID_INVALID({...}),
-		400: new Api.CONNECTION_APP_VERSION_EMPTY({...}),
-		400: new Api.CONNECTION_DEVICE_MODEL_EMPTY({...}),
-		400: new Api.CONNECTION_LANG_PACK_INVALID({...}),
-		400: new Api.CONNECTION_LAYER_INVALID({...}),
-		400: new Api.CONNECTION_NOT_INITED({...}),
-		400: new Api.CONNECTION_SYSTEM_EMPTY({...}),
-		400: new Api.CONNECTION_SYSTEM_LANG_CODE_EMPTY({...}),
-		400: new Api.DATA_INVALID({...}),
-		400: new Api.INPUT_LAYER_INVALID({...}),
-		400: new Api.MSG_ID_INVALID({...}),
-		}));
+    const result: Api.Config = await client.invoke(
+        new Api.help.getConfig({
+            400: new Api.CONNECTION_API_ID_INVALID({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_APP_VERSION_EMPTY({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_DEVICE_MODEL_EMPTY({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_LANG_PACK_INVALID({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_LAYER_INVALID({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_NOT_INITED({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_SYSTEM_EMPTY({
+                /* ... */
+            }),
+            400: new Api.CONNECTION_SYSTEM_LANG_CODE_EMPTY({
+                /* ... */
+            }),
+            400: new Api.DATA_INVALID({
+                /* ... */
+            }),
+            400: new Api.INPUT_LAYER_INVALID({
+                /* ... */
+            }),
+            400: new Api.MSG_ID_INVALID({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

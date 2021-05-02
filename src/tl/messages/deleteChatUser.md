@@ -8,17 +8,21 @@ Deletes a user from a chat and sends a service message on it.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.deleteChatUser({
-		chatId: 8933148,
-		userId: new Api.InputUser({...}),
-		}));
+    const result = await client.invoke(
+        new Api.messages.deleteChatUser({
+            chatId: 8933148,
+            userId: new Api.InputUser({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +32,21 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.messages.deleteChatUser({
-		chatId: 8933148,
-		userId: new Api.InputUser({...}),
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.messages.deleteChatUser({
+            chatId: 8933148,
+            userId: new Api.InputUser({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

@@ -8,17 +8,21 @@ Changes the absolute position of a sticker in the set to which it belongs; for b
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.stickers.changeStickerPosition({
-		sticker: new Api.InputDocument({...}),
-		position: 3575070,
-		}));
+    const result = await client.invoke(
+        new Api.stickers.changeStickerPosition({
+            sticker: new Api.InputDocument({
+                /* ... */
+            }),
+            position: 3575070,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +32,21 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.StickerSet = await client.invoke(new Api.stickers.changeStickerPosition({
-		sticker: new Api.InputDocument({...}),
-		position: 3575070,
-		}));
+    const result: Api.messages.StickerSet = await client.invoke(
+        new Api.stickers.changeStickerPosition({
+            sticker: new Api.InputDocument({
+                /* ... */
+            }),
+            position: 3575070,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

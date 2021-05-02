@@ -8,20 +8,26 @@ Get the participants of a [supergroup/channel](https://core.telegram.org/api/cha
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.channels.getParticipants({
-		channel: new Api.InputChannel({...}),
-		filter: new Api.ChannelParticipantsFilter({...}),
-		offset: 8575241,
-		limit: 8740833,
-		hash: 2176980,
-		}));
+    const result = await client.invoke(
+        new Api.channels.getParticipants({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            filter: new Api.ChannelParticipantsFilter({
+                /* ... */
+            }),
+            offset: 8575241,
+            limit: 8740833,
+            hash: 2176980,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -31,20 +37,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.channels.ChannelParticipants = await client.invoke(new Api.channels.getParticipants({
-		channel: new Api.InputChannel({...}),
-		filter: new Api.ChannelParticipantsFilter({...}),
-		offset: 8575241,
-		limit: 8740833,
-		hash: 2176980,
-		}));
+    const result: Api.channels.ChannelParticipants = await client.invoke(
+        new Api.channels.getParticipants({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            filter: new Api.ChannelParticipantsFilter({
+                /* ... */
+            }),
+            offset: 8575241,
+            limit: 8740833,
+            hash: 2176980,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

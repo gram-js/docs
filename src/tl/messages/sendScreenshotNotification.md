@@ -8,18 +8,22 @@ Notify the other user in a private chat that a screenshot of the chat was taken
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.sendScreenshotNotification({
-		peer: new Api.InputPeer({...}),
-		replyToMsgId: 9530722,
-		randomId: 5562715,
-		}));
+    const result = await client.invoke(
+        new Api.messages.sendScreenshotNotification({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            replyToMsgId: 9530722,
+            randomId: 5562715,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -29,18 +33,22 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.messages.sendScreenshotNotification({
-		peer: new Api.InputPeer({...}),
-		replyToMsgId: 9530722,
-		randomId: 5562715,
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.messages.sendScreenshotNotification({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            replyToMsgId: 9530722,
+            randomId: 5562715,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

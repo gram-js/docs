@@ -8,16 +8,22 @@ Imports contacts: saves a full list on the server, adds already registered conta
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.contacts.importContacts({
-		contacts: [new Api.InputContact({...})],
-		}));
+    const result = await client.invoke(
+        new Api.contacts.importContacts({
+            contacts: [
+                new Api.InputContact({
+                    /* ... */
+                }),
+            ],
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -27,16 +33,22 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.contacts.ImportedContacts = await client.invoke(new Api.contacts.importContacts({
-		contacts: [new Api.InputContact({...})],
-		}));
+    const result: Api.contacts.ImportedContacts = await client.invoke(
+        new Api.contacts.importContacts({
+            contacts: [
+                new Api.InputContact({
+                    /* ... */
+                }),
+            ],
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

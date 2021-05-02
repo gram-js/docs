@@ -8,18 +8,22 @@ Get [message statistics](https://core.telegram.org/api/stats)
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.stats.getMessageStats({
-		dark: true,
-		channel: new Api.InputChannel({...}),
-		msgId: 7543089,
-		}));
+    const result = await client.invoke(
+        new Api.stats.getMessageStats({
+            dark: true,
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            msgId: 7543089,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -29,18 +33,22 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.stats.MessageStats = await client.invoke(new Api.stats.getMessageStats({
-		dark: true,
-		channel: new Api.InputChannel({...}),
-		msgId: 7543089,
-		}));
+    const result: Api.stats.MessageStats = await client.invoke(
+        new Api.stats.getMessageStats({
+            dark: true,
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            msgId: 7543089,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

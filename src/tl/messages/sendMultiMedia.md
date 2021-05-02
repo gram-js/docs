@@ -8,22 +8,30 @@ Send an [album or grouped media](https://core.telegram.org/api/files#albums-grou
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.sendMultiMedia({
-		silent: true,
-		background: true,
-		clearDraft: true,
-		peer: new Api.InputPeer({...}),
-		replyToMsgId: 9838180,
-		multiMedia: [new Api.InputSingleMedia({...})],
-		scheduleDate: 6930295,
-		}));
+    const result = await client.invoke(
+        new Api.messages.sendMultiMedia({
+            silent: true,
+            background: true,
+            clearDraft: true,
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            replyToMsgId: 9838180,
+            multiMedia: [
+                new Api.InputSingleMedia({
+                    /* ... */
+                }),
+            ],
+            scheduleDate: 6930295,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -33,22 +41,30 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.messages.sendMultiMedia({
-		silent: true,
-		background: true,
-		clearDraft: true,
-		peer: new Api.InputPeer({...}),
-		replyToMsgId: 9838180,
-		multiMedia: [new Api.InputSingleMedia({...})],
-		scheduleDate: 6930295,
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.messages.sendMultiMedia({
+            silent: true,
+            background: true,
+            clearDraft: true,
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            replyToMsgId: 9838180,
+            multiMedia: [
+                new Api.InputSingleMedia({
+                    /* ... */
+                }),
+            ],
+            scheduleDate: 6930295,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

@@ -8,23 +8,27 @@ Gets back the conversation history with one interlocutor / within a chat
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.getHistory({
-		peer: new Api.InputPeer({...}),
-		offsetId: 9291972,
-		offsetDate: 5920558,
-		addOffset: 7946814,
-		limit: 8137102,
-		maxId: 9480436,
-		minId: 8804446,
-		hash: 9358333,
-		}));
+    const result = await client.invoke(
+        new Api.messages.getHistory({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            offsetId: 9291972,
+            offsetDate: 5920558,
+            addOffset: 7946814,
+            limit: 8137102,
+            maxId: 9480436,
+            minId: 8804446,
+            hash: 9358333,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -34,23 +38,27 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.Messages = await client.invoke(new Api.messages.getHistory({
-		peer: new Api.InputPeer({...}),
-		offsetId: 9291972,
-		offsetDate: 5920558,
-		addOffset: 7946814,
-		limit: 8137102,
-		maxId: 9480436,
-		minId: 8804446,
-		hash: 9358333,
-		}));
+    const result: Api.messages.Messages = await client.invoke(
+        new Api.messages.getHistory({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            offsetId: 9291972,
+            offsetDate: 5920558,
+            addOffset: 7946814,
+            limit: 8137102,
+            maxId: 9480436,
+            minId: 8804446,
+            hash: 9358333,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

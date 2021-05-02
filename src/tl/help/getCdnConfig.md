@@ -8,16 +8,20 @@ Get configuration for [CDN](https://core.telegram.org/cdn) file downloads.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.help.getCdnConfig({
-		401: new Api.AUTH_KEY_PERM_EMPTY({...}),
-		}));
+    const result = await client.invoke(
+        new Api.help.getCdnConfig({
+            401: new Api.AUTH_KEY_PERM_EMPTY({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -27,16 +31,20 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.CdnConfig = await client.invoke(new Api.help.getCdnConfig({
-		401: new Api.AUTH_KEY_PERM_EMPTY({...}),
-		}));
+    const result: Api.CdnConfig = await client.invoke(
+        new Api.help.getCdnConfig({
+            401: new Api.AUTH_KEY_PERM_EMPTY({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

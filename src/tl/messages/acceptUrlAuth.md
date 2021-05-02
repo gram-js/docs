@@ -17,7 +17,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     const result = await client.invoke(new Api.messages.acceptUrlAuth({
 		writeAllowed: true,
-		peer: new Api.InputPeer({...}),
+		peer: new Api.InputPeer({ /* ... */ }... */ }),
 		msgId: 9723223,
 		buttonId: 3768630,
 		}));
@@ -39,7 +39,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     const result: Api.UrlAuthResult = await client.invoke(new Api.messages.acceptUrlAuth({
 		writeAllowed: true,
-		peer: new Api.InputPeer({...}),
+		peer: new Api.InputPeer({ /* ... */ }... */ }),
 		msgId: 9723223,
 		buttonId: 3768630,
 		}));

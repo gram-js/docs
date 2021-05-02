@@ -8,22 +8,30 @@ Answer an inline query, for bots only
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.setInlineBotResults({
-		gallery: true,
-		private: true,
-		queryId: 1598104,
-		results: [new Api.InputBotInlineResult({...})],
-		cacheTime: 8220380,
-		nextOffset: 'random string here',
-		switchPm: new Api.InlineBotSwitchPM({...}),
-		}));
+    const result = await client.invoke(
+        new Api.messages.setInlineBotResults({
+            gallery: true,
+            private: true,
+            queryId: 1598104,
+            results: [
+                new Api.InputBotInlineResult({
+                    /* ... */
+                }),
+            ],
+            cacheTime: 8220380,
+            nextOffset: 'random string here',
+            switchPm: new Api.InlineBotSwitchPM({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -33,22 +41,30 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Bool = await client.invoke(new Api.messages.setInlineBotResults({
-		gallery: true,
-		private: true,
-		queryId: 1598104,
-		results: [new Api.InputBotInlineResult({...})],
-		cacheTime: 8220380,
-		nextOffset: 'random string here',
-		switchPm: new Api.InlineBotSwitchPM({...}),
-		}));
+    const result: Api.Bool = await client.invoke(
+        new Api.messages.setInlineBotResults({
+            gallery: true,
+            private: true,
+            queryId: 1598104,
+            results: [
+                new Api.InputBotInlineResult({
+                    /* ... */
+                }),
+            ],
+            cacheTime: 8220380,
+            nextOffset: 'random string here',
+            switchPm: new Api.InlineBotSwitchPM({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

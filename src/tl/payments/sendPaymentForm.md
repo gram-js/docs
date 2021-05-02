@@ -8,19 +8,23 @@ Send compiled payment form
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.payments.sendPaymentForm({
-		msgId: 6158322,
-		requestedInfoId: 'random string here',
-		shippingOptionId: 'random string here',
-		credentials: new Api.InputPaymentCredentials({...}),
-		}));
+    const result = await client.invoke(
+        new Api.payments.sendPaymentForm({
+            msgId: 6158322,
+            requestedInfoId: 'random string here',
+            shippingOptionId: 'random string here',
+            credentials: new Api.InputPaymentCredentials({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -30,19 +34,23 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.payments.PaymentResult = await client.invoke(new Api.payments.sendPaymentForm({
-		msgId: 6158322,
-		requestedInfoId: 'random string here',
-		shippingOptionId: 'random string here',
-		credentials: new Api.InputPaymentCredentials({...}),
-		}));
+    const result: Api.payments.PaymentResult = await client.invoke(
+        new Api.payments.sendPaymentForm({
+            msgId: 6158322,
+            requestedInfoId: 'random string here',
+            shippingOptionId: 'random string here',
+            credentials: new Api.InputPaymentCredentials({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

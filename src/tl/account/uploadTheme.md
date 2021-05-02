@@ -8,19 +8,25 @@ Upload theme
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.account.uploadTheme({
-		file: new Api.InputFile({...}),
-		thumb: new Api.InputFile({...}),
-		fileName: 'random string here',
-		mimeType: 'random string here',
-		}));
+    const result = await client.invoke(
+        new Api.account.uploadTheme({
+            file: new Api.InputFile({
+                /* ... */
+            }),
+            thumb: new Api.InputFile({
+                /* ... */
+            }),
+            fileName: 'random string here',
+            mimeType: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -30,19 +36,25 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Document = await client.invoke(new Api.account.uploadTheme({
-		file: new Api.InputFile({...}),
-		thumb: new Api.InputFile({...}),
-		fileName: 'random string here',
-		mimeType: 'random string here',
-		}));
+    const result: Api.Document = await client.invoke(
+        new Api.account.uploadTheme({
+            file: new Api.InputFile({
+                /* ... */
+            }),
+            thumb: new Api.InputFile({
+                /* ... */
+            }),
+            fileName: 'random string here',
+            mimeType: 'random string here',
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

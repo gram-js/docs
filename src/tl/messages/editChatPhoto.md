@@ -8,17 +8,21 @@ Changes chat photo and sends a service message on it
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.editChatPhoto({
-		chatId: 4941600,
-		photo: new Api.InputChatPhoto({...}),
-		}));
+    const result = await client.invoke(
+        new Api.messages.editChatPhoto({
+            chatId: 4941600,
+            photo: new Api.InputChatPhoto({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -37,7 +41,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     const result: Api.Returns a messages.StatedMessage object containing a service message sent during an action. = await client.invoke(new Api.messages.editChatPhoto({
 		chatId: 4941600,
-		photo: new Api.InputChatPhoto({...}),
+		photo: new Api.InputChatPhoto({ /* ... */ }),
 		}));
     console.log(result); // prints the result
 })();

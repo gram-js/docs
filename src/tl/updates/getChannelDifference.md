@@ -8,20 +8,26 @@ Returns the difference between the current state of updates of a certain channel
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.updates.getChannelDifference({
-		force: true,
-		channel: new Api.InputChannel({...}),
-		filter: new Api.ChannelMessagesFilter({...}),
-		pts: 9497495,
-		limit: 7516490,
-		}));
+    const result = await client.invoke(
+        new Api.updates.getChannelDifference({
+            force: true,
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            filter: new Api.ChannelMessagesFilter({
+                /* ... */
+            }),
+            pts: 9497495,
+            limit: 7516490,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -31,20 +37,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.updates.ChannelDifference = await client.invoke(new Api.updates.getChannelDifference({
-		force: true,
-		channel: new Api.InputChannel({...}),
-		filter: new Api.ChannelMessagesFilter({...}),
-		pts: 9497495,
-		limit: 7516490,
-		}));
+    const result: Api.updates.ChannelDifference = await client.invoke(
+        new Api.updates.getChannelDifference({
+            force: true,
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            filter: new Api.ChannelMessagesFilter({
+                /* ... */
+            }),
+            pts: 9497495,
+            limit: 7516490,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

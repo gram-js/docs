@@ -8,19 +8,23 @@ Returns the list of user photos.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.photos.getUserPhotos({
-		userId: new Api.InputUser({...}),
-		offset: 2298587,
-		maxId: 8768579,
-		limit: 2175124,
-		}));
+    const result = await client.invoke(
+        new Api.photos.getUserPhotos({
+            userId: new Api.InputUser({
+                /* ... */
+            }),
+            offset: 2298587,
+            maxId: 8768579,
+            limit: 2175124,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -30,19 +34,23 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.photos.Photos = await client.invoke(new Api.photos.getUserPhotos({
-		userId: new Api.InputUser({...}),
-		offset: 2298587,
-		maxId: 8768579,
-		limit: 2175124,
-		}));
+    const result: Api.photos.Photos = await client.invoke(
+        new Api.photos.getUserPhotos({
+            userId: new Api.InputUser({
+                /* ... */
+            }),
+            offset: 2298587,
+            maxId: 8768579,
+            limit: 2175124,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

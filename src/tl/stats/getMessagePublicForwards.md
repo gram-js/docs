@@ -10,21 +10,27 @@ Will return a list of [messages](https://core.telegram.org/constructor/message) 
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.stats.getMessagePublicForwards({
-		channel: new Api.InputChannel({...}),
-		msgId: 6095617,
-		offsetRate: 2424360,
-		offsetPeer: new Api.InputPeer({...}),
-		offsetId: 9162729,
-		limit: 9133445,
-		}));
+    const result = await client.invoke(
+        new Api.stats.getMessagePublicForwards({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            msgId: 6095617,
+            offsetRate: 2424360,
+            offsetPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            offsetId: 9162729,
+            limit: 9133445,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -34,21 +40,27 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.Messages = await client.invoke(new Api.stats.getMessagePublicForwards({
-		channel: new Api.InputChannel({...}),
-		msgId: 6095617,
-		offsetRate: 2424360,
-		offsetPeer: new Api.InputPeer({...}),
-		offsetId: 9162729,
-		limit: 9133445,
-		}));
+    const result: Api.messages.Messages = await client.invoke(
+        new Api.stats.getMessagePublicForwards({
+            channel: new Api.InputChannel({
+                /* ... */
+            }),
+            msgId: 6095617,
+            offsetRate: 2424360,
+            offsetPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            offsetId: 9162729,
+            limit: 9133445,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

@@ -8,28 +8,36 @@ Gets back found messages
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.search({
-		peer: new Api.InputPeer({...}),
-		q: 'random string here',
-		fromId: new Api.InputPeer({...}),
-		topMsgId: 4881049,
-		filter: new Api.MessagesFilter({...}),
-		minDate: 7108524,
-		maxDate: 3588179,
-		offsetId: 840380,
-		addOffset: 3671533,
-		limit: 6577178,
-		maxId: 7375544,
-		minId: 9351693,
-		hash: 7383860,
-		}));
+    const result = await client.invoke(
+        new Api.messages.search({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            q: 'random string here',
+            fromId: new Api.InputPeer({
+                /* ... */
+            }),
+            topMsgId: 4881049,
+            filter: new Api.MessagesFilter({
+                /* ... */
+            }),
+            minDate: 7108524,
+            maxDate: 3588179,
+            offsetId: 840380,
+            addOffset: 3671533,
+            limit: 6577178,
+            maxId: 7375544,
+            minId: 9351693,
+            hash: 7383860,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -39,28 +47,36 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.Messages = await client.invoke(new Api.messages.search({
-		peer: new Api.InputPeer({...}),
-		q: 'random string here',
-		fromId: new Api.InputPeer({...}),
-		topMsgId: 4881049,
-		filter: new Api.MessagesFilter({...}),
-		minDate: 7108524,
-		maxDate: 3588179,
-		offsetId: 840380,
-		addOffset: 3671533,
-		limit: 6577178,
-		maxId: 7375544,
-		minId: 9351693,
-		hash: 7383860,
-		}));
+    const result: Api.messages.Messages = await client.invoke(
+        new Api.messages.search({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            q: 'random string here',
+            fromId: new Api.InputPeer({
+                /* ... */
+            }),
+            topMsgId: 4881049,
+            filter: new Api.MessagesFilter({
+                /* ... */
+            }),
+            minDate: 7108524,
+            maxDate: 3588179,
+            offsetId: 840380,
+            addOffset: 3671533,
+            limit: 6577178,
+            maxId: 7375544,
+            minId: 9351693,
+            hash: 7383860,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

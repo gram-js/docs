@@ -17,7 +17,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     const result = await client.invoke(new Api.messages.addChatUser({
 		chatId: 1537502,
-		userId: new Api.InputUser({...}),
+		userId: new Api.InputUser({ /* ... */ }... */ }),
 		fwdLimit: 9717987,
 		}));
     console.log(result); // prints the result
@@ -38,7 +38,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     const result: Api.messages.StatedMessage = await client.invoke(new Api.messages.addChatUser({
 		chatId: 1537502,
-		userId: new Api.InputUser({...}),
+		userId: new Api.InputUser({ /* ... */ }... */ }),
 		fwdLimit: 9717987,
 		}));
     console.log(result); // prints the result

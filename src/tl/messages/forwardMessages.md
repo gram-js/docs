@@ -8,23 +8,29 @@ Forwards messages by their IDs.
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.forwardMessages({
-		silent: true,
-		background: true,
-		withMyScore: true,
-		fromPeer: new Api.InputPeer({...}),
-		id: [3594049],
-		randomId: [2616332],
-		toPeer: new Api.InputPeer({...}),
-		scheduleDate: 46082,
-		}));
+    const result = await client.invoke(
+        new Api.messages.forwardMessages({
+            silent: true,
+            background: true,
+            withMyScore: true,
+            fromPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            id: [3594049],
+            randomId: [2616332],
+            toPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            scheduleDate: 46082,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -34,23 +40,29 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.messages.forwardMessages({
-		silent: true,
-		background: true,
-		withMyScore: true,
-		fromPeer: new Api.InputPeer({...}),
-		id: [3594049],
-		randomId: [2616332],
-		toPeer: new Api.InputPeer({...}),
-		scheduleDate: 46082,
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.messages.forwardMessages({
+            silent: true,
+            background: true,
+            withMyScore: true,
+            fromPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            id: [3594049],
+            randomId: [2616332],
+            toPeer: new Api.InputPeer({
+                /* ... */
+            }),
+            scheduleDate: 46082,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

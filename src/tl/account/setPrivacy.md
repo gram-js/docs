@@ -8,17 +8,25 @@ Change privacy settings of current account
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.account.setPrivacy({
-		key: new Api.InputPrivacyKey({...}),
-		rules: [new Api.InputPrivacyRule({...})],
-		}));
+    const result = await client.invoke(
+        new Api.account.setPrivacy({
+            key: new Api.InputPrivacyKey({
+                /* ... */
+            }),
+            rules: [
+                new Api.InputPrivacyRule({
+                    /* ... */
+                }),
+            ],
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +36,25 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.account.PrivacyRules = await client.invoke(new Api.account.setPrivacy({
-		key: new Api.InputPrivacyKey({...}),
-		rules: [new Api.InputPrivacyRule({...})],
-		}));
+    const result: Api.account.PrivacyRules = await client.invoke(
+        new Api.account.setPrivacy({
+            key: new Api.InputPrivacyKey({
+                /* ... */
+            }),
+            rules: [
+                new Api.InputPrivacyRule({
+                    /* ... */
+                }),
+            ],
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

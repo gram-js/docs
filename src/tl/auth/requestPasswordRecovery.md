@@ -8,16 +8,20 @@ Request recovery code of a [2FA password](https://core.telegram.org/api/srp), on
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.auth.requestPasswordRecovery({
-		400: new Api.PASSWORD_EMPTY({...}),
-		}));
+    const result = await client.invoke(
+        new Api.auth.requestPasswordRecovery({
+            400: new Api.PASSWORD_EMPTY({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -27,16 +31,20 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.auth.PasswordRecovery = await client.invoke(new Api.auth.requestPasswordRecovery({
-		400: new Api.PASSWORD_EMPTY({...}),
-		}));
+    const result: Api.auth.PasswordRecovery = await client.invoke(
+        new Api.auth.requestPasswordRecovery({
+            400: new Api.PASSWORD_EMPTY({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

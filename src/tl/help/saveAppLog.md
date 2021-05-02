@@ -16,7 +16,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
     const result = await client.invoke(new Api.help.saveAppLog({
-		events: [new Api.InputAppEvent({...})],
+		events: [new Api.InputAppEvent({ /* ... */ }... */ })],
 		}));
     console.log(result); // prints the result
 })();
@@ -35,7 +35,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
     const result: Api.Bool = await client.invoke(new Api.help.saveAppLog({
-		events: [new Api.InputAppEvent({...})],
+		events: [new Api.InputAppEvent({ /* ... */ }... */ })],
 		}));
     console.log(result); // prints the result
 })();

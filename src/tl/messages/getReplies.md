@@ -8,24 +8,28 @@ Get messages in a reply thread
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.getReplies({
-		peer: new Api.InputPeer({...}),
-		msgId: 7855235,
-		offsetId: 9695761,
-		offsetDate: 8619023,
-		addOffset: 4679718,
-		limit: 2057604,
-		maxId: 3135654,
-		minId: 6971168,
-		hash: 5441484,
-		}));
+    const result = await client.invoke(
+        new Api.messages.getReplies({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            msgId: 7855235,
+            offsetId: 9695761,
+            offsetDate: 8619023,
+            addOffset: 4679718,
+            limit: 2057604,
+            maxId: 3135654,
+            minId: 6971168,
+            hash: 5441484,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -35,24 +39,28 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.Messages = await client.invoke(new Api.messages.getReplies({
-		peer: new Api.InputPeer({...}),
-		msgId: 7855235,
-		offsetId: 9695761,
-		offsetDate: 8619023,
-		addOffset: 4679718,
-		limit: 2057604,
-		maxId: 3135654,
-		minId: 6971168,
-		hash: 5441484,
-		}));
+    const result: Api.messages.Messages = await client.invoke(
+        new Api.messages.getReplies({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            msgId: 7855235,
+            offsetId: 9695761,
+            offsetDate: 8619023,
+            addOffset: 4679718,
+            limit: 2057604,
+            maxId: 3135654,
+            minId: 6971168,
+            hash: 5441484,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

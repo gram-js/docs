@@ -8,17 +8,21 @@ Find out if a media message's caption can be edited
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.getMessageEditData({
-		peer: new Api.InputPeer({...}),
-		id: 691465,
-		}));
+    const result = await client.invoke(
+        new Api.messages.getMessageEditData({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            id: 691465,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +32,21 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.MessageEditData = await client.invoke(new Api.messages.getMessageEditData({
-		peer: new Api.InputPeer({...}),
-		id: 691465,
-		}));
+    const result: Api.messages.MessageEditData = await client.invoke(
+        new Api.messages.getMessageEditData({
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            id: 691465,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

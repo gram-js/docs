@@ -8,17 +8,21 @@ Verify a new phone number to associate to the current account
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.account.sendChangePhoneCode({
-		phoneNumber: 'random string here',
-		settings: new Api.CodeSettings({...}),
-		}));
+    const result = await client.invoke(
+        new Api.account.sendChangePhoneCode({
+            phoneNumber: 'random string here',
+            settings: new Api.CodeSettings({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -28,17 +32,21 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.auth.SentCode = await client.invoke(new Api.account.sendChangePhoneCode({
-		phoneNumber: 'random string here',
-		settings: new Api.CodeSettings({...}),
-		}));
+    const result: Api.auth.SentCode = await client.invoke(
+        new Api.account.sendChangePhoneCode({
+            phoneNumber: 'random string here',
+            settings: new Api.CodeSettings({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

@@ -16,7 +16,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
     const result = await client.invoke(new Api.messages.acceptEncryption({
-		peer: new Api.InputEncryptedChat({...}),
+		peer: new Api.InputEncryptedChat({ /* ... */ }... */ }),
 		gB: Buffer.from('some bytes here'),
 		keyFingerprint: 3544566,
 		}));
@@ -37,7 +37,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
     const result: Api.EncryptedChat = await client.invoke(new Api.messages.acceptEncryption({
-		peer: new Api.InputEncryptedChat({...}),
+		peer: new Api.InputEncryptedChat({ /* ... */ }... */ }),
 		gB: Buffer.from('some bytes here'),
 		keyFingerprint: 3544566,
 		}));

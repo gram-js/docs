@@ -8,16 +8,20 @@ Get info about a certain wallpaper
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.account.getWallPaper({
-		wallpaper: new Api.InputWallPaper({...}),
-		}));
+    const result = await client.invoke(
+        new Api.account.getWallPaper{ /* ... */ }
+            wallpaper: new Api.InputWallPaper({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -27,16 +31,20 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
-const client = new TelegramClient(session, apiId, apiHash, {});
+const client = new TelegramClient(se{ /* ... */ }, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.WallPaper = await client.invoke(new Api.account.getWallPaper({
-		wallpaper: new Api.InputWallPaper({...}),
-		}));
+    const result: Api.WallPaper = await client.invoke(
+        new Api.account.getWallPaper({
+            wallpaper: new Api.InputWallPaper({
+                /* ... */
+            }),
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```

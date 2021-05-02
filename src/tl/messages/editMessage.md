@@ -8,23 +8,35 @@ Edit message
 :::tab{title="JavaScript"}
 
 ```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
+const { Api, TelegramClient } = require('telegram');
+const { StringSession } = require('telegram/sessions');
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.editMessage({
-		noWebpage: true,
-		peer: new Api.InputPeer({...}),
-		id: 8810695,
-		message: 'random string here',
-		media: new Api.InputMedia({...}),
-		replyMarkup: new Api.ReplyMarkup({...}),
-		entities: [new Api.MessageEntity({...})],
-		scheduleDate: 1557612,
-		}));
+    const result = await client.invoke(
+        new Api.messages.editMessage({
+            noWebpage: true,
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            id: 8810695,
+            message: 'random string here',
+            media: new Api.InputMedia({
+                /* ... */
+            }),
+            replyMarkup: new Api.ReplyMarkup({
+                /* ... */
+            }),
+            entities: [
+                new Api.MessageEntity({
+                    /* ... */
+                }),
+            ],
+            scheduleDate: 1557612,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
@@ -34,23 +46,35 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 :::tab{title="TypeScript"}
 
 ```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
+import { Api, TelegramClient } from 'telegram';
+import { StringSession } from 'telegram/sessions';
 
 const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.messages.editMessage({
-		noWebpage: true,
-		peer: new Api.InputPeer({...}),
-		id: 8810695,
-		message: 'random string here',
-		media: new Api.InputMedia({...}),
-		replyMarkup: new Api.ReplyMarkup({...}),
-		entities: [new Api.MessageEntity({...})],
-		scheduleDate: 1557612,
-		}));
+    const result: Api.Updates = await client.invoke(
+        new Api.messages.editMessage({
+            noWebpage: true,
+            peer: new Api.InputPeer({
+                /* ... */
+            }),
+            id: 8810695,
+            message: 'random string here',
+            media: new Api.InputMedia({
+                /* ... */
+            }),
+            replyMarkup: new Api.ReplyMarkup({
+                /* ... */
+            }),
+            entities: [
+                new Api.MessageEntity({
+                    /* ... */
+                }),
+            ],
+            scheduleDate: 1557612,
+        }),
+    );
     console.log(result); // prints the result
 })();
 ```
