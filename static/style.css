@@ -92,6 +92,13 @@ h6:hover .icon-link::before {
     display: none;
 }
 
+blockquote {
+    border-left: 0.25em solid #3b434b;
+    padding: 0 1em;
+    color: #8b949e;
+    margin: 0;
+}
+
 /* container (source: bootstrap) */
 
 .container {
@@ -143,6 +150,7 @@ pre {
     color: #c9d1d9;
     padding: 0.75em 1.5em;
     overflow: auto;
+    border-radius: 8px;
 }
 
 pre ::selection {
