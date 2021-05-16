@@ -1,3 +1,4 @@
+const sidebar = document.querySelector('.sidebar');
 const tabSections = document.querySelectorAll('.tabs');
 
 tabSections.forEach(section => {
@@ -39,5 +40,7 @@ document.body.addEventListener('click', event => {
         tabs.forEach(tab => {
             tab.classList.toggle('hidden', tab.dataset.title !== title);
         });
+    } else if (target.closest('.menu-icon')) {
+        sidebar.classList.toggle('visible');
     }
 });
