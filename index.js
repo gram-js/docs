@@ -21,7 +21,7 @@ import find from 'unist-util-find';
 
 const root = ``;
 
-const head = title => `<!doctype html>
+const head = (title, description) => `<!doctype html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -29,8 +29,14 @@ const head = title => `<!doctype html>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="${root}/static/style.css">
-        <title>${escapeHtml(title)} | GramJS</title>
         <script src="${root}/static/script.js" defer></script>
+        <title>${escapeHtml(title)} | GramJS</title>
+        <meta name="title" content="${escapeHtml(title)} | GramJS" />
+        <meta name="description" content="${escapeHtml(description)}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://gram.js.org" />
+        <meta property="og:title" content="${escapeHtml(title)} | GramJS" />
+        <meta property="og:description" content="${escapeHtml(description)}" />
     </head>
     <body>`;
 
@@ -81,13 +87,22 @@ const processor = unified()
     .use(html);
 
 const treeProcessor = remark().use(() => tree => {
-    const heading = tree.children.find(
+    const headingIndex = tree.children.findIndex(
         child => child.type === 'heading' && child.depth === 1,
     );
 
     return {
-        ...heading,
         type: 'root',
+        children: [
+            {
+                ...tree.children[headingIndex],
+                type: 'paragraph',
+            },
+            {
+                ...tree.children[headingIndex + 1],
+                type: 'paragraph',
+            },
+        ],
     };
 });
 
@@ -149,7 +164,10 @@ glob('src/**/*.md', async (error, files) => {
             const doc = await processor.process(data);
             const titleDoc = await treeProcessor.process(data);
 
-            const title = titleDoc.toString().trim();
+            let [title, ...description] = titleDoc.toString().split('\n');
+            title = title.trim();
+            description = description.join('\n').trim();
+
             const { dir, name } = path.parse(file);
 
             const directories = dir.split(path.sep);
@@ -159,6 +177,7 @@ glob('src/**/*.md', async (error, files) => {
                 doc,
                 name,
                 title,
+                description,
                 directories: directories.slice(1),
             };
         }),
@@ -184,13 +203,13 @@ glob('src/**/*.md', async (error, files) => {
     const sidebar = generateSidebar(tree);
 
     await Promise.all(
-        fileData.map(async ({ doc, title, name, directories }) => {
+        fileData.map(async ({ doc, title, description, name, directories }) => {
             const fullPath = path.join('docs', ...directories);
             await mkdirp(fullPath);
 
             await fs.writeFile(
                 `${fullPath}${path.sep}${name}.html`,
-                `${head(title)}
+                `${head(title, description.slice(0, 150))}
                     <header class="container">
                         <span class="menu-icon">
                             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">

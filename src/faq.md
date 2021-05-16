@@ -1,5 +1,7 @@
 # FAQ
 
+> Frequently asked questions
+
 ## Table of Contents
 
 ## How do I stop logging?
