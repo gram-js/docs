@@ -14,22 +14,27 @@ import remark2rehype from 'remark-rehype';
 import slug from 'rehype-slug';
 import toc from 'remark-toc';
 import unified from 'unified';
+import remark from 'remark';
 import visit from 'unist-util-visit';
+import escapeHtml from '@youtwitface/escape-html';
+import find from 'unist-util-find';
 
 const root = ``;
 
-const head = `<!doctype html>
+const head = title => `<!doctype html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="${root}/static/style.css">
+        <title>${escapeHtml(title)}</title>
         <script src="${root}/static/script.js" defer></script>
     </head>
-    <body><div class="container">`;
+    <body>`;
 
-const foot = `</div></body></html>`;
+const foot = `</body></html>`;
 
 const onDirective = node => {
     const data = node.data || (node.data = {});
@@ -58,6 +63,12 @@ const transform = tree =>
 
 const processor = unified()
     .use(markdown)
+    .use(() => tree => {
+        const node = find(tree, { type: 'heading' });
+        node.depth = Math.min(node.depth + 1, 6);
+
+        return tree;
+    })
     .use(directive)
     .use(() => transform)
     .use(gfm)
@@ -69,27 +80,134 @@ const processor = unified()
     .use(raw)
     .use(html);
 
+const treeProcessor = remark().use(() => tree => {
+    const heading = tree.children.find(
+        child => child.type === 'heading' && child.depth === 1,
+    );
+
+    return {
+        ...heading,
+        type: 'root',
+    };
+});
+
+const titleCase = string => {
+    if (string === 'tl') {
+        return 'TL';
+    }
+
+    return string
+        .split(/-/)
+        .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
+        .join(' ');
+};
+
+const linkTitle = (title, filePath, shouldLink = true) => {
+    const escapedTitle = escapeHtml(title);
+
+    return shouldLink
+        ? `<a href="${root || ''}/${filePath}">${escapedTitle}</a>`
+        : escapedTitle;
+};
+
+const generateSidebar = (object, directories) => {
+    return Object.entries(object).reduce((sidebar, [key, value]) => {
+        const filePath = (directories ?? [])
+            .concat(key === 'index' ? '' : key)
+            .join('/');
+
+        let title, children;
+        if (directories && key === 'index') {
+            return sidebar;
+        } else if (typeof value === 'string') {
+            title = linkTitle(value, filePath);
+        } else {
+            title = linkTitle(
+                titleCase(value.index || key),
+                filePath,
+                !!value.index,
+            );
+            children = `<ul>${generateSidebar(
+                value,
+                (directories ?? []).concat(key),
+            )}</ul>`;
+        }
+
+        return sidebar + `<li>${title}</li>${children ?? ''}`;
+    }, '');
+};
+
 glob('src/**/*.md', async (error, files) => {
     if (error) {
         console.error(error);
         process.exit(1);
     }
 
-    await Promise.all(
+    const fileData = await Promise.all(
         files.map(async file => {
             const data = await fs.readFile(file, { encoding: 'utf-8' });
             const doc = await processor.process(data);
+            const titleDoc = await treeProcessor.process(data);
+
+            const title = titleDoc.toString().trim();
             const { dir, name } = path.parse(file);
 
             const directories = dir.split(path.sep);
-            directories[0] = 'docs';
+            directories[0] = 'docs, ...directive';
 
-            const newPath = directories.join(path.sep);
-            await mkdirp(newPath);
+            return {
+                doc,
+                name,
+                title,
+                directories: directories.slice(1),
+            };
+        }),
+    );
+
+    const tree = await fileData.reduce(
+        async (promise, { title, name, directories }) => {
+            const tree = await promise;
+            const currentTree = directories.reduce((t, d) => {
+                if (!(d in t)) {
+                    t[d] = {};
+                }
+
+                return t[d];
+            }, tree);
+
+            currentTree[name] = directories[0] === 'tl' ? name : title;
+            return tree;
+        },
+        Promise.resolve({}),
+    );
+
+    const sidebar = generateSidebar(tree);
+
+    await Promise.all(
+        fileData.map(async ({ doc, title, name, directories }) => {
+            const fullPath = path.join('docs', ...directories);
+            await mkdirp(fullPath);
 
             await fs.writeFile(
-                `${newPath}${path.sep}${name}.html`,
-                `${head}${doc}${foot}`,
+                `${fullPath}${path.sep}${name}.html`,
+                `${head(title)}
+                    <header class="container">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                                <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path>
+                            </svg>
+                        </span>
+                        <h1>GramJS</h1>
+                    </header>
+                    <main class="container page">
+                        <div class="sidebar">
+                            <ul>${sidebar}</ul>
+                        </div>
+                        <div class="container content">
+                            ${doc}
+                        </div>
+                    </main>
+                ${foot}`,
             );
         }),
     );
