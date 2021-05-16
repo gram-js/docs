@@ -16,7 +16,7 @@ import toc from 'remark-toc';
 import unified from 'unified';
 import visit from 'unist-util-visit';
 
-const root = `/docs`;
+const root = ``;
 
 const head = `<!doctype html>
 <html>
