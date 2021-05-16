@@ -1,5 +1,5 @@
 :root {
-    --icon-link-path: url(/docs/static/link.svg);
+    --icon-link-path: url(/static/link.svg);
 }
 
 :target {
