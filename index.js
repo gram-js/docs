@@ -29,7 +29,7 @@ const head = title => `<!doctype html>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="${root}/static/style.css">
-        <title>${escapeHtml(title)}</title>
+        <title>${escapeHtml(title)} | GramJS</title>
         <script src="${root}/static/script.js" defer></script>
     </head>
     <body>`;
