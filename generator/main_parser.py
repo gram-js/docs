@@ -20,7 +20,8 @@ with open("saved.json", "r", encoding="utf-8") as out:
 with open("template.md", "r", encoding="utf-8") as out:
     template = out.read()
 
-shutil.rmtree("tl")
+if os.path.isdir("tl"):
+    shutil.rmtree("tl")
 os.makedirs("tl", exist_ok=True)
 
 
@@ -87,7 +88,6 @@ for method in parsed:
         if method.namespace:
             title = method.namespace + "." + title
 
-        print("params are",params)
         data = template.format(title=title,
                                description=markdownify(description),
                                params=to_table(params),
