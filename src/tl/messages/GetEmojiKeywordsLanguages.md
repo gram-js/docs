@@ -1,70 +1,72 @@
 # messages.GetEmojiKeywordsLanguages
 
-No description found
+Get info about an emoji keyword localization
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetEmojiKeywordsLanguages({
-      langCodes: ["some string here"],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetEmojiKeywordsLanguages({
+    langCodes: ['some string here']
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<EmojiLanguage> = await client.invoke(
-    new Api.messages.GetEmojiKeywordsLanguages({
-      langCodes: ["some string here"],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<EmojiLanguage> = await client.invoke(new Api.messages.GetEmojiKeywordsLanguages({
+    langCodes: ['some string here']
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type   | Description          |
-| :-------: | ------ | -------------------- |
-| langCodes | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-Vector
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **langCodes** | [Vector](https://core.telegram.org/type/Vector%20t)<[string](https://core.telegram.org/type/string)> | Language codes 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Vector](https://core.telegram.org/type/Vector%20t)<[EmojiLanguage](https://core.telegram.org/type/EmojiLanguage)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

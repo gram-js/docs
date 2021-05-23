@@ -1,79 +1,82 @@
 # messages.InstallStickerSet
 
-No description found
+Install a stickerset
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.InstallStickerSet({
-      stickerset: new Api.InputStickerSetID({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-      }),
-      archived: false,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.InstallStickerSet({
+    stickerset: new Api.InputStickerSetID({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
+    }),
+    archived: false
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.StickerSetInstallResult = await client.invoke(
-    new Api.messages.InstallStickerSet({
-      stickerset: new Api.InputStickerSetID({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-      }),
-      archived: false,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.StickerSetInstallResult = await client.invoke(new Api.messages.InstallStickerSet({
+    stickerset: new Api.InputStickerSetID({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
+    }),
+    archived: false
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|    Name    | Type            | Description          |
-| :--------: | --------------- | -------------------- |
-| stickerset | InputStickerSet | No description found |
-|  archived  | Bool            | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.StickerSetInstallResult
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **stickerset** | [InputStickerSet](https://core.telegram.org/type/InputStickerSet) | Stickerset to install 
+| **archived** | [Bool](https://core.telegram.org/type/Bool) | Whether to archive stickerset 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.StickerSetInstallResult](https://core.telegram.org/type/messages.StickerSetInstallResult)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | STICKERSET\_INVALID | The provided sticker set is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

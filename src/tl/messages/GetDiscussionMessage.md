@@ -1,73 +1,93 @@
 # messages.GetDiscussionMessage
 
-No description found
+Get [discussion message](https://core.telegram.org/api/threads) from the [associated discussion group](https://core.telegram.org/api/discussion) of a channel to show it on top of the comment section, without actually joining the group
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetDiscussionMessage({
-      peer: "username",
-      msgId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetDiscussionMessage({
+    peer: 'username',
+    msgId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.DiscussionMessage = await client.invoke(
-    new Api.messages.GetDiscussionMessage({
-      peer: "username",
-      msgId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.DiscussionMessage = await client.invoke(new Api.messages.GetDiscussionMessage({
+    peer: 'username',
+    msgId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name  | Type      | Description          |
-| :---: | --------- | -------------------- |
-| peer  | InputPeer | No description found |
-| msgId | int       | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.DiscussionMessage
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | [Channel ID](https://core.telegram.org/api/channel) 
+| **msgId** | [int](https://core.telegram.org/type/int) | Message ID 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.DiscussionMessage](https://core.telegram.org/type/messages.DiscussionMessage)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+#### [Threads](https://core.telegram.org/api/threads)
+
+Telegram allows commenting on a [channel post](https://core.telegram.org/api/channel) or on a generic [supergroup message](https://core.telegram.org/api/channel), thanks to message threads.
+
+
+
+#### [Discussion groups](https://core.telegram.org/api/discussion)
+
+[Groups](https://core.telegram.org/api/channel) can be associated to a [channel](https://core.telegram.org/api/channel) as a [discussion group](https://telegram.org/blog/privacy-discussions-web-bots), to allow users to discuss about posts.
+
+
+
+

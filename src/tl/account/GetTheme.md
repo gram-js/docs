@@ -1,82 +1,89 @@
 # account.GetTheme
 
-No description found
+Get installed themes
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetTheme({
-      format: "some string here",
-      theme: new Api.InputTheme({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-      }),
-      documentId: BigInt("-4156887774564"),
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.GetTheme({
+    format: 'some string here',
+    theme: new Api.InputTheme({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
+    }),
+    documentId: BigInt('-4156887774564')
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Theme = await client.invoke(
-    new Api.account.GetTheme({
-      format: "some string here",
-      theme: new Api.InputTheme({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-      }),
-      documentId: BigInt("-4156887774564"),
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Theme = await client.invoke(new Api.account.GetTheme({
+    format: 'some string here',
+    theme: new Api.InputTheme({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
+    }),
+    documentId: BigInt('-4156887774564')
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|    Name    | Type       | Description          |
-| :--------: | ---------- | -------------------- |
-|   format   | string     | No description found |
-|   theme    | InputTheme | No description found |
-| documentId | long       | No description found |
 
-### [](#result)Result
+## Parameters
 
-Theme
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **format** | [string](https://core.telegram.org/type/string) | Theme format, a string that identifies the theming engines supported by the client 
+| **hash** | [int](https://core.telegram.org/type/int) | [Hash for pagination, for more info click here](https://core.telegram.org/api/offsets#hash-generation) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[account.Themes](https://core.telegram.org/type/account.Themes)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Pagination in the API](https://core.telegram.org/api/offsets)
+
+How to fetch results from large lists of objects.
+
+
+
+

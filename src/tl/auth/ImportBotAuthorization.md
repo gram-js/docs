@@ -1,79 +1,87 @@
 # auth.ImportBotAuthorization
 
-No description found
+Login as a bot
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.auth.ImportBotAuthorization({
-      flags: 43,
-      apiId: 43,
-      apiHash: "some string here",
-      botAuthToken: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.auth.ImportBotAuthorization({
+    flags: 43,
+    apiId: 43,
+    apiHash: 'some string here',
+    botAuthToken: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.auth.Authorization = await client.invoke(
-    new Api.auth.ImportBotAuthorization({
-      flags: 43,
-      apiId: 43,
-      apiHash: "some string here",
-      botAuthToken: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.auth.Authorization = await client.invoke(new Api.auth.ImportBotAuthorization({
+    flags: 43,
+    apiId: 43,
+    apiHash: 'some string here',
+    botAuthToken: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|     Name     | Type   | Description          |
-| :----------: | ------ | -------------------- |
-|    flags     | int    | No description found |
-|    apiId     | int    | No description found |
-|   apiHash    | string | No description found |
-| botAuthToken | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-auth.Authorization
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [int](https://core.telegram.org/type/int) | Reserved for future use 
+| **apiId** | [int](https://core.telegram.org/type/int) | Application identifier (see. [App configuration](https://core.telegram.org/myapp)) 
+| **apiHash** | [string](https://core.telegram.org/type/string) | Application identifier hash (see. [App configuration](https://core.telegram.org/myapp)) 
+| **botAuthToken** | [string](https://core.telegram.org/type/string) | Bot token (see [bots](https://core.telegram.org/bots)) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+Returns an [auth.Authorization](https://core.telegram.org/type/auth.Authorization) object with information on the new authorization.
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | ACCESS\_TOKEN\_EXPIRED | Bot token expired 
+| 400 | ACCESS\_TOKEN\_INVALID | The provided token is not valid 
+| 400 | API\_ID\_INVALID | The api\_id/api\_hash combination is invalid 
+| 401 | AUTH\_KEY\_INVALID | Auth key invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Bots: An introduction for developers](https://core.telegram.org/bots)
+
+

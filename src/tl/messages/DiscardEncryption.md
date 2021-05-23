@@ -1,70 +1,75 @@
 # messages.DiscardEncryption
 
-No description found
+Cancels a request for creation and/or delete info on secret chat.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.DiscardEncryption({
-      chatId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.DiscardEncryption({
+    chatId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.messages.DiscardEncryption({
-      chatId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.messages.DiscardEncryption({
+    chatId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type | Description          |
-| :----: | ---- | -------------------- |
-| chatId | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **chatId** | [int](https://core.telegram.org/type/int) | Secret chat ID 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHAT\_ID\_EMPTY | The provided chat ID is empty 
+| 400 | ENCRYPTION\_ALREADY\_DECLINED | The secret chat was already declined 
+| 400 | ENCRYPTION\_ID\_INVALID | The provided secret chat ID is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

@@ -1,24 +1,24 @@
 # messages.EditChatDefaultBannedRights
 
-No description found
+Edit the default banned rights of a [channel/supergroup/group](https://core.telegram.org/api/channel).
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.EditChatDefaultBannedRights({
-      peer: "username",
-      bannedRights: new Api.ChatBannedRights({
+    const result = await client.invoke(new Api.messages.EditChatDefaultBannedRights({
+    peer: 'username',
+    bannedRights: new Api.ChatBannedRights({
         untilDate: 43,
         viewMessages: None,
         sendMessages: None,
@@ -30,30 +30,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         sendPolls: true,
         changeInfo: true,
         inviteUsers: true,
-        pinMessages: true,
-      }),
+        pinMessages: true
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Updates = await client.invoke(
-    new Api.messages.EditChatDefaultBannedRights({
-      peer: "username",
-      bannedRights: new Api.ChatBannedRights({
+    const result: Api.Updates = await client.invoke(new Api.messages.EditChatDefaultBannedRights({
+    peer: 'username',
+    bannedRights: new Api.ChatBannedRights({
         untilDate: 43,
         viewMessages: None,
         sendMessages: None,
@@ -65,35 +61,52 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         sendPolls: true,
         changeInfo: true,
         inviteUsers: true,
-        pinMessages: true,
-      }),
+        pinMessages: true
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|     Name     | Type             | Description          |
-| :----------: | ---------------- | -------------------- |
-|     peer     | InputPeer        | No description found |
-| bannedRights | ChatBannedRights | No description found |
 
-### [](#result)Result
+## Parameters
 
-Updates
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | The peer 
+| **bannedRights** | [ChatBannedRights](https://core.telegram.org/type/ChatBannedRights) | The new global rights 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Updates](https://core.telegram.org/type/Updates)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | BANNED\_RIGHTS\_INVALID | You provided some invalid flags in the banned rights 
+| 400 | CHAT\_ADMIN\_REQUIRED | You must be an admin in this chat to do this 
+| 400 | CHAT\_NOT\_MODIFIED | The pinned message wasn't modified 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
+| 400 | UNTIL\_DATE\_INVALID | Invalid until date provided 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+

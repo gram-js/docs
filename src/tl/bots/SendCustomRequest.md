@@ -1,77 +1,81 @@
 # bots.SendCustomRequest
 
-No description found
+Sends a custom request; for bots only
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.bots.SendCustomRequest({
-      customMethod: "some string here",
-      params: new Api.DataJSON({
-        data: "some string here",
-      }),
+    const result = await client.invoke(new Api.bots.SendCustomRequest({
+    customMethod: 'some string here',
+    params: new Api.DataJSON({
+        data: 'some string here'
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.DataJSON = await client.invoke(
-    new Api.bots.SendCustomRequest({
-      customMethod: "some string here",
-      params: new Api.DataJSON({
-        data: "some string here",
-      }),
+    const result: Api.DataJSON = await client.invoke(new Api.bots.SendCustomRequest({
+    customMethod: 'some string here',
+    params: new Api.DataJSON({
+        data: 'some string here'
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|     Name     | Type     | Description          |
-| :----------: | -------- | -------------------- |
-| customMethod | string   | No description found |
-|    params    | DataJSON | No description found |
 
-### [](#result)Result
+## Parameters
 
-DataJSON
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **customMethod** | [string](https://core.telegram.org/type/string) | The method name 
+| **params** | [DataJSON](https://core.telegram.org/type/DataJSON) | JSON-serialized method parameters 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[DataJSON](https://core.telegram.org/type/DataJSON)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | METHOD\_INVALID | The specified method is invalid 
+| 400 | USER\_BOT\_INVALID | This method can only be called by a bot 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

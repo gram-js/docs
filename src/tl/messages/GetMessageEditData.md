@@ -1,73 +1,79 @@
 # messages.GetMessageEditData
 
-No description found
+Find out if a media message's caption can be edited
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetMessageEditData({
-      peer: "username",
-      id: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetMessageEditData({
+    peer: 'username',
+    id: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.MessageEditData = await client.invoke(
-    new Api.messages.GetMessageEditData({
-      peer: "username",
-      id: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.MessageEditData = await client.invoke(new Api.messages.GetMessageEditData({
+    peer: 'username',
+    id: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type      | Description          |
-| :--: | --------- | -------------------- |
-| peer | InputPeer | No description found |
-|  id  | int       | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.MessageEditData
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Peer where the media was sent 
+| **id** | [int](https://core.telegram.org/type/int) | ID of message 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.MessageEditData](https://core.telegram.org/type/messages.MessageEditData)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHAT\_ADMIN\_REQUIRED | You must be an admin in this chat to do this 
+| 403 | MESSAGE\_AUTHOR\_REQUIRED | Message author required 
+| 400 | MESSAGE\_ID\_INVALID | The provided message id is invalid 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

@@ -1,70 +1,81 @@
 # channels.GetChannels
 
-No description found
+Get info about [channels/supergroups](https://core.telegram.org/api/channel)
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.channels.GetChannels({
-      id: ["username"],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.channels.GetChannels({
+    id: ['username']
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.Chats = await client.invoke(
-    new Api.channels.GetChannels({
-      id: ["username"],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.Chats = await client.invoke(new Api.channels.GetChannels({
+    id: ['username']
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type         | Description          |
-| :--: | ------------ | -------------------- |
-|  id  | InputChannel | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.Chats
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **id** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputChannel](https://core.telegram.org/type/InputChannel)> | IDs of channels/supergroups to get info about 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.Chats](https://core.telegram.org/type/messages.Chats)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_INVALID | The provided channel is invalid 
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 400 | MSG\_ID\_INVALID | Invalid message ID provided 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+

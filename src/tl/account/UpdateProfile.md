@@ -1,76 +1,81 @@
 # account.UpdateProfile
 
-No description found
+Updates user profile.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.UpdateProfile({
-      firstName: "some string here",
-      lastName: "some string here",
-      about: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.UpdateProfile({
+    firstName: 'some string here',
+    lastName: 'some string here',
+    about: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.User = await client.invoke(
-    new Api.account.UpdateProfile({
-      firstName: "some string here",
-      lastName: "some string here",
-      about: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.User = await client.invoke(new Api.account.UpdateProfile({
+    firstName: 'some string here',
+    lastName: 'some string here',
+    about: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type   | Description          |
-| :-------: | ------ | -------------------- |
-| firstName | string | No description found |
-| lastName  | string | No description found |
-|   about   | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-User
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **firstName** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[string](https://core.telegram.org/type/string) | New user first name 
+| **lastName** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[string](https://core.telegram.org/type/string) | New user last name 
+| **about** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[string](https://core.telegram.org/type/string) | New bio 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+Returns [User](https://core.telegram.org/type/User) object containing the updated current user profile.
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | ABOUT\_TOO\_LONG | About string too long 
+| 400 | FIRSTNAME\_INVALID | The first name is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

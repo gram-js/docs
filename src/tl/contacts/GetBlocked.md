@@ -1,73 +1,75 @@
 # contacts.GetBlocked
 
-No description found
+Returns the list of blocked users.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.contacts.GetBlocked({
-      offset: 43,
-      limit: 100,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.contacts.GetBlocked({
+    offset: 43,
+    limit: 100
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.contacts.Blocked = await client.invoke(
-    new Api.contacts.GetBlocked({
-      offset: 43,
-      limit: 100,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.contacts.Blocked = await client.invoke(new Api.contacts.GetBlocked({
+    offset: 43,
+    limit: 100
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type | Description          |
-| :----: | ---- | -------------------- |
-| offset | int  | No description found |
-| limit  | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-contacts.Blocked
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **offset** | [int](https://core.telegram.org/type/int) | The number of list elements to be skipped 
+| **limit** | [int](https://core.telegram.org/type/int) | The number of list elements to be returned 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[contacts.Blocked](https://core.telegram.org/type/contacts.Blocked)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

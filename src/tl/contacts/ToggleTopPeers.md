@@ -1,70 +1,78 @@
 # contacts.ToggleTopPeers
 
-No description found
+Enable/disable [top peers](https://core.telegram.org/api/top-rating)
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.contacts.ToggleTopPeers({
-      enabled: false,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.contacts.ToggleTopPeers({
+    enabled: false
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.contacts.ToggleTopPeers({
-      enabled: false,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.contacts.ToggleTopPeers({
+    enabled: false
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type | Description          |
-| :-----: | ---- | -------------------- |
-| enabled | Bool | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **enabled** | [Bool](https://core.telegram.org/type/Bool) | Enable/disable 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Top peer rating](https://core.telegram.org/api/top-rating)
+
+If enabled, the rating of top peers indicates the relevance of a frequently used peer in a certain category (frequently messaged users, frequently used bots, inline bots, frequently visited channels and so on).
+
+
+
+

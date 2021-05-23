@@ -1,76 +1,78 @@
 # account.GetAuthorizationForm
 
-No description found
+Returns a Telegram Passport authorization form for sharing data with a service
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetAuthorizationForm({
-      botId: 43,
-      scope: "some string here",
-      publicKey: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.GetAuthorizationForm({
+    botId: 43,
+    scope: 'some string here',
+    publicKey: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.account.AuthorizationForm = await client.invoke(
-    new Api.account.GetAuthorizationForm({
-      botId: 43,
-      scope: "some string here",
-      publicKey: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.account.AuthorizationForm = await client.invoke(new Api.account.GetAuthorizationForm({
+    botId: 43,
+    scope: 'some string here',
+    publicKey: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type   | Description          |
-| :-------: | ------ | -------------------- |
-|   botId   | int    | No description found |
-|   scope   | string | No description found |
-| publicKey | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-account.AuthorizationForm
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **botId** | [int](https://core.telegram.org/type/int) | User identifier of the service's bot 
+| **scope** | [string](https://core.telegram.org/type/string) | Telegram Passport element types requested by the service 
+| **publicKey** | [string](https://core.telegram.org/type/string) | Service's public key 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[account.AuthorizationForm](https://core.telegram.org/type/account.AuthorizationForm)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

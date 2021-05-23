@@ -1,70 +1,72 @@
 # messages.GetEmojiURL
 
-No description found
+Returns an HTTP URL which can be used to automatically log in into translation platform and suggest new emoji replacements. The URL will be valid for 30 seconds after generation
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetEmojiURL({
-      langCode: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetEmojiURL({
+    langCode: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.EmojiURL = await client.invoke(
-    new Api.messages.GetEmojiURL({
-      langCode: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.EmojiURL = await client.invoke(new Api.messages.GetEmojiURL({
+    langCode: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type   | Description          |
-| :------: | ------ | -------------------- |
-| langCode | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-EmojiURL
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **langCode** | [string](https://core.telegram.org/type/string) | Language code for which the emoji replacements will be suggested 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[EmojiURL](https://core.telegram.org/type/EmojiURL)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

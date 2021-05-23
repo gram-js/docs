@@ -1,87 +1,88 @@
 # users.SetSecureValueErrors
 
-No description found
+Notify the user that the sent [passport](https://core.telegram.org/passport) data contains some errors The user will not be able to re-submit their Passport data to you until the errors are fixed (the contents of the field for which you returned the error must change).
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.users.SetSecureValueErrors({
-      id: "username",
-      errors: [
-        new Api.SecureValueErrorData({
-          type: new Api.SecureValueTypePersonalDetails({}),
-          dataHash: Buffer.from("arbitrary data here"),
-          field: "some string here",
-          text: "some string here",
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.users.SetSecureValueErrors({
+    id: 'username',
+    errors: [new Api.SecureValueErrorData({
+        type: new Api.SecureValueTypePersonalDetails({}),
+        dataHash: Buffer.from('arbitrary data here'),
+        field: 'some string here',
+        text: 'some string here'
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.users.SetSecureValueErrors({
-      id: "username",
-      errors: [
-        new Api.SecureValueErrorData({
-          type: new Api.SecureValueTypePersonalDetails({}),
-          dataHash: Buffer.from("arbitrary data here"),
-          field: "some string here",
-          text: "some string here",
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.users.SetSecureValueErrors({
+    id: 'username',
+    errors: [new Api.SecureValueErrorData({
+        type: new Api.SecureValueTypePersonalDetails({}),
+        dataHash: Buffer.from('arbitrary data here'),
+        field: 'some string here',
+        text: 'some string here'
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type             | Description          |
-| :----: | ---------------- | -------------------- |
-|   id   | InputUser        | No description found |
-| errors | SecureValueError | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **id** | [InputUser](https://core.telegram.org/type/InputUser) | The user 
+| **errors** | [Vector](https://core.telegram.org/type/Vector%20t)<[SecureValueError](https://core.telegram.org/type/SecureValueError)> | Errors 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | USER\_ID\_INVALID | The provided user ID is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Telegram Passport Manual](https://core.telegram.org/passport)
+
+

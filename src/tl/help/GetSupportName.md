@@ -1,63 +1,68 @@
 # help.GetSupportName
 
-No description found
+Get localized name of the telegram support user
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(new Api.help.GetSupportName({}));
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.help.GetSupportName({}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.help.SupportName = await client.invoke(
-    new Api.help.GetSupportName({})
-  );
-  console.log(result); // prints the result
+    const result: Api.help.SupportName = await client.invoke(new Api.help.GetSupportName({}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
+
+
+## Parameters
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#result)Result
 
-help.SupportName
+## Result
 
-### [](#possible-errors)Possible errors
+[help.SupportName](https://core.telegram.org/type/help.SupportName)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 403 | USER\_INVALID | Invalid user provided 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

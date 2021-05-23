@@ -1,70 +1,85 @@
 # auth.RecoverPassword
 
-No description found
+Reset the [2FA password](https://core.telegram.org/api/srp) using the recovery code sent using [auth.requestPasswordRecovery](https://core.telegram.org/method/auth.requestPasswordRecovery).
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.auth.RecoverPassword({
-      code: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.auth.RecoverPassword({
+    code: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.auth.Authorization = await client.invoke(
-    new Api.auth.RecoverPassword({
-      code: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.auth.Authorization = await client.invoke(new Api.auth.RecoverPassword({
+    code: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type   | Description          |
-| :--: | ------ | -------------------- |
-| code | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-auth.Authorization
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **code** | [string](https://core.telegram.org/type/string) | Code received via email 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[auth.Authorization](https://core.telegram.org/type/auth.Authorization)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CODE\_EMPTY | The provided code is empty 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Two-factor authentication](https://core.telegram.org/api/srp)
+
+How to login to a user's account if they have enabled 2FA, how to change password.
+
+
+
+#### [auth.requestPasswordRecovery](https://core.telegram.org/method/auth.requestPasswordRecovery)
+
+Request recovery code of a [2FA password](https://core.telegram.org/api/srp), only for accounts with a [recovery email configured](https://core.telegram.org/api/srp#email-verification).
+
+
+
+

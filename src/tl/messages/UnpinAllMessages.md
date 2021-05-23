@@ -1,70 +1,78 @@
 # messages.UnpinAllMessages
 
-No description found
+[Unpin](https://core.telegram.org/api/pin) all pinned messages
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.UnpinAllMessages({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.UnpinAllMessages({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.AffectedHistory = await client.invoke(
-    new Api.messages.UnpinAllMessages({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.AffectedHistory = await client.invoke(new Api.messages.UnpinAllMessages({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type      | Description          |
-| :--: | --------- | -------------------- |
-| peer | InputPeer | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.AffectedHistory
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Chat where to unpin 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.AffectedHistory](https://core.telegram.org/type/messages.AffectedHistory)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Pinned messages](https://core.telegram.org/api/pin)
+
+Telegram allows pinning multiple messages on top of a specific chat.
+
+
+
+

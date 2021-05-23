@@ -71,7 +71,6 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 })();"""
 
     data = example
-    print("result", result)
     js_example = template_js.replace("0", data)
     if " " in result:
         result = ""

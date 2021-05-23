@@ -1,70 +1,80 @@
 # account.ResetWebAuthorization
 
-No description found
+Log out an active web [telegram login](https://core.telegram.org/widgets/login) session
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.ResetWebAuthorization({
-      hash: BigInt("-4156887774564"),
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.ResetWebAuthorization({
+    hash: BigInt('-4156887774564')
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.account.ResetWebAuthorization({
-      hash: BigInt("-4156887774564"),
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.account.ResetWebAuthorization({
+    hash: BigInt('-4156887774564')
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type | Description          |
-| :--: | ---- | -------------------- |
-| hash | long | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **hash** | [long](https://core.telegram.org/type/long) | [Session](https://core.telegram.org/constructor/webAuthorization) hash 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [webAuthorization](https://core.telegram.org/constructor/webAuthorization)
+
+Represents a bot logged in using the [Telegram login widget](https://core.telegram.org/widgets/login)
+
+
+
+#### [Telegram Login Widget](https://core.telegram.org/widgets/login)
+
+

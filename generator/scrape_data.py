@@ -1,5 +1,6 @@
 # used to create the saved two json files.
-# full.json contains a list of function names and description and their links. used later to get more info about those functions
+# full.json contains a list of function names and description and their links.
+# used later to get more info about those functions
 # saved.json contains all info about a particular function
 # run this file first
 import json
@@ -20,15 +21,30 @@ def fix(my_html):
 def scape_page(url):
     result = requests.get(url).text
     soup = BeautifulSoup(result, "html.parser")
-    title = fix(str(soup.find(id="dev_page_title")))
+    title = soup.find(id="dev_page_title").text
     content = soup.find(id="dev_page_content")
     description = fix(str(content.find("p")))
     tables = content.find_all(class_="table")
     result = fix(str(content.find(id="result").find_next("p")))
     params = []
     errors = []
-
-    if len(tables) >= 1:
+    if len(tables) == 1:
+        tbody = tables[0].find("tbody")
+        for row in tbody.find_all("tr"):
+            row_name, row_type, row_description = row.find_all("td")
+            if soup.find(id="possible-errors"):
+                errors.append({
+                    "errors_name": fix(str(row_name)),
+                    "errors_type": fix(str(row_type)),
+                    "errors_description": fix(str(row_description)),
+                })
+            else:
+                params.append({
+                    "param_name": fix(str(row_name)),
+                    "param_type": fix(str(row_type)),
+                    "param_description": fix(str(row_description)),
+                })
+    elif len(tables) == 2:
         tbody = tables[0].find("tbody")
         for row in tbody.find_all("tr"):
             row_name, row_type, row_description = row.find_all("td")
@@ -37,7 +53,6 @@ def scape_page(url):
                 "param_type": fix(str(row_type)),
                 "param_description": fix(str(row_description)),
             })
-    if len(tables) == 2:
         tbody = tables[1].find("tbody")
         for row in tbody.find_all("tr"):
             row_name, row_type, row_description = row.find_all("td")

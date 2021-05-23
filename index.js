@@ -18,6 +18,15 @@ import remark from 'remark';
 import visit from 'unist-util-visit';
 import escapeHtml from '@youtwitface/escape-html';
 import find from 'unist-util-find';
+import { stripHtml } from "string-strip-html";
+
+const snakeToCamel = str =>
+    str.toLowerCase().replace(/([-_][a-z])/g, group =>
+        group
+            .toUpperCase()
+            .replace('-', '')
+            .replace('_', '')
+    );
 
 const root = ``;
 
@@ -40,7 +49,12 @@ const head = (title, description) => `<!doctype html>
     </head>
     <body>`;
 
-const foot = `</body></html>`;
+const foot = (lunar) => `</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    ${lunar}
+    </script>
+</html>`;
 
 const onDirective = node => {
     const data = node.data || (node.data = {});
@@ -70,7 +84,7 @@ const transform = tree =>
 const processor = unified()
     .use(markdown)
     .use(() => tree => {
-        const node = find(tree, { type: 'heading' });
+        const node = find(tree, {type: 'heading'});
         node.depth = Math.min(node.depth + 1, 6);
 
         return tree;
@@ -79,9 +93,9 @@ const processor = unified()
     .use(() => transform)
     .use(gfm)
     .use(toc)
-    .use(remark2rehype, { allowDangerousHtml: true })
+    .use(remark2rehype, {allowDangerousHtml: true})
     .use(slug)
-    .use(autolinkHeadings, { behavior: 'append' })
+    .use(autolinkHeadings, {behavior: 'append'})
     .use(highlight)
     .use(raw)
     .use(html);
@@ -151,8 +165,38 @@ const generateSidebar = (object, directories) => {
         return sidebar + `<li>${title}</li>${children ?? ''}`;
     }, '');
 };
+const generateSearchIndex = async () => {
+    let main = `var idx = lunr(function () {
+  this.field('title')
+  this.field('description')
+  this.field('params')`;
+    const data = JSON.parse(await fs.readFile("generator/saved.json", {encoding: 'utf-8'}));
+    for (const func of data) {
+        let params = "";
+        for (const param of func["params"]) {
+            params += `${snakeToCamel(stripHtml(param["param_name"]).result)}  ${stripHtml(param["param_description"]).result}\n`
+        }
+        let title = stripHtml(func["title"]).result;
+        if (title.includes(".")){
+            const [namespace,className] = title.split(".");
+            title = namespace+"."+className[0].toUpperCase()+className.slice(1);
+        }else{
+            title = title[0].toUpperCase()+title.slice(1);
+        }
+        main += `
+  this.add({
+    "title": \`${title}\`,
+    "description": \`${stripHtml(func["description"]).result}\`,
+    "params": \`${params}\`,
+  })`
+    }
+    main += "})";
+    return main;
+
+};
 
 glob('src/**/*.md', async (error, files) => {
+
     if (error) {
         console.error(error);
         process.exit(1);
@@ -160,7 +204,7 @@ glob('src/**/*.md', async (error, files) => {
 
     const fileData = await Promise.all(
         files.map(async file => {
-            const data = await fs.readFile(file, { encoding: 'utf-8' });
+            const data = await fs.readFile(file, {encoding: 'utf-8'});
             const doc = await processor.process(data);
             const titleDoc = await treeProcessor.process(data);
 
@@ -168,9 +212,9 @@ glob('src/**/*.md', async (error, files) => {
             title = title.trim();
             description = description.join('\n').trim();
 
-            const { dir, name } = path.parse(file);
+            const {dir, name} = path.parse(file);
 
-            const directories = dir.split(path.sep);
+            const directories = dir.split("/");
             directories[0] = 'docs, ...directive';
 
             return {
@@ -184,7 +228,7 @@ glob('src/**/*.md', async (error, files) => {
     );
 
     const tree = await fileData.reduce(
-        async (promise, { title, name, directories }) => {
+        async (promise, {title, name, directories}) => {
             const tree = await promise;
             const currentTree = directories.reduce((t, d) => {
                 if (!(d in t)) {
@@ -203,12 +247,12 @@ glob('src/**/*.md', async (error, files) => {
     const sidebar = generateSidebar(tree);
 
     await Promise.all(
-        fileData.map(async ({ doc, title, description, name, directories }) => {
+        fileData.map(async ({doc, title, description, name, directories}) => {
             const fullPath = path.join('docs', ...directories);
             await mkdirp(fullPath);
 
             await fs.writeFile(
-                `${fullPath}${path.sep}${name}.html`,
+                `${fullPath}/${name}.html`,
                 `${head(title, description.slice(0, 150))}
                     <header class="container">
                         <span class="menu-icon">
@@ -226,7 +270,7 @@ glob('src/**/*.md', async (error, files) => {
                             ${doc}
                         </div>
                     </main>
-                ${foot}`,
+                ${foot(""/*await generateSearchIndex()*/)}`,
             );
         }),
     );

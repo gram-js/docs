@@ -1,76 +1,88 @@
 # messages.EditChatAdmin
 
-No description found
+Make a user admin in a [legacy group](https://core.telegram.org/api/channel).
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.EditChatAdmin({
-      chatId: 43,
-      userId: "username",
-      isAdmin: false,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.EditChatAdmin({
+    chatId: 43,
+    userId: 'username',
+    isAdmin: false
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.messages.EditChatAdmin({
-      chatId: 43,
-      userId: "username",
-      isAdmin: false,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.messages.EditChatAdmin({
+    chatId: 43,
+    userId: 'username',
+    isAdmin: false
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type      | Description          |
-| :-----: | --------- | -------------------- |
-| chatId  | int       | No description found |
-| userId  | InputUser | No description found |
-| isAdmin | Bool      | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **chatId** | [int](https://core.telegram.org/type/int) | The ID of the group 
+| **userId** | [InputUser](https://core.telegram.org/type/InputUser) | The user to make admin 
+| **isAdmin** | [Bool](https://core.telegram.org/type/Bool) | Whether to make him admin 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHAT\_ID\_INVALID | The provided chat id is invalid 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
+| 400 | USER\_ID\_INVALID | The provided user ID is invalid 
+| 400 | USER\_NOT\_PARTICIPANT | You're not a member of this supergroup/channel 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+

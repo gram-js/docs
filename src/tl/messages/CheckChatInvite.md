@@ -1,70 +1,75 @@
 # messages.CheckChatInvite
 
-No description found
+Check the validity of a chat invite link and get basic info about it
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.CheckChatInvite({
-      hash: "B5MnlS34H1JKyBE71zZfo1",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.CheckChatInvite({
+    hash: 'B5MnlS34H1JKyBE71zZfo1'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.ChatInvite = await client.invoke(
-    new Api.messages.CheckChatInvite({
-      hash: "B5MnlS34H1JKyBE71zZfo1",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.ChatInvite = await client.invoke(new Api.messages.CheckChatInvite({
+    hash: 'B5MnlS34H1JKyBE71zZfo1'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type   | Description          |
-| :--: | ------ | -------------------- |
-| hash | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-ChatInvite
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **hash** | [string](https://core.telegram.org/type/string) | Invite hash in t.me/joinchat/hash 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[ChatInvite](https://core.telegram.org/type/ChatInvite)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | INVITE\_HASH\_EMPTY | The invite hash is empty 
+| 400 | INVITE\_HASH\_EXPIRED | The invite link has expired 
+| 400 | INVITE\_HASH\_INVALID | The invite hash is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

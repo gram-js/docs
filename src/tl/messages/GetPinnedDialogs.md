@@ -1,70 +1,79 @@
 # messages.GetPinnedDialogs
 
-No description found
+Get pinned dialogs
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetPinnedDialogs({
-      folderId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetPinnedDialogs({
+    folderId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.PeerDialogs = await client.invoke(
-    new Api.messages.GetPinnedDialogs({
-      folderId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.PeerDialogs = await client.invoke(new Api.messages.GetPinnedDialogs({
+    folderId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type | Description          |
-| :------: | ---- | -------------------- |
-| folderId | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.PeerDialogs
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **folderId** | [int](https://core.telegram.org/type/int) | [Peer folder ID, for more info click here](https://core.telegram.org/api/folders#peer-folders) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.PeerDialogs](https://core.telegram.org/type/messages.PeerDialogs)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | FOLDER\_ID\_INVALID | Invalid folder ID 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Folders](https://core.telegram.org/api/folders)
+
+Telegram allows placing chats into folders, based on their type, mute status, or other custom criteria, thanks to folder blacklists and whitelists.
+
+
+
+

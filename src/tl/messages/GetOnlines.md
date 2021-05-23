@@ -1,70 +1,74 @@
 # messages.GetOnlines
 
-No description found
+Get count of online users in a chat
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetOnlines({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetOnlines({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.ChatOnlines = await client.invoke(
-    new Api.messages.GetOnlines({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.ChatOnlines = await client.invoke(new Api.messages.GetOnlines({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type      | Description          |
-| :--: | --------- | -------------------- |
-| peer | InputPeer | No description found |
 
-### [](#result)Result
+## Parameters
 
-ChatOnlines
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | The chat 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[ChatOnlines](https://core.telegram.org/type/ChatOnlines)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

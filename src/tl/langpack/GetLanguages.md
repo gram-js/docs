@@ -1,70 +1,73 @@
 # langpack.GetLanguages
 
-No description found
+Get information about all languages in a localization pack
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.langpack.GetLanguages({
-      langPack: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.langpack.GetLanguages({
+    langPack: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<LangPackLanguage> = await client.invoke(
-    new Api.langpack.GetLanguages({
-      langPack: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<LangPackLanguage> = await client.invoke(new Api.langpack.GetLanguages({
+    langPack: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type   | Description          |
-| :------: | ------ | -------------------- |
-| langPack | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-Vector
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **langPack** | [string](https://core.telegram.org/type/string) | Language pack 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Vector](https://core.telegram.org/type/Vector%20t)<[LangPackLanguage](https://core.telegram.org/type/LangPackLanguage)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | LANG\_PACK\_INVALID | The provided language pack is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

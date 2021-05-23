@@ -1,126 +1,137 @@
 # stickers.CreateStickerSet
 
-No description found
+Create a stickerset, bots only.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.stickers.CreateStickerSet({
-      userId: "username",
-      title: "My very normal title",
-      shortName: "some string here",
-      stickers: [
-        new Api.InputStickerSetItem({
-          document: new Api.InputDocument({
-            id: BigInt("-4156887774564"),
-            accessHash: BigInt("-4156887774564"),
-            fileReference: Buffer.from("arbitrary data here"),
-          }),
-          emoji: "some string here",
-          maskCoords: new Api.MaskCoords({
+    const result = await client.invoke(new Api.stickers.CreateStickerSet({
+    userId: 'username',
+    title: 'My very normal title',
+    shortName: 'some string here',
+    stickers: [new Api.InputStickerSetItem({
+        document: new Api.InputDocument({
+            id: BigInt('-4156887774564'),
+            accessHash: BigInt('-4156887774564'),
+            fileReference: Buffer.from('arbitrary data here')
+        }),
+        emoji: 'some string here',
+        maskCoords: new Api.MaskCoords({
             n: 43,
             x: 8.24,
             y: 8.24,
-            zoom: 8.24,
-          }),
-        }),
-      ],
-      masks: true,
-      animated: true,
-      thumb: new Api.InputDocument({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-        fileReference: Buffer.from("arbitrary data here"),
-      }),
+            zoom: 8.24
+        })
+    })],
+    masks: true,
+    animated: true,
+    thumb: new Api.InputDocument({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564'),
+        fileReference: Buffer.from('arbitrary data here')
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.StickerSet = await client.invoke(
-    new Api.stickers.CreateStickerSet({
-      userId: "username",
-      title: "My very normal title",
-      shortName: "some string here",
-      stickers: [
-        new Api.InputStickerSetItem({
-          document: new Api.InputDocument({
-            id: BigInt("-4156887774564"),
-            accessHash: BigInt("-4156887774564"),
-            fileReference: Buffer.from("arbitrary data here"),
-          }),
-          emoji: "some string here",
-          maskCoords: new Api.MaskCoords({
+    const result: Api.messages.StickerSet = await client.invoke(new Api.stickers.CreateStickerSet({
+    userId: 'username',
+    title: 'My very normal title',
+    shortName: 'some string here',
+    stickers: [new Api.InputStickerSetItem({
+        document: new Api.InputDocument({
+            id: BigInt('-4156887774564'),
+            accessHash: BigInt('-4156887774564'),
+            fileReference: Buffer.from('arbitrary data here')
+        }),
+        emoji: 'some string here',
+        maskCoords: new Api.MaskCoords({
             n: 43,
             x: 8.24,
             y: 8.24,
-            zoom: 8.24,
-          }),
-        }),
-      ],
-      masks: true,
-      animated: true,
-      thumb: new Api.InputDocument({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-        fileReference: Buffer.from("arbitrary data here"),
-      }),
+            zoom: 8.24
+        })
+    })],
+    masks: true,
+    animated: true,
+    thumb: new Api.InputDocument({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564'),
+        fileReference: Buffer.from('arbitrary data here')
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type                | Description          |
-| :-------: | ------------------- | -------------------- |
-|   masks   | true                | No description found |
-| animated  | true                | No description found |
-|  userId   | InputUser           | No description found |
-|   title   | string              | No description found |
-| shortName | string              | No description found |
-|   thumb   | InputDocument       | No description found |
-| stickers  | InputStickerSetItem | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.StickerSet
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **masks** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether this is a mask stickerset 
+| **animated** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether this is an animated stickerset 
+| **userId** | [InputUser](https://core.telegram.org/type/InputUser) | Stickerset owner 
+| **title** | [string](https://core.telegram.org/type/string) | Stickerset name, 1-64 chars 
+| **shortName** | [string](https://core.telegram.org/type/string) | Sticker set name. Can contain only English letters, digits and underscores. Must end with *"*by*"* ( is case insensitive); 1-64 characters 
+| **thumb** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[InputDocument](https://core.telegram.org/type/InputDocument) | Thumbnail 
+| **stickers** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputStickerSetItem](https://core.telegram.org/type/InputStickerSetItem)> | Stickers 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.StickerSet](https://core.telegram.org/type/messages.StickerSet)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | BOT\_MISSING | This method can only be run by a bot 
+| 400 | PACK\_SHORT\_NAME\_INVALID | Short pack name invalid 
+| 400 | PACK\_SHORT\_NAME\_OCCUPIED | A stickerpack with this name already exists 
+| 400 | PACK\_TITLE\_INVALID | The stickerpack title is invalid 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
+| 400 | SHORTNAME\_OCCUPY\_FAILED | An internal error occurred 
+| 400 | STICKERS\_EMPTY | No sticker provided 
+| 400 | STICKER\_EMOJI\_INVALID | Sticker emoji invalid 
+| 400 | STICKER\_FILE\_INVALID | Sticker file invalid 
+| 400 | STICKER\_PNG\_DIMENSIONS | Sticker png dimensions invalid 
+| 400 | STICKER\_PNG\_NOPNG | One of the specified stickers is not a valid PNG file 
+| 400 | USER\_ID\_INVALID | The provided user ID is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

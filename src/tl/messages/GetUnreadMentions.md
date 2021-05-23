@@ -1,85 +1,96 @@
 # messages.GetUnreadMentions
 
-No description found
+Get unread messages where we were mentioned
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetUnreadMentions({
-      peer: "username",
-      offsetId: 43,
-      addOffset: 0,
-      limit: 100,
-      maxId: 0,
-      minId: 0,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetUnreadMentions({
+    peer: 'username',
+    offsetId: 43,
+    addOffset: 0,
+    limit: 100,
+    maxId: 0,
+    minId: 0
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.Messages = await client.invoke(
-    new Api.messages.GetUnreadMentions({
-      peer: "username",
-      offsetId: 43,
-      addOffset: 0,
-      limit: 100,
-      maxId: 0,
-      minId: 0,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.Messages = await client.invoke(new Api.messages.GetUnreadMentions({
+    peer: 'username',
+    offsetId: 43,
+    addOffset: 0,
+    limit: 100,
+    maxId: 0,
+    minId: 0
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type      | Description          |
-| :-------: | --------- | -------------------- |
-|   peer    | InputPeer | No description found |
-| offsetId  | int       | No description found |
-| addOffset | int       | No description found |
-|   limit   | int       | No description found |
-|   maxId   | int       | No description found |
-|   minId   | int       | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.Messages
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Peer where to look for mentions 
+| **offsetId** | [int](https://core.telegram.org/type/int) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
+| **addOffset** | [int](https://core.telegram.org/type/int) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
+| **limit** | [int](https://core.telegram.org/type/int) | Maximum number of results to return, [see pagination](https://core.telegram.org/api/offsets) 
+| **maxId** | [int](https://core.telegram.org/type/int) | Maximum message ID to return, [see pagination](https://core.telegram.org/api/offsets) 
+| **minId** | [int](https://core.telegram.org/type/int) | Minimum message ID to return, [see pagination](https://core.telegram.org/api/offsets) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.Messages](https://core.telegram.org/type/messages.Messages)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_INVALID | The provided channel is invalid 
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Pagination in the API](https://core.telegram.org/api/offsets)
+
+How to fetch results from large lists of objects.
+
+
+
+

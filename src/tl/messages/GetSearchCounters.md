@@ -1,73 +1,81 @@
 # messages.GetSearchCounters
 
-No description found
+Get the number of results that would be found by a [messages.search](https://core.telegram.org/method/messages.search) call with the same parameters
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetSearchCounters({
-      peer: "username",
-      filters: [new Api.InputMessagesFilterPhotos({})],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetSearchCounters({
+    peer: 'username',
+    filters: [new Api.InputMessagesFilterPhotos({})]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<messages.SearchCounter> = await client.invoke(
-    new Api.messages.GetSearchCounters({
-      peer: "username",
-      filters: [new Api.InputMessagesFilterPhotos({})],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<messages.SearchCounter> = await client.invoke(new Api.messages.GetSearchCounters({
+    peer: 'username',
+    filters: [new Api.InputMessagesFilterPhotos({})]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type           | Description          |
-| :-----: | -------------- | -------------------- |
-|  peer   | InputPeer      | No description found |
-| filters | MessagesFilter | No description found |
 
-### [](#result)Result
+## Parameters
 
-Vector
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Peer where to search 
+| **filters** | [Vector](https://core.telegram.org/type/Vector%20t)<[MessagesFilter](https://core.telegram.org/type/MessagesFilter)> | Search filters 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Vector](https://core.telegram.org/type/Vector%20t)<[messages.SearchCounter](https://core.telegram.org/type/messages.SearchCounter)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [messages.search](https://core.telegram.org/method/messages.search)
+
+Gets back found messages
+
+
+
+

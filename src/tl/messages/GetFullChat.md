@@ -1,70 +1,74 @@
 # messages.GetFullChat
 
-No description found
+Returns full chat info according to its ID.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetFullChat({
-      chatId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetFullChat({
+    chatId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.ChatFull = await client.invoke(
-    new Api.messages.GetFullChat({
-      chatId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.ChatFull = await client.invoke(new Api.messages.GetFullChat({
+    chatId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type | Description          |
-| :----: | ---- | -------------------- |
-| chatId | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.ChatFull
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **chatId** | [int](https://core.telegram.org/type/int) | Chat ID 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.ChatFull](https://core.telegram.org/type/messages.ChatFull)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHAT\_ID\_INVALID | The provided chat id is invalid 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

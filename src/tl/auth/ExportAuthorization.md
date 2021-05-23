@@ -1,70 +1,73 @@
 # auth.ExportAuthorization
 
-No description found
+Returns data for copying authorization to another data-centre.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.auth.ExportAuthorization({
-      dcId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.auth.ExportAuthorization({
+    dcId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.auth.ExportedAuthorization = await client.invoke(
-    new Api.auth.ExportAuthorization({
-      dcId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.auth.ExportedAuthorization = await client.invoke(new Api.auth.ExportAuthorization({
+    dcId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type | Description          |
-| :--: | ---- | -------------------- |
-| dcId | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-auth.ExportedAuthorization
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **dcId** | [int](https://core.telegram.org/type/int) | Number of a target data-centre 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[auth.ExportedAuthorization](https://core.telegram.org/type/auth.ExportedAuthorization)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | DC\_ID\_INVALID | The provided DC ID is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

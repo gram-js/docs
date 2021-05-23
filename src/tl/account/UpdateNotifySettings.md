@@ -1,81 +1,87 @@
 # account.UpdateNotifySettings
 
-No description found
+Edits notification settings from a given user/group, from all users/all groups.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.UpdateNotifySettings({
-      peer: "username",
-      settings: new Api.InputPeerNotifySettings({
+    const result = await client.invoke(new Api.account.UpdateNotifySettings({
+    peer: 'username',
+    settings: new Api.InputPeerNotifySettings({
         showPreviews: false,
         muteUntil: 43,
-        sound: "some string here",
-      }),
+        sound: 'some string here'
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.account.UpdateNotifySettings({
-      peer: "username",
-      settings: new Api.InputPeerNotifySettings({
+    const result: Api.Bool = await client.invoke(new Api.account.UpdateNotifySettings({
+    peer: 'username',
+    settings: new Api.InputPeerNotifySettings({
         showPreviews: false,
         muteUntil: 43,
-        sound: "some string here",
-      }),
+        sound: 'some string here'
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type                    | Description          |
-| :------: | ----------------------- | -------------------- |
-|   peer   | InputNotifyPeer         | No description found |
-| settings | InputPeerNotifySettings | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputNotifyPeer](https://core.telegram.org/type/InputNotifyPeer) | Notification source 
+| **settings** | [InputPeerNotifySettings](https://core.telegram.org/type/InputPeerNotifySettings) | Notification settings 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 400 | MSG\_ID\_INVALID | Invalid message ID provided 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
+| 400 | SETTINGS\_INVALID | Invalid settings were provided 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

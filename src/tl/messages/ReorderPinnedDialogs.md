@@ -1,76 +1,86 @@
 # messages.ReorderPinnedDialogs
 
-No description found
+Reorder pinned dialogs
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.ReorderPinnedDialogs({
-      folderId: 43,
-      order: ["username"],
-      force: true,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.ReorderPinnedDialogs({
+    folderId: 43,
+    order: ['username'],
+    force: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.messages.ReorderPinnedDialogs({
-      folderId: 43,
-      order: ["username"],
-      force: true,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.messages.ReorderPinnedDialogs({
+    folderId: 43,
+    order: ['username'],
+    force: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type            | Description          |
-| :------: | --------------- | -------------------- |
-|  force   | true            | No description found |
-| folderId | int             | No description found |
-|  order   | InputDialogPeer | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **force** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | If set, dialogs pinned server-side but not present in the order field will be unpinned. 
+| **folderId** | [int](https://core.telegram.org/type/int) | [Peer folder ID, for more info click here](https://core.telegram.org/api/folders#peer-folders) 
+| **order** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputDialogPeer](https://core.telegram.org/type/InputDialogPeer)> | New dialog order 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Folders](https://core.telegram.org/api/folders)
+
+Telegram allows placing chats into folders, based on their type, mute status, or other custom criteria, thanks to folder blacklists and whitelists.
+
+
+
+

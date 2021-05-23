@@ -1,77 +1,81 @@
 # bots.AnswerWebhookJSONQuery
 
-No description found
+Answers a custom query; for bots only
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.bots.AnswerWebhookJSONQuery({
-      queryId: BigInt("-4156887774564"),
-      data: new Api.DataJSON({
-        data: "some string here",
-      }),
+    const result = await client.invoke(new Api.bots.AnswerWebhookJSONQuery({
+    queryId: BigInt('-4156887774564'),
+    data: new Api.DataJSON({
+        data: 'some string here'
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.bots.AnswerWebhookJSONQuery({
-      queryId: BigInt("-4156887774564"),
-      data: new Api.DataJSON({
-        data: "some string here",
-      }),
+    const result: Api.Bool = await client.invoke(new Api.bots.AnswerWebhookJSONQuery({
+    queryId: BigInt('-4156887774564'),
+    data: new Api.DataJSON({
+        data: 'some string here'
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type     | Description          |
-| :-----: | -------- | -------------------- |
-| queryId | long     | No description found |
-|  data   | DataJSON | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **queryId** | [long](https://core.telegram.org/type/long) | Identifier of a custom query 
+| **data** | [DataJSON](https://core.telegram.org/type/DataJSON) | JSON-serialized answer to the query 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | QUERY\_ID\_INVALID | The query ID is invalid 
+| 400 | USER\_BOT\_INVALID | This method can only be called by a bot 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

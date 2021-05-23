@@ -1,89 +1,91 @@
 # messages.UploadEncryptedFile
 
-No description found
+Upload encrypted file and associate it to a secret chat
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.UploadEncryptedFile({
-      peer: new Api.InputEncryptedChat({
+    const result = await client.invoke(new Api.messages.UploadEncryptedFile({
+    peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt("-4156887774564"),
-      }),
-      file: new Api.InputEncryptedFileUploaded({
-        id: BigInt("-4156887774564"),
+        accessHash: BigInt('-4156887774564')
+    }),
+    file: new Api.InputEncryptedFileUploaded({
+        id: BigInt('-4156887774564'),
         parts: 43,
-        md5Checksum: "some string here",
-        keyFingerprint: 43,
-      }),
+        md5Checksum: 'some string here',
+        keyFingerprint: 43
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.EncryptedFile = await client.invoke(
-    new Api.messages.UploadEncryptedFile({
-      peer: new Api.InputEncryptedChat({
+    const result: Api.EncryptedFile = await client.invoke(new Api.messages.UploadEncryptedFile({
+    peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt("-4156887774564"),
-      }),
-      file: new Api.InputEncryptedFileUploaded({
-        id: BigInt("-4156887774564"),
+        accessHash: BigInt('-4156887774564')
+    }),
+    file: new Api.InputEncryptedFileUploaded({
+        id: BigInt('-4156887774564'),
         parts: 43,
-        md5Checksum: "some string here",
-        keyFingerprint: 43,
-      }),
+        md5Checksum: 'some string here',
+        keyFingerprint: 43
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type               | Description          |
-| :--: | ------------------ | -------------------- |
-| peer | InputEncryptedChat | No description found |
-| file | InputEncryptedFile | No description found |
 
-### [](#result)Result
+## Parameters
 
-EncryptedFile
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputEncryptedChat](https://core.telegram.org/type/InputEncryptedChat) | The secret chat to associate the file to 
+| **file** | [InputEncryptedFile](https://core.telegram.org/type/InputEncryptedFile) | The file 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[EncryptedFile](https://core.telegram.org/type/EncryptedFile)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

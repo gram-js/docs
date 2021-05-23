@@ -1,91 +1,104 @@
 # channels.CreateChannel
 
-No description found
+Create a [supergroup/channel](https://core.telegram.org/api/channel).
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.channels.CreateChannel({
-      title: "My very normal title",
-      about: "some string here",
-      megagroup: true,
-      geoPoint: new Api.InputGeoPoint({
+    const result = await client.invoke(new Api.channels.CreateChannel({
+    title: 'My very normal title',
+    about: 'some string here',
+    megagroup: true,
+    geoPoint: new Api.InputGeoPoint({
         lat: 8.24,
         long: 8.24,
-        accuracyRadius: 43,
-      }),
-      address: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+        accuracyRadius: 43
+    }),
+    address: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Updates = await client.invoke(
-    new Api.channels.CreateChannel({
-      title: "My very normal title",
-      about: "some string here",
-      megagroup: true,
-      geoPoint: new Api.InputGeoPoint({
+    const result: Api.Updates = await client.invoke(new Api.channels.CreateChannel({
+    title: 'My very normal title',
+    about: 'some string here',
+    megagroup: true,
+    geoPoint: new Api.InputGeoPoint({
         lat: 8.24,
         long: 8.24,
-        accuracyRadius: 43,
-      }),
-      address: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+        accuracyRadius: 43
+    }),
+    address: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type          | Description          |
-| :-------: | ------------- | -------------------- |
-| broadcast | true          | No description found |
-| megagroup | true          | No description found |
-|   title   | string        | No description found |
-|   about   | string        | No description found |
-| geoPoint  | InputGeoPoint | No description found |
-|  address  | string        | No description found |
 
-### [](#result)Result
+## Parameters
 
-Updates
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **broadcast** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to create a [channel](https://core.telegram.org/api/channel) 
+| **megagroup** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether to create a [supergroup](https://core.telegram.org/api/channel) 
+| **title** | [string](https://core.telegram.org/type/string) | Channel title 
+| **about** | [string](https://core.telegram.org/type/string) | Channel description 
+| **geoPoint** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[InputGeoPoint](https://core.telegram.org/type/InputGeoPoint) | Geogroup location 
+| **address** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[string](https://core.telegram.org/type/string) | Geogroup address 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Updates](https://core.telegram.org/type/Updates)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNELS\_TOO\_MUCH | You have joined too many channels/supergroups 
+| 400 | CHAT\_ABOUT\_TOO\_LONG | Chat about too long 
+| 400 | CHAT\_TITLE\_EMPTY | No chat title provided 
+| 403 | USER\_RESTRICTED | You're spamreported, you can't create channels or chats. 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+

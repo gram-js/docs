@@ -1,96 +1,109 @@
 # messages.SendEncryptedFile
 
-No description found
+Sends a message with a file attachment to a secret chat
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.SendEncryptedFile({
-      peer: new Api.InputEncryptedChat({
+    const result = await client.invoke(new Api.messages.SendEncryptedFile({
+    peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt("-4156887774564"),
-      }),
-      randomId: BigInt("-4156887774564"),
-      data: Buffer.from("arbitrary data here"),
-      file: new Api.InputEncryptedFileUploaded({
-        id: BigInt("-4156887774564"),
+        accessHash: BigInt('-4156887774564')
+    }),
+    randomId: BigInt('-4156887774564'),
+    data: Buffer.from('arbitrary data here'),
+    file: new Api.InputEncryptedFileUploaded({
+        id: BigInt('-4156887774564'),
         parts: 43,
-        md5Checksum: "some string here",
-        keyFingerprint: 43,
-      }),
+        md5Checksum: 'some string here',
+        keyFingerprint: 43
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.SentEncryptedMessage = await client.invoke(
-    new Api.messages.SendEncryptedFile({
-      peer: new Api.InputEncryptedChat({
+    const result: Api.messages.SentEncryptedMessage = await client.invoke(new Api.messages.SendEncryptedFile({
+    peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt("-4156887774564"),
-      }),
-      randomId: BigInt("-4156887774564"),
-      data: Buffer.from("arbitrary data here"),
-      file: new Api.InputEncryptedFileUploaded({
-        id: BigInt("-4156887774564"),
+        accessHash: BigInt('-4156887774564')
+    }),
+    randomId: BigInt('-4156887774564'),
+    data: Buffer.from('arbitrary data here'),
+    file: new Api.InputEncryptedFileUploaded({
+        id: BigInt('-4156887774564'),
         parts: 43,
-        md5Checksum: "some string here",
-        keyFingerprint: 43,
-      }),
+        md5Checksum: 'some string here',
+        keyFingerprint: 43
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type               | Description          |
-| :------: | ------------------ | -------------------- |
-|  silent  | true               | No description found |
-|   peer   | InputEncryptedChat | No description found |
-| randomId | long               | No description found |
-|   data   | bytes              | No description found |
-|   file   | InputEncryptedFile | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.SentEncryptedMessage
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **silent** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to send the file without triggering a notification 
+| **peer** | [InputEncryptedChat](https://core.telegram.org/type/InputEncryptedChat) | Secret chat ID 
+| **randomId** | [long](https://core.telegram.org/type/long) | Unique client message ID necessary to prevent message resending 
+| **data** | [bytes](https://core.telegram.org/type/bytes) | TL-serialization of [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage) type, encrypted with a key generated during chat initialization 
+| **file** | [InputEncryptedFile](https://core.telegram.org/type/InputEncryptedFile) | File attachment for the secret chat 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.SentEncryptedMessage](https://core.telegram.org/type/messages.SentEncryptedMessage)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | DATA\_TOO\_LONG | Data too long 
+| 400 | ENCRYPTION\_DECLINED | The secret chat was declined 
+| 400 | MD5\_CHECKSUM\_INVALID | The MD5 checksums do not match 
+| 400 | MSG\_WAIT\_FAILED | A waiting call returned an error 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage)
+
+Object describes the contents of an encrypted message.
+
+
+
+

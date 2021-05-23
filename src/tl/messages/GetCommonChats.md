@@ -1,76 +1,86 @@
 # messages.GetCommonChats
 
-No description found
+Get chats in common with a user
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetCommonChats({
-      userId: "username",
-      maxId: 0,
-      limit: 100,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetCommonChats({
+    userId: 'username',
+    maxId: 0,
+    limit: 100
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.Chats = await client.invoke(
-    new Api.messages.GetCommonChats({
-      userId: "username",
-      maxId: 0,
-      limit: 100,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.Chats = await client.invoke(new Api.messages.GetCommonChats({
+    userId: 'username',
+    maxId: 0,
+    limit: 100
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type      | Description          |
-| :----: | --------- | -------------------- |
-| userId | InputUser | No description found |
-| maxId  | int       | No description found |
-| limit  | int       | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.Chats
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **userId** | [InputUser](https://core.telegram.org/type/InputUser) | User ID 
+| **maxId** | [int](https://core.telegram.org/type/int) | Maximum ID of chat to return (see [pagination](https://core.telegram.org/api/offsets)) 
+| **limit** | [int](https://core.telegram.org/type/int) | Maximum number of results to return, [see pagination](https://core.telegram.org/api/offsets) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.Chats](https://core.telegram.org/type/messages.Chats)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | MSG\_ID\_INVALID | Invalid message ID provided 
+| 400 | USER\_ID\_INVALID | The provided user ID is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Pagination in the API](https://core.telegram.org/api/offsets)
+
+How to fetch results from large lists of objects.
+
+
+
+

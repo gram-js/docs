@@ -1,73 +1,89 @@
 # messages.EditChatAbout
 
-No description found
+Edit the description of a [group/supergroup/channel](https://core.telegram.org/api/channel).
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.EditChatAbout({
-      peer: "username",
-      about: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.EditChatAbout({
+    peer: 'username',
+    about: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.messages.EditChatAbout({
-      peer: "username",
-      about: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Bool = await client.invoke(new Api.messages.EditChatAbout({
+    peer: 'username',
+    about: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name  | Type      | Description          |
-| :---: | --------- | -------------------- |
-| peer  | InputPeer | No description found |
-| about | string    | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | The [group/supergroup/channel](https://core.telegram.org/api/channel). 
+| **about** | [string](https://core.telegram.org/type/string) | The new description 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_INVALID | The provided channel is invalid 
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 400 | CHAT\_ABOUT\_NOT\_MODIFIED | About text has not changed 
+| 400 | CHAT\_ABOUT\_TOO\_LONG | Chat about too long 
+| 400 | CHAT\_ADMIN\_REQUIRED | You must be an admin in this chat to do this 
+| 400 | CHAT\_NOT\_MODIFIED | The pinned message wasn't modified 
+| 403 | CHAT\_WRITE\_FORBIDDEN | You can't write in this chat 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+

@@ -1,74 +1,76 @@
 # account.SetGlobalPrivacySettings
 
-No description found
+Set global privacy settings
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.SetGlobalPrivacySettings({
-      settings: new Api.GlobalPrivacySettings({
-        archiveAndMuteNewNoncontactPeers: false,
-      }),
+    const result = await client.invoke(new Api.account.SetGlobalPrivacySettings({
+    settings: new Api.GlobalPrivacySettings({
+        archiveAndMuteNewNoncontactPeers: false
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.GlobalPrivacySettings = await client.invoke(
-    new Api.account.SetGlobalPrivacySettings({
-      settings: new Api.GlobalPrivacySettings({
-        archiveAndMuteNewNoncontactPeers: false,
-      }),
+    const result: Api.GlobalPrivacySettings = await client.invoke(new Api.account.SetGlobalPrivacySettings({
+    settings: new Api.GlobalPrivacySettings({
+        archiveAndMuteNewNoncontactPeers: false
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type                  | Description          |
-| :------: | --------------------- | -------------------- |
-| settings | GlobalPrivacySettings | No description found |
 
-### [](#result)Result
+## Parameters
 
-GlobalPrivacySettings
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **settings** | [GlobalPrivacySettings](https://core.telegram.org/type/GlobalPrivacySettings) | Global privacy settings 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[GlobalPrivacySettings](https://core.telegram.org/type/GlobalPrivacySettings)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

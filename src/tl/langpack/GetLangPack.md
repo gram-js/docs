@@ -1,73 +1,76 @@
 # langpack.GetLangPack
 
-No description found
+Get localization pack strings
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.langpack.GetLangPack({
-      langPack: "some string here",
-      langCode: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.langpack.GetLangPack({
+    langPack: 'some string here',
+    langCode: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.LangPackDifference = await client.invoke(
-    new Api.langpack.GetLangPack({
-      langPack: "some string here",
-      langCode: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.LangPackDifference = await client.invoke(new Api.langpack.GetLangPack({
+    langPack: 'some string here',
+    langCode: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type   | Description          |
-| :------: | ------ | -------------------- |
-| langPack | string | No description found |
-| langCode | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-LangPackDifference
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **langPack** | [string](https://core.telegram.org/type/string) | Language pack name 
+| **langCode** | [string](https://core.telegram.org/type/string) | Language code 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[LangPackDifference](https://core.telegram.org/type/LangPackDifference)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | LANG\_PACK\_INVALID | The provided language pack is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

@@ -1,70 +1,78 @@
 # contacts.GetContactIDs
 
-No description found
+Get contact by telegram IDs
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.contacts.GetContactIDs({
-      hash: 0,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.contacts.GetContactIDs({
+    hash: 0
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<int> = await client.invoke(
-    new Api.contacts.GetContactIDs({
-      hash: 0,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<int> = await client.invoke(new Api.contacts.GetContactIDs({
+    hash: 0
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type | Description          |
-| :--: | ---- | -------------------- |
-| hash | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-Vector
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **hash** | [int](https://core.telegram.org/type/int) | [Hash for pagination, for more info click here](https://core.telegram.org/api/offsets#hash-generation) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Vector](https://core.telegram.org/type/Vector%20t)<[int](https://core.telegram.org/type/int)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Pagination in the API](https://core.telegram.org/api/offsets)
+
+How to fetch results from large lists of objects.
+
+
+
+

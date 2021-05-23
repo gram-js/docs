@@ -1,23 +1,23 @@
 # account.SaveAutoDownloadSettings
 
-No description found
+Change media autodownload settings
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.SaveAutoDownloadSettings({
-      settings: new Api.AutoDownloadSettings({
+    const result = await client.invoke(new Api.account.SaveAutoDownloadSettings({
+    settings: new Api.AutoDownloadSettings({
         photoSizeMax: 43,
         videoSizeMax: 43,
         fileSizeMax: 43,
@@ -25,31 +25,27 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         disabled: true,
         videoPreloadLarge: true,
         audioPreloadNext: true,
-        phonecallsLessData: true,
-      }),
-      low: true,
-      high: true,
-    })
-  );
-  console.log(result); // prints the result
+        phonecallsLessData: true
+    }),
+    low: true,
+    high: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.account.SaveAutoDownloadSettings({
-      settings: new Api.AutoDownloadSettings({
+    const result: Api.Bool = await client.invoke(new Api.account.SaveAutoDownloadSettings({
+    settings: new Api.AutoDownloadSettings({
         photoSizeMax: 43,
         videoSizeMax: 43,
         fileSizeMax: 43,
@@ -57,38 +53,45 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         disabled: true,
         videoPreloadLarge: true,
         audioPreloadNext: true,
-        phonecallsLessData: true,
-      }),
-      low: true,
-      high: true,
-    })
-  );
-  console.log(result); // prints the result
+        phonecallsLessData: true
+    }),
+    low: true,
+    high: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type                 | Description          |
-| :------: | -------------------- | -------------------- |
-|   low    | true                 | No description found |
-|   high   | true                 | No description found |
-| settings | AutoDownloadSettings | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **low** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to save settings in the low data usage preset 
+| **high** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether to save settings in the high data usage preset 
+| **settings** | [AutoDownloadSettings](https://core.telegram.org/type/AutoDownloadSettings) | Media autodownload settings 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

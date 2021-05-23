@@ -1,80 +1,78 @@
 # account.GetMultiWallPapers
 
-No description found
+Get info about multiple wallpapers
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetMultiWallPapers({
-      wallpapers: [
-        new Api.InputWallPaper({
-          id: BigInt("-4156887774564"),
-          accessHash: BigInt("-4156887774564"),
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.GetMultiWallPapers({
+    wallpapers: [new Api.InputWallPaper({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<WallPaper> = await client.invoke(
-    new Api.account.GetMultiWallPapers({
-      wallpapers: [
-        new Api.InputWallPaper({
-          id: BigInt("-4156887774564"),
-          accessHash: BigInt("-4156887774564"),
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<WallPaper> = await client.invoke(new Api.account.GetMultiWallPapers({
+    wallpapers: [new Api.InputWallPaper({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|    Name    | Type           | Description          |
-| :--------: | -------------- | -------------------- |
-| wallpapers | InputWallPaper | No description found |
 
-### [](#result)Result
+## Parameters
 
-Vector
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **wallpapers** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputWallPaper](https://core.telegram.org/type/InputWallPaper)> | Wallpapers to fetch info about 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Vector](https://core.telegram.org/type/Vector%20t)<[WallPaper](https://core.telegram.org/type/WallPaper)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

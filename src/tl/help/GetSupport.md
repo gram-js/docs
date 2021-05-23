@@ -1,63 +1,67 @@
 # help.GetSupport
 
-No description found
+Returns the support user for the 'ask a question' feature.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(new Api.help.GetSupport({}));
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.help.GetSupport({}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.help.Support = await client.invoke(
-    new Api.help.GetSupport({})
-  );
-  console.log(result); // prints the result
+    const result: Api.help.Support = await client.invoke(new Api.help.GetSupport({}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
+
+
+## Parameters
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#result)Result
 
-help.Support
+## Result
 
-### [](#possible-errors)Possible errors
+[help.Support](https://core.telegram.org/type/help.Support)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

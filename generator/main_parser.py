@@ -20,17 +20,28 @@ with open("saved.json", "r", encoding="utf-8") as out:
 with open("template.md", "r", encoding="utf-8") as out:
     template = out.read()
 
-if os.path.isdir("tl"):
+if os.path.exists("tl"):
     shutil.rmtree("tl")
 os.makedirs("tl", exist_ok=True)
+
+
+def to_camel_case(snake_str):
+    if snake_str[0].isupper():
+        return snake_str
+    components = snake_str.split('_')
+    # We capitalize the first letter of each component except the first one
+    # with the 'title' method and join them together.
+    return components[0] + ''.join(x.title() for x in components[1:])
 
 
 def to_table(row):
     a = ""
     for x in row:
         x = list(x.values())
-
-        a += f"|{markdownify(x[0])}|{markdownify(x[1]).replace('<', ' < ').replace('>', ' > ')}|{markdownify(x[2])}|\n"
+        first = markdownify(to_camel_case(x[0])).replace('|', '').replace("\n", '<br>')
+        second = markdownify(x[1]).replace('|', '').replace("\n", '<br>')
+        third = markdownify(x[2]).replace('|', '').replace("\n", '<br>')
+        a += f"|{first}|{second}|{third}\n"
     return a
 
 
@@ -64,7 +75,7 @@ for method in parsed:
     if method.is_function:
         # try to find description
         for function in scrapped_file:
-            if method.name.lower() in function["title"]:
+            if method.name.lower() in function["title"].lower():
                 description = function["description"]
                 params = function["params"]
                 main_result = function["result"]
@@ -72,7 +83,7 @@ for method in parsed:
                 can_bots_use = "Yes" if function["can_bot_use"] else "No"
                 related_pages = function["related_pages"]
                 break
-        # we know populate the template.md
+        # we now populate the template.md
         if not params:
             for x in method.args:
                 x: TLArg
@@ -99,5 +110,3 @@ for method in parsed:
                                )
         with open(os.path.join(path, method.class_name + ".md"), "w", encoding="utf-8") as out:
             out.write(data)
-
-

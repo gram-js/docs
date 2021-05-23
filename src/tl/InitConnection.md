@@ -1,108 +1,107 @@
 # InitConnection
 
-No description found
+Initialize connection
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.InitConnection({
-      apiId: 43,
-      deviceModel: "some string here",
-      systemVersion: "some string here",
-      appVersion: "some string here",
-      systemLangCode: "some string here",
-      langPack: "some string here",
-      langCode: "some string here",
-      query: new Api.AnyRequest({
-        /*...*/
-      }),
-      proxy: new Api.InputClientProxy({
-        address: "some string here",
-        port: 43,
-      }),
-      params: new Api.JsonNull({}),
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.InitConnection({
+    apiId: 43,
+    deviceModel: 'some string here',
+    systemVersion: 'some string here',
+    appVersion: 'some string here',
+    systemLangCode: 'some string here',
+    langPack: 'some string here',
+    langCode: 'some string here',
+    query: new Api.AnyRequest({/*...*/}),
+    proxy: new Api.InputClientProxy({
+        address: 'some string here',
+        port: 43
+    }),
+    params: new Api.JsonNull({})
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.AnyRequest = await client.invoke(
-    new Api.InitConnection({
-      apiId: 43,
-      deviceModel: "some string here",
-      systemVersion: "some string here",
-      appVersion: "some string here",
-      systemLangCode: "some string here",
-      langPack: "some string here",
-      langCode: "some string here",
-      query: new Api.AnyRequest({
-        /*...*/
-      }),
-      proxy: new Api.InputClientProxy({
-        address: "some string here",
-        port: 43,
-      }),
-      params: new Api.JsonNull({}),
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.AnyRequest = await client.invoke(new Api.InitConnection({
+    apiId: 43,
+    deviceModel: 'some string here',
+    systemVersion: 'some string here',
+    appVersion: 'some string here',
+    systemLangCode: 'some string here',
+    langPack: 'some string here',
+    langCode: 'some string here',
+    query: new Api.AnyRequest({/*...*/}),
+    proxy: new Api.InputClientProxy({
+        address: 'some string here',
+        port: 43
+    }),
+    params: new Api.JsonNull({})
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|      Name      | Type             | Description          |
-| :------------: | ---------------- | -------------------- |
-|       x        | Type             | No description found |
-|     apiId      | int              | No description found |
-|  deviceModel   | string           | No description found |
-| systemVersion  | string           | No description found |
-|   appVersion   | string           | No description found |
-| systemLangCode | string           | No description found |
-|    langPack    | string           | No description found |
-|    langCode    | string           | No description found |
-|     proxy      | InputClientProxy | No description found |
-|     params     | JSONValue        | No description found |
-|     query      | X                | No description found |
 
-### [](#result)Result
+## Parameters
 
-AnyRequest
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **apiId** | [int](https://core.telegram.org/type/int) | Application identifier (see. [App configuration](https://core.telegram.org/myapp)) 
+| **deviceModel** | [string](https://core.telegram.org/type/string) | Device model 
+| **systemVersion** | [string](https://core.telegram.org/type/string) | Operation system version 
+| **appVersion** | [string](https://core.telegram.org/type/string) | Application version 
+| **systemLangCode** | [string](https://core.telegram.org/type/string) | Code for the language used on the device's OS, ISO 639-1 standard 
+| **langPack** | [string](https://core.telegram.org/type/string) | Language pack to use 
+| **langCode** | [string](https://core.telegram.org/type/string) | Code for the language used on the client, ISO 639-1 standard 
+| **proxy** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[InputClientProxy](https://core.telegram.org/type/InputClientProxy) | Info about an MTProto proxy 
+| **params** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[JSONValue](https://core.telegram.org/type/JSONValue) | Additional initConnection parameters.   <br>For now, only the tz\_offset field is supported, for specifying timezone offset in seconds. 
+| **query** | !X | The query itself 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+X
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CONNECTION\_LAYER\_INVALID | Layer invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

@@ -1,70 +1,73 @@
 # account.GetNotifySettings
 
-No description found
+Gets current notification settings for a given user/group, from all users/all groups.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetNotifySettings({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.GetNotifySettings({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.PeerNotifySettings = await client.invoke(
-    new Api.account.GetNotifySettings({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.PeerNotifySettings = await client.invoke(new Api.account.GetNotifySettings({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type            | Description          |
-| :--: | --------------- | -------------------- |
-| peer | InputNotifyPeer | No description found |
 
-### [](#result)Result
+## Parameters
 
-PeerNotifySettings
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputNotifyPeer](https://core.telegram.org/type/InputNotifyPeer) | Notification source 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+Returns a [PeerNotifySettings](https://core.telegram.org/type/PeerNotifySettings) object containing current notification settings.
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

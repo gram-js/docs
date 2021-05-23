@@ -1,78 +1,89 @@
 # account.GetPasswordSettings
 
-No description found
+Get private info associated to the password info (recovery email, telegram [passport](https://core.telegram.org/passport) info & so on)
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetPasswordSettings({
-      password: new Api.InputCheckPasswordSRP({
-        srpId: BigInt("-4156887774564"),
-        a: Buffer.from("arbitrary data here"),
-        m1: Buffer.from("arbitrary data here"),
-      }),
+    const result = await client.invoke(new Api.account.GetPasswordSettings({
+    password: new Api.InputCheckPasswordSRP({
+        srpId: BigInt('-4156887774564'),
+        a: Buffer.from('arbitrary data here'),
+        m1: Buffer.from('arbitrary data here')
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.account.PasswordSettings = await client.invoke(
-    new Api.account.GetPasswordSettings({
-      password: new Api.InputCheckPasswordSRP({
-        srpId: BigInt("-4156887774564"),
-        a: Buffer.from("arbitrary data here"),
-        m1: Buffer.from("arbitrary data here"),
-      }),
+    const result: Api.account.PasswordSettings = await client.invoke(new Api.account.GetPasswordSettings({
+    password: new Api.InputCheckPasswordSRP({
+        srpId: BigInt('-4156887774564'),
+        a: Buffer.from('arbitrary data here'),
+        m1: Buffer.from('arbitrary data here')
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type                  | Description          |
-| :------: | --------------------- | -------------------- |
-| password | InputCheckPasswordSRP | No description found |
 
-### [](#result)Result
+## Parameters
 
-account.PasswordSettings
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **password** | [InputCheckPasswordSRP](https://core.telegram.org/type/InputCheckPasswordSRP) | The password (see [SRP](https://core.telegram.org/api/srp)) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[account.PasswordSettings](https://core.telegram.org/type/account.PasswordSettings)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | PASSWORD\_HASH\_INVALID | The provided password hash is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Two-factor authentication](https://core.telegram.org/api/srp)
+
+How to login to a user's account if they have enabled 2FA, how to change password.
+
+
+
+#### [Telegram Passport Manual](https://core.telegram.org/passport)
+
+

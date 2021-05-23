@@ -1,73 +1,76 @@
 # account.GetNotifyExceptions
 
-No description found
+Returns list of chats with non-default notification settings
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetNotifyExceptions({
-      compareSound: true,
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.GetNotifyExceptions({
+    compareSound: true,
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Updates = await client.invoke(
-    new Api.account.GetNotifyExceptions({
-      compareSound: true,
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Updates = await client.invoke(new Api.account.GetNotifyExceptions({
+    compareSound: true,
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|     Name     | Type            | Description          |
-| :----------: | --------------- | -------------------- |
-| compareSound | true            | No description found |
-|     peer     | InputNotifyPeer | No description found |
 
-### [](#result)Result
+## Parameters
 
-Updates
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **compareSound** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | If true, chats with non-default sound will also be returned 
+| **peer** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[InputNotifyPeer](https://core.telegram.org/type/InputNotifyPeer) | If specified, only chats of the specified category will be returned 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Updates](https://core.telegram.org/type/Updates)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

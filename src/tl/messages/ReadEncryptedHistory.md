@@ -1,79 +1,82 @@
 # messages.ReadEncryptedHistory
 
-No description found
+Marks message history within a secret chat as read.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.ReadEncryptedHistory({
-      peer: new Api.InputEncryptedChat({
+    const result = await client.invoke(new Api.messages.ReadEncryptedHistory({
+    peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt("-4156887774564"),
-      }),
-      maxDate: 43,
-    })
-  );
-  console.log(result); // prints the result
+        accessHash: BigInt('-4156887774564')
+    }),
+    maxDate: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Bool = await client.invoke(
-    new Api.messages.ReadEncryptedHistory({
-      peer: new Api.InputEncryptedChat({
+    const result: Api.Bool = await client.invoke(new Api.messages.ReadEncryptedHistory({
+    peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt("-4156887774564"),
-      }),
-      maxDate: 43,
-    })
-  );
-  console.log(result); // prints the result
+        accessHash: BigInt('-4156887774564')
+    }),
+    maxDate: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type               | Description          |
-| :-----: | ------------------ | -------------------- |
-|  peer   | InputEncryptedChat | No description found |
-| maxDate | int                | No description found |
 
-### [](#result)Result
+## Parameters
 
-Bool
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputEncryptedChat](https://core.telegram.org/type/InputEncryptedChat) | Secret chat ID 
+| **maxDate** | [int](https://core.telegram.org/type/int) | Maximum date value for received messages in history 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | MSG\_WAIT\_FAILED | A waiting call returned an error 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

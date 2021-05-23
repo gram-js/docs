@@ -1,73 +1,76 @@
 # messages.GetPollResults
 
-No description found
+Get poll results
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetPollResults({
-      peer: "username",
-      msgId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetPollResults({
+    peer: 'username',
+    msgId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Updates = await client.invoke(
-    new Api.messages.GetPollResults({
-      peer: "username",
-      msgId: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Updates = await client.invoke(new Api.messages.GetPollResults({
+    peer: 'username',
+    msgId: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name  | Type      | Description          |
-| :---: | --------- | -------------------- |
-| peer  | InputPeer | No description found |
-| msgId | int       | No description found |
 
-### [](#result)Result
+## Parameters
 
-Updates
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Peer where the poll was found 
+| **msgId** | [int](https://core.telegram.org/type/int) | Message ID of poll message 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Updates](https://core.telegram.org/type/Updates)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | MESSAGE\_ID\_INVALID | The provided message id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

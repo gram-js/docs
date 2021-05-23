@@ -1,73 +1,82 @@
 # messages.GetDhConfig
 
-No description found
+Returns configuration parameters for Diffie-Hellman key generation. Can also return a random sequence of bytes of required length.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetDhConfig({
-      version: 43,
-      randomLength: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetDhConfig({
+    version: 43,
+    randomLength: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.DhConfig = await client.invoke(
-    new Api.messages.GetDhConfig({
-      version: 43,
-      randomLength: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.DhConfig = await client.invoke(new Api.messages.GetDhConfig({
+    version: 43,
+    randomLength: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|     Name     | Type | Description          |
-| :----------: | ---- | -------------------- |
-|   version    | int  | No description found |
-| randomLength | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.DhConfig
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **version** | [int](https://core.telegram.org/type/int) | Value of the **version** parameter from [messages.dhConfig](https://core.telegram.org/constructor/messages.dhConfig), avialable at the client 
+| **randomLength** | [int](https://core.telegram.org/type/int) | Length of the required random sequence 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.DhConfig](https://core.telegram.org/type/messages.DhConfig)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | RANDOM\_LENGTH\_INVALID | Random length invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [messages.dhConfig](https://core.telegram.org/constructor/messages.dhConfig)
+
+New set of configuring parameters.
+
+
+
+

@@ -1,70 +1,72 @@
 # help.GetRecentMeUrls
 
-No description found
+Get recently used t.me links
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.help.GetRecentMeUrls({
-      referer: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.help.GetRecentMeUrls({
+    referer: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.help.RecentMeUrls = await client.invoke(
-    new Api.help.GetRecentMeUrls({
-      referer: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.help.RecentMeUrls = await client.invoke(new Api.help.GetRecentMeUrls({
+    referer: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type   | Description          |
-| :-----: | ------ | -------------------- |
-| referer | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-help.RecentMeUrls
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **referer** | [string](https://core.telegram.org/type/string) | Referer 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[help.RecentMeUrls](https://core.telegram.org/type/help.RecentMeUrls)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

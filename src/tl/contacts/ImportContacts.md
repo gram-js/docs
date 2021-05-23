@@ -1,84 +1,88 @@
 # contacts.ImportContacts
 
-No description found
+Imports contacts: saves a full list on the server, adds already registered contacts to the contact list, returns added contacts and their info.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.contacts.ImportContacts({
-      contacts: [
-        new Api.InputPhoneContact({
-          clientId: readBigIntFromBuffer(generateRandomBytes(8)),
-          phone: "some string here",
-          firstName: "some string here",
-          lastName: "some string here",
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.contacts.ImportContacts({
+    contacts: [new Api.InputPhoneContact({
+        clientId: readBigIntFromBuffer(generateRandomBytes(8)),
+        phone: 'some string here',
+        firstName: 'some string here',
+        lastName: 'some string here'
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.contacts.ImportedContacts = await client.invoke(
-    new Api.contacts.ImportContacts({
-      contacts: [
-        new Api.InputPhoneContact({
-          clientId: readBigIntFromBuffer(generateRandomBytes(8)),
-          phone: "some string here",
-          firstName: "some string here",
-          lastName: "some string here",
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.contacts.ImportedContacts = await client.invoke(new Api.contacts.ImportContacts({
+    contacts: [new Api.InputPhoneContact({
+        clientId: readBigIntFromBuffer(generateRandomBytes(8)),
+        phone: 'some string here',
+        firstName: 'some string here',
+        lastName: 'some string here'
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type         | Description          |
-| :------: | ------------ | -------------------- |
-| contacts | InputContact | No description found |
 
-### [](#result)Result
+## Parameters
 
-contacts.ImportedContacts
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **contacts** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputContact](https://core.telegram.org/type/InputContact)> | List of contacts to import 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[contacts.ImportedContacts](https://core.telegram.org/type/contacts.ImportedContacts)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [contacts.addContact](https://core.telegram.org/method/contacts.addContact)
+
+Add an existing telegram user as contact.
+
+
+
+

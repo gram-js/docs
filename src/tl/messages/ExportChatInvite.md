@@ -1,70 +1,77 @@
 # messages.ExportChatInvite
 
-No description found
+Export an invite link for a chat
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.ExportChatInvite({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.ExportChatInvite({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.ExportedChatInvite = await client.invoke(
-    new Api.messages.ExportChatInvite({
-      peer: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.ExportedChatInvite = await client.invoke(new Api.messages.ExportChatInvite({
+    peer: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type      | Description          |
-| :--: | --------- | -------------------- |
-| peer | InputPeer | No description found |
 
-### [](#result)Result
+## Parameters
 
-ExportedChatInvite
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Chat 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[ExportedChatInvite](https://core.telegram.org/type/ExportedChatInvite)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 400 | CHAT\_ADMIN\_REQUIRED | You must be an admin in this chat to do this 
+| 400 | CHAT\_ID\_INVALID | The provided chat id is invalid 
+| 403 | CHAT\_WRITE\_FORBIDDEN | You can't write in this chat 
+| 400 | PEER\_ID\_INVALID | The provided peer id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

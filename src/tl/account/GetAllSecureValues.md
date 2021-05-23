@@ -1,63 +1,71 @@
 # account.GetAllSecureValues
 
-No description found
+Get all saved [Telegram Passport](https://core.telegram.org/passport) documents, [for more info see the passport docs »](https://core.telegram.org/passport/encryption#encryption)
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(new Api.account.GetAllSecureValues({}));
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.account.GetAllSecureValues({}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<SecureValue> = await client.invoke(
-    new Api.account.GetAllSecureValues({})
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<SecureValue> = await client.invoke(new Api.account.GetAllSecureValues({}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
+
+
+## Parameters
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#result)Result
 
-Vector
+## Result
 
-### [](#possible-errors)Possible errors
+[Vector](https://core.telegram.org/type/Vector%20t)<[SecureValue](https://core.telegram.org/type/SecureValue)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Telegram Passport Manual](https://core.telegram.org/passport)
+
+#### [Telegram Passport Encryption Details](https://core.telegram.org/passport/encryption)
+
+

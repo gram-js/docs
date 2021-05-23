@@ -1,70 +1,85 @@
 # channels.GetLeftChannels
 
-No description found
+Get a list of [channels/supergroups](https://core.telegram.org/api/channel) we left
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.channels.GetLeftChannels({
-      offset: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.channels.GetLeftChannels({
+    offset: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.Chats = await client.invoke(
-    new Api.channels.GetLeftChannels({
-      offset: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.Chats = await client.invoke(new Api.channels.GetLeftChannels({
+    offset: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type | Description          |
-| :----: | ---- | -------------------- |
-| offset | int  | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.Chats
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **offset** | [int](https://core.telegram.org/type/int) | Offset for [pagination](https://core.telegram.org/api/offsets) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.Chats](https://core.telegram.org/type/messages.Chats)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 403 | TAKEOUT\_REQUIRED | A takeout session has to be initialized, first 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Pagination in the API](https://core.telegram.org/api/offsets)
+
+How to fetch results from large lists of objects.
+
+
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+

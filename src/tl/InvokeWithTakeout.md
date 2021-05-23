@@ -1,78 +1,76 @@
 # InvokeWithTakeout
 
-No description found
+Invoke a method within a takeout session
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.InvokeWithTakeout({
-      takeoutId: BigInt("-4156887774564"),
-      query: new Api.AnyRequest({
-        /*...*/
-      }),
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.InvokeWithTakeout({
+    takeoutId: BigInt('-4156887774564'),
+    query: new Api.AnyRequest({/*...*/})
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.AnyRequest = await client.invoke(
-    new Api.InvokeWithTakeout({
-      takeoutId: BigInt("-4156887774564"),
-      query: new Api.AnyRequest({
-        /*...*/
-      }),
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.AnyRequest = await client.invoke(new Api.InvokeWithTakeout({
+    takeoutId: BigInt('-4156887774564'),
+    query: new Api.AnyRequest({/*...*/})
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type | Description          |
-| :-------: | ---- | -------------------- |
-|     x     | Type | No description found |
-| takeoutId | long | No description found |
-|   query   | X    | No description found |
 
-### [](#result)Result
+## Parameters
 
-AnyRequest
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **takeoutId** | [long](https://core.telegram.org/type/long) | Takeout session ID 
+| **query** | !X | Query 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+X
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | INPUT\_METHOD\_INVALID\_1400137063\_X | Invalid method 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

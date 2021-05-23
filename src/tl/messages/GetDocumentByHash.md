@@ -1,76 +1,79 @@
 # messages.GetDocumentByHash
 
-No description found
+Get a document by its SHA256 hash, mainly used for gifs
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetDocumentByHash({
-      sha256: Buffer.from("arbitrary data here"),
-      size: 43,
-      mimeType: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetDocumentByHash({
+    sha256: Buffer.from('arbitrary data here'),
+    size: 43,
+    mimeType: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Document = await client.invoke(
-    new Api.messages.GetDocumentByHash({
-      sha256: Buffer.from("arbitrary data here"),
-      size: 43,
-      mimeType: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Document = await client.invoke(new Api.messages.GetDocumentByHash({
+    sha256: Buffer.from('arbitrary data here'),
+    size: 43,
+    mimeType: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type   | Description          |
-| :------: | ------ | -------------------- |
-|  sha256  | bytes  | No description found |
-|   size   | int    | No description found |
-| mimeType | string | No description found |
 
-### [](#result)Result
+## Parameters
 
-Document
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **sha256** | [bytes](https://core.telegram.org/type/bytes) | SHA256 of file 
+| **size** | [int](https://core.telegram.org/type/int) | Size of the file in bytes 
+| **mimeType** | [string](https://core.telegram.org/type/string) | Mime type 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Document](https://core.telegram.org/type/Document)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | SHA256\_HASH\_INVALID | The provided SHA256 hash is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

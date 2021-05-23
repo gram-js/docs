@@ -1,78 +1,75 @@
 # InvokeAfterMsgs
 
-No description found
+Invokes a query after a successfull completion of previous queries
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.InvokeAfterMsgs({
-      msgIds: [BigInt("-4156887774564")],
-      query: new Api.AnyRequest({
-        /*...*/
-      }),
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.InvokeAfterMsgs({
+    msgIds: [BigInt('-4156887774564')],
+    query: new Api.AnyRequest({/*...*/})
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.AnyRequest = await client.invoke(
-    new Api.InvokeAfterMsgs({
-      msgIds: [BigInt("-4156887774564")],
-      query: new Api.AnyRequest({
-        /*...*/
-      }),
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.AnyRequest = await client.invoke(new Api.InvokeAfterMsgs({
+    msgIds: [BigInt('-4156887774564')],
+    query: new Api.AnyRequest({/*...*/})
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name  | Type | Description          |
-| :----: | ---- | -------------------- |
-|   x    | Type | No description found |
-| msgIds | long | No description found |
-| query  | X    | No description found |
 
-### [](#result)Result
+## Parameters
 
-AnyRequest
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **msgIds** | [Vector](https://core.telegram.org/type/Vector%20t)<[long](https://core.telegram.org/type/long)> | List of messages on which a current query depends 
+| **query** | !X | The query itself 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+X
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

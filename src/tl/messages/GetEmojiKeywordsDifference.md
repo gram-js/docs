@@ -1,73 +1,75 @@
 # messages.GetEmojiKeywordsDifference
 
-No description found
+Get changed emoji keywords
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetEmojiKeywordsDifference({
-      langCode: "some string here",
-      fromVersion: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetEmojiKeywordsDifference({
+    langCode: 'some string here',
+    fromVersion: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.EmojiKeywordsDifference = await client.invoke(
-    new Api.messages.GetEmojiKeywordsDifference({
-      langCode: "some string here",
-      fromVersion: 43,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.EmojiKeywordsDifference = await client.invoke(new Api.messages.GetEmojiKeywordsDifference({
+    langCode: 'some string here',
+    fromVersion: 43
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|    Name     | Type   | Description          |
-| :---------: | ------ | -------------------- |
-|  langCode   | string | No description found |
-| fromVersion | int    | No description found |
 
-### [](#result)Result
+## Parameters
 
-EmojiKeywordsDifference
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **langCode** | [string](https://core.telegram.org/type/string) | Language code 
+| **fromVersion** | [int](https://core.telegram.org/type/int) | Previous emoji keyword localization version 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[EmojiKeywordsDifference](https://core.telegram.org/type/EmojiKeywordsDifference)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

@@ -1,82 +1,80 @@
 # photos.DeletePhotos
 
-No description found
+Deletes profile photos.
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.photos.DeletePhotos({
-      id: [
-        new Api.InputPhoto({
-          id: BigInt("-4156887774564"),
-          accessHash: BigInt("-4156887774564"),
-          fileReference: Buffer.from("arbitrary data here"),
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.photos.DeletePhotos({
+    id: [new Api.InputPhoto({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564'),
+        fileReference: Buffer.from('arbitrary data here')
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.Vector<long> = await client.invoke(
-    new Api.photos.DeletePhotos({
-      id: [
-        new Api.InputPhoto({
-          id: BigInt("-4156887774564"),
-          accessHash: BigInt("-4156887774564"),
-          fileReference: Buffer.from("arbitrary data here"),
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Vector<long> = await client.invoke(new Api.photos.DeletePhotos({
+    id: [new Api.InputPhoto({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564'),
+        fileReference: Buffer.from('arbitrary data here')
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name | Type       | Description          |
-| :--: | ---------- | -------------------- |
-|  id  | InputPhoto | No description found |
 
-### [](#result)Result
+## Parameters
 
-Vector
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **id** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputPhoto](https://core.telegram.org/type/InputPhoto)> | Input photos to delete 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+Method returns a list of successfully deleted photos in [Vector](https://core.telegram.org/type/Vector%20t)<[long](https://core.telegram.org/type/long)>
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

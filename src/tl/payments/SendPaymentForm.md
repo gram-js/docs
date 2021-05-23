@@ -1,85 +1,95 @@
 # payments.SendPaymentForm
 
-No description found
+Send compiled payment form
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.payments.SendPaymentForm({
-      msgId: 43,
-      credentials: new Api.InputPaymentCredentialsSaved({
-        id: "some string here",
-        tmpPassword: Buffer.from("arbitrary data here"),
-      }),
-      requestedInfoId: "some string here",
-      shippingOptionId: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.payments.SendPaymentForm({
+    msgId: 43,
+    credentials: new Api.InputPaymentCredentialsSaved({
+        id: 'some string here',
+        tmpPassword: Buffer.from('arbitrary data here')
+    }),
+    requestedInfoId: 'some string here',
+    shippingOptionId: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.payments.PaymentResult = await client.invoke(
-    new Api.payments.SendPaymentForm({
-      msgId: 43,
-      credentials: new Api.InputPaymentCredentialsSaved({
-        id: "some string here",
-        tmpPassword: Buffer.from("arbitrary data here"),
-      }),
-      requestedInfoId: "some string here",
-      shippingOptionId: "some string here",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.payments.PaymentResult = await client.invoke(new Api.payments.SendPaymentForm({
+    msgId: 43,
+    credentials: new Api.InputPaymentCredentialsSaved({
+        id: 'some string here',
+        tmpPassword: Buffer.from('arbitrary data here')
+    }),
+    requestedInfoId: 'some string here',
+    shippingOptionId: 'some string here'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|       Name       | Type                    | Description          |
-| :--------------: | ----------------------- | -------------------- |
-|      msgId       | int                     | No description found |
-| requestedInfoId  | string                  | No description found |
-| shippingOptionId | string                  | No description found |
-|   credentials    | InputPaymentCredentials | No description found |
 
-### [](#result)Result
+## Parameters
 
-payments.PaymentResult
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **msgId** | [int](https://core.telegram.org/type/int) | Message ID of form 
+| **requestedInfoId** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[string](https://core.telegram.org/type/string) | ID of saved and validated [order info](https://core.telegram.org/constructor/payments.validatedRequestedInfo) 
+| **shippingOptionId** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[string](https://core.telegram.org/type/string) | Chosen shipping option ID 
+| **credentials** | [InputPaymentCredentials](https://core.telegram.org/type/InputPaymentCredentials) | Payment credentials 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[payments.PaymentResult](https://core.telegram.org/type/payments.PaymentResult)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | MESSAGE\_ID\_INVALID | The provided message id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [payments.ValidatedRequestedInfo](https://core.telegram.org/constructor/payments.validatedRequestedInfo)
+
+Validated user-provided info
+
+
+
+

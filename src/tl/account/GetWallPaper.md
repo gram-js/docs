@@ -1,76 +1,78 @@
 # account.GetWallPaper
 
-No description found
+Get info about a certain wallpaper
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.account.GetWallPaper({
-      wallpaper: new Api.InputWallPaper({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-      }),
+    const result = await client.invoke(new Api.account.GetWallPaper({
+    wallpaper: new Api.InputWallPaper({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.WallPaper = await client.invoke(
-    new Api.account.GetWallPaper({
-      wallpaper: new Api.InputWallPaper({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-      }),
+    const result: Api.WallPaper = await client.invoke(new Api.account.GetWallPaper({
+    wallpaper: new Api.InputWallPaper({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564')
     })
-  );
-  console.log(result); // prints the result
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type           | Description          |
-| :-------: | -------------- | -------------------- |
-| wallpaper | InputWallPaper | No description found |
 
-### [](#result)Result
+## Parameters
 
-WallPaper
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **wallpaper** | [InputWallPaper](https://core.telegram.org/type/InputWallPaper) | The wallpaper to get info about 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[WallPaper](https://core.telegram.org/type/WallPaper)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

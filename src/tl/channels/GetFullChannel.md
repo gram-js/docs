@@ -1,70 +1,76 @@
 # channels.GetFullChannel
 
-No description found
+Get full info about a channel
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.channels.GetFullChannel({
-      channel: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.channels.GetFullChannel({
+    channel: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.ChatFull = await client.invoke(
-    new Api.channels.GetFullChannel({
-      channel: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.ChatFull = await client.invoke(new Api.channels.GetFullChannel({
+    channel: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|  Name   | Type         | Description          |
-| :-----: | ------------ | -------------------- |
-| channel | InputChannel | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.ChatFull
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | The channel to get info about 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[messages.ChatFull](https://core.telegram.org/type/messages.ChatFull)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_INVALID | The provided channel is invalid 
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
+| 403 | CHANNEL\_PUBLIC\_GROUP\_NA | channel/supergroup not available 
+| 400 | MSG\_ID\_INVALID | Invalid message ID provided 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

@@ -1,100 +1,104 @@
 # payments.ValidateRequestedInfo
 
-No description found
+Submit requested order information for validation
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.payments.ValidateRequestedInfo({
-      msgId: 43,
-      info: new Api.PaymentRequestedInfo({
-        name: "some string here",
-        phone: "some string here",
-        email: "some string here",
+    const result = await client.invoke(new Api.payments.ValidateRequestedInfo({
+    msgId: 43,
+    info: new Api.PaymentRequestedInfo({
+        name: 'some string here',
+        phone: 'some string here',
+        email: 'some string here',
         shippingAddress: new Api.PostAddress({
-          streetLine1: "some string here",
-          streetLine2: "some string here",
-          city: "some string here",
-          state: "some string here",
-          countryIso2: "some string here",
-          postCode: "some string here",
-        }),
-      }),
-      save: true,
-    })
-  );
-  console.log(result); // prints the result
+            streetLine1: 'some string here',
+            streetLine2: 'some string here',
+            city: 'some string here',
+            state: 'some string here',
+            countryIso2: 'some string here',
+            postCode: 'some string here'
+        })
+    }),
+    save: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.payments.ValidatedRequestedInfo = await client.invoke(
-    new Api.payments.ValidateRequestedInfo({
-      msgId: 43,
-      info: new Api.PaymentRequestedInfo({
-        name: "some string here",
-        phone: "some string here",
-        email: "some string here",
+    const result: Api.payments.ValidatedRequestedInfo = await client.invoke(new Api.payments.ValidateRequestedInfo({
+    msgId: 43,
+    info: new Api.PaymentRequestedInfo({
+        name: 'some string here',
+        phone: 'some string here',
+        email: 'some string here',
         shippingAddress: new Api.PostAddress({
-          streetLine1: "some string here",
-          streetLine2: "some string here",
-          city: "some string here",
-          state: "some string here",
-          countryIso2: "some string here",
-          postCode: "some string here",
-        }),
-      }),
-      save: true,
-    })
-  );
-  console.log(result); // prints the result
+            streetLine1: 'some string here',
+            streetLine2: 'some string here',
+            city: 'some string here',
+            state: 'some string here',
+            countryIso2: 'some string here',
+            postCode: 'some string here'
+        })
+    }),
+    save: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-| Name  | Type                 | Description          |
-| :---: | -------------------- | -------------------- |
-| save  | true                 | No description found |
-| msgId | int                  | No description found |
-| info  | PaymentRequestedInfo | No description found |
 
-### [](#result)Result
+## Parameters
 
-payments.ValidatedRequestedInfo
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **save** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Save order information to re-use it for future orders 
+| **msgId** | [int](https://core.telegram.org/type/int) | Message ID of payment form 
+| **info** | [PaymentRequestedInfo](https://core.telegram.org/type/PaymentRequestedInfo) | Requested order information 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[payments.ValidatedRequestedInfo](https://core.telegram.org/type/payments.ValidatedRequestedInfo)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | MESSAGE\_ID\_INVALID | The provided message id is invalid 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+

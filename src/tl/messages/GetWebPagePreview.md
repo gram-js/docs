@@ -1,71 +1,81 @@
 # messages.GetWebPagePreview
 
-No description found
+Get preview of webpage
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.GetWebPagePreview({
-      message: "Hello there!",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.GetWebPagePreview({
+    message: 'Hello there!'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.MessageMedia = await client.invoke(
-    new Api.messages.GetWebPagePreview({
-      message: "Hello there!",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.MessageMedia = await client.invoke(new Api.messages.GetWebPagePreview({
+    message: 'Hello there!'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type          | Description          |
-| :------: | ------------- | -------------------- |
-| message  | string        | No description found |
-| entities | MessageEntity | No description found |
 
-### [](#result)Result
+## Parameters
 
-MessageMedia
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **message** | [string](https://core.telegram.org/type/string) | Message from which to extract the preview 
+| **entities** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).3?[Vector](https://core.telegram.org/type/Vector%20t)<[MessageEntity](https://core.telegram.org/type/MessageEntity)> | [Message entities for styled text](https://core.telegram.org/api/entities) 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[MessageMedia](https://core.telegram.org/type/MessageMedia)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | MESSAGE\_EMPTY | The provided message is empty 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Styled text with message entities](https://core.telegram.org/api/entities)
+
+How to create styled text with message entities
+
+
+
+

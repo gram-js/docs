@@ -1,94 +1,104 @@
 # phone.RequestCall
 
-No description found
+Start a telegram phone call
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.phone.RequestCall({
-      userId: "username",
-      randomId: 43,
-      gAHash: Buffer.from("arbitrary data here"),
-      protocol: new Api.PhoneCallProtocol({
+    const result = await client.invoke(new Api.phone.RequestCall({
+    userId: 'username',
+    randomId: 43,
+    gAHash: Buffer.from('arbitrary data here'),
+    protocol: new Api.PhoneCallProtocol({
         minLayer: 43,
         maxLayer: 43,
-        libraryVersions: ["some string here"],
+        libraryVersions: ['some string here'],
         udpP2p: true,
-        udpReflector: true,
-      }),
-      video: true,
-    })
-  );
-  console.log(result); // prints the result
+        udpReflector: true
+    }),
+    video: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.phone.PhoneCall = await client.invoke(
-    new Api.phone.RequestCall({
-      userId: "username",
-      randomId: 43,
-      gAHash: Buffer.from("arbitrary data here"),
-      protocol: new Api.PhoneCallProtocol({
+    const result: Api.phone.PhoneCall = await client.invoke(new Api.phone.RequestCall({
+    userId: 'username',
+    randomId: 43,
+    gAHash: Buffer.from('arbitrary data here'),
+    protocol: new Api.PhoneCallProtocol({
         minLayer: 43,
         maxLayer: 43,
-        libraryVersions: ["some string here"],
+        libraryVersions: ['some string here'],
         udpP2p: true,
-        udpReflector: true,
-      }),
-      video: true,
-    })
-  );
-  console.log(result); // prints the result
+        udpReflector: true
+    }),
+    video: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name   | Type              | Description          |
-| :------: | ----------------- | -------------------- |
-|  video   | true              | No description found |
-|  userId  | InputUser         | No description found |
-| randomId | int               | No description found |
-|  gAHash  | bytes             | No description found |
-| protocol | PhoneCallProtocol | No description found |
 
-### [](#result)Result
+## Parameters
 
-phone.PhoneCall
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **video** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to start a video call 
+| **userId** | [InputUser](https://core.telegram.org/type/InputUser) | Destination of the phone call 
+| **randomId** | [int](https://core.telegram.org/type/int) | Random ID to avoid resending the same object 
+| **gAHash** | [bytes](https://core.telegram.org/type/bytes) | [Parameter for E2E encryption key exchange »](https://core.telegram.org/api/end-to-end/voice-calls) 
+| **protocol** | [PhoneCallProtocol](https://core.telegram.org/type/PhoneCallProtocol) | Phone call settings 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[phone.PhoneCall](https://core.telegram.org/type/phone.PhoneCall)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CALL\_PROTOCOL\_FLAGS\_INVALID | Call protocol flags invalid 
+| 400 | PARTICIPANT\_VERSION\_OUTDATED | The other participant does not use an up to date telegram client with support for calls 
+| 400 | USER\_ID\_INVALID | The provided user ID is invalid 
+| 403 | USER\_IS\_BLOCKED | You were blocked by this user 
+| 403 | USER\_PRIVACY\_RESTRICTED | The user's privacy settings do not allow you to do this 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [End-to-End Encrypted Voice Calls](https://core.telegram.org/api/end-to-end/voice-calls)
+
+

@@ -1,79 +1,87 @@
 # messages.DeleteHistory
 
-No description found
+Delete the history of a [supergroup](https://core.telegram.org/api/channel)
 
-### [](#example)Example
+
+
+## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result = await client.invoke(
-    new Api.messages.DeleteHistory({
-      peer: "username",
-      maxId: 0,
-      justClear: true,
-      revoke: true,
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.messages.DeleteHistory({
+    peer: 'username',
+    maxId: 0,
+    justClear: true,
+    revoke: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession("");
+const session = new StringSession('');
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  const result: Api.messages.AffectedHistory = await client.invoke(
-    new Api.messages.DeleteHistory({
-      peer: "username",
-      maxId: 0,
-      justClear: true,
-      revoke: true,
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.messages.AffectedHistory = await client.invoke(new Api.messages.DeleteHistory({
+    peer: 'username',
+    maxId: 0,
+    justClear: true,
+    revoke: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
-### [](#parameters)Parameters
 
-|   Name    | Type      | Description          |
-| :-------: | --------- | -------------------- |
-| justClear | true      | No description found |
-|  revoke   | true      | No description found |
-|   peer    | InputPeer | No description found |
-|   maxId   | int       | No description found |
 
-### [](#result)Result
+## Parameters
 
-messages.AffectedHistory
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+| **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | [Supergroup](https://core.telegram.org/api/channel) whose history must be deleted 
+| **maxId** | [int](https://core.telegram.org/type/int) | ID of message **up to which** the history must be deleted 
 
-### [](#possible-errors)Possible errors
+
+## Result
+
+[Bool](https://core.telegram.org/type/Bool)
+
+
+
+## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+| 400 | CHANNEL\_INVALID | The provided channel is invalid 
+| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
 
-####No
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+Yes
+
+## Related pages
+
+#### [Channels](https://core.telegram.org/api/channel)
+
+How to handle channels, supergroups, groups, and what's the difference between them.
+
+
+
+
