@@ -15,7 +15,7 @@ import slug from 'rehype-slug';
 import toc from 'remark-toc';
 import unified from 'unified';
 import remark from 'remark';
-import visit from 'unist-util-visit';
+import {visit} from 'unist-util-visit';
 import escapeHtml from '@youtwitface/escape-html';
 import find from 'unist-util-find';
 import { stripHtml } from "string-strip-html";
