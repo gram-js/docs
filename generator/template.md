@@ -2,35 +2,30 @@
 
 {description}
 
+## Example
 
-### [](#example)Example
 {examples}
 
-
-### [](#parameters)Parameters
+## Parameters
 
 | Name | Type | Description |
-| :---: |
+| :--: | ---- | ----------- |
 {params}
 
-
-### [](#result)Result
-
-
+## Result
 
 {result}
 
-
-
-### [](#possible-errors)Possible errors
+## Possible errors
 
 | Code | Type | Description |
-| :---: |
+| :--: | ---- | ----------- |
 {errors}
 
-### [](#can-bots-use-this-method)Can bots use this methd ?
-####{bots}
+## Can bots use this method?
 
-### [](#related-pages)Related pages
+{bots}
+
+## Related pages
 
 {related}
