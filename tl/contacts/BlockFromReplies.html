@@ -9,11 +9,11 @@
         <script src="/static/script.js" defer></script>
         <title>contacts.BlockFromReplies | GramJS</title>
         <meta name="title" content="contacts.BlockFromReplies | GramJS" />
-        <meta name="description" content="Stop getting notifications about [thread replies](https://core.telegram.org/api/threads) of a certain user in @replies" />
+        <meta name="description" content="Stop getting notifications about [thread replies](https://core.telegram.org/api/threads) of a certain user in `@replies`" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gram.js.org" />
         <meta property="og:title" content="contacts.BlockFromReplies | GramJS" />
-        <meta property="og:description" content="Stop getting notifications about [thread replies](https://core.telegram.org/api/threads) of a certain user in @replies" />
+        <meta property="og:description" content="Stop getting notifications about [thread replies](https://core.telegram.org/api/threads) of a certain user in `@replies`" />
     </head>
     <body>
                     <header class="container">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="container content">
                             <h2 id="contactsblockfromreplies">contacts.BlockFromReplies<a aria-hidden="true" tabindex="-1" href="#contactsblockfromreplies"><span class="icon icon-link"></span></a></h2>
-<p>Stop getting notifications about <a href="https://core.telegram.org/api/threads">thread replies</a> of a certain user in @replies</p>
+<p>Stop getting notifications about <a href="https://core.telegram.org/api/threads">thread replies</a> of a certain user in <code>@replies</code></p>
 <h2 id="example">Example<a aria-hidden="true" tabindex="-1" href="#example"><span class="icon icon-link"></span></a></h2>
 <div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {Api, TelegramClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram'</span>);
 <span class="hljs-keyword">const</span> {StringSession} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'telegram/sessions'</span>);
@@ -99,7 +99,7 @@
 
 
 
-<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>deleteMessage</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to delete the specified message as well</td></tr><tr><td align="center"><strong>deleteHistory</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.1?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to delete all @replies messages from this user as well</td></tr><tr><td align="center"><strong>reportSpam</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.2?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to also report this user for spam</td></tr><tr><td align="center"><strong>msgId</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>ID of the message in the <a href="https://core.telegram.org/api/threads#replies">@replies</a> chat</td></tr></tbody></table>
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>flags</strong></td><td><a href="https://core.telegram.org/type/%23">#</a></td><td>Flags, see <a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">TL conditional fields</a></td></tr><tr><td align="center"><strong>deleteMessage</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.0?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to delete the specified message as well</td></tr><tr><td align="center"><strong>deleteHistory</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.1?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to delete all <code>@replies</code> messages from this user as well</td></tr><tr><td align="center"><strong>reportSpam</strong></td><td><a href="https://core.telegram.org/mtproto/TL-combinators#conditional-fields">flags</a>.2?<a href="https://core.telegram.org/constructor/true">true</a></td><td>Whether to also report this user for spam</td></tr><tr><td align="center"><strong>msgId</strong></td><td><a href="https://core.telegram.org/type/int">int</a></td><td>ID of the message in the <a href="https://core.telegram.org/api/threads#replies">@replies</a> chat</td></tr></tbody></table>
 <h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
 <p><a href="https://core.telegram.org/type/Updates">Updates</a></p>
 <h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>

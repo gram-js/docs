@@ -93,7 +93,7 @@
 
 
 
-<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputEncryptedChat">InputEncryptedChat</a></td><td>Secret chat ID</td></tr><tr><td align="center"><strong>gB</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td>B = g ^ b mod p, see <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></td></tr><tr><td align="center"><strong>keyFingerprint</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>64-bit fingerprint of the received key</td></tr></tbody></table>
+<table><thead><tr><th align="center">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><strong>peer</strong></td><td><a href="https://core.telegram.org/type/InputEncryptedChat">InputEncryptedChat</a></td><td>Secret chat ID</td></tr><tr><td align="center"><strong>gB</strong></td><td><a href="https://core.telegram.org/type/bytes">bytes</a></td><td><code>B = g ^ b mod p</code>, see <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></td></tr><tr><td align="center"><strong>keyFingerprint</strong></td><td><a href="https://core.telegram.org/type/long">long</a></td><td>64-bit fingerprint of the received key</td></tr></tbody></table>
 <h2 id="result">Result<a aria-hidden="true" tabindex="-1" href="#result"><span class="icon icon-link"></span></a></h2>
 <p><a href="https://core.telegram.org/type/EncryptedChat">EncryptedChat</a></p>
 <h2 id="possible-errors">Possible errors<a aria-hidden="true" tabindex="-1" href="#possible-errors"><span class="icon icon-link"></span></a></h2>
@@ -124,7 +124,7 @@
 
 <table><thead><tr><th align="center">Code</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td align="center">400</td><td>CHAT_ID_INVALID</td><td>The provided chat id is invalid</td></tr><tr><td align="center">400</td><td>ENCRYPTION_ALREADY_ACCEPTED</td><td>Secret chat already accepted</td></tr><tr><td align="center">400</td><td>ENCRYPTION_ALREADY_DECLINED</td><td>The secret chat was already declined</td></tr></tbody></table>
 <h2 id="can-bots-use-this-method">Can bots use this method?<a aria-hidden="true" tabindex="-1" href="#can-bots-use-this-method"><span class="icon icon-link"></span></a></h2>
-<p>Yes</p>
+<p>No</p>
 <h2 id="related-pages">Related pages<a aria-hidden="true" tabindex="-1" href="#related-pages"><span class="icon icon-link"></span></a></h2>
                         </div>
                     </main>
