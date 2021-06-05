@@ -62,7 +62,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **silent** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).5?[true](https://core.telegram.org/constructor/true) | Whether to send the message silently (no notification will be triggered on the other client) 
 | **background** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).6?[true](https://core.telegram.org/constructor/true) | Whether to send the message in background 
 | **clearDraft** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).7?[true](https://core.telegram.org/constructor/true) | Whether to clear the [draft](https://core.telegram.org/api/drafts) 
-| **hideVia** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).11?[true](https://core.telegram.org/constructor/true) | Whether to hide the via @botname in the resulting message (only for bot usernames encountered in the [config](https://core.telegram.org/constructor/config)) 
+| **hideVia** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).11?[true](https://core.telegram.org/constructor/true) | Whether to hide the `via @botname` in the resulting message (only for bot usernames encountered in the [config](https://core.telegram.org/constructor/config)) 
 | **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Destination 
 | **replyToMsgId** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[int](https://core.telegram.org/type/int) | ID of the message this message should reply to 
 | **randomId** | [long](https://core.telegram.org/type/long) | Random ID to avoid resending the same query 
@@ -106,7 +106,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

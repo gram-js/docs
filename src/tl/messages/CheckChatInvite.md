@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
-| **hash** | [string](https://core.telegram.org/type/string) | Invite hash in t.me/joinchat/hash 
+| **hash** | [string](https://core.telegram.org/type/string) | Invite hash in `t.me/joinchat/hash` 
 
 
 ## Result
@@ -68,7 +68,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

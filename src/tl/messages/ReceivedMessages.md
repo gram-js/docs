@@ -65,7 +65,7 @@ The method returns the list of message IDs, for which PUSH-notifications were ca
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

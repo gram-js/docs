@@ -1,6 +1,6 @@
 # channels.ToggleSlowMode
 
-Toggle supergroup slow mode: if enabled, users will only be able to send one message every seconds seconds
+Toggle supergroup slow mode: if enabled, users will only be able to send one message every `seconds` seconds
 
 
 
@@ -51,7 +51,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 | **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | The [supergroup](https://core.telegram.org/api/channel) 
-| **seconds** | [int](https://core.telegram.org/type/int) | Users will only be able to send one message every seconds seconds, 0 to disable the limitation 
+| **seconds** | [int](https://core.telegram.org/type/int) | Users will only be able to send one message every `seconds` seconds, `0` to disable the limitation 
 
 
 ## Result
@@ -73,7 +73,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

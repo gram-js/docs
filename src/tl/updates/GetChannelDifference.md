@@ -73,7 +73,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | The channel 
 | **filter** | [ChannelMessagesFilter](https://core.telegram.org/type/ChannelMessagesFilter) | Messsage filter 
 | **pts** | [int](https://core.telegram.org/type/int) | Persistent timestamp (see [updates](https://core.telegram.org/api/updates)) 
-| **limit** | [int](https://core.telegram.org/type/int) | How many updates to fetch, max 100000  <br>Ordinary (non-bot) users are supposed to pass 10-100 
+| **limit** | [int](https://core.telegram.org/type/int) | How many updates to fetch, max `100000`  <br>Ordinary (non-bot) users are supposed to pass `10-100` 
 
 
 ## Result

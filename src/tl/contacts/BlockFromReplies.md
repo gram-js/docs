@@ -1,6 +1,6 @@
 # contacts.BlockFromReplies
 
-Stop getting notifications about [thread replies](https://core.telegram.org/api/threads) of a certain user in @replies
+Stop getting notifications about [thread replies](https://core.telegram.org/api/threads) of a certain user in `@replies`
 
 
 
@@ -56,7 +56,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | :--: | ---- | ----------- |
 | **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
 | **deleteMessage** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to delete the specified message as well 
-| **deleteHistory** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether to delete all @replies messages from this user as well 
+| **deleteHistory** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether to delete all `@replies` messages from this user as well 
 | **reportSpam** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[true](https://core.telegram.org/constructor/true) | Whether to also report this user for spam 
 | **msgId** | [int](https://core.telegram.org/type/int) | ID of the message in the [@replies](https://core.telegram.org/api/threads#replies) chat 
 

@@ -56,7 +56,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | :--: | ---- | ----------- |
 | **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
 | **pts** | [int](https://core.telegram.org/type/int) | PTS, see [updates](https://core.telegram.org/api/updates). 
-| **ptsTotalLimit** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[int](https://core.telegram.org/type/int) | For fast updating: if provided and pts + pts\_total\_limit < remote pts, [updates.differenceTooLong](https://core.telegram.org/constructor/updates.differenceTooLong) will be returned.  <br>Simply tells the server to not return the difference if it is bigger than pts\_total\_limit  <br>If the remote pts is too big (> ~4000000), this field will default to 1000000 
+| **ptsTotalLimit** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[int](https://core.telegram.org/type/int) | For fast updating: if provided and `pts + pts\_total\_limit < remote pts`, [updates.differenceTooLong](https://core.telegram.org/constructor/updates.differenceTooLong) will be returned.  <br>Simply tells the server to not return the difference if it is bigger than `pts\_total\_limit`  <br>If the remote pts is too big (> ~4000000), this field will default to 1000000 
 | **date** | [int](https://core.telegram.org/type/int) | date, see [updates](https://core.telegram.org/api/updates). 
 | **qts** | [int](https://core.telegram.org/type/int) | QTS, see [updates](https://core.telegram.org/api/updates). 
 

@@ -76,7 +76,7 @@ Returns an [auth.Authorization](https://core.telegram.org/type/auth.Authorizatio
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

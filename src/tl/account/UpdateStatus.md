@@ -65,13 +65,13 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 
 #### [boolTrue](https://core.telegram.org/constructor/boolTrue)
 
-The constructor can be interpreted as a **boolean**true value.
+The constructor can be interpreted as a **boolean**`true` value.
 
 
 

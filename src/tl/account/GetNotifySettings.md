@@ -66,7 +66,7 @@ Returns a [PeerNotifySettings](https://core.telegram.org/type/PeerNotifySettings
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

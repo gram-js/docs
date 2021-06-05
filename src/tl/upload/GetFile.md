@@ -89,7 +89,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
 | 406 | FILEREF\_UPGRADE\_NEEDED | The client has to be updated in order to support [file references](https://core.telegram.org/api/file_reference) 
 | 400 | FILE\_ID\_INVALID | The provided file id is invalid 
-| 400 | FILE\_REFERENCE\_* | The file reference expired, it [must be refreshed](https://core.telegram.org/api/file_reference) 
+| 400 | FILE\_REFERENCE\_`*` | The file reference expired, it [must be refreshed](https://core.telegram.org/api/file_reference) 
 | 400 | FILE\_REFERENCE\_EXPIRED | File reference expired, it must be refetched as described in <https://core.telegram.org/api/file_reference> 
 | 400 | LIMIT\_INVALID | The provided limit is invalid 
 | 400 | LOCATION\_INVALID | The provided location is invalid 

@@ -59,8 +59,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
 | **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Chat where the poll was sent 
 | **id** | [int](https://core.telegram.org/type/int) | Message ID 
-| **option** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[bytes](https://core.telegram.org/type/bytes) | Get only results for the specified poll option 
-| **offset** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[string](https://core.telegram.org/type/string) | Offset for results, taken from the next\_offset field of [messages.votesList](https://core.telegram.org/constructor/messages.votesList), initially an empty string.   <br>Note: if no more results are available, the method call will return an empty next\_offset; thus, avoid providing the next\_offset returned in [messages.votesList](https://core.telegram.org/constructor/messages.votesList) if it is empty, to avoid an infinite loop. 
+| **option** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[bytes](https://core.telegram.org/type/bytes) | Get only results for the specified poll `option` 
+| **offset** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[string](https://core.telegram.org/type/string) | Offset for results, taken from the `next\_offset` field of [messages.votesList](https://core.telegram.org/constructor/messages.votesList), initially an empty string.   <br>Note: if no more results are available, the method call will return an empty `next\_offset`; thus, avoid providing the `next\_offset` returned in [messages.votesList](https://core.telegram.org/constructor/messages.votesList) if it is empty, to avoid an infinite loop. 
 | **limit** | [int](https://core.telegram.org/type/int) | Number of results to return 
 
 
@@ -81,7 +81,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

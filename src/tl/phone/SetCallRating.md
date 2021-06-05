@@ -63,7 +63,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
 | **userInitiative** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether the user decided on their own initiative to rate the call 
 | **peer** | [InputPhoneCall](https://core.telegram.org/type/InputPhoneCall) | The call to rate 
-| **rating** | [int](https://core.telegram.org/type/int) | Rating in 1-5 stars 
+| **rating** | [int](https://core.telegram.org/type/int) | Rating in `1-5` stars 
 | **comment** | [string](https://core.telegram.org/type/string) | An additional comment 
 
 
@@ -82,7 +82,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

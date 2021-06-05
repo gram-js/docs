@@ -55,7 +55,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
 | **dark** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Pass true if a URL with the dark theme must be returned 
 | **peer** | [InputPeer](https://core.telegram.org/type/InputPeer) | Chat identifier 
-| **params** | [string](https://core.telegram.org/type/string) | Parameters from tg://statsrefresh?params=****** link 
+| **params** | [string](https://core.telegram.org/type/string) | Parameters from `tg://statsrefresh?params=******` link 
 
 
 ## Result
@@ -73,7 +73,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

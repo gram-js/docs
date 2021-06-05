@@ -1,6 +1,6 @@
 # help.GetDeepLinkInfo
 
-Get info about a t.me link
+Get info about a `t.me` link
 
 
 
@@ -48,7 +48,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
-| **path** | [string](https://core.telegram.org/type/string) | Path in t.me/path 
+| **path** | [string](https://core.telegram.org/type/string) | Path in `t.me/path` 
 
 
 ## Result
@@ -65,7 +65,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

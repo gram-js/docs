@@ -2,7 +2,7 @@
 
 Generate a login token, for [login via QR code](https://core.telegram.org/api/qr-login).  
 
-The generated login token should be encoded using base64url, then shown as a tg://login?token=base64encodedtoken URL in the QR code.
+The generated login token should be encoded using base64url, then shown as a `tg://login?token=base64encodedtoken` URL in the QR code.
 
 
 
@@ -73,7 +73,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

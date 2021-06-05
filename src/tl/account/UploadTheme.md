@@ -58,7 +58,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **file** | [InputFile](https://core.telegram.org/type/InputFile) | Theme file uploaded as described in [files »](https://core.telegram.org/api/files) 
 | **thumb** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[InputFile](https://core.telegram.org/type/InputFile) | Thumbnail 
 | **fileName** | [string](https://core.telegram.org/type/string) | File name 
-| **mimeType** | [string](https://core.telegram.org/type/string) | MIME type, must be application/x-tgtheme-{format}, where format depends on the client 
+| **mimeType** | [string](https://core.telegram.org/type/string) | MIME type, must be `application/x-tgtheme-{format}`, where `format` depends on the client 
 
 
 ## Result
@@ -76,7 +76,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

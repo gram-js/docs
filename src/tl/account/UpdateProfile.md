@@ -74,7 +74,7 @@ Returns [User](https://core.telegram.org/type/User) object containing the update
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

@@ -66,7 +66,7 @@ Method returns a list of **random\_id**s of messages for which push notification
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

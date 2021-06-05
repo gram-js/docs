@@ -1,6 +1,6 @@
 # auth.BindTempAuthKey
 
-Binds a temporary authorization key temp\_auth\_key\_id to the permanent authorization key perm\_auth\_key\_id. Each permanent key may only be bound to one temporary key at a time, binding a new temporary key overwrites the previous one.
+Binds a temporary authorization key `temp\_auth\_key\_id` to the permanent authorization key `perm\_auth\_key\_id`. Each permanent key may only be bound to one temporary key at a time, binding a new temporary key overwrites the previous one.
 
 
 

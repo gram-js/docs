@@ -1,6 +1,6 @@
 # help.GetRecentMeUrls
 
-Get recently used t.me links
+Get recently used `t.me` links
 
 
 
@@ -65,7 +65,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

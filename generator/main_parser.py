@@ -80,7 +80,7 @@ for method in parsed:
                 params = function["params"]
                 main_result = function["result"]
                 errors = function["errors"]
-                can_bots_use = "Yes" if function["can_bot_use"] else "No"
+                can_bots_use = function["can_bot_use"].title()
                 related_pages = function["related_pages"]
                 break
         # we now populate the template.md

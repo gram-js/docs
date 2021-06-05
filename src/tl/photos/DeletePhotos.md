@@ -73,7 +73,7 @@ Method returns a list of successfully deleted photos in [Vector](https://core.te
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

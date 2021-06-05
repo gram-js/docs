@@ -52,7 +52,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
-| **tokenType** | [int](https://core.telegram.org/type/int) | Device token type.  <br>**Possible values**:  <br>1 - APNS (device token for apple push)  <br>2 - FCM (firebase token for google firebase)  <br>3 - MPNS (channel URI for microsoft push)  <br>4 - Simple push (endpoint for firefox's simple push API)  <br>5 - Ubuntu phone (token for ubuntu push)  <br>6 - Blackberry (token for blackberry push)  <br>7 - Unused  <br>8 - WNS (windows push)  <br>9 - APNS VoIP (token for apple push VoIP)  <br>10 - Web push (web push, see below)  <br>11 - MPNS VoIP (token for microsoft push VoIP)  <br>12 - Tizen (token for tizen push)  <br>  <br>For 10 web push, the token must be a JSON-encoded object containing the keys described in [PUSH updates](https://core.telegram.org/api/push-updates) 
+| **tokenType** | [int](https://core.telegram.org/type/int) | Device token type.  <br>**Possible values**:  <br>`1` - APNS (device token for apple push)  <br>`2` - FCM (firebase token for google firebase)  <br>`3` - MPNS (channel URI for microsoft push)  <br>`4` - Simple push (endpoint for firefox's simple push API)  <br>`5` - Ubuntu phone (token for ubuntu push)  <br>`6` - Blackberry (token for blackberry push)  <br>`7` - Unused  <br>`8` - WNS (windows push)  <br>`9` - APNS VoIP (token for apple push VoIP)  <br>`10` - Web push (web push, see below)  <br>`11` - MPNS VoIP (token for microsoft push VoIP)  <br>`12` - Tizen (token for tizen push)  <br>  <br>For `10` web push, the token must be a JSON-encoded object containing the keys described in [PUSH updates](https://core.telegram.org/api/push-updates) 
 | **token** | [string](https://core.telegram.org/type/string) | Device token 
 | **otherUids** | [Vector](https://core.telegram.org/type/Vector%20t)<[int](https://core.telegram.org/type/int)> | List of user identifiers of other users currently using the client 
 
@@ -72,7 +72,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

@@ -65,13 +65,13 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
-| 400 | CHANNELS\_ADMIN\_LOCATED\_TOO\_MUCH | Returned if both the check\_limit and the by\_location flags are set and the user has reached the limit of public geogroups 
-| 400 | CHANNELS\_ADMIN\_PUBLIC\_TOO\_MUCH | Returned if the check\_limit flag is set and the user has reached the limit of public channels/supergroups 
+| 400 | CHANNELS\_ADMIN\_LOCATED\_TOO\_MUCH | Returned if both the `check\_limit` and the `by\_location` flags are set and the user has reached the limit of public geogroups 
+| 400 | CHANNELS\_ADMIN\_PUBLIC\_TOO\_MUCH | Returned if the `check\_limit` flag is set and the user has reached the limit of public channels/supergroups 
 
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

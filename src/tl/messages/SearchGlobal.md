@@ -70,7 +70,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **filter** | [MessagesFilter](https://core.telegram.org/type/MessagesFilter) | Global search filter 
 | **minDate** | [int](https://core.telegram.org/type/int) | If a positive value was specified, the method will return only messages with date bigger than min\_date 
 | **maxDate** | [int](https://core.telegram.org/type/int) | If a positive value was transferred, the method will return only messages with date smaller than max\_date 
-| **offsetRate** | [int](https://core.telegram.org/type/int) | Initially 0, then set to the [next\_rate parameter of messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice) 
+| **offsetRate** | [int](https://core.telegram.org/type/int) | Initially 0, then set to the [`next\_rate` parameter of messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice) 
 | **offsetPeer** | [InputPeer](https://core.telegram.org/type/InputPeer) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
 | **offsetId** | [int](https://core.telegram.org/type/int) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
 | **limit** | [int](https://core.telegram.org/type/int) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
@@ -92,7 +92,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

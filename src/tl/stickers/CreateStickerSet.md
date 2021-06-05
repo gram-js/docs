@@ -98,7 +98,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **masks** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether this is a mask stickerset 
 | **animated** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether this is an animated stickerset 
 | **userId** | [InputUser](https://core.telegram.org/type/InputUser) | Stickerset owner 
-| **title** | [string](https://core.telegram.org/type/string) | Stickerset name, 1-64 chars 
+| **title** | [string](https://core.telegram.org/type/string) | Stickerset name, `1-64` chars 
 | **shortName** | [string](https://core.telegram.org/type/string) | Sticker set name. Can contain only English letters, digits and underscores. Must end with *"*by*"* ( is case insensitive); 1-64 characters 
 | **thumb** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[InputDocument](https://core.telegram.org/type/InputDocument) | Thumbnail 
 | **stickers** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputStickerSetItem](https://core.telegram.org/type/InputStickerSetItem)> | Stickers 

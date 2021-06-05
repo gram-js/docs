@@ -81,7 +81,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | **langPack** | [string](https://core.telegram.org/type/string) | Language pack to use 
 | **langCode** | [string](https://core.telegram.org/type/string) | Code for the language used on the client, ISO 639-1 standard 
 | **proxy** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[InputClientProxy](https://core.telegram.org/type/InputClientProxy) | Info about an MTProto proxy 
-| **params** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[JSONValue](https://core.telegram.org/type/JSONValue) | Additional initConnection parameters.   <br>For now, only the tz\_offset field is supported, for specifying timezone offset in seconds. 
+| **params** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[JSONValue](https://core.telegram.org/type/JSONValue) | Additional initConnection parameters.   <br>For now, only the `tz\_offset` field is supported, for specifying timezone offset in seconds. 
 | **query** | !X | The query itself 
 
 

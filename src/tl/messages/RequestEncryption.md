@@ -54,7 +54,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | :--: | ---- | ----------- |
 | **userId** | [InputUser](https://core.telegram.org/type/InputUser) | User ID 
 | **randomId** | [int](https://core.telegram.org/type/int) | Unique client request ID required to prevent resending. This also doubles as the chat ID. 
-| **gA** | [bytes](https://core.telegram.org/type/bytes) | A = g ^ a mod p, see [Wikipedia](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) 
+| **gA** | [bytes](https://core.telegram.org/type/bytes) | `A = g ^ a mod p`, see [Wikipedia](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) 
 
 
 ## Result
@@ -73,7 +73,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

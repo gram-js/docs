@@ -59,7 +59,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 | **peer** | [InputEncryptedChat](https://core.telegram.org/type/InputEncryptedChat) | Secret chat ID 
-| **gB** | [bytes](https://core.telegram.org/type/bytes) | B = g ^ b mod p, see [Wikipedia](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) 
+| **gB** | [bytes](https://core.telegram.org/type/bytes) | `B = g ^ b mod p`, see [Wikipedia](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) 
 | **keyFingerprint** | [long](https://core.telegram.org/type/long) | 64-bit fingerprint of the received key 
 
 
@@ -80,7 +80,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

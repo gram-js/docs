@@ -53,7 +53,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 | **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
-| **force** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | If set, dialogs pinned server-side but not present in the order field will be unpinned. 
+| **force** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | If set, dialogs pinned server-side but not present in the `order` field will be unpinned. 
 | **folderId** | [int](https://core.telegram.org/type/int) | [Peer folder ID, for more info click here](https://core.telegram.org/api/folders#peer-folders) 
 | **order** | [Vector](https://core.telegram.org/type/Vector%20t)<[InputDialogPeer](https://core.telegram.org/type/InputDialogPeer)> | New dialog order 
 
@@ -73,7 +73,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
 ## Can bots use this method?
 
-Yes
+No
 
 ## Related pages
 

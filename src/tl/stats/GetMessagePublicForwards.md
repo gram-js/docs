@@ -2,7 +2,7 @@
 
 Obtains a list of messages, indicating to which other public channels was a channel message forwarded.  
 
-Will return a list of [messages](https://core.telegram.org/constructor/message) with peer\_id equal to the public channel to which this message was forwarded.
+Will return a list of [messages](https://core.telegram.org/constructor/message) with `peer\_id` equal to the public channel to which this message was forwarded.
 
 
 
@@ -62,7 +62,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | :--: | ---- | ----------- |
 | **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | Source channel 
 | **msgId** | [int](https://core.telegram.org/type/int) | Source message ID 
-| **offsetRate** | [int](https://core.telegram.org/type/int) | Initially 0, then set to the next\_rate parameter of [messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice) 
+| **offsetRate** | [int](https://core.telegram.org/type/int) | Initially 0, then set to the `next\_rate` parameter of [messages.messagesSlice](https://core.telegram.org/constructor/messages.messagesSlice) 
 | **offsetPeer** | [InputPeer](https://core.telegram.org/type/InputPeer) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
 | **offsetId** | [int](https://core.telegram.org/type/int) | [Offsets for pagination, for more info click here](https://core.telegram.org/api/offsets) 
 | **limit** | [int](https://core.telegram.org/type/int) | Maximum number of results to return, [see pagination](https://core.telegram.org/api/offsets) 
