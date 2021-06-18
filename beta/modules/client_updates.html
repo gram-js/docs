@@ -1,0 +1,454 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>client/updates | telegram</title>
+	<meta name="description" content="Documentation for telegram">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">telegram</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">telegram</a>
+				</li>
+				<li>
+					<a href="client_updates.html">client/updates</a>
+				</li>
+			</ul>
+			<h1>Module client/updates</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#addeventhandler" class="tsd-kind-icon">add<wbr>Event<wbr>Handler</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#removeeventhandler" class="tsd-kind-icon">remove<wbr>Event<wbr>Handler</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#listeventhandlers" class="tsd-kind-icon">list<wbr>Event<wbr>Handlers</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#catchup" class="tsd-kind-icon">catch<wbr>Up</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#_handleupdate" class="tsd-kind-icon">_handle<wbr>Update</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#_processupdate" class="tsd-kind-icon">_process<wbr>Update</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#_dispatchupdate" class="tsd-kind-icon">_dispatch<wbr>Update</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="client_updates.html#_updateloop" class="tsd-kind-icon">_update<wbr>Loop</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a>, event<span class="tsd-signature-symbol">?: </span><a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L11">gramjs/client/updates.ts:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> event: <a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>f: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+													<ul class="tsd-parameters">
+														<li class="tsd-parameter-signature">
+															<ul class="tsd-signatures tsd-kind-type-literal">
+																<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+															</ul>
+															<ul class="tsd-descriptions">
+																<li class="tsd-description">
+																	<h4 class="tsd-parameters-title">Parameters</h4>
+																	<ul class="tsd-parameters">
+																		<li>
+																			<h5>event: <span class="tsd-signature-type">any</span></h5>
+																		</li>
+																	</ul>
+																	<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter-signature">
+													<ul class="tsd-signatures tsd-kind-type-literal">
+														<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+													</ul>
+													<ul class="tsd-descriptions">
+														<li class="tsd-description">
+															<h4 class="tsd-parameters-title">Parameters</h4>
+															<ul class="tsd-parameters">
+																<li>
+																	<h5>event: <span class="tsd-signature-type">any</span></h5>
+																</li>
+															</ul>
+															<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="addeventhandler" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Handler<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CallableFunction</span>, event<span class="tsd-signature-symbol">?: </span><a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L18">gramjs/client/updates.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">CallableFunction</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> event: <a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="removeeventhandler" class="tsd-anchor"></a>
+					<h3>remove<wbr>Event<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Handler<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CallableFunction</span>, event<span class="tsd-signature-symbol">: </span><a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L31">gramjs/client/updates.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">CallableFunction</span></h5>
+								</li>
+								<li>
+									<h5>event: <a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="listeventhandlers" class="tsd-anchor"></a>
+					<h3>list<wbr>Event<wbr>Handlers</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Event<wbr>Handlers<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CallableFunction</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L41">gramjs/client/updates.ts:41</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="../classes/events_common.eventbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">EventBuilder</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CallableFunction</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="catchup" class="tsd-anchor"></a>
+					<h3>catch<wbr>Up</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">catch<wbr>Up<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L45">gramjs/client/updates.ts:45</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="_handleupdate" class="tsd-anchor"></a>
+					<h3>_handle<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">_handle<wbr>Update<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a>, update<span class="tsd-signature-symbol">: </span><a href="tl_api.api.html#typeupdate" class="tsd-signature-type" data-tsd-kind="Type alias">TypeUpdate</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L49">gramjs/client/updates.ts:49</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+								<li>
+									<h5>update: <a href="tl_api.api.html#typeupdate" class="tsd-signature-type" data-tsd-kind="Type alias">TypeUpdate</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="_processupdate" class="tsd-anchor"></a>
+					<h3>_process<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">_process<wbr>Update<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a>, update<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, others<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, entities<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L85">gramjs/client/updates.ts:85</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+								<li>
+									<h5>update: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>others: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> entities: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="_dispatchupdate" class="tsd-anchor"></a>
+					<h3>_dispatch<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">_dispatch<wbr>Update<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a>, args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>update<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UpdateConnectionState</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L100">gramjs/client/updates.ts:100</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+								<li>
+									<h5>args: <span class="tsd-signature-symbol">{ </span>update<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UpdateConnectionState</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>update<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UpdateConnectionState</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="_updateloop" class="tsd-anchor"></a>
+					<h3>_update<wbr>Loop</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">_update<wbr>Loop<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/updates.ts#L137">gramjs/client/updates.ts:137</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="../classes/client_telegramclient.telegramclient.html" class="tsd-signature-type" data-tsd-kind="Class">TelegramClient</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="client_updates.html">client/updates</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#on" class="tsd-kind-icon">on</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#addeventhandler" class="tsd-kind-icon">add<wbr>Event<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#removeeventhandler" class="tsd-kind-icon">remove<wbr>Event<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#listeventhandlers" class="tsd-kind-icon">list<wbr>Event<wbr>Handlers</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#catchup" class="tsd-kind-icon">catch<wbr>Up</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#_handleupdate" class="tsd-kind-icon">_handle<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#_processupdate" class="tsd-kind-icon">_process<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#_dispatchupdate" class="tsd-kind-icon">_dispatch<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="client_updates.html#_updateloop" class="tsd-kind-icon">_update<wbr>Loop</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>telegram</title>
+	<meta name="description" content="Documentation for telegram">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">telegram</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>telegram</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#gramjs" id="gramjs" style="color: inherit; text-decoration: none;">
+					<h1>GramJS</h1>
+				</a>
+				<p><strong>GramJS</strong> is Telegram client implementation in Javascript. This project&#39;s <em>core</em> is <strong>completely based</strong> on
+					<a href="https://github.com/LonamiWebs/Telethon">Telethon</a>. All the files which are fully based on it.
+				don&#39;t forget to have a look to the original project.</p>
+				<a href="#obtaining-your-api-id-and-hash" id="obtaining-your-api-id-and-hash" style="color: inherit; text-decoration: none;">
+					<h3>Obtaining your <code>API ID</code> and <code>Hash</code></h3>
+				</a>
+				<ol>
+					<li>Follow <a href="https://my.telegram.org">this link</a> and login with your phone number.</li>
+					<li>Click under <code>API Development tools</code>.</li>
+					<li>A <code>Create new application</code> window will appear. Fill in your application details.
+						There is no need to enter any <code>URL</code>, and only the first two fields (<code>App title</code> and <code>Short name</code>)
+					can be changed later as long as I&#39;m aware.</li>
+					<li>Click on <code>Create application</code> at the end. Now that you have the <code>API ID</code> and <code>Hash</code></li>
+				</ol>
+				<a href="#running-gramjs" id="running-gramjs" style="color: inherit; text-decoration: none;">
+					<h2>Running GramJS</h2>
+				</a>
+				<p>If you want to run in it in a browser just use webpack (a configuration file is already present).
+					The output will be in <code>browser</code> folder.
+					In the browser gramjs will use localstorage to not regenerate api methods each run.
+				check the <code>examples</code> folder for more info.</p>
+				<a href="#generate-session-string" id="generate-session-string" style="color: inherit; text-decoration: none;">
+					<h2>Generate Session String</h2>
+				</a>
+				<p>To generate session string , simply run <code>npx tgsession</code> and provide required details</p>
+				<a href="#using-raw-api" id="using-raw-api" style="color: inherit; text-decoration: none;">
+					<h2>Using raw api</h2>
+				</a>
+				<p>Currently you can use any raw api function using <code>await client.invoke(new RequestClass(args))</code> .
+				you can find all the requests and types at <a href="https://gram.js.org/">https://gram.js.org/</a></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/helpers.html">Helpers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils.html">Utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_telegramclient.html">client/<wbr>Telegram<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_account.html">client/account</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_auth.html">client/auth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_bots.html">client/bots</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_buttons.html">client/buttons</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_chats.html">client/chats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_dialogs.html">client/dialogs</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_downloads.html">client/downloads</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_messageparse.html">client/message<wbr>Parse</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_messages.html">client/messages</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_telegrambaseclient.html">client/telegram<wbr>Base<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_updates.html">client/updates</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_uploads.html">client/uploads</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/client_users.html">client/users</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/define.html">define</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/events.html">events</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/events_newmessage.html">events/<wbr>New<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/events_raw.html">events/<wbr>Raw</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/events_common.html">events/common</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/example.html">example</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/requestiter.html">request<wbr>Iter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sessions.html">sessions</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sessions_abstract.html">sessions/<wbr>Abstract</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sessions_memory.html">sessions/<wbr>Memory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sessions_storesession.html">sessions/<wbr>Store<wbr>Session</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sessions_stringsession.html">sessions/<wbr>String<wbr>Session</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl.html">tl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_alltlobjects.html">tl/<wbr>AllTLObjects</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_mtprotorequest.html">tl/MTProto<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_api.html">tl/api</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_core.html">tl/core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_core_gzippacked.html">tl/core/GZIPPacked</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_core_messagecontainer.html">tl/core/<wbr>Message<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_core_rpcresult.html">tl/core/RPCResult</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_core_tlmessage.html">tl/core/TLMessage</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom.html">tl/custom</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_button.html">tl/custom/button</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_chatgetter.html">tl/custom/chat<wbr>Getter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_dialog.html">tl/custom/dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_draft.html">tl/custom/draft</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_file.html">tl/custom/file</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_forward.html">tl/custom/forward</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_inlineresult.html">tl/custom/inline<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_inlineresults.html">tl/custom/inline<wbr>Results</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_message.html">tl/custom/message</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_messagebutton.html">tl/custom/message<wbr>Button</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_custom_sendergetter.html">tl/custom/sender<wbr>Getter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_generationhelpers.html">tl/generation<wbr>Helpers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tl_patched.html">tl/patched</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

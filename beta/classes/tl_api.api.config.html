@@ -1,0 +1,1364 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Config | telegram</title>
+	<meta name="description" content="Documentation for telegram">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">telegram</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">telegram</a>
+				</li>
+				<li>
+					<a href="../modules/tl_api.html">tl/api</a>
+				</li>
+				<li>
+					<a href="../modules/tl_api.api.html">Api</a>
+				</li>
+				<li>
+					<a href="tl_api.api.config.html">Config</a>
+				</li>
+			</ul>
+			<h1>Class Config</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="tl_api.api.virtualclass.html" class="tsd-signature-type" data-tsd-kind="Class">VirtualClass</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>phonecallsEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>defaultP2pContacts<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>preloadFeaturedStickers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>ignorePhoneEntities<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>revokePmInbox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>blockedMode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>pfsEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>date<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>expires<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>testMode<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#bool" class="tsd-signature-type" data-tsd-kind="Type alias">Bool</a><span class="tsd-signature-symbol">; </span>thisDc<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>dcOptions<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#typedcoption" class="tsd-signature-type" data-tsd-kind="Type alias">TypeDcOption</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>dcTxtDomainName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>chatSizeMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>megagroupSizeMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>forwardedCountMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>onlineUpdatePeriodMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>offlineBlurTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>offlineIdleTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>onlineCloudTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>notifyCloudDelayMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>notifyDefaultDelayMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>pushChatPeriodMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>pushChatLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>savedGifsLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>editTimeLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>revokeTimeLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>revokePmTimeLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>ratingEDecay<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>stickersRecentLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>stickersFavedLimit<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>channelsReadMediaPeriod<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>tmpSessions<span class="tsd-signature-symbol">?: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>pinnedDialogsCountMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>pinnedInfolderCountMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>callReceiveTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>callRingTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>callConnectTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>callPacketTimeoutMs<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>meUrlPrefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>autoupdateUrlPrefix<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>gifSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>venueSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>imgSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>staticMapsProvider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>captionLengthMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>messageLengthMax<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>webfileDcId<span class="tsd-signature-symbol">: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>suggestedLangCode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>langPackVersion<span class="tsd-signature-symbol">?: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol">; </span>baseLangPackVersion<span class="tsd-signature-symbol">?: </span><a href="../modules/tl_api.api.html#int" class="tsd-signature-type" data-tsd-kind="Type alias">int</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Config</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="tl_api.api.config.html#constructor_id" class="tsd-kind-icon">CONSTRUCTOR_<wbr>ID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="tl_api.api.config.html#subclass_of_id" class="tsd-kind-icon">SUBCLASS_<wbr>OF_<wbr>ID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="tl_api.api.config.html#classname" class="tsd-kind-icon">class<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="tl_api.api.config.html#classtype" class="tsd-kind-icon">class<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="tl_api.api.config.html#constructor_id-1" class="tsd-kind-icon">CONSTRUCTOR_<wbr>ID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="tl_api.api.config.html#subclass_of_id-1" class="tsd-kind-icon">SUBCLASS_<wbr>OF_<wbr>ID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="tl_api.api.config.html#classname-1" class="tsd-kind-icon">class<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="tl_api.api.config.html#classtype-1" class="tsd-kind-icon">class<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#phonecallsenabled" class="tsd-kind-icon">phonecalls<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#defaultp2pcontacts" class="tsd-kind-icon">default<wbr>P2p<wbr>Contacts</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#preloadfeaturedstickers" class="tsd-kind-icon">preload<wbr>Featured<wbr>Stickers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#ignorephoneentities" class="tsd-kind-icon">ignore<wbr>Phone<wbr>Entities</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#revokepminbox" class="tsd-kind-icon">revoke<wbr>PmInbox</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#blockedmode" class="tsd-kind-icon">blocked<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#pfsenabled" class="tsd-kind-icon">pfs<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#date" class="tsd-kind-icon">date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#expires" class="tsd-kind-icon">expires</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#testmode" class="tsd-kind-icon">test<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#thisdc" class="tsd-kind-icon">this<wbr>Dc</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#dcoptions" class="tsd-kind-icon">dc<wbr>Options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#dctxtdomainname" class="tsd-kind-icon">dc<wbr>Txt<wbr>Domain<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#chatsizemax" class="tsd-kind-icon">chat<wbr>Size<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#megagroupsizemax" class="tsd-kind-icon">megagroup<wbr>Size<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#forwardedcountmax" class="tsd-kind-icon">forwarded<wbr>Count<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#onlineupdateperiodms" class="tsd-kind-icon">online<wbr>Update<wbr>Period<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#offlineblurtimeoutms" class="tsd-kind-icon">offline<wbr>Blur<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#offlineidletimeoutms" class="tsd-kind-icon">offline<wbr>Idle<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#onlinecloudtimeoutms" class="tsd-kind-icon">online<wbr>Cloud<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#notifyclouddelayms" class="tsd-kind-icon">notify<wbr>Cloud<wbr>Delay<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#notifydefaultdelayms" class="tsd-kind-icon">notify<wbr>Default<wbr>Delay<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#pushchatperiodms" class="tsd-kind-icon">push<wbr>Chat<wbr>Period<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#pushchatlimit" class="tsd-kind-icon">push<wbr>Chat<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#savedgifslimit" class="tsd-kind-icon">saved<wbr>Gifs<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#edittimelimit" class="tsd-kind-icon">edit<wbr>Time<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#revoketimelimit" class="tsd-kind-icon">revoke<wbr>Time<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#revokepmtimelimit" class="tsd-kind-icon">revoke<wbr>PmTime<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#ratingedecay" class="tsd-kind-icon">ratingEDecay</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#stickersrecentlimit" class="tsd-kind-icon">stickers<wbr>Recent<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#stickersfavedlimit" class="tsd-kind-icon">stickers<wbr>Faved<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#channelsreadmediaperiod" class="tsd-kind-icon">channels<wbr>Read<wbr>Media<wbr>Period</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#tmpsessions" class="tsd-kind-icon">tmp<wbr>Sessions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#pinneddialogscountmax" class="tsd-kind-icon">pinned<wbr>Dialogs<wbr>Count<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#pinnedinfoldercountmax" class="tsd-kind-icon">pinned<wbr>Infolder<wbr>Count<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#callreceivetimeoutms" class="tsd-kind-icon">call<wbr>Receive<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#callringtimeoutms" class="tsd-kind-icon">call<wbr>Ring<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#callconnecttimeoutms" class="tsd-kind-icon">call<wbr>Connect<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#callpackettimeoutms" class="tsd-kind-icon">call<wbr>Packet<wbr>Timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#meurlprefix" class="tsd-kind-icon">me<wbr>Url<wbr>Prefix</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#autoupdateurlprefix" class="tsd-kind-icon">autoupdate<wbr>Url<wbr>Prefix</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#gifsearchusername" class="tsd-kind-icon">gif<wbr>Search<wbr>Username</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#venuesearchusername" class="tsd-kind-icon">venue<wbr>Search<wbr>Username</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#imgsearchusername" class="tsd-kind-icon">img<wbr>Search<wbr>Username</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#staticmapsprovider" class="tsd-kind-icon">static<wbr>Maps<wbr>Provider</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#captionlengthmax" class="tsd-kind-icon">caption<wbr>Length<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#messagelengthmax" class="tsd-kind-icon">message<wbr>Length<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#webfiledcid" class="tsd-kind-icon">webfile<wbr>DcId</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#suggestedlangcode" class="tsd-kind-icon">suggested<wbr>Lang<wbr>Code</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#langpackversion" class="tsd-kind-icon">lang<wbr>Pack<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tl_api.api.config.html#baselangpackversion" class="tsd-kind-icon">base<wbr>Lang<wbr>Pack<wbr>Version</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="tl_api.api.config.html#serializebytes" class="tsd-kind-icon">serialize<wbr>Bytes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="tl_api.api.config.html#serializedate" class="tsd-kind-icon">serialize<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="tl_api.api.config.html#fromreader" class="tsd-kind-icon">from<wbr>Reader</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="tl_api.api.config.html#getbytes" class="tsd-kind-icon">get<wbr>Bytes</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="tl_api.api.config.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="constructor_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> CONSTRUCTOR_<wbr>ID</h3>
+					<div class="tsd-signature tsd-kind-icon">CONSTRUCTOR_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#constructor_id">CONSTRUCTOR_ID</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L28">gramjs/tl/api.d.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="subclass_of_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> SUBCLASS_<wbr>OF_<wbr>ID</h3>
+					<div class="tsd-signature tsd-kind-icon">SUBCLASS_<wbr>OF_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#subclass_of_id">SUBCLASS_OF_ID</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L29">gramjs/tl/api.d.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="classname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> class<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#classname">className</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L30">gramjs/tl/api.d.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="classtype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> class<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">class<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;constructor&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;request&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#classtype">classType</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L31">gramjs/tl/api.d.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor_id-1" class="tsd-anchor"></a>
+					<h3>CONSTRUCTOR_<wbr>ID</h3>
+					<div class="tsd-signature tsd-kind-icon">CONSTRUCTOR_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#constructor_id-1">CONSTRUCTOR_ID</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L38">gramjs/tl/api.d.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="subclass_of_id-1" class="tsd-anchor"></a>
+					<h3>SUBCLASS_<wbr>OF_<wbr>ID</h3>
+					<div class="tsd-signature tsd-kind-icon">SUBCLASS_<wbr>OF_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#subclass_of_id-1">SUBCLASS_OF_ID</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L39">gramjs/tl/api.d.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="classname-1" class="tsd-anchor"></a>
+					<h3>class<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#classname-1">className</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L40">gramjs/tl/api.d.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="classtype-1" class="tsd-anchor"></a>
+					<h3>class<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">class<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;constructor&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;request&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#classtype-1">classType</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L41">gramjs/tl/api.d.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="phonecallsenabled" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> phonecalls<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">phonecalls<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2848">gramjs/tl/api.d.ts:2848</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="defaultp2pcontacts" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> default<wbr>P2p<wbr>Contacts</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>P2p<wbr>Contacts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2849">gramjs/tl/api.d.ts:2849</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="preloadfeaturedstickers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> preload<wbr>Featured<wbr>Stickers</h3>
+					<div class="tsd-signature tsd-kind-icon">preload<wbr>Featured<wbr>Stickers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2850">gramjs/tl/api.d.ts:2850</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="ignorephoneentities" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ignore<wbr>Phone<wbr>Entities</h3>
+					<div class="tsd-signature tsd-kind-icon">ignore<wbr>Phone<wbr>Entities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2851">gramjs/tl/api.d.ts:2851</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="revokepminbox" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> revoke<wbr>PmInbox</h3>
+					<div class="tsd-signature tsd-kind-icon">revoke<wbr>PmInbox<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2852">gramjs/tl/api.d.ts:2852</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="blockedmode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> blocked<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">blocked<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2853">gramjs/tl/api.d.ts:2853</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pfsenabled" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> pfs<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">pfs<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2854">gramjs/tl/api.d.ts:2854</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="date" class="tsd-anchor"></a>
+					<h3>date</h3>
+					<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2855">gramjs/tl/api.d.ts:2855</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="expires" class="tsd-anchor"></a>
+					<h3>expires</h3>
+					<div class="tsd-signature tsd-kind-icon">expires<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2856">gramjs/tl/api.d.ts:2856</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="testmode" class="tsd-anchor"></a>
+					<h3>test<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2857">gramjs/tl/api.d.ts:2857</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="thisdc" class="tsd-anchor"></a>
+					<h3>this<wbr>Dc</h3>
+					<div class="tsd-signature tsd-kind-icon">this<wbr>Dc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2858">gramjs/tl/api.d.ts:2858</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dcoptions" class="tsd-anchor"></a>
+					<h3>dc<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">dc<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="tl_api.api.dcoption.html" class="tsd-signature-type" data-tsd-kind="Class">DcOption</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2859">gramjs/tl/api.d.ts:2859</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dctxtdomainname" class="tsd-anchor"></a>
+					<h3>dc<wbr>Txt<wbr>Domain<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">dc<wbr>Txt<wbr>Domain<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2860">gramjs/tl/api.d.ts:2860</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="chatsizemax" class="tsd-anchor"></a>
+					<h3>chat<wbr>Size<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">chat<wbr>Size<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2861">gramjs/tl/api.d.ts:2861</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="megagroupsizemax" class="tsd-anchor"></a>
+					<h3>megagroup<wbr>Size<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">megagroup<wbr>Size<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2862">gramjs/tl/api.d.ts:2862</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="forwardedcountmax" class="tsd-anchor"></a>
+					<h3>forwarded<wbr>Count<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">forwarded<wbr>Count<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2863">gramjs/tl/api.d.ts:2863</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onlineupdateperiodms" class="tsd-anchor"></a>
+					<h3>online<wbr>Update<wbr>Period<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">online<wbr>Update<wbr>Period<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2864">gramjs/tl/api.d.ts:2864</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="offlineblurtimeoutms" class="tsd-anchor"></a>
+					<h3>offline<wbr>Blur<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">offline<wbr>Blur<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2865">gramjs/tl/api.d.ts:2865</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="offlineidletimeoutms" class="tsd-anchor"></a>
+					<h3>offline<wbr>Idle<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">offline<wbr>Idle<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2866">gramjs/tl/api.d.ts:2866</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onlinecloudtimeoutms" class="tsd-anchor"></a>
+					<h3>online<wbr>Cloud<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">online<wbr>Cloud<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2867">gramjs/tl/api.d.ts:2867</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="notifyclouddelayms" class="tsd-anchor"></a>
+					<h3>notify<wbr>Cloud<wbr>Delay<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">notify<wbr>Cloud<wbr>Delay<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2868">gramjs/tl/api.d.ts:2868</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="notifydefaultdelayms" class="tsd-anchor"></a>
+					<h3>notify<wbr>Default<wbr>Delay<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">notify<wbr>Default<wbr>Delay<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2869">gramjs/tl/api.d.ts:2869</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pushchatperiodms" class="tsd-anchor"></a>
+					<h3>push<wbr>Chat<wbr>Period<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">push<wbr>Chat<wbr>Period<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2870">gramjs/tl/api.d.ts:2870</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pushchatlimit" class="tsd-anchor"></a>
+					<h3>push<wbr>Chat<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">push<wbr>Chat<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2871">gramjs/tl/api.d.ts:2871</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="savedgifslimit" class="tsd-anchor"></a>
+					<h3>saved<wbr>Gifs<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">saved<wbr>Gifs<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2872">gramjs/tl/api.d.ts:2872</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="edittimelimit" class="tsd-anchor"></a>
+					<h3>edit<wbr>Time<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">edit<wbr>Time<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2873">gramjs/tl/api.d.ts:2873</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="revoketimelimit" class="tsd-anchor"></a>
+					<h3>revoke<wbr>Time<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">revoke<wbr>Time<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2874">gramjs/tl/api.d.ts:2874</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="revokepmtimelimit" class="tsd-anchor"></a>
+					<h3>revoke<wbr>PmTime<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">revoke<wbr>PmTime<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2875">gramjs/tl/api.d.ts:2875</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="ratingedecay" class="tsd-anchor"></a>
+					<h3>ratingEDecay</h3>
+					<div class="tsd-signature tsd-kind-icon">ratingEDecay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2876">gramjs/tl/api.d.ts:2876</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="stickersrecentlimit" class="tsd-anchor"></a>
+					<h3>stickers<wbr>Recent<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">stickers<wbr>Recent<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2877">gramjs/tl/api.d.ts:2877</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="stickersfavedlimit" class="tsd-anchor"></a>
+					<h3>stickers<wbr>Faved<wbr>Limit</h3>
+					<div class="tsd-signature tsd-kind-icon">stickers<wbr>Faved<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2878">gramjs/tl/api.d.ts:2878</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="channelsreadmediaperiod" class="tsd-anchor"></a>
+					<h3>channels<wbr>Read<wbr>Media<wbr>Period</h3>
+					<div class="tsd-signature tsd-kind-icon">channels<wbr>Read<wbr>Media<wbr>Period<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2879">gramjs/tl/api.d.ts:2879</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tmpsessions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tmp<wbr>Sessions</h3>
+					<div class="tsd-signature tsd-kind-icon">tmp<wbr>Sessions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2880">gramjs/tl/api.d.ts:2880</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pinneddialogscountmax" class="tsd-anchor"></a>
+					<h3>pinned<wbr>Dialogs<wbr>Count<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">pinned<wbr>Dialogs<wbr>Count<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2881">gramjs/tl/api.d.ts:2881</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pinnedinfoldercountmax" class="tsd-anchor"></a>
+					<h3>pinned<wbr>Infolder<wbr>Count<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">pinned<wbr>Infolder<wbr>Count<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2882">gramjs/tl/api.d.ts:2882</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="callreceivetimeoutms" class="tsd-anchor"></a>
+					<h3>call<wbr>Receive<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">call<wbr>Receive<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2883">gramjs/tl/api.d.ts:2883</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="callringtimeoutms" class="tsd-anchor"></a>
+					<h3>call<wbr>Ring<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">call<wbr>Ring<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2884">gramjs/tl/api.d.ts:2884</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="callconnecttimeoutms" class="tsd-anchor"></a>
+					<h3>call<wbr>Connect<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">call<wbr>Connect<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2885">gramjs/tl/api.d.ts:2885</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="callpackettimeoutms" class="tsd-anchor"></a>
+					<h3>call<wbr>Packet<wbr>Timeout<wbr>Ms</h3>
+					<div class="tsd-signature tsd-kind-icon">call<wbr>Packet<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2886">gramjs/tl/api.d.ts:2886</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="meurlprefix" class="tsd-anchor"></a>
+					<h3>me<wbr>Url<wbr>Prefix</h3>
+					<div class="tsd-signature tsd-kind-icon">me<wbr>Url<wbr>Prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2887">gramjs/tl/api.d.ts:2887</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="autoupdateurlprefix" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> autoupdate<wbr>Url<wbr>Prefix</h3>
+					<div class="tsd-signature tsd-kind-icon">autoupdate<wbr>Url<wbr>Prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2888">gramjs/tl/api.d.ts:2888</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="gifsearchusername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> gif<wbr>Search<wbr>Username</h3>
+					<div class="tsd-signature tsd-kind-icon">gif<wbr>Search<wbr>Username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2889">gramjs/tl/api.d.ts:2889</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="venuesearchusername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> venue<wbr>Search<wbr>Username</h3>
+					<div class="tsd-signature tsd-kind-icon">venue<wbr>Search<wbr>Username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2890">gramjs/tl/api.d.ts:2890</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="imgsearchusername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> img<wbr>Search<wbr>Username</h3>
+					<div class="tsd-signature tsd-kind-icon">img<wbr>Search<wbr>Username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2891">gramjs/tl/api.d.ts:2891</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="staticmapsprovider" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> static<wbr>Maps<wbr>Provider</h3>
+					<div class="tsd-signature tsd-kind-icon">static<wbr>Maps<wbr>Provider<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2892">gramjs/tl/api.d.ts:2892</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="captionlengthmax" class="tsd-anchor"></a>
+					<h3>caption<wbr>Length<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">caption<wbr>Length<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2893">gramjs/tl/api.d.ts:2893</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="messagelengthmax" class="tsd-anchor"></a>
+					<h3>message<wbr>Length<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">message<wbr>Length<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2894">gramjs/tl/api.d.ts:2894</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="webfiledcid" class="tsd-anchor"></a>
+					<h3>webfile<wbr>DcId</h3>
+					<div class="tsd-signature tsd-kind-icon">webfile<wbr>DcId<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2895">gramjs/tl/api.d.ts:2895</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="suggestedlangcode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> suggested<wbr>Lang<wbr>Code</h3>
+					<div class="tsd-signature tsd-kind-icon">suggested<wbr>Lang<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2896">gramjs/tl/api.d.ts:2896</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="langpackversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> lang<wbr>Pack<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">lang<wbr>Pack<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2897">gramjs/tl/api.d.ts:2897</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="baselangpackversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Lang<wbr>Pack<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">base<wbr>Lang<wbr>Pack<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2898">gramjs/tl/api.d.ts:2898</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="serializebytes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> serialize<wbr>Bytes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">serialize<wbr>Bytes<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#serializebytes">serializeBytes</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L33">gramjs/tl/api.d.ts:33</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="serializedate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> serialize<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">serialize<wbr>Date<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#serializedate">serializeDate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L34">gramjs/tl/api.d.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="fromreader" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Reader</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Reader<span class="tsd-signature-symbol">(</span>reader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="tl_api.api.config.html" class="tsd-signature-type" data-tsd-kind="Class">Config</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L2846">gramjs/tl/api.d.ts:2846</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>reader: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="tl_api.api.config.html" class="tsd-signature-type" data-tsd-kind="Class">Config</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getbytes" class="tsd-anchor"></a>
+					<h3>get<wbr>Bytes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Bytes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#getbytes">getBytes</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L36">gramjs/tl/api.d.ts:36</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Config<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>phonecallsEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>defaultP2pContacts<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>preloadFeaturedStickers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>ignorePhoneEntities<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>revokePmInbox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>blockedMode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>pfsEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>expires<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>testMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>thisDc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>dcOptions<span class="tsd-signature-symbol">: </span><a href="tl_api.api.dcoption.html" class="tsd-signature-type" data-tsd-kind="Class">DcOption</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>dcTxtDomainName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>chatSizeMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>megagroupSizeMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>forwardedCountMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>onlineUpdatePeriodMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>offlineBlurTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>offlineIdleTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>onlineCloudTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>notifyCloudDelayMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>notifyDefaultDelayMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pushChatPeriodMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pushChatLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>savedGifsLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>editTimeLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>revokeTimeLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>revokePmTimeLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>ratingEDecay<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>stickersRecentLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>stickersFavedLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>channelsReadMediaPeriod<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>tmpSessions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pinnedDialogsCountMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pinnedInfolderCountMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callReceiveTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callRingTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callConnectTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callPacketTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>meUrlPrefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>autoupdateUrlPrefix<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>gifSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>venueSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>imgSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>staticMapsProvider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>captionLengthMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>messageLengthMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>webfileDcId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>suggestedLangCode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>langPackVersion<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>baseLangPackVersion<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="tl_api.api.config.html" class="tsd-signature-type" data-tsd-kind="Class">Config</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="tl_api.api.virtualclass.html">VirtualClass</a>.<a href="tl_api.api.virtualclass.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/tl/api.d.ts#L41">gramjs/tl/api.d.ts:41</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <span class="tsd-signature-symbol">{ </span>phonecallsEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>defaultP2pContacts<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>preloadFeaturedStickers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>ignorePhoneEntities<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>revokePmInbox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>blockedMode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>pfsEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>expires<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>testMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>thisDc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>dcOptions<span class="tsd-signature-symbol">: </span><a href="tl_api.api.dcoption.html" class="tsd-signature-type" data-tsd-kind="Class">DcOption</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>dcTxtDomainName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>chatSizeMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>megagroupSizeMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>forwardedCountMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>onlineUpdatePeriodMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>offlineBlurTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>offlineIdleTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>onlineCloudTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>notifyCloudDelayMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>notifyDefaultDelayMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pushChatPeriodMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pushChatLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>savedGifsLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>editTimeLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>revokeTimeLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>revokePmTimeLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>ratingEDecay<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>stickersRecentLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>stickersFavedLimit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>channelsReadMediaPeriod<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>tmpSessions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pinnedDialogsCountMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pinnedInfolderCountMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callReceiveTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callRingTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callConnectTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>callPacketTimeoutMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>meUrlPrefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>autoupdateUrlPrefix<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>gifSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>venueSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>imgSearchUsername<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>staticMapsProvider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>captionLengthMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>messageLengthMax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>webfileDcId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>suggestedLangCode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>langPackVersion<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>baseLangPackVersion<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> phonecalls<wbr>Enabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> default<wbr>P2p<wbr>Contacts<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> preload<wbr>Featured<wbr>Stickers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> ignore<wbr>Phone<wbr>Entities<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> revoke<wbr>PmInbox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> blocked<wbr>Mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> pfs<wbr>Enabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>expires<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>test<wbr>Mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>this<wbr>Dc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>dc<wbr>Options<span class="tsd-signature-symbol">: </span><a href="tl_api.api.dcoption.html" class="tsd-signature-type" data-tsd-kind="Class">DcOption</a><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>dc<wbr>Txt<wbr>Domain<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>chat<wbr>Size<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>megagroup<wbr>Size<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>forwarded<wbr>Count<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>online<wbr>Update<wbr>Period<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>offline<wbr>Blur<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>offline<wbr>Idle<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>online<wbr>Cloud<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>notify<wbr>Cloud<wbr>Delay<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>notify<wbr>Default<wbr>Delay<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>push<wbr>Chat<wbr>Period<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>push<wbr>Chat<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>saved<wbr>Gifs<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>edit<wbr>Time<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>revoke<wbr>Time<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>revoke<wbr>PmTime<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>ratingEDecay<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>stickers<wbr>Recent<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>stickers<wbr>Faved<wbr>Limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>channels<wbr>Read<wbr>Media<wbr>Period<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> tmp<wbr>Sessions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>pinned<wbr>Dialogs<wbr>Count<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>pinned<wbr>Infolder<wbr>Count<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>call<wbr>Receive<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>call<wbr>Ring<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>call<wbr>Connect<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>call<wbr>Packet<wbr>Timeout<wbr>Ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>me<wbr>Url<wbr>Prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> autoupdate<wbr>Url<wbr>Prefix<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> gif<wbr>Search<wbr>Username<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> venue<wbr>Search<wbr>Username<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> img<wbr>Search<wbr>Username<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> static<wbr>Maps<wbr>Provider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>caption<wbr>Length<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>message<wbr>Length<wbr>Max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>webfile<wbr>DcId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> suggested<wbr>Lang<wbr>Code<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> lang<wbr>Pack<wbr>Version<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Lang<wbr>Pack<wbr>Version<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="tl_api.api.config.html" class="tsd-signature-type" data-tsd-kind="Class">Config</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/tl_api.html">tl/api</a>
+						<ul>
+							<li class="current tsd-kind-namespace tsd-parent-kind-module">
+								<a href="../modules/tl_api.api.html">Api</a>
+								<ul>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.account.html">account</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.auth.html">auth</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.bots.html">bots</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.channels.html">channels</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.contacts.html">contacts</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.folders.html">folders</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.help.html">help</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.langpack.html">langpack</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.messages.html">messages</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.payments.html">payments</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.phone.html">phone</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.photos.html">photos</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.stats.html">stats</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.stickers.html">stickers</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.storage.html">storage</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.updates-1.html">updates</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.upload.html">upload</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+										<a href="../modules/tl_api.api.users.html">users</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="tl_api.api.config.html" class="tsd-kind-icon">Config</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="tl_api.api.config.html#constructor_id" class="tsd-kind-icon">CONSTRUCTOR_<wbr>ID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="tl_api.api.config.html#subclass_of_id" class="tsd-kind-icon">SUBCLASS_<wbr>OF_<wbr>ID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="tl_api.api.config.html#classname" class="tsd-kind-icon">class<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="tl_api.api.config.html#classtype" class="tsd-kind-icon">class<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="tl_api.api.config.html#serializebytes" class="tsd-kind-icon">serialize<wbr>Bytes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="tl_api.api.config.html#serializedate" class="tsd-kind-icon">serialize<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="tl_api.api.config.html#fromreader" class="tsd-kind-icon">from<wbr>Reader</a>
+							</li>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="tl_api.api.config.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="tl_api.api.config.html#getbytes" class="tsd-kind-icon">get<wbr>Bytes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="tl_api.api.config.html#constructor_id-1" class="tsd-kind-icon">CONSTRUCTOR_<wbr>ID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="tl_api.api.config.html#subclass_of_id-1" class="tsd-kind-icon">SUBCLASS_<wbr>OF_<wbr>ID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="tl_api.api.config.html#classname-1" class="tsd-kind-icon">class<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="tl_api.api.config.html#classtype-1" class="tsd-kind-icon">class<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#phonecallsenabled" class="tsd-kind-icon">phonecalls<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#defaultp2pcontacts" class="tsd-kind-icon">default<wbr>P2p<wbr>Contacts</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#preloadfeaturedstickers" class="tsd-kind-icon">preload<wbr>Featured<wbr>Stickers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#ignorephoneentities" class="tsd-kind-icon">ignore<wbr>Phone<wbr>Entities</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#revokepminbox" class="tsd-kind-icon">revoke<wbr>PmInbox</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#blockedmode" class="tsd-kind-icon">blocked<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#pfsenabled" class="tsd-kind-icon">pfs<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#date" class="tsd-kind-icon">date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#expires" class="tsd-kind-icon">expires</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#testmode" class="tsd-kind-icon">test<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#thisdc" class="tsd-kind-icon">this<wbr>Dc</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#dcoptions" class="tsd-kind-icon">dc<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#dctxtdomainname" class="tsd-kind-icon">dc<wbr>Txt<wbr>Domain<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#chatsizemax" class="tsd-kind-icon">chat<wbr>Size<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#megagroupsizemax" class="tsd-kind-icon">megagroup<wbr>Size<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#forwardedcountmax" class="tsd-kind-icon">forwarded<wbr>Count<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#onlineupdateperiodms" class="tsd-kind-icon">online<wbr>Update<wbr>Period<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#offlineblurtimeoutms" class="tsd-kind-icon">offline<wbr>Blur<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#offlineidletimeoutms" class="tsd-kind-icon">offline<wbr>Idle<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#onlinecloudtimeoutms" class="tsd-kind-icon">online<wbr>Cloud<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#notifyclouddelayms" class="tsd-kind-icon">notify<wbr>Cloud<wbr>Delay<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#notifydefaultdelayms" class="tsd-kind-icon">notify<wbr>Default<wbr>Delay<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#pushchatperiodms" class="tsd-kind-icon">push<wbr>Chat<wbr>Period<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#pushchatlimit" class="tsd-kind-icon">push<wbr>Chat<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#savedgifslimit" class="tsd-kind-icon">saved<wbr>Gifs<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#edittimelimit" class="tsd-kind-icon">edit<wbr>Time<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#revoketimelimit" class="tsd-kind-icon">revoke<wbr>Time<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#revokepmtimelimit" class="tsd-kind-icon">revoke<wbr>PmTime<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#ratingedecay" class="tsd-kind-icon">ratingEDecay</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#stickersrecentlimit" class="tsd-kind-icon">stickers<wbr>Recent<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#stickersfavedlimit" class="tsd-kind-icon">stickers<wbr>Faved<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#channelsreadmediaperiod" class="tsd-kind-icon">channels<wbr>Read<wbr>Media<wbr>Period</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#tmpsessions" class="tsd-kind-icon">tmp<wbr>Sessions</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#pinneddialogscountmax" class="tsd-kind-icon">pinned<wbr>Dialogs<wbr>Count<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#pinnedinfoldercountmax" class="tsd-kind-icon">pinned<wbr>Infolder<wbr>Count<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#callreceivetimeoutms" class="tsd-kind-icon">call<wbr>Receive<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#callringtimeoutms" class="tsd-kind-icon">call<wbr>Ring<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#callconnecttimeoutms" class="tsd-kind-icon">call<wbr>Connect<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#callpackettimeoutms" class="tsd-kind-icon">call<wbr>Packet<wbr>Timeout<wbr>Ms</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#meurlprefix" class="tsd-kind-icon">me<wbr>Url<wbr>Prefix</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#autoupdateurlprefix" class="tsd-kind-icon">autoupdate<wbr>Url<wbr>Prefix</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#gifsearchusername" class="tsd-kind-icon">gif<wbr>Search<wbr>Username</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#venuesearchusername" class="tsd-kind-icon">venue<wbr>Search<wbr>Username</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#imgsearchusername" class="tsd-kind-icon">img<wbr>Search<wbr>Username</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#staticmapsprovider" class="tsd-kind-icon">static<wbr>Maps<wbr>Provider</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#captionlengthmax" class="tsd-kind-icon">caption<wbr>Length<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#messagelengthmax" class="tsd-kind-icon">message<wbr>Length<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#webfiledcid" class="tsd-kind-icon">webfile<wbr>DcId</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#suggestedlangcode" class="tsd-kind-icon">suggested<wbr>Lang<wbr>Code</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#langpackversion" class="tsd-kind-icon">lang<wbr>Pack<wbr>Version</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tl_api.api.config.html#baselangpackversion" class="tsd-kind-icon">base<wbr>Lang<wbr>Pack<wbr>Version</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
