@@ -4,6 +4,12 @@ This should set you up in no time!
 
 ## Table of Contents
 
+## Advanced documentation
+
+Check out the [beta documentation](./beta) beta documentation for all available methods.
+ 
+PS: work in progress.
+
 ## Installation
 
 Installing GramJS is a straight forward process:

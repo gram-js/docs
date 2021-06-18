@@ -1,13 +1,13 @@
 {
   "name": "gramjs-docs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "run-script-os",
-    "build:darwin:linux:default": "rm -rf docs && node index.js && cp -r static/ docs/",
-    "build:win32": "(if exist docs RMDIR /S /Q docs) && node index.js && echo d | xcopy static docs\\static"
+    "build:darwin:linux:default": "rm -rf docs && node index.js && cp -r static/ docs/ && cp -r beta/ docs/",
+    "build:win32": "(if exist docs RMDIR /S /Q docs) && node index.js && echo d | xcopy static docs\\static && echo d | xcopy /s /q /e /y beta docs\\beta"
   },
   "keywords": [],
   "author": "Andrew Lane <contact@lungers.com>",
