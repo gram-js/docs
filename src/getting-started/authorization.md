@@ -21,23 +21,23 @@ Using GramJS you can use a bot token to log in. Doing this is simple
 :::tab{title="JavaScript"}
 
 ```js
-const { TelegramClient } = require('telegram');
-const { StringSession } = require('telegram/sessions');
+const { TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
 
-const stringSession = ''; // leave this empty for now
-const BOT_TOKEN = ''; // put your bot token here
+const stringSession = ""; // leave this empty for now
+const BOT_TOKEN = ""; // put your bot token here
 
 (async () => {
-    const client = new TelegramClient(
-        new StringSession(stringSession),
-        apiId,
-        apiHash,
-        { connectionRetries: 5 },
-    );
-    await client.start({
-        botAuthToken: BOT_TOKEN,
-    });
-    console.log(client.session.save());
+  const client = new TelegramClient(
+    new StringSession(stringSession),
+    apiId,
+    apiHash,
+    { connectionRetries: 5 }
+  );
+  await client.start({
+    botAuthToken: BOT_TOKEN,
+  });
+  console.log(client.session.save());
 })();
 ```
 
@@ -45,23 +45,23 @@ const BOT_TOKEN = ''; // put your bot token here
 :::tab{title="TypeScript"}
 
 ```ts
-import { TelegramClient } from 'telegram';
-import { StringSession } from 'telegram/sessions';
+import { TelegramClient } from "telegram";
+import { StringSession } from "telegram/sessions";
 
-const stringSession = ''; // leave this empty for now
-const BOT_TOKEN = ''; // put your bot token here
+const stringSession = ""; // leave this empty for now
+const BOT_TOKEN = ""; // put your bot token here
 
 (async () => {
-    const client = new TelegramClient(
-        new StringSession(stringSession),
-        apiId,
-        apiHash,
-        { connectionRetries: 5 },
-    );
-    await client.start({
-        botAuthToken: BOT_TOKEN,
-    });
-    console.log(client.session.save());
+  const client = new TelegramClient(
+    new StringSession(stringSession),
+    apiId,
+    apiHash,
+    { connectionRetries: 5 }
+  );
+  await client.start({
+    botAuthToken: BOT_TOKEN,
+  });
+  console.log(client.session.save());
 })();
 ```
 
@@ -78,28 +78,28 @@ Logging in as a user is a bit more complex because you'll need to provide callba
 :::tab{title="JavaScript"}
 
 ```js
-const { TelegramClient } = require('telegram');
-const { StringSession } = require('telegram/sessions');
-const input = require('input'); // npm i input
+const { TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
+const input = require("input"); // npm i input
 
 const apiId = 123456;
-const apiHash = '123456abcdfg';
-const stringSession = new StringSession(''); // fill this later with the value from session.save()
+const apiHash = "123456abcdfg";
+const stringSession = new StringSession(""); // fill this later with the value from session.save()
 
 (async () => {
-    console.log('Loading interactive example...');
-    const client = new TelegramClient(stringSession, apiId, apiHash, {
-        connectionRetries: 5,
-    });
-    await client.start({
-        phoneNumber: async () => await input.text('number ?'),
-        password: async () => await input.text('password?'),
-        phoneCode: async () => await input.text('Code ?'),
-        onError: err => console.log(err),
-    });
-    console.log('You should now be connected.');
-    console.log(client.session.save()); // Save this string to avoid logging in again
-    await client.sendMessage('me', { message: 'Hello!' });
+  console.log("Loading interactive example...");
+  const client = new TelegramClient(stringSession, apiId, apiHash, {
+    connectionRetries: 5,
+  });
+  await client.start({
+    phoneNumber: async () => await input.text("number ?"),
+    password: async () => await input.text("password?"),
+    phoneCode: async () => await input.text("Code ?"),
+    onError: (err) => console.log(err),
+  });
+  console.log("You should now be connected.");
+  console.log(client.session.save()); // Save this string to avoid logging in again
+  await client.sendMessage("me", { message: "Hello!" });
 })();
 ```
 
@@ -107,28 +107,28 @@ const stringSession = new StringSession(''); // fill this later with the value f
 :::tab{title="TypeScript"}
 
 ```ts
-import { TelegramClient } from 'telegram';
-import { StringSession } from 'telegram/sessions';
-import input from 'input'; // npm i input
+import { TelegramClient } from "telegram";
+import { StringSession } from "telegram/sessions";
+import input from "input"; // npm i input
 
 const apiId = 123456;
-const apiHash = '123456abcdfg';
-const stringSession = new StringSession(''); // fill this later with the value from session.save()
+const apiHash = "123456abcdfg";
+const stringSession = new StringSession(""); // fill this later with the value from session.save()
 
 (async () => {
-    console.log('Loading interactive example...');
-    const client = new TelegramClient(stringSession, apiId, apiHash, {
-        connectionRetries: 5,
-    });
-    await client.start({
-        phoneNumber: async () => await input.text('number ?'),
-        password: async () => await input.text('password?'),
-        phoneCode: async () => await input.text('Code ?'),
-        onError: err => console.log(err),
-    });
-    console.log('You should now be connected.');
-    console.log(client.session.save()); // Save this string to avoid logging in again
-    await client.sendMessage('me', { message: 'Hello!' });
+  console.log("Loading interactive example...");
+  const client = new TelegramClient(stringSession, apiId, apiHash, {
+    connectionRetries: 5,
+  });
+  await client.start({
+    phoneNumber: async () => await input.text("number ?"),
+    password: async () => await input.text("password?"),
+    phoneCode: async () => await input.text("Code ?"),
+    onError: (err) => console.log(err),
+  });
+  console.log("You should now be connected.");
+  console.log(client.session.save()); // Save this string to avoid logging in again
+  await client.sendMessage("me", { message: "Hello!" });
 })();
 ```
 
@@ -149,14 +149,14 @@ You can import it from `telegram/session`
 :::tab{title="JavaScript"}
 
 ```js
-const { StringSession } = require('telegram/sessions');
+const { StringSession } = require("telegram/sessions");
 ```
 
 :::
 :::tab{title="TypeScript"}
 
 ```ts
-import { StringSession } from 'telegram/sessions';
+import { StringSession } from "telegram/sessions";
 ```
 
 :::
@@ -165,7 +165,7 @@ import { StringSession } from 'telegram/sessions';
 If you're using it for the first login you need to provide an empty String to the constructor
 
 ```js
-const stringSession = new StringSession('');
+const stringSession = new StringSession("");
 ```
 
 After logging in you'll need to call the `.save()` method to receive the string
@@ -185,10 +185,10 @@ Store session uses [store2](https://www.npmjs.com/package/store2) with the help 
 :::tab{title="JavaScript"}
 
 ```js
-const { StringSession } = require('telegram/sessions');
-const storeSession = new StoreSession('my_session');
+const { StringSession } = require("telegram/sessions");
+const storeSession = new StoreSession("my_session");
 const client = new TelegramClient(storeSession, apiId, apiHash, {
-    connectionRetries: 5,
+  connectionRetries: 5,
 });
 ```
 
@@ -196,10 +196,10 @@ const client = new TelegramClient(storeSession, apiId, apiHash, {
 :::tab{title="TypeScript"}
 
 ```ts
-import { StringSession } from 'telegram/sessions';
-const storeSession = new StoreSession('my_session');
+import { StringSession } from "telegram/sessions";
+const storeSession = new StoreSession("my_session");
 const client = new TelegramClient(storeSession, apiId, apiHash, {
-    connectionRetries: 5,
+  connectionRetries: 5,
 });
 ```
 

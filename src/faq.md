@@ -12,24 +12,24 @@ logging is enabled by default to the most verbose option.to remove it you can do
 :::tab{title="JavaScript"}
 
 ```js
-const { Logger } = require('telegram/extensions');
-Logger.setLevel('none'); // no logging
-Logger.setLevel('error'); // only errors
-Logger.setLevel('none'); // warnings too
-Logger.setLevel('none'); // info too
-Logger.setLevel('debug'); // everything
+const { Logger } = require("telegram/extensions");
+Logger.setLevel("none"); // no logging
+Logger.setLevel("error"); // only errors
+Logger.setLevel("none"); // warnings too
+Logger.setLevel("none"); // info too
+Logger.setLevel("debug"); // everything
 ```
 
 :::
 :::tab{title="TypeScript"}
 
 ```ts
-import { Logger } from 'telegram/extensions';
-Logger.setLevel('none'); // no logging
-Logger.setLevel('error'); // only errors
-Logger.setLevel('none'); // warnings too
-Logger.setLevel('none'); // info too
-Logger.setLevel('debug'); // everything
+import { Logger } from "telegram/extensions";
+Logger.setLevel("none"); // no logging
+Logger.setLevel("error"); // only errors
+Logger.setLevel("none"); // warnings too
+Logger.setLevel("none"); // info too
+Logger.setLevel("debug"); // everything
 ```
 
 :::

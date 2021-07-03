@@ -7,7 +7,7 @@ This should set you up in no time!
 ## Advanced documentation
 
 Check out the [beta documentation](./beta) beta documentation for all available methods.
- 
+
 PS: work in progress.
 
 ## Installation
@@ -28,28 +28,28 @@ Afterward, you can use the following code to send a message to yourself.
 :::tab{title="JavaScript"}
 
 ```js
-const { TelegramClient } = require('telegram');
-const { StringSession } = require('telegram/sessions');
-const input = require('input'); // npm i input
+const { TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
+const input = require("input"); // npm i input
 
 const apiId = 123456;
-const apiHash = '123456abcdfg';
-const stringSession = new StringSession(''); // fill this later with the value from session.save()
+const apiHash = "123456abcdfg";
+const stringSession = new StringSession(""); // fill this later with the value from session.save()
 
 (async () => {
-    console.log('Loading interactive example...');
-    const client = new TelegramClient(stringSession, apiId, apiHash, {
-        connectionRetries: 5,
-    });
-    await client.start({
-        phoneNumber: async () => await input.text('number ?'),
-        password: async () => await input.text('password?'),
-        phoneCode: async () => await input.text('Code ?'),
-        onError: err => console.log(err),
-    });
-    console.log('You should now be connected.');
-    console.log(client.session.save()); // Save this string to avoid logging in again
-    await client.sendMessage('me', { message: 'Hello!' });
+  console.log("Loading interactive example...");
+  const client = new TelegramClient(stringSession, apiId, apiHash, {
+    connectionRetries: 5,
+  });
+  await client.start({
+    phoneNumber: async () => await input.text("number ?"),
+    password: async () => await input.text("password?"),
+    phoneCode: async () => await input.text("Code ?"),
+    onError: (err) => console.log(err),
+  });
+  console.log("You should now be connected.");
+  console.log(client.session.save()); // Save this string to avoid logging in again
+  await client.sendMessage("me", { message: "Hello!" });
 })();
 ```
 
@@ -57,28 +57,28 @@ const stringSession = new StringSession(''); // fill this later with the value f
 :::tab{title="TypeScript"}
 
 ```ts
-import { TelegramClient } from 'telegram';
-import { StringSession } from 'telegram/sessions';
-import input from 'input'; // npm i input
+import { TelegramClient } from "telegram";
+import { StringSession } from "telegram/sessions";
+import input from "input"; // npm i input
 
 const apiId = 123456;
-const apiHash = '123456abcdfg';
-const stringSession = new StringSession(''); // fill this later with the value from session.save()
+const apiHash = "123456abcdfg";
+const stringSession = new StringSession(""); // fill this later with the value from session.save()
 
 (async () => {
-    console.log('Loading interactive example...');
-    const client = new TelegramClient(stringSession, apiId, apiHash, {
-        connectionRetries: 5,
-    });
-    await client.start({
-        phoneNumber: async () => await input.text('number ?'),
-        password: async () => await input.text('password?'),
-        phoneCode: async () => await input.text('Code ?'),
-        onError: err => console.log(err),
-    });
-    console.log('You should now be connected.');
-    console.log(client.session.save()); // Save this string to avoid logging in again
-    await client.sendMessage('me', { message: 'Hello!' });
+  console.log("Loading interactive example...");
+  const client = new TelegramClient(stringSession, apiId, apiHash, {
+    connectionRetries: 5,
+  });
+  await client.start({
+    phoneNumber: async () => await input.text("number ?"),
+    password: async () => await input.text("password?"),
+    phoneCode: async () => await input.text("Code ?"),
+    onError: (err) => console.log(err),
+  });
+  console.log("You should now be connected.");
+  console.log(client.session.save()); // Save this string to avoid logging in again
+  await client.sendMessage("me", { message: "Hello!" });
 })();
 ```
 
@@ -95,28 +95,28 @@ GramJS is still in its early stages but it can access all API methods from teleg
 :::tab{title="JavaScript"}
 
 ```js
-const { Api } = require('telegram/tl');
+const { Api } = require("telegram/tl");
 
 const result = await client.invoke(
-    new Api.channels.CheckUsername({
-        username: 'testing',
-    }),
+  new Api.channels.CheckUsername({
+    username: "testing",
+  })
 );
-console.log('Result is ', result);
+console.log("Result is ", result);
 ```
 
 :::
 :::tab{title="TypeScript"}
 
 ```ts
-import { Api } from 'telegram/tl';
+import { Api } from "telegram/tl";
 
 const result = await client.invoke(
-    new Api.channels.CheckUsername({
-        username: 'testing',
-    }),
+  new Api.channels.CheckUsername({
+    username: "testing",
+  })
 );
-console.log('Result is ', result);
+console.log("Result is ", result);
 ```
 
 :::

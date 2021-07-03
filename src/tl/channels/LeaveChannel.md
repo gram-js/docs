@@ -2,72 +2,72 @@
 
 Leave a [channel/supergroup](https://core.telegram.org/api/channel)
 
-
-
 ## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession('');
+```js
+const { Api, TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
+
+const session = new StringSession("");
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.channels.LeaveChannel({
-    channel: 'username'
-}));
-    console.log(result); // prints the result
+  const result = await client.invoke(
+    new Api.channels.LeaveChannel({
+      channel: "username",
+    })
+  );
+  console.log(result); // prints the result
 })();
 ```
+
 :::
 
 :::tab{title="TypeScript"}
-```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession('');
+```ts
+import { Api, TelegramClient } from "telegram";
+import { StringSession } from "telegram/sessions";
+
+const session = new StringSession("");
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.Updates = await client.invoke(new Api.channels.LeaveChannel({
-    channel: 'username'
-}));
-    console.log(result); // prints the result
+  const result: Api.Updates = await client.invoke(
+    new Api.channels.LeaveChannel({
+      channel: "username",
+    })
+  );
+  console.log(result); // prints the result
 })();
 ```
+
 :::
 ::::
 
-
-
 ## Parameters
 
-| Name | Type | Description |
-| :--: | ---- | ----------- |
-| **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | [Channel/supergroup](https://core.telegram.org/api/channel) to leave 
-
+|    Name     | Type                                                        | Description                                                          |
+| :---------: | ----------------------------------------------------------- | -------------------------------------------------------------------- |
+| **channel** | [InputChannel](https://core.telegram.org/type/InputChannel) | [Channel/supergroup](https://core.telegram.org/api/channel) to leave |
 
 ## Result
 
 [Updates](https://core.telegram.org/type/Updates)
 
-
-
 ## Possible errors
 
-| Code | Type | Description |
-| :--: | ---- | ----------- |
-| 400 | CHANNEL\_INVALID | The provided channel is invalid 
-| 400 | CHANNEL\_PRIVATE | You haven't joined this channel/supergroup 
-| 403 | CHANNEL\_PUBLIC\_GROUP\_NA | channel/supergroup not available 
-| 400 | MSG\_ID\_INVALID | Invalid message ID provided 
-| 400 | USER\_CREATOR | You can't leave this channel, because you're its creator 
-| 400 | USER\_NOT\_PARTICIPANT | You're not a member of this supergroup/channel 
-
+| Code | Type                    | Description                                              |
+| :--: | ----------------------- | -------------------------------------------------------- |
+| 400  | CHANNEL_INVALID         | The provided channel is invalid                          |
+| 400  | CHANNEL_PRIVATE         | You haven't joined this channel/supergroup               |
+| 403  | CHANNEL_PUBLIC_GROUP_NA | channel/supergroup not available                         |
+| 400  | MSG_ID_INVALID          | Invalid message ID provided                              |
+| 400  | USER_CREATOR            | You can't leave this channel, because you're its creator |
+| 400  | USER_NOT_PARTICIPANT    | You're not a member of this supergroup/channel           |
 
 ## Can bots use this method?
 
@@ -78,7 +78,3 @@ Yes
 #### [Channels](https://core.telegram.org/api/channel)
 
 How to handle channels, supergroups, groups, and what's the difference between them.
-
-
-
-

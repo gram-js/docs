@@ -1,491 +1,1051 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TelegramClientParams | telegram</title>
-	<meta name="description" content="Documentation for telegram">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/main.css">
-	<script async src="../assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="../index.html" class="title">telegram</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="../modules.html">telegram</a>
-				</li>
-				<li>
-					<a href="../modules/client_telegrambaseclient.html">client/telegramBaseClient</a>
-				</li>
-				<li>
-					<a href="client_telegrambaseclient.telegramclientparams.html">TelegramClientParams</a>
-				</li>
-			</ul>
-			<h1>Interface TelegramClientParams</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Interface for creating a new client.
-						All of these have a default value and you should only change those if you know what you are doing.</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">TelegramClientParams</span>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#connection" class="tsd-kind-icon">connection</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#useipv6" class="tsd-kind-icon">useIPV6</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#timeout" class="tsd-kind-icon">timeout</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#requestretries" class="tsd-kind-icon">request<wbr>Retries</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#connectionretries" class="tsd-kind-icon">connection<wbr>Retries</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#downloadretries" class="tsd-kind-icon">download<wbr>Retries</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#retrydelay" class="tsd-kind-icon">retry<wbr>Delay</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#autoreconnect" class="tsd-kind-icon">auto<wbr>Reconnect</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#sequentialupdates" class="tsd-kind-icon">sequential<wbr>Updates</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#floodsleepthreshold" class="tsd-kind-icon">flood<wbr>Sleep<wbr>Threshold</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#devicemodel" class="tsd-kind-icon">device<wbr>Model</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#systemversion" class="tsd-kind-icon">system<wbr>Version</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#appversion" class="tsd-kind-icon">app<wbr>Version</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#langcode" class="tsd-kind-icon">lang<wbr>Code</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#systemlangcode" class="tsd-kind-icon">system<wbr>Lang<wbr>Code</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#baselogger" class="tsd-kind-icon">base<wbr>Logger</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_telegrambaseclient.telegramclientparams.html#usewss" class="tsd-kind-icon">useWSS</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="connection" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> connection</h3>
-					<div class="tsd-signature tsd-kind-icon">connection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L30">gramjs/client/telegramBaseClient.ts:30</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The connection instance to be used when creating a new connection to the servers. It must be a type.<br/>
-							Defaults to {@link ConnectionTCPFull} on Node and {@link ConnectionTCPObfuscated} on browsers.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="useipv6" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> useIPV6</h3>
-					<div class="tsd-signature tsd-kind-icon">useIPV6<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L34">gramjs/client/telegramBaseClient.ts:34</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to connect to the servers through IPv6 or not. By default this is false.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="timeout" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timeout</h3>
-					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L38">gramjs/client/telegramBaseClient.ts:38</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The timeout in seconds to be used when connecting. This does nothing for now.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="requestretries" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> request<wbr>Retries</h3>
-					<div class="tsd-signature tsd-kind-icon">request<wbr>Retries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L45">gramjs/client/telegramBaseClient.ts:45</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>How many times a request should be retried.<br/>
-								Request are retried when Telegram is having internal issues (due to INTERNAL error or RPC_CALL_FAIL error),<br/>
-								when there is a errors.FloodWaitError less than floodSleepThreshold, or when there&#39;s a migrate error.<br/>
-							defaults to 5.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="connectionretries" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> connection<wbr>Retries</h3>
-					<div class="tsd-signature tsd-kind-icon">connection<wbr>Retries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L51">gramjs/client/telegramBaseClient.ts:51</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>How many times the reconnection should retry, either on the initial connection or when Telegram disconnects us.<br/>
-								May be set to a negative or undefined value for infinite retries, but this is not recommended, since the program can get stuck in an infinite loop.<br/>
-							defaults to 5</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="downloadretries" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> download<wbr>Retries</h3>
-					<div class="tsd-signature tsd-kind-icon">download<wbr>Retries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L55">gramjs/client/telegramBaseClient.ts:55</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>How many times we should retry borrowing a sender from another DC when it fails. defaults to 5</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="retrydelay" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> retry<wbr>Delay</h3>
-					<div class="tsd-signature tsd-kind-icon">retry<wbr>Delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L57">gramjs/client/telegramBaseClient.ts:57</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The delay in milliseconds to sleep between automatic reconnections. defaults to 1000</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="autoreconnect" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> auto<wbr>Reconnect</h3>
-					<div class="tsd-signature tsd-kind-icon">auto<wbr>Reconnect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L59">gramjs/client/telegramBaseClient.ts:59</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether reconnection should be retried connection_retries times automatically if Telegram disconnects us or not. defaults to true</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sequentialupdates" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sequential<wbr>Updates</h3>
-					<div class="tsd-signature tsd-kind-icon">sequential<wbr>Updates<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L61">gramjs/client/telegramBaseClient.ts:61</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>does nothing for now</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="floodsleepthreshold" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> flood<wbr>Sleep<wbr>Threshold</h3>
-					<div class="tsd-signature tsd-kind-icon">flood<wbr>Sleep<wbr>Threshold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L65">gramjs/client/telegramBaseClient.ts:65</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The threshold below which the library should automatically sleep on flood wait and slow mode wait errors (inclusive).<br/>
-								For instance, if a FloodWaitError for 17s occurs and floodSleepThreshold is 20s, the library will sleep automatically.<br/>
-							If the error was for 21s, it would raise FloodWaitError instead. defaults to 60 sec.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="devicemodel" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> device<wbr>Model</h3>
-					<div class="tsd-signature tsd-kind-icon">device<wbr>Model<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L69">gramjs/client/telegramBaseClient.ts:69</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Device model to be sent when creating the initial connection. Defaults to os.type().toString().</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="systemversion" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> system<wbr>Version</h3>
-					<div class="tsd-signature tsd-kind-icon">system<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L73">gramjs/client/telegramBaseClient.ts:73</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>System version to be sent when creating the initial connection. defaults to os.release().toString() -.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="appversion" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> app<wbr>Version</h3>
-					<div class="tsd-signature tsd-kind-icon">app<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L77">gramjs/client/telegramBaseClient.ts:77</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>App version to be sent when creating the initial connection. Defaults to 1.0.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="langcode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> lang<wbr>Code</h3>
-					<div class="tsd-signature tsd-kind-icon">lang<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L81">gramjs/client/telegramBaseClient.ts:81</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Language code to be sent when creating the initial connection. Defaults to &#39;en&#39;.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="systemlangcode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> system<wbr>Lang<wbr>Code</h3>
-					<div class="tsd-signature tsd-kind-icon">system<wbr>Lang<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L85">gramjs/client/telegramBaseClient.ts:85</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>System lang code to be sent when creating the initial connection. Defaults to &#39;en&#39;.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="baselogger" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Logger</h3>
-					<div class="tsd-signature tsd-kind-icon">base<wbr>Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L89">gramjs/client/telegramBaseClient.ts:89</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Does nothing for now. don&#39;t change.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="usewss" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> useWSS</h3>
-					<div class="tsd-signature tsd-kind-icon">useWSS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L93">gramjs/client/telegramBaseClient.ts:93</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to try to connect over Wss (or 443 port) or not.</p>
-						</div>
-					</div>
-				</section>
-			</section>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="../modules.html">Modules</a>
-					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/client_telegrambaseclient.html">client/telegram<wbr>Base<wbr>Client</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="client_telegrambaseclient.telegramclientparams.html" class="tsd-kind-icon">Telegram<wbr>Client<wbr>Params</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#connection" class="tsd-kind-icon">connection</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#useipv6" class="tsd-kind-icon">useIPV6</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#timeout" class="tsd-kind-icon">timeout</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#requestretries" class="tsd-kind-icon">request<wbr>Retries</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#connectionretries" class="tsd-kind-icon">connection<wbr>Retries</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#downloadretries" class="tsd-kind-icon">download<wbr>Retries</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#retrydelay" class="tsd-kind-icon">retry<wbr>Delay</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#autoreconnect" class="tsd-kind-icon">auto<wbr>Reconnect</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#sequentialupdates" class="tsd-kind-icon">sequential<wbr>Updates</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#floodsleepthreshold" class="tsd-kind-icon">flood<wbr>Sleep<wbr>Threshold</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#devicemodel" class="tsd-kind-icon">device<wbr>Model</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#systemversion" class="tsd-kind-icon">system<wbr>Version</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#appversion" class="tsd-kind-icon">app<wbr>Version</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#langcode" class="tsd-kind-icon">lang<wbr>Code</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#systemlangcode" class="tsd-kind-icon">system<wbr>Lang<wbr>Code</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#baselogger" class="tsd-kind-icon">base<wbr>Logger</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="client_telegrambaseclient.telegramclientparams.html#usewss" class="tsd-kind-icon">useWSS</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/client_telegrambaseclient.telegrambaseclient.html" class="tsd-kind-icon">Telegram<wbr>Base<wbr>Client</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="../assets/js/main.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TelegramClientParams | telegram</title>
+    <meta name="description" content="Documentation for telegram" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script async src="../assets/js/search.js" id="search-script"></script>
+  </head>
+  <body>
+    <header>
+      <div class="tsd-page-toolbar">
+        <div class="container">
+          <div class="table-wrap">
+            <div
+              class="table-cell"
+              id="tsd-search"
+              data-index="../assets/js/search.json"
+              data-base=".."
+            >
+              <div class="field">
+                <label
+                  for="tsd-search-field"
+                  class="tsd-widget search no-caption"
+                  >Search</label
+                >
+                <input id="tsd-search-field" type="text" />
+              </div>
+              <ul class="results">
+                <li class="state loading">Preparing search index...</li>
+                <li class="state failure">The search index is not available</li>
+              </ul>
+              <a href="../index.html" class="title">telegram</a>
+            </div>
+            <div class="table-cell" id="tsd-widgets">
+              <div id="tsd-filter">
+                <a
+                  href="#"
+                  class="tsd-widget options no-caption"
+                  data-toggle="options"
+                  >Options</a
+                >
+                <div class="tsd-filter-group">
+                  <div class="tsd-select" id="tsd-filter-visibility">
+                    <span class="tsd-select-label">All</span>
+                    <ul class="tsd-select-list">
+                      <li data-value="public">Public</li>
+                      <li data-value="protected">Public/Protected</li>
+                      <li data-value="private" class="selected">All</li>
+                    </ul>
+                  </div>
+                  <input type="checkbox" id="tsd-filter-inherited" checked />
+                  <label class="tsd-widget" for="tsd-filter-inherited"
+                    >Inherited</label
+                  >
+                </div>
+              </div>
+              <a href="#" class="tsd-widget menu no-caption" data-toggle="menu"
+                >Menu</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tsd-page-title">
+        <div class="container">
+          <ul class="tsd-breadcrumb">
+            <li>
+              <a href="../modules.html">telegram</a>
+            </li>
+            <li>
+              <a href="../modules/client_telegrambaseclient.html"
+                >client/telegramBaseClient</a
+              >
+            </li>
+            <li>
+              <a href="client_telegrambaseclient.telegramclientparams.html"
+                >TelegramClientParams</a
+              >
+            </li>
+          </ul>
+          <h1>Interface TelegramClientParams</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container container-main">
+      <div class="row">
+        <div class="col-8 col-content">
+          <section class="tsd-panel tsd-comment">
+            <div class="tsd-comment tsd-typography">
+              <div class="lead">
+                <p>
+                  Interface for creating a new client. All of these have a
+                  default value and you should only change those if you know
+                  what you are doing.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="tsd-panel tsd-hierarchy">
+            <h3>Hierarchy</h3>
+            <ul class="tsd-hierarchy">
+              <li>
+                <span class="target">TelegramClientParams</span>
+              </li>
+            </ul>
+          </section>
+          <section class="tsd-panel-group tsd-index-group">
+            <h2>Index</h2>
+            <section class="tsd-panel tsd-index-panel">
+              <div class="tsd-index-content">
+                <section class="tsd-index-section">
+                  <h3>Properties</h3>
+                  <ul class="tsd-index-list">
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#connection"
+                        class="tsd-kind-icon"
+                        >connection</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#useipv6"
+                        class="tsd-kind-icon"
+                        >useIPV6</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#timeout"
+                        class="tsd-kind-icon"
+                        >timeout</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#requestretries"
+                        class="tsd-kind-icon"
+                        >request<wbr />Retries</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#connectionretries"
+                        class="tsd-kind-icon"
+                        >connection<wbr />Retries</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#downloadretries"
+                        class="tsd-kind-icon"
+                        >download<wbr />Retries</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#retrydelay"
+                        class="tsd-kind-icon"
+                        >retry<wbr />Delay</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#autoreconnect"
+                        class="tsd-kind-icon"
+                        >auto<wbr />Reconnect</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#sequentialupdates"
+                        class="tsd-kind-icon"
+                        >sequential<wbr />Updates</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#floodsleepthreshold"
+                        class="tsd-kind-icon"
+                        >flood<wbr />Sleep<wbr />Threshold</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#devicemodel"
+                        class="tsd-kind-icon"
+                        >device<wbr />Model</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#systemversion"
+                        class="tsd-kind-icon"
+                        >system<wbr />Version</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#appversion"
+                        class="tsd-kind-icon"
+                        >app<wbr />Version</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#langcode"
+                        class="tsd-kind-icon"
+                        >lang<wbr />Code</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#systemlangcode"
+                        class="tsd-kind-icon"
+                        >system<wbr />Lang<wbr />Code</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#baselogger"
+                        class="tsd-kind-icon"
+                        >base<wbr />Logger</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a
+                        href="client_telegrambaseclient.telegramclientparams.html#usewss"
+                        class="tsd-kind-icon"
+                        >useWSS</a
+                      >
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </section>
+          </section>
+          <section class="tsd-panel-group tsd-member-group">
+            <h2>Properties</h2>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="connection" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                connection
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                connection<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">any</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L30"
+                      >gramjs/client/telegramBaseClient.ts:30</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    The connection instance to be used when creating a new
+                    connection to the servers. It must be a type.<br />
+                    Defaults to {@link ConnectionTCPFull} on Node and {@link
+                    ConnectionTCPObfuscated} on browsers.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="useipv6" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span> useIPV6
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                useIPV6<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">boolean</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L34"
+                      >gramjs/client/telegramBaseClient.ts:34</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    Whether to connect to the servers through IPv6 or not. By
+                    default this is false.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="timeout" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span> timeout
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                timeout<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L38"
+                      >gramjs/client/telegramBaseClient.ts:38</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    The timeout in seconds to be used when connecting. This does
+                    nothing for now.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="requestretries" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                request<wbr />Retries
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                request<wbr />Retries<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L45"
+                      >gramjs/client/telegramBaseClient.ts:45</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    How many times a request should be retried.<br />
+                    Request are retried when Telegram is having internal issues
+                    (due to INTERNAL error or RPC_CALL_FAIL error),<br />
+                    when there is a errors.FloodWaitError less than
+                    floodSleepThreshold, or when there&#39;s a migrate error.<br />
+                    defaults to 5.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="connectionretries" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                connection<wbr />Retries
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                connection<wbr />Retries<span class="tsd-signature-symbol"
+                  >:</span
+                >
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L51"
+                      >gramjs/client/telegramBaseClient.ts:51</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    How many times the reconnection should retry, either on the
+                    initial connection or when Telegram disconnects us.<br />
+                    May be set to a negative or undefined value for infinite
+                    retries, but this is not recommended, since the program can
+                    get stuck in an infinite loop.<br />
+                    defaults to 5
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="downloadretries" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                download<wbr />Retries
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                download<wbr />Retries<span class="tsd-signature-symbol"
+                  >:</span
+                >
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L55"
+                      >gramjs/client/telegramBaseClient.ts:55</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    How many times we should retry borrowing a sender from
+                    another DC when it fails. defaults to 5
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="retrydelay" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                retry<wbr />Delay
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                retry<wbr />Delay<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L57"
+                      >gramjs/client/telegramBaseClient.ts:57</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    The delay in milliseconds to sleep between automatic
+                    reconnections. defaults to 1000
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="autoreconnect" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                auto<wbr />Reconnect
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                auto<wbr />Reconnect<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">boolean</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L59"
+                      >gramjs/client/telegramBaseClient.ts:59</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    Whether reconnection should be retried connection_retries
+                    times automatically if Telegram disconnects us or not.
+                    defaults to true
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="sequentialupdates" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                sequential<wbr />Updates
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                sequential<wbr />Updates<span class="tsd-signature-symbol"
+                  >:</span
+                >
+                <span class="tsd-signature-type">boolean</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L61"
+                      >gramjs/client/telegramBaseClient.ts:61</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>does nothing for now</p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="floodsleepthreshold" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                flood<wbr />Sleep<wbr />Threshold
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                flood<wbr />Sleep<wbr />Threshold<span
+                  class="tsd-signature-symbol"
+                  >:</span
+                >
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L65"
+                      >gramjs/client/telegramBaseClient.ts:65</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    The threshold below which the library should automatically
+                    sleep on flood wait and slow mode wait errors
+                    (inclusive).<br />
+                    For instance, if a FloodWaitError for 17s occurs and
+                    floodSleepThreshold is 20s, the library will sleep
+                    automatically.<br />
+                    If the error was for 21s, it would raise FloodWaitError
+                    instead. defaults to 60 sec.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="devicemodel" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                device<wbr />Model
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                device<wbr />Model<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L69"
+                      >gramjs/client/telegramBaseClient.ts:69</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    Device model to be sent when creating the initial
+                    connection. Defaults to os.type().toString().
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="systemversion" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                system<wbr />Version
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                system<wbr />Version<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L73"
+                      >gramjs/client/telegramBaseClient.ts:73</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    System version to be sent when creating the initial
+                    connection. defaults to os.release().toString() -.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="appversion" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                app<wbr />Version
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                app<wbr />Version<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L77"
+                      >gramjs/client/telegramBaseClient.ts:77</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    App version to be sent when creating the initial connection.
+                    Defaults to 1.0.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="langcode" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                lang<wbr />Code
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                lang<wbr />Code<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L81"
+                      >gramjs/client/telegramBaseClient.ts:81</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    Language code to be sent when creating the initial
+                    connection. Defaults to &#39;en&#39;.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="systemlangcode" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                system<wbr />Lang<wbr />Code
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                system<wbr />Lang<wbr />Code<span class="tsd-signature-symbol"
+                  >:</span
+                >
+                <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L85"
+                      >gramjs/client/telegramBaseClient.ts:85</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    System lang code to be sent when creating the initial
+                    connection. Defaults to &#39;en&#39;.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="baselogger" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span>
+                base<wbr />Logger
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                base<wbr />Logger<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">any</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L89"
+                      >gramjs/client/telegramBaseClient.ts:89</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>Does nothing for now. don&#39;t change.</p>
+                </div>
+              </div>
+            </section>
+            <section
+              class="
+                tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface
+              "
+            >
+              <a name="usewss" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagOptional">Optional</span> useWSS
+              </h3>
+              <div class="tsd-signature tsd-kind-icon">
+                useWSS<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">boolean</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/gram-js/gramjs/blob/2f10bfe/gramjs/client/telegramBaseClient.ts#L93"
+                      >gramjs/client/telegramBaseClient.ts:93</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    Whether to try to connect over Wss (or 443 port) or not.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+          <nav class="tsd-navigation primary">
+            <ul>
+              <li class="">
+                <a href="../modules.html">Modules</a>
+              </li>
+              <li class="current tsd-kind-module">
+                <a href="../modules/client_telegrambaseclient.html"
+                  >client/telegram<wbr />Base<wbr />Client</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="tsd-navigation secondary menu-sticky">
+            <ul class="before-current"></ul>
+            <ul class="current">
+              <li class="current tsd-kind-interface tsd-parent-kind-module">
+                <a
+                  href="client_telegrambaseclient.telegramclientparams.html"
+                  class="tsd-kind-icon"
+                  >Telegram<wbr />Client<wbr />Params</a
+                >
+                <ul>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#connection"
+                      class="tsd-kind-icon"
+                      >connection</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#useipv6"
+                      class="tsd-kind-icon"
+                      >useIPV6</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#timeout"
+                      class="tsd-kind-icon"
+                      >timeout</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#requestretries"
+                      class="tsd-kind-icon"
+                      >request<wbr />Retries</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#connectionretries"
+                      class="tsd-kind-icon"
+                      >connection<wbr />Retries</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#downloadretries"
+                      class="tsd-kind-icon"
+                      >download<wbr />Retries</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#retrydelay"
+                      class="tsd-kind-icon"
+                      >retry<wbr />Delay</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#autoreconnect"
+                      class="tsd-kind-icon"
+                      >auto<wbr />Reconnect</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#sequentialupdates"
+                      class="tsd-kind-icon"
+                      >sequential<wbr />Updates</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#floodsleepthreshold"
+                      class="tsd-kind-icon"
+                      >flood<wbr />Sleep<wbr />Threshold</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#devicemodel"
+                      class="tsd-kind-icon"
+                      >device<wbr />Model</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#systemversion"
+                      class="tsd-kind-icon"
+                      >system<wbr />Version</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#appversion"
+                      class="tsd-kind-icon"
+                      >app<wbr />Version</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#langcode"
+                      class="tsd-kind-icon"
+                      >lang<wbr />Code</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#systemlangcode"
+                      class="tsd-kind-icon"
+                      >system<wbr />Lang<wbr />Code</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#baselogger"
+                      class="tsd-kind-icon"
+                      >base<wbr />Logger</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a
+                      href="client_telegrambaseclient.telegramclientparams.html#usewss"
+                      class="tsd-kind-icon"
+                      >useWSS</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="after-current">
+              <li class="tsd-kind-class tsd-parent-kind-module">
+                <a
+                  href="../classes/client_telegrambaseclient.telegrambaseclient.html"
+                  class="tsd-kind-icon"
+                  >Telegram<wbr />Base<wbr />Client</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <footer class="with-border-bottom">
+      <div class="container">
+        <h2>Legend</h2>
+        <div class="tsd-legend-group">
+          <ul class="tsd-legend">
+            <li class="tsd-kind-namespace">
+              <span class="tsd-kind-icon">Namespace</span>
+            </li>
+            <li class="tsd-kind-variable">
+              <span class="tsd-kind-icon">Variable</span>
+            </li>
+            <li class="tsd-kind-function">
+              <span class="tsd-kind-icon">Function</span>
+            </li>
+            <li class="tsd-kind-function tsd-has-type-parameter">
+              <span class="tsd-kind-icon">Function with type parameter</span>
+            </li>
+            <li class="tsd-kind-type-alias">
+              <span class="tsd-kind-icon">Type alias</span>
+            </li>
+            <li class="tsd-kind-type-alias tsd-has-type-parameter">
+              <span class="tsd-kind-icon">Type alias with type parameter</span>
+            </li>
+          </ul>
+          <ul class="tsd-legend">
+            <li class="tsd-kind-interface">
+              <span class="tsd-kind-icon">Interface</span>
+            </li>
+            <li class="tsd-kind-property tsd-parent-kind-interface">
+              <span class="tsd-kind-icon">Property</span>
+            </li>
+          </ul>
+          <ul class="tsd-legend">
+            <li class="tsd-kind-class">
+              <span class="tsd-kind-icon">Class</span>
+            </li>
+            <li class="tsd-kind-class tsd-has-type-parameter">
+              <span class="tsd-kind-icon">Class with type parameter</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="container tsd-generator">
+      <p>
+        Generated using
+        <a href="https://typedoc.org/" target="_blank">TypeDoc</a>
+      </p>
+    </div>
+    <div class="overlay"></div>
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>

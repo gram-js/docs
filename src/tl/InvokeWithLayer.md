@@ -2,79 +2,83 @@
 
 Invoke the specified query using the specified API [layer](https://core.telegram.org/api/invoking#layers)
 
-
-
 ## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession('');
+```js
+const { Api, TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
+
+const session = new StringSession("");
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.InvokeWithLayer({
-    layer: 43,
-    query: new Api.AnyRequest({/*...*/})
-}));
-    console.log(result); // prints the result
+  const result = await client.invoke(
+    new Api.InvokeWithLayer({
+      layer: 43,
+      query: new Api.AnyRequest({
+        /*...*/
+      }),
+    })
+  );
+  console.log(result); // prints the result
 })();
 ```
+
 :::
 
 :::tab{title="TypeScript"}
-```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession('');
+```ts
+import { Api, TelegramClient } from "telegram";
+import { StringSession } from "telegram/sessions";
+
+const session = new StringSession("");
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.AnyRequest = await client.invoke(new Api.InvokeWithLayer({
-    layer: 43,
-    query: new Api.AnyRequest({/*...*/})
-}));
-    console.log(result); // prints the result
+  const result: Api.AnyRequest = await client.invoke(
+    new Api.InvokeWithLayer({
+      layer: 43,
+      query: new Api.AnyRequest({
+        /*...*/
+      }),
+    })
+  );
+  console.log(result); // prints the result
 })();
 ```
+
 :::
 ::::
 
-
-
 ## Parameters
 
-| Name | Type | Description |
-| :--: | ---- | ----------- |
-| **layer** | [int](https://core.telegram.org/type/int) | The layer to use 
-| **query** | !X | The query 
-
+|   Name    | Type                                      | Description      |
+| :-------: | ----------------------------------------- | ---------------- |
+| **layer** | [int](https://core.telegram.org/type/int) | The layer to use |
+| **query** | !X                                        | The query        |
 
 ## Result
 
 X
 
-
-
 ## Possible errors
 
-| Code | Type | Description |
-| :--: | ---- | ----------- |
-| 400 | AUTH\_BYTES\_INVALID | The provided authorization is invalid 
-| 400 | CDN\_METHOD\_INVALID | You can't call this method in a CDN DC 
-| 403 | CHAT\_WRITE\_FORBIDDEN | You can't write in this chat 
-| 400 | CONNECTION\_API\_ID\_INVALID | The provided API id is invalid 
-| 400 | CONNECTION\_DEVICE\_MODEL\_EMPTY | Device model empty 
-| 400 | CONNECTION\_LANG\_PACK\_INVALID | Language pack invalid 
-| 400 | CONNECTION\_NOT\_INITED | Connection not initialized 
-| 400 | CONNECTION\_SYSTEM\_EMPTY | Connection system empty 
-| 400 | INPUT\_LAYER\_INVALID | The provided layer is invalid 
-| 400 | INVITE\_HASH\_EXPIRED | The invite link has expired 
-
+| Code | Type                          | Description                            |
+| :--: | ----------------------------- | -------------------------------------- |
+| 400  | AUTH_BYTES_INVALID            | The provided authorization is invalid  |
+| 400  | CDN_METHOD_INVALID            | You can't call this method in a CDN DC |
+| 403  | CHAT_WRITE_FORBIDDEN          | You can't write in this chat           |
+| 400  | CONNECTION_API_ID_INVALID     | The provided API id is invalid         |
+| 400  | CONNECTION_DEVICE_MODEL_EMPTY | Device model empty                     |
+| 400  | CONNECTION_LANG_PACK_INVALID  | Language pack invalid                  |
+| 400  | CONNECTION_NOT_INITED         | Connection not initialized             |
+| 400  | CONNECTION_SYSTEM_EMPTY       | Connection system empty                |
+| 400  | INPUT_LAYER_INVALID           | The provided layer is invalid          |
+| 400  | INVITE_HASH_EXPIRED           | The invite link has expired            |
 
 ## Can bots use this method?
 
@@ -85,7 +89,3 @@ Yes
 #### [Calling API Methods](https://core.telegram.org/api/invoking)
 
 Additional options for calling methods.
-
-
-
-

@@ -1,46 +1,46 @@
-const sidebar = document.querySelector('.sidebar');
-const tabSections = document.querySelectorAll('.tabs');
+const sidebar = document.querySelector(".sidebar");
+const tabSections = document.querySelectorAll(".tabs");
 
-tabSections.forEach(section => {
-    const tabs = Array.from(section.querySelectorAll('.tab'));
-    const selectedTab = tabs[0].dataset.title;
-    const titleSection = document.createElement('div');
+tabSections.forEach((section) => {
+  const tabs = Array.from(section.querySelectorAll(".tab"));
+  const selectedTab = tabs[0].dataset.title;
+  const titleSection = document.createElement("div");
 
-    tabs.forEach(tab => {
-        if (tab.dataset.title !== selectedTab) {
-            tab.classList.add('hidden');
-        }
-    });
+  tabs.forEach((tab) => {
+    if (tab.dataset.title !== selectedTab) {
+      tab.classList.add("hidden");
+    }
+  });
 
-    titleSection.classList.add('tabs-title');
-    titleSection.append(
-        ...tabs.map(tab => {
-            const button = document.createElement('button');
-            button.classList.add('tab-title-button');
-            button.textContent = tab.dataset.title;
-            button.dataset.title = tab.dataset.title;
-            return button;
-        }),
-    );
+  titleSection.classList.add("tabs-title");
+  titleSection.append(
+    ...tabs.map((tab) => {
+      const button = document.createElement("button");
+      button.classList.add("tab-title-button");
+      button.textContent = tab.dataset.title;
+      button.dataset.title = tab.dataset.title;
+      return button;
+    })
+  );
 
-    section.insertBefore(titleSection, tabs[0]);
+  section.insertBefore(titleSection, tabs[0]);
 });
 
-document.body.addEventListener('click', event => {
-    const { target } = event;
+document.body.addEventListener("click", (event) => {
+  const { target } = event;
 
-    if (target.closest('.tab-title-button')) {
-        const { title } = target.dataset;
-        if (!title) {
-            return;
-        }
-
-        const tabs = Array.from(document.querySelectorAll('.tab'));
-
-        tabs.forEach(tab => {
-            tab.classList.toggle('hidden', tab.dataset.title !== title);
-        });
-    } else if (target.closest('.menu-icon')) {
-        sidebar.classList.toggle('visible');
+  if (target.closest(".tab-title-button")) {
+    const { title } = target.dataset;
+    if (!title) {
+      return;
     }
+
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+
+    tabs.forEach((tab) => {
+      tab.classList.toggle("hidden", tab.dataset.title !== title);
+    });
+  } else if (target.closest(".menu-icon")) {
+    sidebar.classList.toggle("visible");
+  }
 });

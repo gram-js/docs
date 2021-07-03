@@ -10,6 +10,7 @@
 
 | Name | Type | Description |
 | :--: | ---- | ----------- |
+
 {params}
 
 ## Result
@@ -20,6 +21,7 @@
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
+
 {errors}
 
 ## Can bots use this method?

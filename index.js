@@ -1,31 +1,30 @@
-import autolinkHeadings from 'rehype-autolink-headings';
-import directive from 'remark-directive';
-import fs from 'fs/promises';
-import gfm from 'remark-gfm';
-import glob from 'glob';
-import h from 'hastscript';
-import highlight from 'rehype-highlight';
-import html from 'rehype-stringify';
-import markdown from 'remark-parse';
-import mkdirp from 'mkdirp';
-import path from 'path';
-import raw from 'rehype-raw';
-import remark2rehype from 'remark-rehype';
-import slug from 'rehype-slug';
-import toc from 'remark-toc';
-import unified from 'unified';
-import remark from 'remark';
-import {visit} from 'unist-util-visit';
-import escapeHtml from '@youtwitface/escape-html';
-import find from 'unist-util-find';
+import autolinkHeadings from "rehype-autolink-headings";
+import directive from "remark-directive";
+import fs from "fs/promises";
+import gfm from "remark-gfm";
+import glob from "glob";
+import h from "hastscript";
+import highlight from "rehype-highlight";
+import html from "rehype-stringify";
+import markdown from "remark-parse";
+import mkdirp from "mkdirp";
+import path from "path";
+import raw from "rehype-raw";
+import remark2rehype from "remark-rehype";
+import slug from "rehype-slug";
+import toc from "remark-toc";
+import unified from "unified";
+import remark from "remark";
+import { visit } from "unist-util-visit";
+import escapeHtml from "@youtwitface/escape-html";
+import find from "unist-util-find";
 import { stripHtml } from "string-strip-html";
 
-const snakeToCamel = str =>
-    str.toLowerCase().replace(/([-_][a-z])/g, group =>
-        group
-            .toUpperCase()
-            .replace('-', '')
-            .replace('_', '')
+const snakeToCamel = (str) =>
+  str
+    .toLowerCase()
+    .replace(/([-_][a-z])/g, (group) =>
+      group.toUpperCase().replace("-", "").replace("_", "")
     );
 
 const root = ``;
@@ -56,204 +55,202 @@ const foot = (lunar) => `</body>
     </script>
 </html>`;
 
-const onDirective = node => {
-    const data = node.data || (node.data = {});
-    const hast = h(node.name, node.attributes, node.children);
+const onDirective = (node) => {
+  const data = node.data || (node.data = {});
+  const hast = h(node.name, node.attributes, node.children);
 
-    if (hast.tagName === 'tabs') {
-        data.hName = 'div';
-        data.hProperties = {
-            class: `tabs`,
-        };
-    } else if (hast.tagName === 'tab') {
-        data.hName = 'div';
-        data.hProperties = {
-            class: `tab`,
-            'data-title': hast.properties.title,
-        };
-    }
+  if (hast.tagName === "tabs") {
+    data.hName = "div";
+    data.hProperties = {
+      class: `tabs`,
+    };
+  } else if (hast.tagName === "tab") {
+    data.hName = "div";
+    data.hProperties = {
+      class: `tab`,
+      "data-title": hast.properties.title,
+    };
+  }
 };
 
-const transform = tree =>
-    visit(
-        tree,
-        ['textDirective', 'leafDirective', 'containerDirective'],
-        onDirective,
-    );
+const transform = (tree) =>
+  visit(
+    tree,
+    ["textDirective", "leafDirective", "containerDirective"],
+    onDirective
+  );
 
 const processor = unified()
-    .use(markdown)
-    .use(() => tree => {
-        const node = find(tree, {type: 'heading'});
-        node.depth = Math.min(node.depth + 1, 6);
+  .use(markdown)
+  .use(() => (tree) => {
+    const node = find(tree, { type: "heading" });
+    node.depth = Math.min(node.depth + 1, 6);
 
-        return tree;
-    })
-    .use(directive)
-    .use(() => transform)
-    .use(gfm)
-    .use(toc)
-    .use(remark2rehype, {allowDangerousHtml: true})
-    .use(slug)
-    .use(autolinkHeadings, {behavior: 'append'})
-    .use(highlight)
-    .use(raw)
-    .use(html);
+    return tree;
+  })
+  .use(directive)
+  .use(() => transform)
+  .use(gfm)
+  .use(toc)
+  .use(remark2rehype, { allowDangerousHtml: true })
+  .use(slug)
+  .use(autolinkHeadings, { behavior: "append" })
+  .use(highlight)
+  .use(raw)
+  .use(html);
 
-const treeProcessor = remark().use(() => tree => {
-    const headingIndex = tree.children.findIndex(
-        child => child.type === 'heading' && child.depth === 1,
-    );
+const treeProcessor = remark().use(() => (tree) => {
+  const headingIndex = tree.children.findIndex(
+    (child) => child.type === "heading" && child.depth === 1
+  );
 
-    return {
-        type: 'root',
-        children: [
-            {
-                ...tree.children[headingIndex],
-                type: 'paragraph',
-            },
-            {
-                ...tree.children[headingIndex + 1],
-                type: 'paragraph',
-            },
-        ],
-    };
+  return {
+    type: "root",
+    children: [
+      {
+        ...tree.children[headingIndex],
+        type: "paragraph",
+      },
+      {
+        ...tree.children[headingIndex + 1],
+        type: "paragraph",
+      },
+    ],
+  };
 });
 
-const titleCase = string => {
-    if (string === 'tl') {
-        return 'TL';
-    }
+const titleCase = (string) => {
+  if (string === "tl") {
+    return "TL";
+  }
 
-    return string
-        .split(/-/)
-        .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
-        .join(' ');
+  return string
+    .split(/-/)
+    .map((x) => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
+    .join(" ");
 };
 
 const linkTitle = (title, filePath, shouldLink = true) => {
-    const escapedTitle = escapeHtml(title);
+  const escapedTitle = escapeHtml(title);
 
-    return shouldLink
-        ? `<a href="${root || ''}/${filePath}">${escapedTitle}</a>`
-        : escapedTitle;
+  return shouldLink
+    ? `<a href="${root || ""}/${filePath}">${escapedTitle}</a>`
+    : escapedTitle;
 };
 
 const generateSidebar = (object, directories) => {
-    return Object.entries(object).reduce((sidebar, [key, value]) => {
-        const filePath = (directories ?? [])
-            .concat(key === 'index' ? '' : key)
-            .join('/');
+  return Object.entries(object).reduce((sidebar, [key, value]) => {
+    const filePath = (directories ?? [])
+      .concat(key === "index" ? "" : key)
+      .join("/");
 
-        let title, children;
-        if (directories && key === 'index') {
-            return sidebar;
-        } else if (typeof value === 'string') {
-            title = linkTitle(value, filePath);
-        } else {
-            title = linkTitle(
-                titleCase(value.index || key),
-                filePath,
-                !!value.index,
-            );
-            children = `<ul>${generateSidebar(
-                value,
-                (directories ?? []).concat(key),
-            )}</ul>`;
-        }
+    let title, children;
+    if (directories && key === "index") {
+      return sidebar;
+    } else if (typeof value === "string") {
+      title = linkTitle(value, filePath);
+    } else {
+      title = linkTitle(titleCase(value.index || key), filePath, !!value.index);
+      children = `<ul>${generateSidebar(
+        value,
+        (directories ?? []).concat(key)
+      )}</ul>`;
+    }
 
-        return sidebar + `<li>${title}</li>${children ?? ''}`;
-    }, '');
+    return sidebar + `<li>${title}</li>${children ?? ""}`;
+  }, "");
 };
 const generateSearchIndex = async () => {
-    let main = `var idx = lunr(function () {
+  let main = `var idx = lunr(function () {
   this.field('title')
   this.field('description')
   this.field('params')`;
-    const data = JSON.parse(await fs.readFile("generator/saved.json", {encoding: 'utf-8'}));
-    for (const func of data) {
-        let params = "";
-        for (const param of func["params"]) {
-            params += `${snakeToCamel(stripHtml(param["param_name"]).result)}  ${stripHtml(param["param_description"]).result}\n`
-        }
-        let title = stripHtml(func["title"]).result;
-        if (title.includes(".")){
-            const [namespace,className] = title.split(".");
-            title = namespace+"."+className[0].toUpperCase()+className.slice(1);
-        }else{
-            title = title[0].toUpperCase()+title.slice(1);
-        }
-        main += `
+  const data = JSON.parse(
+    await fs.readFile("generator/saved.json", { encoding: "utf-8" })
+  );
+  for (const func of data) {
+    let params = "";
+    for (const param of func["params"]) {
+      params += `${snakeToCamel(stripHtml(param["param_name"]).result)}  ${
+        stripHtml(param["param_description"]).result
+      }\n`;
+    }
+    let title = stripHtml(func["title"]).result;
+    if (title.includes(".")) {
+      const [namespace, className] = title.split(".");
+      title = namespace + "." + className[0].toUpperCase() + className.slice(1);
+    } else {
+      title = title[0].toUpperCase() + title.slice(1);
+    }
+    main += `
   this.add({
     "title": \`${title}\`,
     "description": \`${stripHtml(func["description"]).result}\`,
     "params": \`${params}\`,
-  })`
-    }
-    main += "})";
-    return main;
-
+  })`;
+  }
+  main += "})";
+  return main;
 };
 
-glob('src/**/*.md', async (error, files) => {
+glob("src/**/*.md", async (error, files) => {
+  if (error) {
+    console.error(error);
+    process.exit(1);
+  }
 
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    }
+  const fileData = await Promise.all(
+    files.map(async (file) => {
+      const data = await fs.readFile(file, { encoding: "utf-8" });
+      const doc = await processor.process(data);
+      const titleDoc = await treeProcessor.process(data);
 
-    const fileData = await Promise.all(
-        files.map(async file => {
-            const data = await fs.readFile(file, {encoding: 'utf-8'});
-            const doc = await processor.process(data);
-            const titleDoc = await treeProcessor.process(data);
+      let [title, ...description] = titleDoc.toString().split("\n");
+      title = title.trim();
+      description = description.join("\n").trim();
 
-            let [title, ...description] = titleDoc.toString().split('\n');
-            title = title.trim();
-            description = description.join('\n').trim();
+      const { dir, name } = path.parse(file);
 
-            const {dir, name} = path.parse(file);
+      const directories = dir.split("/");
+      directories[0] = "docs, ...directive";
 
-            const directories = dir.split("/");
-            directories[0] = 'docs, ...directive';
+      return {
+        doc,
+        name,
+        title,
+        description,
+        directories: directories.slice(1),
+      };
+    })
+  );
 
-            return {
-                doc,
-                name,
-                title,
-                description,
-                directories: directories.slice(1),
-            };
-        }),
-    );
+  const tree = await fileData.reduce(
+    async (promise, { title, name, directories }) => {
+      const tree = await promise;
+      const currentTree = directories.reduce((t, d) => {
+        if (!(d in t)) {
+          t[d] = {};
+        }
 
-    const tree = await fileData.reduce(
-        async (promise, {title, name, directories}) => {
-            const tree = await promise;
-            const currentTree = directories.reduce((t, d) => {
-                if (!(d in t)) {
-                    t[d] = {};
-                }
+        return t[d];
+      }, tree);
 
-                return t[d];
-            }, tree);
+      currentTree[name] = directories[0] === "tl" ? name : title;
+      return tree;
+    },
+    Promise.resolve({})
+  );
 
-            currentTree[name] = directories[0] === 'tl' ? name : title;
-            return tree;
-        },
-        Promise.resolve({}),
-    );
+  const sidebar = generateSidebar(tree);
 
-    const sidebar = generateSidebar(tree);
+  await Promise.all(
+    fileData.map(async ({ doc, title, description, name, directories }) => {
+      const fullPath = path.join("docs", ...directories);
+      await mkdirp(fullPath);
 
-    await Promise.all(
-        fileData.map(async ({doc, title, description, name, directories}) => {
-            const fullPath = path.join('docs', ...directories);
-            await mkdirp(fullPath);
-
-            await fs.writeFile(
-                `${fullPath}/${name}.html`,
-                `${head(title, description.slice(0, 150))}
+      await fs.writeFile(
+        `${fullPath}/${name}.html`,
+        `${head(title, description.slice(0, 150))}
                     <header class="container">
                         <span class="menu-icon">
                             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -270,8 +267,8 @@ glob('src/**/*.md', async (error, files) => {
                             ${doc}
                         </div>
                     </main>
-                ${foot(""/*await generateSearchIndex()*/)}`,
-            );
-        }),
-    );
+                ${foot("" /*await generateSearchIndex()*/)}`
+      );
+    })
+  );
 });

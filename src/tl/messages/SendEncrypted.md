@@ -2,84 +2,84 @@
 
 Sends a text message to a secret chat.
 
-
-
 ## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-```js
-const {Api, TelegramClient} = require('telegram');
-const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession('');
+```js
+const { Api, TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
+
+const session = new StringSession("");
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result = await client.invoke(new Api.messages.SendEncrypted({
-    peer: new Api.InputEncryptedChat({
+  const result = await client.invoke(
+    new Api.messages.SendEncrypted({
+      peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt('-4156887774564')
-    }),
-    randomId: BigInt('-4156887774564'),
-    data: Buffer.from('arbitrary data here')
-}));
-    console.log(result); // prints the result
+        accessHash: BigInt("-4156887774564"),
+      }),
+      randomId: BigInt("-4156887774564"),
+      data: Buffer.from("arbitrary data here"),
+    })
+  );
+  console.log(result); // prints the result
 })();
 ```
+
 :::
 
 :::tab{title="TypeScript"}
-```ts
-import {Api, TelegramClient} from 'telegram';
-import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession('');
+```ts
+import { Api, TelegramClient } from "telegram";
+import { StringSession } from "telegram/sessions";
+
+const session = new StringSession("");
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-    const result: Api.messages.SentEncryptedMessage = await client.invoke(new Api.messages.SendEncrypted({
-    peer: new Api.InputEncryptedChat({
+  const result: Api.messages.SentEncryptedMessage = await client.invoke(
+    new Api.messages.SendEncrypted({
+      peer: new Api.InputEncryptedChat({
         chatId: 43,
-        accessHash: BigInt('-4156887774564')
-    }),
-    randomId: BigInt('-4156887774564'),
-    data: Buffer.from('arbitrary data here')
-}));
-    console.log(result); // prints the result
+        accessHash: BigInt("-4156887774564"),
+      }),
+      randomId: BigInt("-4156887774564"),
+      data: Buffer.from("arbitrary data here"),
+    })
+  );
+  console.log(result); // prints the result
 })();
 ```
+
 :::
 ::::
 
-
-
 ## Parameters
 
-| Name | Type | Description |
-| :--: | ---- | ----------- |
-| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
-| **silent** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Send encrypted message without a notification 
-| **peer** | [InputEncryptedChat](https://core.telegram.org/type/InputEncryptedChat) | Secret chat ID 
-| **randomId** | [long](https://core.telegram.org/type/long) | Unique client message ID, necessary to avoid message resending 
-| **data** | [bytes](https://core.telegram.org/type/bytes) | TL-serialization of [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage) type, encrypted with a key that was created during chat initialization 
-
+|     Name     | Type                                                                                                                              | Description                                                                                                                                                    |
+| :----------: | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  **flags**   | [#](https://core.telegram.org/type/%23)                                                                                           | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields)                                                        |
+|  **silent**  | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Send encrypted message without a notification                                                                                                                  |
+|   **peer**   | [InputEncryptedChat](https://core.telegram.org/type/InputEncryptedChat)                                                           | Secret chat ID                                                                                                                                                 |
+| **randomId** | [long](https://core.telegram.org/type/long)                                                                                       | Unique client message ID, necessary to avoid message resending                                                                                                 |
+|   **data**   | [bytes](https://core.telegram.org/type/bytes)                                                                                     | TL-serialization of [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage) type, encrypted with a key that was created during chat initialization |
 
 ## Result
 
 [messages.SentEncryptedMessage](https://core.telegram.org/type/messages.SentEncryptedMessage)
 
-
-
 ## Possible errors
 
-| Code | Type | Description |
-| :--: | ---- | ----------- |
-| 400 | CHAT\_ID\_INVALID | The provided chat id is invalid 
-| 400 | DATA\_INVALID | Encrypted data invalid 
-| 400 | ENCRYPTION\_DECLINED | The secret chat was declined 
-| 400 | MSG\_WAIT\_FAILED | A waiting call returned an error 
-
+| Code | Type                | Description                      |
+| :--: | ------------------- | -------------------------------- |
+| 400  | CHAT_ID_INVALID     | The provided chat id is invalid  |
+| 400  | DATA_INVALID        | Encrypted data invalid           |
+| 400  | ENCRYPTION_DECLINED | The secret chat was declined     |
+| 400  | MSG_WAIT_FAILED     | A waiting call returned an error |
 
 ## Can bots use this method?
 
@@ -90,7 +90,3 @@ No
 #### [DecryptedMessage](https://core.telegram.org/type/DecryptedMessage)
 
 Object describes the contents of an encrypted message.
-
-
-
-
