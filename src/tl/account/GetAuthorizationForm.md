@@ -11,10 +11,12 @@ Returns a Telegram Passport authorization form for sharing data with a service
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.account.GetAuthorizationForm({
       botId: 43,
@@ -34,10 +36,12 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.account.AuthorizationForm = await client.invoke(
     new Api.account.GetAuthorizationForm({
       botId: 43,

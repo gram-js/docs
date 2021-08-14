@@ -11,10 +11,12 @@ Toggle supergroup slow mode: if enabled, users will only be able to send one mes
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.channels.ToggleSlowMode({
       channel: "username",
@@ -33,10 +35,12 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.Updates = await client.invoke(
     new Api.channels.ToggleSlowMode({
       channel: "username",

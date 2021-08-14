@@ -38,7 +38,7 @@ KNOWN_NAMED_EXAMPLES = {
     ('lang_code', 'string'): "'en'",
     ('chat_id', 'int'): '478614198',
     ('clientId', 'long'): 'readBigIntFromBuffer(generateRandomBytes(8))',
-    ('video', 'InputFile'): "client.upload_file('/path/to/file.mp4')",
+    ('video', 'InputFile'): 'await client.uploadFile({file:new CustomFile("video.mp4", fs.statSync("../video.mp4").size, "../video.mp4"),workers:1})',
 }
 
 KNOWN_TYPED_EXAMPLES = {
@@ -51,8 +51,8 @@ KNOWN_TYPED_EXAMPLES = {
     'double': '8.24',
     'Bool': 'false',
     'true': 'true',
-    'InputChatPhoto': "client.uploadFile('/path/to/photo.jpg')",
-    'InputFile': "client.uploadFile('/path/to/file.jpg')",
+    'InputChatPhoto': 'await client.uploadFile({file:new CustomFile("photo.jpg", fs.statSync("../photo.jpg").size, "../photo.jpg"),workers:1})',
+    'InputFile': 'await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1})',
     'InputPeer': "'username'"
 }
 

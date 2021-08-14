@@ -11,10 +11,12 @@ Should be called after the user hides the report spam/add as contact bar of a ne
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.messages.HidePeerSettingsBar({
       peer: "username",
@@ -32,10 +34,12 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.Bool = await client.invoke(
     new Api.messages.HidePeerSettingsBar({
       peer: "username",

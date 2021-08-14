@@ -11,10 +11,12 @@ Optional: notify the server that the user is currently busy in a call: this will
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.phone.ReceivedCall({
       peer: new Api.InputPhoneCall({
@@ -35,10 +37,12 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.Bool = await client.invoke(
     new Api.phone.ReceivedCall({
       peer: new Api.InputPhoneCall({

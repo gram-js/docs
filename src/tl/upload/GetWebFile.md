@@ -11,10 +11,12 @@ Returns content of an HTTP file or a part, by proxying the request through teleg
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.upload.GetWebFile({
       location: new Api.InputWebFileLocation({
@@ -37,10 +39,12 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.upload.WebFile = await client.invoke(
     new Api.upload.GetWebFile({
       location: new Api.InputWebFileLocation({

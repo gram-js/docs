@@ -11,15 +11,24 @@ Upload a file and associate it to a chat (without actually sending it to the cha
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.messages.UploadMedia({
       peer: "username",
       media: new Api.InputMediaUploadedPhoto({
-        file: client.uploadFile("/path/to/file.jpg"),
+        file: await client.uploadFile({
+          file: new CustomFile(
+            "file.bin",
+            fs.statSync("../file.bin").size,
+            "../file.bin"
+          ),
+          workers: 1,
+        }),
         stickers: [
           new Api.InputDocument({
             id: BigInt("-4156887774564"),
@@ -43,15 +52,24 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.MessageMedia = await client.invoke(
     new Api.messages.UploadMedia({
       peer: "username",
       media: new Api.InputMediaUploadedPhoto({
-        file: client.uploadFile("/path/to/file.jpg"),
+        file: await client.uploadFile({
+          file: new CustomFile(
+            "file.bin",
+            fs.statSync("../file.bin").size,
+            "../file.bin"
+          ),
+          workers: 1,
+        }),
         stickers: [
           new Api.InputDocument({
             id: BigInt("-4156887774564"),

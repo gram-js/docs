@@ -11,14 +11,30 @@ Updates current user profile photo.
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.photos.UploadProfilePhoto({
-      file: client.uploadFile("/path/to/file.jpg"),
-      video: client.upload_file("/path/to/file.mp4"),
+      file: await client.uploadFile({
+        file: new CustomFile(
+          "file.bin",
+          fs.statSync("../file.bin").size,
+          "../file.bin"
+        ),
+        workers: 1,
+      }),
+      video: await client.uploadFile({
+        file: new CustomFile(
+          "video.mp4",
+          fs.statSync("../video.mp4").size,
+          "../video.mp4"
+        ),
+        workers: 1,
+      }),
       videoStartTs: 8.24,
     })
   );
@@ -34,14 +50,30 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.photos.Photo = await client.invoke(
     new Api.photos.UploadProfilePhoto({
-      file: client.uploadFile("/path/to/file.jpg"),
-      video: client.upload_file("/path/to/file.mp4"),
+      file: await client.uploadFile({
+        file: new CustomFile(
+          "file.bin",
+          fs.statSync("../file.bin").size,
+          "../file.bin"
+        ),
+        workers: 1,
+      }),
+      video: await client.uploadFile({
+        file: new CustomFile(
+          "video.mp4",
+          fs.statSync("../video.mp4").size,
+          "../video.mp4"
+        ),
+        workers: 1,
+      }),
       videoStartTs: 8.24,
     })
   );

@@ -11,10 +11,12 @@ Check the validity of a chat invite link and get basic info about it
 const { Api, TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result = await client.invoke(
     new Api.messages.CheckChatInvite({
       hash: "B5MnlS34H1JKyBE71zZfo1",
@@ -32,10 +34,12 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 import { Api, TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 
-const session = new StringSession("");
+const session = new StringSession(""); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
+  await client.connect(); // This assumes you have already authenticated with .start()
+
   const result: Api.ChatInvite = await client.invoke(
     new Api.messages.CheckChatInvite({
       hash: "B5MnlS34H1JKyBE71zZfo1",
