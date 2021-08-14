@@ -63,9 +63,10 @@
     <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
   });
   <span class="hljs-keyword">await</span> client.start({
-    <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"number ?"</span>),
-    <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"password?"</span>),
-    <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Code ?"</span>),
+    <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Please enter your number: "</span>),
+    <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Please enter your password: "</span>),
+    <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () =>
+      <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Please enter the code you received: "</span>),
     <span class="hljs-attr">onError</span>: <span class="hljs-function">(<span class="hljs-params">err</span>) =></span> <span class="hljs-built_in">console</span>.log(err),
   });
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"You should now be connected."</span>);
@@ -86,9 +87,10 @@
     <span class="hljs-attr">connectionRetries</span>: <span class="hljs-number">5</span>,
   });
   <span class="hljs-keyword">await</span> client.start({
-    <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"number ?"</span>),
-    <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"password?"</span>),
-    <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Code ?"</span>),
+    <span class="hljs-attr">phoneNumber</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Please enter your number: "</span>),
+    <span class="hljs-attr">password</span>: <span class="hljs-keyword">async</span> () => <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Please enter your password: "</span>),
+    <span class="hljs-attr">phoneCode</span>: <span class="hljs-keyword">async</span> () =>
+      <span class="hljs-keyword">await</span> input.text(<span class="hljs-string">"Please enter the code you received: "</span>),
     <span class="hljs-attr">onError</span>: <span class="hljs-function">(<span class="hljs-params">err</span>) =></span> <span class="hljs-built_in">console</span>.log(err),
   });
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"You should now be connected."</span>);

@@ -35,20 +35,24 @@
 <div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Api, TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"telegram"</span>);
 <span class="hljs-keyword">const</span> { StringSession } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"telegram/sessions"</span>);
 
-<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">""</span>);
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">""</span>); <span class="hljs-comment">// You should put your string session here</span>
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">await</span> client.connect(); <span class="hljs-comment">// This assumes you have already authenticated with .start()</span>
+
   <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> client.invoke(<span class="hljs-keyword">new</span> Api.payments.GetSavedInfo({}));
   <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// prints the result</span>
 })();
 </code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Api, TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"telegram"</span>;
 <span class="hljs-keyword">import</span> { StringSession } <span class="hljs-keyword">from</span> <span class="hljs-string">"telegram/sessions"</span>;
 
-<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">""</span>);
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> StringSession(<span class="hljs-string">""</span>); <span class="hljs-comment">// You should put your string session here</span>
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(session, apiId, apiHash, {});
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">await</span> client.connect(); <span class="hljs-comment">// This assumes you have already authenticated with .start()</span>
+
   <span class="hljs-keyword">const</span> result: Api.payments.SavedInfo = <span class="hljs-keyword">await</span> client.invoke(
     <span class="hljs-keyword">new</span> Api.payments.GetSavedInfo({})
   );

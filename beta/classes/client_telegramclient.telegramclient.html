@@ -97,6 +97,16 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-static"><a href="client_telegramclient.telegramclient.html#events" class="tsd-kind-icon">events</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#parsemode" class="tsd-kind-icon">parse<wbr>Mode</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#floodsleepthreshold" class="tsd-kind-icon">flood<wbr>Sleep<wbr>Threshold</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#connected" class="tsd-kind-icon">connected</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#disconnected" class="tsd-kind-icon">disconnected</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="client_telegramclient.telegramclient.html#constructor" class="tsd-kind-icon">constructor</a></li>
@@ -137,6 +147,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#getme" class="tsd-kind-icon">get<wbr>Me</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#isbot" class="tsd-kind-icon">is<wbr>Bot</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#isuserauthorized" class="tsd-kind-icon">is<wbr>User<wbr>Authorized</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#getentity" class="tsd-kind-icon">get<wbr>Entity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#getinputentity" class="tsd-kind-icon">get<wbr>Input<wbr>Entity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#getpeerid" class="tsd-kind-icon">get<wbr>Peer<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#connect" class="tsd-kind-icon">connect</a></li>
@@ -145,15 +156,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#destroy" class="tsd-kind-icon">destroy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#_authkeycallback" class="tsd-kind-icon">_auth<wbr>Key<wbr>Callback</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="client_telegramclient.telegramclient.html#parsemode" class="tsd-kind-icon">parse<wbr>Mode</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#floodsleepthreshold" class="tsd-kind-icon">flood<wbr>Sleep<wbr>Threshold</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#connected" class="tsd-kind-icon">connected</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="client_telegramclient.telegramclient.html#disconnected" class="tsd-kind-icon">disconnected</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
@@ -169,6 +171,137 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
+					<a name="events" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> events</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> events<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1337">gramjs/client/TelegramClient.ts:1337</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Small hack for using it in browsers</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="parsemode" class="tsd-anchor"></a>
+					<h3>parse<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> parseMode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/client_messageparse.parseinterface.html" class="tsd-signature-type" data-tsd-kind="Interface">ParseInterface</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L427">gramjs/client/TelegramClient.ts:427</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This property is the default parse mode used when sending messages. Defaults to {@link MarkdownParser}.<br/>
+										It will always be either undefined or an object with parse and unparse methods.<br/>
+										When setting a different value it should be one of:<br/>
+									<br/></p>
+									<ul>
+										<li>Object with parse and unparse methods.<br/></li>
+										<li>A str indicating the parse_mode. For Markdown &#39;md&#39; or &#39;markdown&#39; may be used. For HTML, &#39;html&#39; may be used.<br/>
+											The parse method should be a function accepting a single parameter, the text to parse, and returning a tuple consisting of (parsed message str, [MessageEntity instances]).<br/><br/>
+											The unparse method should be the inverse of parse such that text == unparse(parse(text)).<br/>
+											<br/>
+										See <a href="../modules/tl_api.api.html#typemessageentity">Api.TypeMessageEntity</a> for allowed message entities.</li>
+									</ul>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span style="color: #008000">// gets the current parse mode.</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;parse mode is :&quot;</span><span style="color: #000000">,  </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">parseMode</span><span style="color: #000000">)</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/client_messageparse.parseinterface.html" class="tsd-signature-type" data-tsd-kind="Interface">ParseInterface</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="floodsleepthreshold" class="tsd-anchor"></a>
+					<h3>flood<wbr>Sleep<wbr>Threshold</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> floodSleepThreshold<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> floodSleepThreshold<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L243">gramjs/client/telegramBaseClient.ts:243</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L247">gramjs/client/telegramBaseClient.ts:247</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="connected" class="tsd-anchor"></a>
+					<h3>connected</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> connected<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L267">gramjs/client/telegramBaseClient.ts:267</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="disconnected" class="tsd-anchor"></a>
+					<h3>disconnected</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> disconnected<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L277">gramjs/client/telegramBaseClient.ts:277</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
@@ -181,7 +314,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L41">gramjs/client/TelegramClient.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L42">gramjs/client/TelegramClient.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -228,7 +361,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L90">gramjs/client/TelegramClient.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L91">gramjs/client/TelegramClient.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -290,7 +423,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L107">gramjs/client/TelegramClient.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L108">gramjs/client/TelegramClient.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -324,7 +457,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L137">gramjs/client/TelegramClient.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L138">gramjs/client/TelegramClient.ts:138</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -384,7 +517,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L150">gramjs/client/TelegramClient.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L151">gramjs/client/TelegramClient.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -422,7 +555,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L176">gramjs/client/TelegramClient.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L177">gramjs/client/TelegramClient.ts:177</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -476,7 +609,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L196">gramjs/client/TelegramClient.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L197">gramjs/client/TelegramClient.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -515,7 +648,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L221">gramjs/client/TelegramClient.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L222">gramjs/client/TelegramClient.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -561,13 +694,13 @@
 					<a name="inlinequery" class="tsd-anchor"></a>
 					<h3>inline<wbr>Query</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">inline<wbr>Query<span class="tsd-signature-symbol">(</span>bot<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, entity<span class="tsd-signature-symbol">?: </span><a href="tl_api.api.inputpeerself.html" class="tsd-signature-type" data-tsd-kind="Class">InputPeerSelf</a>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, geoPoint<span class="tsd-signature-symbol">?: </span><a href="tl_api.api.geopoint.html" class="tsd-signature-type" data-tsd-kind="Class">GeoPoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_inlineresults.inlineresults.html" class="tsd-signature-type" data-tsd-kind="Class">InlineResults</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">inline<wbr>Query<span class="tsd-signature-symbol">(</span>bot<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, entity<span class="tsd-signature-symbol">?: </span><a href="tl_api.api.inputpeerself.html" class="tsd-signature-type" data-tsd-kind="Class">InputPeerSelf</a>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, geoPoint<span class="tsd-signature-symbol">?: </span><a href="tl_api.api.geopoint.html" class="tsd-signature-type" data-tsd-kind="Class">GeoPoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">InlineResults</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L251">gramjs/client/TelegramClient.ts:251</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L252">gramjs/client/TelegramClient.ts:252</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -621,7 +754,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_inlineresults.inlineresults.html" class="tsd-signature-type" data-tsd-kind="Class">InlineResults</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">InlineResults</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>a list of InlineResults</p>
 						</li>
 					</ul>
@@ -636,7 +769,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L297">gramjs/client/TelegramClient.ts:297</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L298">gramjs/client/TelegramClient.ts:298</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -695,7 +828,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L336">gramjs/client/TelegramClient.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L337">gramjs/client/TelegramClient.ts:337</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -752,7 +885,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L361">gramjs/client/TelegramClient.ts:361</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L362">gramjs/client/TelegramClient.ts:362</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -796,13 +929,13 @@
 					<a name="downloadmedia" class="tsd-anchor"></a>
 					<h3>download<wbr>Media</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">download<wbr>Media<span class="tsd-signature-symbol">(</span>messageOrMedia<span class="tsd-signature-symbol">: </span><a href="tl_api.api.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol"> | </span><a href="../modules/tl_api.api.html#typemessagemedia" class="tsd-signature-type" data-tsd-kind="Type alias">TypeMessageMedia</a><span class="tsd-signature-symbol"> | </span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a>, downloadParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_downloads.downloadmediainterface.html" class="tsd-signature-type" data-tsd-kind="Interface">DownloadMediaInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">download<wbr>Media<span class="tsd-signature-symbol">(</span>messageOrMedia<span class="tsd-signature-symbol">: </span><a href="tl_api.api.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol"> | </span><a href="../modules/tl_api.api.html#typemessagemedia" class="tsd-signature-type" data-tsd-kind="Type alias">TypeMessageMedia</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Message</span>, downloadParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_downloads.downloadmediainterface.html" class="tsd-signature-type" data-tsd-kind="Interface">DownloadMediaInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L394">gramjs/client/TelegramClient.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L395">gramjs/client/TelegramClient.ts:395</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -831,7 +964,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>messageOrMedia: <a href="tl_api.api.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol"> | </span><a href="../modules/tl_api.api.html#typemessagemedia" class="tsd-signature-type" data-tsd-kind="Type alias">TypeMessageMedia</a><span class="tsd-signature-symbol"> | </span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a></h5>
+									<h5>messageOrMedia: <a href="tl_api.api.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol"> | </span><a href="../modules/tl_api.api.html#typemessagemedia" class="tsd-signature-type" data-tsd-kind="Type alias">TypeMessageMedia</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Message</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>instance of a message or a media.</p>
 									</div>
@@ -858,7 +991,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L442">gramjs/client/TelegramClient.ts:442</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L443">gramjs/client/TelegramClient.ts:443</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -870,10 +1003,10 @@
 									<dt>example</dt>
 									<dd><p>// sets the mode to HTML
 											client.setParseMode(&quot;html&quot;);
-											await client.sendMessage(&quot;me&quot;,&quot;<u>This is an underline text</u>&quot;);
+											await client.sendMessage(&quot;me&quot;,{message:&quot;<u>This is an underline text</u>&quot;});
 											// disable formatting
 											client.setParseMode(undefined);
-										await client.sendMessage(&quot;me&quot;,&quot;<u> this will be sent as it is</u> ** with no formatting **);</p>
+										await client.sendMessage(&quot;me&quot;,{message:&quot;<u> this will be sent as it is</u> ** with no formatting **});</p>
 									</dd>
 								</dl>
 							</div>
@@ -901,7 +1034,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L507">gramjs/client/TelegramClient.ts:507</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L508">gramjs/client/TelegramClient.ts:508</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -979,13 +1112,13 @@
 					<a name="getmessages" class="tsd-anchor"></a>
 					<h3>get<wbr>Messages</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Messages<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, getMessagesParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.itermessagesparams.html" class="tsd-signature-type" data-tsd-kind="Interface">IterMessagesParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Messages<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, getMessagesParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.itermessagesparams.html" class="tsd-signature-type" data-tsd-kind="Interface">IterMessagesParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L536">gramjs/client/TelegramClient.ts:536</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L537">gramjs/client/TelegramClient.ts:537</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1026,7 +1159,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p><a href="helpers.totallist.html">TotalList</a> of messages.</p>
 						</li>
 					</ul>
@@ -1035,13 +1168,13 @@
 					<a name="sendmessage" class="tsd-anchor"></a>
 					<h3>send<wbr>Message</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">send<wbr>Message<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, sendMessageParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.sendmessageparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SendMessageParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Message<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, sendMessageParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.sendmessageparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SendMessageParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L584">gramjs/client/TelegramClient.ts:584</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L585">gramjs/client/TelegramClient.ts:585</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1057,28 +1190,28 @@
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts"><span style="color: #008000">// Markdown is the default.</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;me&quot;</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;Hello **world!**)</span><span style="color: #CD3131">;</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;me&quot;</span><span style="color: #000000">,{</span><span style="color: #001080">message:</span><span style="color: #A31515">&quot;Hello **world!**})</span><span style="color: #CD3131">;</span>
 
 <span style="color: #008000">// Defaults to another parse mode.</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">setParseMode</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;HTML&quot;</span><span style="color: #000000">);</span>
 
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Some &lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt; text&#039;</span><span style="color: #000000">)</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;An &lt;a href=&quot;https://example.com&quot;&gt;URL&lt;/a&gt;&#039;</span><span style="color: #000000">)</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;&lt;a href=&quot;tg://user?id=me&quot;&gt;Mentions&lt;/a&gt;&#039;</span><span style="color: #000000">)</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">message:</span><span style="color: #A31515">&#039;Some &lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt; text&#039;</span><span style="color: #000000">})</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">message:</span><span style="color: #A31515">&#039;An &lt;a href=&quot;https://example.com&quot;&gt;URL&lt;/a&gt;&#039;</span><span style="color: #000000">})</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">message:</span><span style="color: #A31515">&#039;&lt;a href=&quot;tg://user?id=me&quot;&gt;Mentions&lt;/a&gt;&#039;</span><span style="color: #000000">})</span>
 
 <span style="color: #008000">// Explicit parse mode.</span>
 <span style="color: #008000">//  No parse mode by default</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">setParseMode</span><span style="color: #000000">(</span><span style="color: #0000FF">undefined</span><span style="color: #000000">);</span>
 <span style="color: #008000">//...but here I want markdown</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Hello, **world**!&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">parseMode:</span><span style="color: #A31515">&quot;md&quot;</span><span style="color: #000000">})</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">message:</span><span style="color: #A31515">&#039;Hello, **world**!&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">parseMode:</span><span style="color: #A31515">&quot;md&quot;</span><span style="color: #000000">}})</span>
 
 <span style="color: #008000">// ...and here I need HTML</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Hello, &lt;i&gt;world&lt;/i&gt;!&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">parseMode</span><span style="color: #000000">=</span><span style="color: #A31515">&#039;html&#039;</span><span style="color: #000000">})</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;me&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">message:</span><span style="color: #A31515">&#039;Hello, &lt;i&gt;world&lt;/i&gt;!&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">parseMode</span><span style="color: #000000">=</span><span style="color: #A31515">&#039;html&#039;</span><span style="color: #000000">}})</span>
 
 
 <span style="color: #008000">// Scheduling a message to be sent after 5 minutes</span>
 
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Hi, future!&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">schedule:</span><span style="color: #000000">(</span><span style="color: #098658">60</span><span style="color: #000000"> * </span><span style="color: #098658">5</span><span style="color: #000000">)+ </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">()}</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">, {</span><span style="color: #001080">message:</span><span style="color: #A31515">&#039;Hi, future!&#039;</span><span style="color: #000000">, </span><span style="color: #001080">schedule:</span><span style="color: #000000">(</span><span style="color: #098658">60</span><span style="color: #000000"> * </span><span style="color: #098658">5</span><span style="color: #000000">)+ </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">()})</span>
 
 </code></pre>
 									</dd>
@@ -1099,7 +1232,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The sent custom Message.</p>
 						</li>
 					</ul>
@@ -1108,13 +1241,13 @@
 					<a name="forwardmessages" class="tsd-anchor"></a>
 					<h3>forward<wbr>Messages</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">forward<wbr>Messages<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, forwardMessagesParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.forwardmessagesparams.html" class="tsd-signature-type" data-tsd-kind="Interface">ForwardMessagesParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">forward<wbr>Messages<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, forwardMessagesParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.forwardmessagesparams.html" class="tsd-signature-type" data-tsd-kind="Interface">ForwardMessagesParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L620">gramjs/client/TelegramClient.ts:620</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L621">gramjs/client/TelegramClient.ts:621</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1125,7 +1258,7 @@
 										(the &quot;forwarded from&quot; text), you should use <code>sendMessage</code> with
 										the original message instead. This will send a copy of it.
 										<br/>
-									See also <a href="tl_custom_message.message.html#forwardto">Message.forwardTo</a>`.</p>
+									See also {@link Message.forwardTo}`.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
@@ -1162,7 +1295,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The list of forwarded Message, Note.<br/>
 							if some messages failed to be forwarded the returned list will have them as undefined.</p>
 						</li>
@@ -1172,13 +1305,13 @@
 					<a name="editmessage" class="tsd-anchor"></a>
 					<h3>edit<wbr>Message</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">edit<wbr>Message<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, editMessageParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.editmessageparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EditMessageParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Message<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, editMessageParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_messages.editmessageparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EditMessageParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L655">gramjs/client/TelegramClient.ts:655</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L656">gramjs/client/TelegramClient.ts:656</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1196,7 +1329,7 @@
 										For example, when trying to edit messages with a reply markup (or clear markup) this error will be raised.</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">message</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;Hi!&quot;</span><span style="color: #000000">);</span>
+									<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">message</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">,{</span><span style="color: #001080">message:</span><span style="color: #A31515">&quot;Hi!&quot;</span><span style="color: #000000">});</span>
 
 <span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">editMessage</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">,{</span><span style="color: #001080">message:message</span><span style="color: #000000">,</span><span style="color: #001080">text:</span><span style="color: #A31515">&quot;Hello!&quot;</span><span style="color: #000000">}</span>
 <span style="color: #008000">// or</span>
@@ -1222,7 +1355,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The edited Message.</p>
 						</li>
 					</ul>
@@ -1237,14 +1370,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L684">gramjs/client/TelegramClient.ts:684</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L685">gramjs/client/TelegramClient.ts:685</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Deletes the given messages, optionally &quot;for everyone&quot;.</p>
 								</div>
-								<p>See also <a href="tl_custom_message.message.html#delete">Message.delete</a>`.</p>
+								<p>See also {@link Message.delete}`.</p>
 								<dl class="tsd-comment-tags">
 									<dt>remarks</dt>
 									<dd><p>This method does <strong>not</strong> validate that the message IDs belong to the chat that you passed! It&#39;s possible for the method to delete messages from different private chats and small group chats at once, so make sure to pass the right IDs.</p>
@@ -1290,7 +1423,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L710">gramjs/client/TelegramClient.ts:710</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L711">gramjs/client/TelegramClient.ts:711</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1328,13 +1461,13 @@
 					<a name="getdialogs" class="tsd-anchor"></a>
 					<h3>get<wbr>Dialogs</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Dialogs<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_dialogs.iterdialogsparams.html" class="tsd-signature-type" data-tsd-kind="Interface">IterDialogsParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_dialog.dialog.html" class="tsd-signature-type" data-tsd-kind="Class">Dialog</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dialogs<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_dialogs.iterdialogsparams.html" class="tsd-signature-type" data-tsd-kind="Interface">IterDialogsParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Dialog</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L736">gramjs/client/TelegramClient.ts:736</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L737">gramjs/client/TelegramClient.ts:737</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1371,7 +1504,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_dialog.dialog.html" class="tsd-signature-type" data-tsd-kind="Class">Dialog</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="helpers.totallist.html" class="tsd-signature-type" data-tsd-kind="Class">TotalList</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Dialog</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1385,7 +1518,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L773">gramjs/client/TelegramClient.ts:773</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L774">gramjs/client/TelegramClient.ts:774</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1453,7 +1586,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L787">gramjs/client/TelegramClient.ts:787</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L788">gramjs/client/TelegramClient.ts:788</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1491,7 +1624,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L798">gramjs/client/TelegramClient.ts:798</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L799">gramjs/client/TelegramClient.ts:799</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1573,7 +1706,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L846">gramjs/client/TelegramClient.ts:846</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L852">gramjs/client/TelegramClient.ts:852</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1611,7 +1744,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L854">gramjs/client/TelegramClient.ts:854</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L860">gramjs/client/TelegramClient.ts:860</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1634,7 +1767,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L880">gramjs/client/TelegramClient.ts:880</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L886">gramjs/client/TelegramClient.ts:886</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1680,13 +1813,13 @@
 					<a name="sendfile" class="tsd-anchor"></a>
 					<h3>send<wbr>File</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">send<wbr>File<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, sendFileParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_uploads.sendfileinterface.html" class="tsd-signature-type" data-tsd-kind="Interface">SendFileInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">send<wbr>File<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a>, sendFileParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/client_uploads.sendfileinterface.html" class="tsd-signature-type" data-tsd-kind="Interface">SendFileInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L922">gramjs/client/TelegramClient.ts:922</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L928">gramjs/client/TelegramClient.ts:928</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1744,7 +1877,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tl_custom_message.message.html" class="tsd-signature-type" data-tsd-kind="Class">Message</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1758,7 +1891,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L949">gramjs/client/TelegramClient.ts:949</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L955">gramjs/client/TelegramClient.ts:955</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1810,7 +1943,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L964">gramjs/client/TelegramClient.ts:964</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L970">gramjs/client/TelegramClient.ts:970</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1850,7 +1983,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L979">gramjs/client/TelegramClient.ts:979</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L985">gramjs/client/TelegramClient.ts:985</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1882,7 +2015,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L992">gramjs/client/TelegramClient.ts:992</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L998">gramjs/client/TelegramClient.ts:998</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1904,6 +2037,108 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getentity" class="tsd-anchor"></a>
+					<h3>get<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/define.html#entity" class="tsd-signature-type" data-tsd-kind="Type alias">Entity</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/define.html#entity" class="tsd-signature-type" data-tsd-kind="Type alias">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1030">gramjs/client/TelegramClient.ts:1030</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Turns the given entity into a valid Telegram <a href="tl_api.api.user.html">Api.User</a>, <a href="tl_api.api.chat.html">Api.Chat</a> or <a href="tl_api.api.channel.html">Api.Channel</a>.<br/>
+									You can also pass a list or iterable of entities, and they will be efficiently fetched from the network.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">me</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">getEntity</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;me&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;My name is&quot;</span><span style="color: #000000">,</span><span style="color: #001080">utils</span><span style="color: #000000">.</span><span style="color: #795E26">getDisplayName</span><span style="color: #000000">(</span><span style="color: #001080">me</span><span style="color: #000000">));</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">chat</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">getInputEntity</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;username&quot;</span><span style="color: #000000">);</span>
+<span style="color: #AF00DB">for</span><span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> (</span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">message</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">iterMessages</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">){</span>
+<span style="color: #000000">    console.log(</span><span style="color: #A31515">&quot;Message text is&quot;</span><span style="color: #000000">,message.text);</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Note that you could have used the username directly, but it&#039;s</span>
+<span style="color: #008000">// good to use getInputEntity if you will reuse it a lot.</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If a username is given, the username will be resolved making an API call every time.<br/>
+											Resolving usernames is an expensive operation and will start hitting flood waits around 50 usernames in a short period of time.<br/>
+											<br/>
+											Similar limits apply to invite links, and you should use their ID instead.<br/>
+											Using phone numbers (from people in your contact list), exact names, integer IDs or Peer rely on a getInputEntity first,<br/>
+											which in turn needs the entity to be in cache, unless a InputPeer was passed.<br/>
+											<br/>
+										If the entity can&#39;t be found, ValueError will be raised.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/define.html#entity" class="tsd-signature-type" data-tsd-kind="Type alias">Entity</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p><a href="tl_api.api.chat.html">Api.Chat</a>,<a href="tl_api.api.chat.html">Api.Chat</a> or <a href="tl_api.api.channel.html">Api.Channel</a> corresponding to the input entity. A list will be returned if more than one was given.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1059">gramjs/client/TelegramClient.ts:1059</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Turns the given entity into a valid Telegram <a href="tl_api.api.user.html">Api.User</a>, <a href="tl_api.api.chat.html">Api.Chat</a> or <a href="tl_api.api.channel.html">Api.Channel</a>.<br/>
+									You can also pass a list or iterable of entities, and they will be efficiently fetched from the network.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">me</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">getEntity</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;me&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;My name is&quot;</span><span style="color: #000000">,</span><span style="color: #001080">utils</span><span style="color: #000000">.</span><span style="color: #795E26">getDisplayName</span><span style="color: #000000">(</span><span style="color: #001080">me</span><span style="color: #000000">));</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">chat</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">getInputEntity</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;username&quot;</span><span style="color: #000000">);</span>
+<span style="color: #AF00DB">for</span><span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> (</span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">message</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">iterMessages</span><span style="color: #000000">(</span><span style="color: #001080">chat</span><span style="color: #000000">){</span>
+<span style="color: #000000">    console.log(</span><span style="color: #A31515">&quot;Message text is&quot;</span><span style="color: #000000">,message.text);</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Note that you could have used the username directly, but it&#039;s</span>
+<span style="color: #008000">// good to use getInputEntity if you will reuse it a lot.</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../modules/define.html#entitylike" class="tsd-signature-type" data-tsd-kind="Type alias">EntityLike</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If a username is given, the username will be resolved making an API call every time.<br/>
+											Resolving usernames is an expensive operation and will start hitting flood waits around 50 usernames in a short period of time.<br/>
+											<br/>
+											Similar limits apply to invite links, and you should use their ID instead.<br/>
+											Using phone numbers (from people in your contact list), exact names, integer IDs or Peer rely on a getInputEntity first,<br/>
+											which in turn needs the entity to be in cache, unless a InputPeer was passed.<br/>
+											<br/>
+										If the entity can&#39;t be found, ValueError will be raised.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/define.html#entity" class="tsd-signature-type" data-tsd-kind="Type alias">Entity</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p><a href="tl_api.api.chat.html">Api.Chat</a>,<a href="tl_api.api.chat.html">Api.Chat</a> or <a href="tl_api.api.channel.html">Api.Channel</a> corresponding to the input entity. A list will be returned if more than one was given.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getinputentity" class="tsd-anchor"></a>
 					<h3>get<wbr>Input<wbr>Entity</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1913,7 +2148,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L1065">gramjs/client/TelegramClient.ts:1065</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1099">gramjs/client/TelegramClient.ts:1099</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1971,7 +2206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L1082">gramjs/client/TelegramClient.ts:1082</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1116">gramjs/client/TelegramClient.ts:1116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2015,7 +2250,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L1090">gramjs/client/TelegramClient.ts:1090</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1124">gramjs/client/TelegramClient.ts:1124</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2032,7 +2267,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L1211">gramjs/client/TelegramClient.ts:1211</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/TelegramClient.ts#L1245">gramjs/client/TelegramClient.ts:1245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2065,7 +2300,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#_initsession">_initSession</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L244">gramjs/client/telegramBaseClient.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L252">gramjs/client/telegramBaseClient.ts:252</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2083,7 +2318,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#disconnect">disconnect</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L263">gramjs/client/telegramBaseClient.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L271">gramjs/client/telegramBaseClient.ts:271</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2101,7 +2336,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L273">gramjs/client/telegramBaseClient.ts:273</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L281">gramjs/client/telegramBaseClient.ts:281</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2119,7 +2354,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#_authkeycallback">_authKeyCallback</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L287">gramjs/client/telegramBaseClient.ts:287</a></li>
+									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L295">gramjs/client/telegramBaseClient.ts:295</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2136,115 +2371,6 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="parsemode" class="tsd-anchor"></a>
-					<h3>parse<wbr>Mode</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> parseMode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/client_messageparse.parseinterface.html" class="tsd-signature-type" data-tsd-kind="Interface">ParseInterface</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/TelegramClient.ts#L426">gramjs/client/TelegramClient.ts:426</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This property is the default parse mode used when sending messages. Defaults to {@link MarkdownParser}.<br/>
-										It will always be either undefined or an object with parse and unparse methods.<br/>
-										When setting a different value it should be one of:<br/>
-									<br/></p>
-									<ul>
-										<li>Object with parse and unparse methods.<br/></li>
-										<li>A str indicating the parse_mode. For Markdown &#39;md&#39; or &#39;markdown&#39; may be used. For HTML, &#39;html&#39; may be used.<br/>
-											The parse method should be a function accepting a single parameter, the text to parse, and returning a tuple consisting of (parsed message str, [MessageEntity instances]).<br/><br/>
-											The unparse method should be the inverse of parse such that text == unparse(parse(text)).<br/>
-											<br/>
-										See <a href="../modules/tl_api.api.html#typemessageentity">Api.TypeMessageEntity</a> for allowed message entities.</li>
-									</ul>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>example</dt>
-									<dd><pre><code class="language-ts"><span style="color: #008000">// gets the current parse mode.</span>
-<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;parse mode is :&quot;</span><span style="color: #000000">,  </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">parseMode</span><span style="color: #000000">)</span>
-</code></pre>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/client_messageparse.parseinterface.html" class="tsd-signature-type" data-tsd-kind="Interface">ParseInterface</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-					<a name="floodsleepthreshold" class="tsd-anchor"></a>
-					<h3>flood<wbr>Sleep<wbr>Threshold</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> floodSleepThreshold<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> floodSleepThreshold<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L235">gramjs/client/telegramBaseClient.ts:235</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L239">gramjs/client/telegramBaseClient.ts:239</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a name="connected" class="tsd-anchor"></a>
-					<h3>connected</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> connected<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L259">gramjs/client/telegramBaseClient.ts:259</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a name="disconnected" class="tsd-anchor"></a>
-					<h3>disconnected</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> disconnected<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L269">gramjs/client/telegramBaseClient.ts:269</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -2254,7 +2380,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#__version__">__version__</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L122">gramjs/client/telegramBaseClient.ts:122</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L122">gramjs/client/telegramBaseClient.ts:122</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -2270,7 +2396,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#session">session</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L130">gramjs/client/telegramBaseClient.ts:130</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L130">gramjs/client/telegramBaseClient.ts:130</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2281,7 +2407,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#apihash">apiHash</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L131">gramjs/client/telegramBaseClient.ts:131</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L131">gramjs/client/telegramBaseClient.ts:131</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2292,7 +2418,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="client_telegrambaseclient.telegrambaseclient.html">TelegramBaseClient</a>.<a href="client_telegrambaseclient.telegrambaseclient.html#apiid">apiId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/57f94a3/gramjs/client/telegramBaseClient.ts#L132">gramjs/client/telegramBaseClient.ts:132</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/telegramBaseClient.ts#L132">gramjs/client/telegramBaseClient.ts:132</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2316,6 +2442,9 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module">
 						<a href="client_telegramclient.telegramclient.html" class="tsd-kind-icon">Telegram<wbr>Client</a>
 						<ul>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
+								<a href="client_telegramclient.telegramclient.html#events" class="tsd-kind-icon">events</a>
+							</li>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="client_telegramclient.telegramclient.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
@@ -2417,6 +2546,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="client_telegramclient.telegramclient.html#isuserauthorized" class="tsd-kind-icon">is<wbr>User<wbr>Authorized</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="client_telegramclient.telegramclient.html#getentity" class="tsd-kind-icon">get<wbr>Entity</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="client_telegramclient.telegramclient.html#getinputentity" class="tsd-kind-icon">get<wbr>Input<wbr>Entity</a>
