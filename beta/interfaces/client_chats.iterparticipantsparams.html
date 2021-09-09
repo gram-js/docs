@@ -91,6 +91,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_chats.iterparticipantsparams.html#limit" class="tsd-kind-icon">limit</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_chats.iterparticipantsparams.html#search" class="tsd-kind-icon">search</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_chats.iterparticipantsparams.html#filter" class="tsd-kind-icon">filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="client_chats.iterparticipantsparams.html#showtotal" class="tsd-kind-icon">show<wbr>Total</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,7 +105,7 @@
 					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/chats.ts#L399">gramjs/client/chats.ts:399</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/20367c4/gramjs/client/chats.ts#L404">gramjs/client/chats.ts:404</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -119,7 +120,7 @@
 					<div class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/chats.ts#L401">gramjs/client/chats.ts:401</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/20367c4/gramjs/client/chats.ts#L406">gramjs/client/chats.ts:406</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -134,12 +135,27 @@
 					<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <a href="../modules/tl_api.api.html#typechannelparticipantsfilter" class="tsd-signature-type" data-tsd-kind="Type alias">TypeChannelParticipantsFilter</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/826d127/gramjs/client/chats.ts#L403">gramjs/client/chats.ts:403</a></li>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/20367c4/gramjs/client/chats.ts#L408">gramjs/client/chats.ts:408</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>optional filter to be used. E.g only admins filter or only banned members filter. PS : some filters need more permissions.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="showtotal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> show<wbr>Total</h3>
+					<div class="tsd-signature tsd-kind-icon">show<wbr>Total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gram-js/gramjs/blob/20367c4/gramjs/client/chats.ts#L410">gramjs/client/chats.ts:410</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>whether to call an extra request (GetFullChannel) to show the total of users in the group/channel. if set to false total will be 0</p>
 						</div>
 					</div>
 				</section>
@@ -174,6 +190,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="client_chats.iterparticipantsparams.html#filter" class="tsd-kind-icon">filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="client_chats.iterparticipantsparams.html#showtotal" class="tsd-kind-icon">show<wbr>Total</a>
 							</li>
 						</ul>
 					</li>
