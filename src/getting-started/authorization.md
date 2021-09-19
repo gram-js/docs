@@ -135,6 +135,71 @@ const stringSession = new StringSession(""); // fill this later with the value f
 :::
 ::::
 
+## Using MTProxies and Socks5 Proxies.
+
+You can also use MTProxies or a normal Socks proxy to connect to telegram servers.
+
+::::tabs
+:::tab{title="JavaScript"}
+
+```js
+const { TelegramClient } = require("telegram");
+
+const apiId = 123456;
+const apiHash = "123456abcdfg";
+
+(async () => {
+  console.log("Loading interactive example...");
+  const client = new TelegramClient("session_name", apiId, apiHash, {
+        useWSS: false, // Important. Most proxies cannot use SSL.
+        proxy: {
+            ip: "123.123.123.123", // Proxy host (IP or hostname)
+            port: 123, // Proxy port
+            MTProxy: false, // Whether it's an MTProxy or a normal Socks one
+            secret: "00000000000000000000000000000000", // If used MTProxy then you need to provide a secret (or zeros).
+            socksType: 5, // If used Socks you can choose 4 or 5. 
+            timeout: 2 // Timeout (in seconds) for connection,
+
+        }
+
+  });
+  await client.connect();
+  console.log("You should now be connected.");
+})();
+```
+
+:::
+:::tab{title="TypeScript"}
+
+```ts
+import { TelegramClient } from "telegram";
+
+const apiId = 123456;
+const apiHash = "123456abcdfg";
+
+(async () => {
+  console.log("Loading interactive example...");
+  const client = new TelegramClient("session_name", apiId, apiHash, {
+        useWSS: false, // Important. Most proxies cannot use SSL.
+        proxy: {
+            ip: "123.123.123.123", // Proxy host (IP or hostname)
+            port: 123, // Proxy port
+            MTProxy: false, // Whether it's an MTProxy or a normal Socks one
+            secret: "00000000000000000000000000000000", // If used MTProxy then you need to provide a secret (or zeros).
+            socksType: 5, // If used Socks you can choose 4 or 5. 
+            timeout: 2 // Timeout (in seconds) for connection,
+
+        }
+
+  });
+  await client.connect();
+  console.log("You should now be connected.");
+})();
+```
+
+:::
+::::
+
 ## Persistent Session
 
 To avoid having to logging each time you'll need to save the session after logging in. There are multiple types of sessions with the easiest being `StringSession` that will provide an Authorization string for you to use again. You can create your own Session by subclassing the `MemorySession` class.
