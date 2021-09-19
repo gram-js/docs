@@ -36,6 +36,7 @@
 <li><a href="#getting-api-id-and-api-hash">Getting API ID and API HASH</a></li>
 <li><a href="#logging-in-as-a-bot">Logging in as a Bot</a></li>
 <li><a href="#logging-in-as-a-user">Logging in as a User</a></li>
+<li><a href="#using-mtproxies-and-socks5-proxies">Using MTProxies and Socks5 Proxies.</a></li>
 <li><a href="#persistent-session">Persistent Session</a></li>
 <li><a href="#string-session">String Session</a></li>
 <li><a href="#store-session">Store Session</a></li>
@@ -135,6 +136,55 @@
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"You should now be connected."</span>);
   <span class="hljs-built_in">console</span>.log(client.session.save()); <span class="hljs-comment">// Save this string to avoid logging in again</span>
   <span class="hljs-keyword">await</span> client.sendMessage(<span class="hljs-string">"me"</span>, { <span class="hljs-attr">message</span>: <span class="hljs-string">"Hello!"</span> });
+})();
+</code></pre></div></div>
+<h2 id="using-mtproxies-and-socks5-proxies">Using MTProxies and Socks5 Proxies.<a aria-hidden="true" tabindex="-1" href="#using-mtproxies-and-socks5-proxies"><span class="icon icon-link"></span></a></h2>
+<p>You can also use MTProxies or a normal Socks proxy to connect to telegram servers.</p>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { TelegramClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"telegram"</span>);
+
+<span class="hljs-keyword">const</span> apiId = <span class="hljs-number">123456</span>;
+<span class="hljs-keyword">const</span> apiHash = <span class="hljs-string">"123456abcdfg"</span>;
+
+(<span class="hljs-keyword">async</span> () => {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Loading interactive example..."</span>);
+  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(<span class="hljs-string">"session_name"</span>, apiId, apiHash, {
+        <span class="hljs-attr">useWSS</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Important. Most proxies cannot use SSL.</span>
+        <span class="hljs-attr">proxy</span>: {
+            <span class="hljs-attr">ip</span>: <span class="hljs-string">"123.123.123.123"</span>, <span class="hljs-comment">// Proxy host (IP or hostname)</span>
+            <span class="hljs-attr">port</span>: <span class="hljs-number">123</span>, <span class="hljs-comment">// Proxy port</span>
+            <span class="hljs-attr">MTProxy</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Whether it's an MTProxy or a normal Socks one</span>
+            <span class="hljs-attr">secret</span>: <span class="hljs-string">"00000000000000000000000000000000"</span>, <span class="hljs-comment">// If used MTProxy then you need to provide a secret (or zeros).</span>
+            <span class="hljs-attr">socksType</span>: <span class="hljs-number">5</span>, <span class="hljs-comment">// If used Socks you can choose 4 or 5. </span>
+            <span class="hljs-attr">timeout</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// Timeout (in seconds) for connection,</span>
+
+        }
+
+  });
+  <span class="hljs-keyword">await</span> client.connect();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"You should now be connected."</span>);
+})();
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { TelegramClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"telegram"</span>;
+
+<span class="hljs-keyword">const</span> apiId = <span class="hljs-number">123456</span>;
+<span class="hljs-keyword">const</span> apiHash = <span class="hljs-string">"123456abcdfg"</span>;
+
+(<span class="hljs-keyword">async</span> () => {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Loading interactive example..."</span>);
+  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> TelegramClient(<span class="hljs-string">"session_name"</span>, apiId, apiHash, {
+        <span class="hljs-attr">useWSS</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Important. Most proxies cannot use SSL.</span>
+        <span class="hljs-attr">proxy</span>: {
+            <span class="hljs-attr">ip</span>: <span class="hljs-string">"123.123.123.123"</span>, <span class="hljs-comment">// Proxy host (IP or hostname)</span>
+            <span class="hljs-attr">port</span>: <span class="hljs-number">123</span>, <span class="hljs-comment">// Proxy port</span>
+            <span class="hljs-attr">MTProxy</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Whether it's an MTProxy or a normal Socks one</span>
+            <span class="hljs-attr">secret</span>: <span class="hljs-string">"00000000000000000000000000000000"</span>, <span class="hljs-comment">// If used MTProxy then you need to provide a secret (or zeros).</span>
+            <span class="hljs-attr">socksType</span>: <span class="hljs-number">5</span>, <span class="hljs-comment">// If used Socks you can choose 4 or 5. </span>
+            <span class="hljs-attr">timeout</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// Timeout (in seconds) for connection,</span>
+
+        }
+
+  });
+  <span class="hljs-keyword">await</span> client.connect();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"You should now be connected."</span>);
 })();
 </code></pre></div></div>
 <h2 id="persistent-session">Persistent Session<a aria-hidden="true" tabindex="-1" href="#persistent-session"><span class="icon icon-link"></span></a></h2>
