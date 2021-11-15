@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "generate-types": "deno run --import-map=type-generation/import_map.json --allow-write --allow-net type-generation/main.ts",
     "build": "run-script-os",
     "build:darwin:linux:default": "rm -rf docs && node index.js && cp -r static/ docs/ && cp -r beta/ docs/",
     "build:win32": "(if exist docs RMDIR /S /Q docs) && node index.js && echo d | xcopy static docs\\static && echo d | xcopy /s /q /e /y beta docs\\beta"
