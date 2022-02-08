@@ -40,21 +40,21 @@
 </ul>
 <h2 id="how-do-i-stop-logging">How do I stop logging?<a aria-hidden="true" tabindex="-1" href="#how-do-i-stop-logging"><span class="icon icon-link"></span></a></h2>
 <p>logging is enabled by default to the most verbose option.to remove it you can do the following</p>
-<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { Logger } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"telegram/extensions"</span>);
-Logger.setLevel(<span class="hljs-string">"none"</span>); <span class="hljs-comment">// no logging</span>
-Logger.setLevel(<span class="hljs-string">"error"</span>); <span class="hljs-comment">// only errors</span>
-Logger.setLevel(<span class="hljs-string">"warn"</span>); <span class="hljs-comment">// warnings too</span>
-Logger.setLevel(<span class="hljs-string">"info"</span>); <span class="hljs-comment">// info too</span>
-Logger.setLevel(<span class="hljs-string">"debug"</span>); <span class="hljs-comment">// everything</span>
-</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts"><span class="hljs-keyword">import</span> { Logger } <span class="hljs-keyword">from</span> <span class="hljs-string">"telegram/extensions"</span>;
-Logger.setLevel(<span class="hljs-string">"none"</span>); <span class="hljs-comment">// no logging</span>
-Logger.setLevel(<span class="hljs-string">"error"</span>); <span class="hljs-comment">// only errors</span>
-Logger.setLevel(<span class="hljs-string">"warn"</span>); <span class="hljs-comment">// warnings too</span>
-Logger.setLevel(<span class="hljs-string">"info"</span>); <span class="hljs-comment">// info too</span>
-Logger.setLevel(<span class="hljs-string">"debug"</span>); <span class="hljs-comment">// everything</span>
+<div class="tabs"><div class="tab" data-title="JavaScript"><pre><code class="hljs language-js">client.setLogLevel(<span class="hljs-string">"none"</span>); <span class="hljs-comment">// no logging</span>
+client.setLogLevel(<span class="hljs-string">"error"</span>); <span class="hljs-comment">// only errors</span>
+client.setLogLevel(<span class="hljs-string">"warn"</span>); <span class="hljs-comment">// warnings too</span>
+client.setLogLevel(<span class="hljs-string">"info"</span>); <span class="hljs-comment">// info too</span>
+client.setLogLevel(<span class="hljs-string">"debug"</span>); <span class="hljs-comment">// everything</span>
+</code></pre></div><div class="tab" data-title="TypeScript"><pre><code class="hljs language-ts">client.setLogLevel(<span class="hljs-string">"none"</span>); <span class="hljs-comment">// no logging</span>
+client.setLogLevel(<span class="hljs-string">"error"</span>); <span class="hljs-comment">// only errors</span>
+client.setLogLevel(<span class="hljs-string">"warn"</span>); <span class="hljs-comment">// warnings too</span>
+client.setLogLevel(<span class="hljs-string">"info"</span>); <span class="hljs-comment">// info too</span>
+client.setLogLevel(<span class="hljs-string">"debug"</span>); <span class="hljs-comment">// everything</span>
 </code></pre></div></div>
 <h2 id="can-i-use-a-proxy">Can I use a proxy?<a aria-hidden="true" tabindex="-1" href="#can-i-use-a-proxy"><span class="icon icon-link"></span></a></h2>
-<p>Sadly no, GramJS is meant to be used in both browser and Node.js ecosystem, and as far as I know, there is no way to use proxies in browsers so it's not currently possible.</p>
+<p>Yes you can, but only on Node!</p>
+<p>Currently only socks5,4 and MTProto proxies are supported.
+HTTP proxies are not supported as they required a completely different connection type.</p>
                         </div>
                     </main>
                 </body>

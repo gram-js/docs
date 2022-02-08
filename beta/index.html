@@ -1,265 +1,44 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>telegram</title>
-	<meta name="description" content="Documentation for telegram">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script async src="assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">telegram</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<h1>telegram</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#gramjs" id="gramjs" style="color: inherit; text-decoration: none;">
-					<h1>GramJS</h1>
-				</a>
-				<p><strong>GramJS</strong> is Telegram client implementation in Javascript. This project&#39;s <em>core</em> is <strong>completely based</strong> on
-					<a href="https://github.com/LonamiWebs/Telethon">Telethon</a>. All the files which are fully based on it.
-				don&#39;t forget to have a look to the original project.</p>
-				<a href="#obtaining-your-api-id-and-hash" id="obtaining-your-api-id-and-hash" style="color: inherit; text-decoration: none;">
-					<h3>Obtaining your <code>API ID</code> and <code>Hash</code></h3>
-				</a>
-				<ol>
-					<li>Follow <a href="https://my.telegram.org">this link</a> and login with your phone number.</li>
-					<li>Click under <code>API Development tools</code>.</li>
-					<li>A <code>Create new application</code> window will appear. Fill in your application details.
-						There is no need to enter any <code>URL</code>, and only the first two fields (<code>App title</code> and <code>Short name</code>)
-					can be changed later as long as I&#39;m aware.</li>
-					<li>Click on <code>Create application</code> at the end. Now that you have the <code>API ID</code> and <code>Hash</code></li>
-				</ol>
-				<a href="#running-gramjs" id="running-gramjs" style="color: inherit; text-decoration: none;">
-					<h2>Running GramJS</h2>
-				</a>
-				<p>If you want to run in it in a browser just use webpack (a configuration file is already present).
-					The output will be in <code>browser</code> folder.
-					In the browser gramjs will use localstorage to not regenerate api methods each run.
-				check the <code>examples</code> folder for more info.</p>
-				<a href="#generate-session-string" id="generate-session-string" style="color: inherit; text-decoration: none;">
-					<h2>Generate Session String</h2>
-				</a>
-				<p>To generate session string , simply run <code>npx tgsession</code> and provide required details</p>
-				<a href="#using-raw-api" id="using-raw-api" style="color: inherit; text-decoration: none;">
-					<h2>Using raw api</h2>
-				</a>
-				<p>Currently you can use any raw api function using <code>await client.invoke(new RequestClass(args))</code> .
-				you can find all the requests and types at <a href="https://gram.js.org/">https://gram.js.org/</a></p>
-				<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
-					<h2>Docs</h2>
-				</a>
-				<p>you can find the docs at <a href="https://painor.gitbook.io/gramjs/">https://painor.gitbook.io/gramjs/</a> or <a href="https://gram.js.org/">https://gram.js.org/</a> which has all the functions with a usage example</p>
-				<a href="#asking-questions" id="asking-questions" style="color: inherit; text-decoration: none;">
-					<h2>Asking questions</h2>
-				</a>
-				<p>If you have any question about how to use the library feel free to open a github issue or join us at the telegram group <a href="https://t.me/gramjschat">@GramJSChat</a></p>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="modules.html">Modules</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/helpers.html">Helpers</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_telegramclient.html">client/<wbr>Telegram<wbr>Client</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_account.html">client/account</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_auth.html">client/auth</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_bots.html">client/bots</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_buttons.html">client/buttons</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_chats.html">client/chats</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_dialogs.html">client/dialogs</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_downloads.html">client/downloads</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_messageparse.html">client/message<wbr>Parse</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_messages.html">client/messages</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_telegrambaseclient.html">client/telegram<wbr>Base<wbr>Client</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_updates.html">client/updates</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_uploads.html">client/uploads</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client_users.html">client/users</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/define.html">define</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/events.html">events</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/events_album.html">events/<wbr>Album</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/events_newmessage.html">events/<wbr>New<wbr>Message</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/events_raw.html">events/<wbr>Raw</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/events_common.html">events/common</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/example.html">example</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/requestiter.html">request<wbr>Iter</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/sessions.html">sessions</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/sessions_abstract.html">sessions/<wbr>Abstract</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/sessions_memory.html">sessions/<wbr>Memory</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/sessions_storesession.html">sessions/<wbr>Store<wbr>Session</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/sessions_stringsession.html">sessions/<wbr>String<wbr>Session</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl.html">tl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_alltlobjects.html">tl/<wbr>AllTLObjects</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_mtprotorequest.html">tl/MTProto<wbr>Request</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_api.html">tl/api</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_core.html">tl/core</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_core_gzippacked.html">tl/core/GZIPPacked</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_core_messagecontainer.html">tl/core/<wbr>Message<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_core_rpcresult.html">tl/core/RPCResult</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_core_tlmessage.html">tl/core/TLMessage</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_generationhelpers.html">tl/generation<wbr>Helpers</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/tl_patched.html">tl/patched</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>telegram</title><meta name="description" content="Documentation for telegram"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">telegram</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>telegram</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#gramjs" id="gramjs" style="color: inherit; text-decoration: none;">
+  <h1>GramJS</h1>
+</a>
+<p>A Telegram client written in JavaScript for Node.js and browsers, with its core being based on
+<a href="https://github.com/LonamiWebs/Telethon">Telethon</a>.</p>
+
+<a href="#obtaining-your-app-id-and-hash" id="obtaining-your-app-id-and-hash" style="color: inherit; text-decoration: none;">
+  <h3>Obtaining your app ID and hash</h3>
+</a>
+<ol>
+<li>Follow <a href="https://my.telegram.org">this link</a>, and login with your phone number.</li>
+<li>Click &quot;API development tools&quot;.</li>
+<li>Fill in your application details.
+There is no need to enter any URL, and only the first two fields (app title and short name)
+can be modified later.</li>
+<li>Finally, click &quot;Create application&quot;.</li>
+</ol>
+
+<a href="#running-gramjs" id="running-gramjs" style="color: inherit; text-decoration: none;">
+  <h2>Running GramJS</h2>
+</a>
+<p>GramJS can run on Node.js, browsers and with frameworks like React.</p>
+<p>In browsers, GramJS will be using the <code>localStorage</code> to cache the layers.</p>
+<p>To get a browser bundle of GramJS, use the following command:</p>
+<pre><code class="language-bash"><span class="hl-0">NODE_ENV=production npx webpack</span>
+</code></pre>
+
+<a href="#using-the-raw-api" id="using-the-raw-api" style="color: inherit; text-decoration: none;">
+  <h2>Using the raw API</h2>
+</a>
+<p>Currently, you can call any raw API method like <code>await client.invoke(new RequestClass(args))</code> .
+You can find all methods and types at <a href="https://gram.js.org">gram.js.org</a>.</p>
+
+<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
+  <h2>Docs</h2>
+</a>
+<p>Youu can find the docs at <a href="https://painor.gitbook.io/gramjs">painor.gitbook.io/gramjs</a> visit <a href="https://gram.js.org">gram.js.org</a> and the beta docs <a href="https://gram.js.org/beta">gram.js.org/beta</a>  to see all supported API methods and types.</p>
+
+<a href="#asking-questions" id="asking-questions" style="color: inherit; text-decoration: none;">
+  <h2>Asking questions</h2>
+</a>
+<p>If you have any question about GramJS, feel free to open a issue or join us at the Telegram group, <a href="https://t.me/gramjschat">@GramJSChat</a>.</p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li><li class=" tsd-kind-namespace"><a href="modules/helpers.html">helpers</a></li><li class=" tsd-kind-namespace"><a href="modules/utils.html">utils</a></li><li class=" tsd-kind-namespace"><a href="modules/errors.html">errors</a></li><li class=" tsd-kind-namespace"><a href="modules/extensions.html">extensions</a></li><li class=" tsd-kind-namespace"><a href="modules/sessions.html">sessions</a></li><li class=" tsd-kind-namespace"><a href="modules/Api.html">Api</a></li><li class=" tsd-kind-namespace"><a href="modules/tl.html">tl</a></li><li class=" tsd-kind-namespace"><a href="modules/custom.html">custom</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-variable"><a href="modules.html#version" class="tsd-kind-icon">version</a></li><li class="tsd-kind-class"><a href="classes/TelegramClient.html" class="tsd-kind-icon">Telegram<wbr/>Client</a></li><li class="tsd-kind-class"><a href="classes/Logger.html" class="tsd-kind-icon">Logger</a></li><li class="tsd-kind-class"><a href="classes/Connection.html" class="tsd-kind-icon">Connection</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li><li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
