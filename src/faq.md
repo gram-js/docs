@@ -12,24 +12,22 @@ logging is enabled by default to the most verbose option.to remove it you can do
 :::tab{title="JavaScript"}
 
 ```js
-const { Logger } = require("telegram/extensions");
-Logger.setLevel("none"); // no logging
-Logger.setLevel("error"); // only errors
-Logger.setLevel("warn"); // warnings too
-Logger.setLevel("info"); // info too
-Logger.setLevel("debug"); // everything
+client.setLogLevel("none"); // no logging
+client.setLogLevel("error"); // only errors
+client.setLogLevel("warn"); // warnings too
+client.setLogLevel("info"); // info too
+client.setLogLevel("debug"); // everything
 ```
 
 :::
 :::tab{title="TypeScript"}
 
 ```ts
-import { Logger } from "telegram/extensions";
-Logger.setLevel("none"); // no logging
-Logger.setLevel("error"); // only errors
-Logger.setLevel("warn"); // warnings too
-Logger.setLevel("info"); // info too
-Logger.setLevel("debug"); // everything
+client.setLogLevel("none"); // no logging
+client.setLogLevel("error"); // only errors
+client.setLogLevel("warn"); // warnings too
+client.setLogLevel("info"); // info too
+client.setLogLevel("debug"); // everything
 ```
 
 :::
@@ -37,4 +35,7 @@ Logger.setLevel("debug"); // everything
 
 ## Can I use a proxy?
 
-Sadly no, GramJS is meant to be used in both browser and Node.js ecosystem, and as far as I know, there is no way to use proxies in browsers so it's not currently possible.
+Yes you can, but only on Node!
+
+Currently only socks5,4 and MTProto proxies are supported. 
+HTTP proxies are not supported as they required a completely different connection type. 
