@@ -171,9 +171,31 @@ h6:hover .icon-link::before {
   opacity: 1;
 }
 
-.tabs-title {
-  display: flex;
-  gap: 1rem;
+.tab-title-button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.67em;
+  background: #21262d;
+  color: #c9d1d9;
+  padding: 0.25em 1em;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: background-color, border-color;
+}
+
+.tab-title-button:hover {
+  background-color: #30363d;
+  border-color: #8b949e;
+  transition-duration: 0.1s;
+}
+
+.tab-title-button:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.tab-title-button:last-child {
+  border-radius: 0 6px 6px 0;
 }
 
 .tab.hidden {
