@@ -49,7 +49,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
   await client.connect(); // This assumes you have already authenticated with .start()
 
-  const result: Api.Updates = await client.invoke(
+  const result: Api.TypeUpdates = await client.invoke(
     new Api.channels.CreateChannel({
       title: "My very normal title",
       about: "some string here",
