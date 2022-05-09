@@ -18,6 +18,7 @@ import remark from "remark";
 import { visit } from "unist-util-visit";
 import escapeHtml from "@youtwitface/escape-html";
 import find from "unist-util-find";
+import { minify } from "html-minifier";
 import { stripHtml } from "string-strip-html";
 
 const snakeToCamel = (str) =>
@@ -48,11 +49,12 @@ const head = (title, description) => `<!doctype html>
     </head>
     <body>`;
 
-const foot = (lunar) => `</body>
+const foot = (lunar) => `
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
     ${lunar}
     </script>
+  </body>
 </html>`;
 
 const onDirective = (node) => {
@@ -144,22 +146,29 @@ const generateSidebar = (object, directories) => {
       .concat(key === "index" ? "" : key)
       .join("/");
 
-    let title, children;
+    let hasSubList, title, children;
     if (directories && key === "index") {
       return sidebar;
     } else if (typeof value === "string") {
       title = linkTitle(value, filePath);
     } else {
+      hasSubList = true;
       title = linkTitle(titleCase(value.index || key), filePath, !!value.index);
-      children = `<ul>${generateSidebar(
+      children = `<ul data-sublist="${escapeHtml(filePath)}">${generateSidebar(
         value,
         (directories ?? []).concat(key)
       )}</ul>`;
     }
 
-    return sidebar + `<li>${title}</li>${children ?? ""}`;
+    return (
+      sidebar +
+      `<li ${
+        hasSubList ? `data-li="${escapeHtml(filePath)}"` : ""
+      }>${title}</li>${children ?? ""}`
+    );
   }, "");
 };
+
 const generateSearchIndex = async () => {
   let main = `var idx = lunr(function () {
   this.field('title')
@@ -248,26 +257,30 @@ glob("src/**/*.md", async (error, files) => {
       const fullPath = path.join("docs", ...directories);
       await mkdirp(fullPath);
 
+      const html = `
+        ${head(title, description.slice(0, 150))}
+        <header class="container">
+          <span class="menu-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+              <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path>
+            </svg>
+          </span>
+          <h1>GramJS</h1>
+        </header>
+        <main class="container page">
+          <div class="sidebar">
+            <ul>${sidebar}</ul>
+          </div>
+          <div class="container content">${doc}</div>
+        </main>
+        ${foot("" /*await generateSearchIndex()*/)}
+      `;
+
       await fs.writeFile(
         `${fullPath}/${name}.html`,
-        `${head(title, description.slice(0, 150))}
-                    <header class="container">
-                        <span class="menu-icon">
-                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-                                <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path>
-                            </svg>
-                        </span>
-                        <h1>GramJS</h1>
-                    </header>
-                    <main class="container page">
-                        <div class="sidebar">
-                            <ul>${sidebar}</ul>
-                        </div>
-                        <div class="container content">
-                            ${doc}
-                        </div>
-                    </main>
-                ${foot("" /*await generateSearchIndex()*/)}`
+        minify(html, {
+          collapseWhitespace: true,
+        })
       );
     })
   );

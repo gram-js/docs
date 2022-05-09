@@ -1,5 +1,6 @@
 :root {
   --icon-link-path: url(/static/link.svg);
+  --icon-chevron-right-path: url(/static/chevron-right.svg);
 }
 
 :target {
@@ -98,8 +99,60 @@ header {
   padding-left: 1.5rem;
 }
 
+.sidebar ul ul[data-collapse] {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.js-enabled .sidebar ul ul[data-collapse] {
+  transition: max-height 0.2s ease-in-out;
+}
+
 .sidebar li {
+  cursor: pointer;
   list-style-type: none;
+  padding: 0;
+  margin-top: 0.25em;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar li[data-li],
+.sidebar li:not([data-li]) a {
+  display: block;
+  padding: 0.5em 1em;
+}
+
+.sidebar li[data-li] {
+  position: relative;
+}
+
+.sidebar li[data-li]::after {
+  --rotation: 0;
+
+  content: "";
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  height: 1.25em;
+  width: 1.25em;
+  background-image: var(--icon-chevron-right-path);
+  transform: translateY(-50%) rotate(var(--rotation));
+  transition: transform 0.2s ease-in-out;
+}
+
+body:not(.js-enabled) .sidebar li[data-li]::after,
+.sidebar li[data-li].open::after {
+  --rotation: 90deg;
+}
+
+.sidebar li:not([data-li]) a:hover {
+  text-decoration: none;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 li {
