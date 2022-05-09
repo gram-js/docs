@@ -1,5 +1,6 @@
 :root {
   --icon-link-path: url(/static/link.svg);
+  --icon-chevron-right-path: url(/static/chevron-right.svg);
 }
 
 :target {
@@ -34,6 +35,7 @@ header {
 }
 
 .page {
+  position: relative;
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -46,7 +48,12 @@ header {
   height: 100vh;
   width: 450px;
   background: #0d1117;
+  border-right: 1px solid rgba(240, 246, 252, 0.2);
   overflow-y: auto;
+}
+
+.sidebar > ul > #docsearch {
+  display: none;
 }
 
 .content {
@@ -98,8 +105,62 @@ header {
   padding-left: 1.5rem;
 }
 
+.sidebar ul ul[data-collapse] {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.js-enabled .sidebar ul ul[data-collapse] {
+  transition: max-height 0.2s ease-in-out;
+}
+
 .sidebar li {
+  cursor: pointer;
   list-style-type: none;
+  padding: 0;
+  margin-top: 0.25em;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar li[data-li],
+.sidebar li:not([data-li]) a {
+  display: block;
+  padding: 0.5em 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar li[data-li] {
+  position: relative;
+}
+
+.sidebar li[data-li]::after {
+  --rotation: 0;
+
+  content: "";
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  height: 1.25em;
+  width: 1.25em;
+  background-image: var(--icon-chevron-right-path);
+  transform: translateY(-50%) rotate(var(--rotation));
+  transition: transform 0.2s ease-in-out;
+}
+
+body:not(.js-enabled) .sidebar li[data-li]::after,
+.sidebar li[data-li].open::after {
+  --rotation: 90deg;
+}
+
+.sidebar li:not([data-li]) a:hover {
+  text-decoration: none;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 li {
@@ -298,4 +359,29 @@ pre code {
 
 .hljs-string {
   color: #a5d6ff;
+}
+
+.algolia-autocomplete {
+  position: unset !important;
+  width: 100%;
+  margin-bottom: 1em;
+  box-shadow: 0px 0px 15px 10px rgb(13, 17, 23);
+  z-index: 1;
+}
+
+.algolia-autocomplete #docsearch {
+  box-sizing: border-box;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5em 1em;
+  color: #c9d1d9;
+  background-color: #21262d;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 5px;
+  outline: none;
+}
+
+span.algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu {
+  top: 52px !important;
+  left: 25px !important;
 }
