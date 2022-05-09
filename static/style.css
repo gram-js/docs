@@ -126,7 +126,7 @@ header {
 .sidebar li[data-li],
 .sidebar li:not([data-li]) a {
   display: block;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.25em;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -140,7 +140,7 @@ header {
 
   content: "";
   position: absolute;
-  right: 0.5em;
+  right: 1em;
   top: 50%;
   height: 1.25em;
   width: 1.25em;
