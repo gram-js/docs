@@ -19,40 +19,38 @@ import { visit } from "unist-util-visit";
 import escapeHtml from "@youtwitface/escape-html";
 import find from "unist-util-find";
 import { minify } from "html-minifier";
-import { stripHtml } from "string-strip-html";
-
-const snakeToCamel = (str) =>
-  str
-    .toLowerCase()
-    .replace(/([-_][a-z])/g, (group) =>
-      group.toUpperCase().replace("-", "").replace("_", "")
-    );
 
 const root = ``;
 
-const head = (title, description) => `<!doctype html>
+const head = (title, description) => `
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="${root}/static/style.css">
-        <script src="${root}/static/script.js" defer></script>
-        <title>${escapeHtml(title)} | GramJS</title>
-        <meta name="title" content="${escapeHtml(title)} | GramJS" />
-        <meta name="description" content="${escapeHtml(description)}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://gram.js.org" />
-        <meta property="og:title" content="${escapeHtml(title)} | GramJS" />
-        <meta property="og:description" content="${escapeHtml(description)}" />
-    </head>
-    <body>`;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${root}/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+    <script src="${root}/static/script.js" defer></script>
+    <title>${escapeHtml(title)} | GramJS</title>
+    <meta name="title" content="${escapeHtml(title)} | GramJS" />
+    <meta name="description" content="${escapeHtml(description)}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gram.js.org" />
+    <meta property="og:title" content="${escapeHtml(title)} | GramJS" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+  </head>
+  <body>`;
 
-const foot = (lunar) => `
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+const foot = `
+    <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script>
-    ${lunar}
+      docsearch({
+        apiKey: '007607fb54223b523130d51c9c9d30b5',
+        indexName: 'gram',
+        inputSelector: '#docsearch',
+      });
     </script>
   </body>
 </html>`;
@@ -169,39 +167,6 @@ const generateSidebar = (object, directories) => {
   }, "");
 };
 
-const generateSearchIndex = async () => {
-  let main = `var idx = lunr(function () {
-  this.field('title')
-  this.field('description')
-  this.field('params')`;
-  const data = JSON.parse(
-    await fs.readFile("generator/saved.json", { encoding: "utf-8" })
-  );
-  for (const func of data) {
-    let params = "";
-    for (const param of func["params"]) {
-      params += `${snakeToCamel(stripHtml(param["param_name"]).result)}  ${
-        stripHtml(param["param_description"]).result
-      }\n`;
-    }
-    let title = stripHtml(func["title"]).result;
-    if (title.includes(".")) {
-      const [namespace, className] = title.split(".");
-      title = namespace + "." + className[0].toUpperCase() + className.slice(1);
-    } else {
-      title = title[0].toUpperCase() + title.slice(1);
-    }
-    main += `
-  this.add({
-    "title": \`${title}\`,
-    "description": \`${stripHtml(func["description"]).result}\`,
-    "params": \`${params}\`,
-  })`;
-  }
-  main += "})";
-  return main;
-};
-
 glob("src/**/*.md", async (error, files) => {
   if (error) {
     console.error(error);
@@ -269,11 +234,14 @@ glob("src/**/*.md", async (error, files) => {
         </header>
         <main class="container page">
           <div class="sidebar">
-            <ul>${sidebar}</ul>
+            <ul>
+              <input id="docsearch" placeholder="Search...">
+              ${sidebar}
+            </ul>
           </div>
           <div class="container content">${doc}</div>
         </main>
-        ${foot("" /*await generateSearchIndex()*/)}
+        ${foot}
       `;
 
       await fs.writeFile(
