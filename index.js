@@ -104,6 +104,13 @@ const treeProcessor = remark().use(() => (tree) => {
     (child) => child.type === "heading" && child.depth === 1
   );
 
+  const description = tree.children[headingIndex + 1];
+
+  description.type = "paragraph";
+  description.children = description.children.flatMap((child) =>
+    child.type === "link" ? child.children : child
+  );
+
   return {
     type: "root",
     children: [
@@ -111,10 +118,7 @@ const treeProcessor = remark().use(() => (tree) => {
         ...tree.children[headingIndex],
         type: "paragraph",
       },
-      {
-        ...tree.children[headingIndex + 1],
-        type: "paragraph",
-      },
+      description,
     ],
   };
 });
