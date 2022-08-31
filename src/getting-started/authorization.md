@@ -151,17 +151,15 @@ const apiHash = "123456abcdfg";
 (async () => {
   console.log("Loading interactive example...");
   const client = new TelegramClient("session_name", apiId, apiHash, {
-        useWSS: false, // Important. Most proxies cannot use SSL.
-        proxy: {
-            ip: "123.123.123.123", // Proxy host (IP or hostname)
-            port: 123, // Proxy port
-            MTProxy: false, // Whether it's an MTProxy or a normal Socks one
-            secret: "00000000000000000000000000000000", // If used MTProxy then you need to provide a secret (or zeros).
-            socksType: 5, // If used Socks you can choose 4 or 5. 
-            timeout: 2 // Timeout (in seconds) for connection,
-
-        }
-
+    useWSS: false, // Important. Most proxies cannot use SSL.
+    proxy: {
+      ip: "123.123.123.123", // Proxy host (IP or hostname)
+      port: 123, // Proxy port
+      MTProxy: false, // Whether it's an MTProxy or a normal Socks one
+      secret: "00000000000000000000000000000000", // If used MTProxy then you need to provide a secret (or zeros).
+      socksType: 5, // If used Socks you can choose 4 or 5.
+      timeout: 2, // Timeout (in seconds) for connection,
+    },
   });
   await client.connect();
   console.log("You should now be connected.");
@@ -180,17 +178,15 @@ const apiHash = "123456abcdfg";
 (async () => {
   console.log("Loading interactive example...");
   const client = new TelegramClient("session_name", apiId, apiHash, {
-        useWSS: false, // Important. Most proxies cannot use SSL.
-        proxy: {
-            ip: "123.123.123.123", // Proxy host (IP or hostname)
-            port: 123, // Proxy port
-            MTProxy: false, // Whether it's an MTProxy or a normal Socks one
-            secret: "00000000000000000000000000000000", // If used MTProxy then you need to provide a secret (or zeros).
-            socksType: 5, // If used Socks you can choose 4 or 5. 
-            timeout: 2 // Timeout (in seconds) for connection,
-
-        }
-
+    useWSS: false, // Important. Most proxies cannot use SSL.
+    proxy: {
+      ip: "123.123.123.123", // Proxy host (IP or hostname)
+      port: 123, // Proxy port
+      MTProxy: false, // Whether it's an MTProxy or a normal Socks one
+      secret: "00000000000000000000000000000000", // If used MTProxy then you need to provide a secret (or zeros).
+      socksType: 5, // If used Socks you can choose 4 or 5.
+      timeout: 2, // Timeout (in seconds) for connection,
+    },
   });
   await client.connect();
   console.log("You should now be connected.");

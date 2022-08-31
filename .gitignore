@@ -2,3 +2,4 @@ docs/
 node_modules/
 saved.json
 full.json
+/.idea/.gitignore

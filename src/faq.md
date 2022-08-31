@@ -37,5 +37,5 @@ client.setLogLevel("debug"); // everything
 
 Yes you can, but only on Node!
 
-Currently only socks5,4 and MTProto proxies are supported. 
-HTTP proxies are not supported as they required a completely different connection type. 
+Currently only socks5,4 and MTProto proxies are supported.
+HTTP proxies are not supported as they required a completely different connection type.
