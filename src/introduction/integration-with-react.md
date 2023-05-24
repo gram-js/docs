@@ -229,7 +229,7 @@ By making a few changes you can save the session
 After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example
 */
 
-async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
+async function startClient (phoneNumber, password, phoneCode) {
   await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
   localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage, also you need to save API_ID and API_HASH
 }
@@ -259,7 +259,7 @@ const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a c
 After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example
 */
 
-async function startClient (phoneNumber, password, phoneCode) {
+async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
   await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
   localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage, also you need to save API_ID and API_HASH
 }
