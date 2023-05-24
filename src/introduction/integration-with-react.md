@@ -38,7 +38,6 @@ async function startClient (phoneNumber, password, phoneCode) {
     phoneCode: async () => await new Promise(resolve => { resolve(phoneCode) }),
     onError: () => {}
   })
-  console.log('Done')
 }
 
 async function sendCode (phone) {
@@ -142,13 +141,7 @@ function createClient ({ session, apiId, apiHash }: IApplicationData): TelegramC
 const client = createClient({ session: SESSION, apiId: API_ID, apiHash: API_HASH }) // Immediately create a client using your application data
 
 async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
-  await client.start({
-    phoneNumber,
-    password,
-    phoneCode,
-    onError: () => {}
-  })
-  console.log('Done')
+  await client.start({phoneNumber, password, phoneCode, onError: () => {} })
 }
 
 async function sendCode (phone: string): Promise<void> {
@@ -220,6 +213,70 @@ export function App (): JSX.Element {
     </>
   )
 }
+```
+
+:::
+::::
+
+## Save session 
+By making a few changes you can save the session
+
+::::tabs
+:::tab{title="JavaScript"}
+
+```js
+/*
+After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example
+*/
+
+async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
+  await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
+  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage, also you need to save API_ID and API_HASH
+}
+
+
+/*
+Now we can get the saved data and run the client without re-authorization
+*/
+
+const SESSION = new StringSession(JSON.parse(localStorage.getItem('session'))) // Get session from local storage
+const API_ID = Number(JSON.parse(localStorage.getItem('apiId'))) // Also get api id
+const API_HASH = JSON.parse(localStorage.getItem('apiHash')) // And api hash
+
+function createClient (session, apiId, apiHash) {
+  return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 } )
+}
+
+const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a client using your application data
+```
+
+:::
+
+:::tab{title="TypeScript"}
+
+```ts
+/*
+After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example
+*/
+
+async function startClient (phoneNumber, password, phoneCode) {
+  await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
+  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage, also you need to save API_ID and API_HASH
+}
+
+/*
+Now we can get the saved data and run the client without re-authorization
+*/
+
+const SESSION = new StringSession(JSON.parse(localStorage.getItem('session') as string)) // Get session from local storage
+const API_ID = Number(JSON.parse(localStorage.getItem('apiId') as string)) as number // Also get api id
+const API_HASH = JSON.parse(localStorage.getItem('apiHash') as string) // And api hash
+
+function createClient ({ session, apiId, apiHash }: IApplicationData): TelegramClient {
+  return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 } )
+}
+
+const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a client using your application data
 ```
 
 :::
