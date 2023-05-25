@@ -1,8 +1,8 @@
 # Integration with React
 
-In this article, we will look at the combination of gram.js and React
+In this article, we will look at the combination of gramjs and React
 
-After creating the project and installing all the necessary dependencies, you can use gram.js in your projects
+After creating the project and installing all the necessary dependencies, you can use gramjs in your projects
 
 ## Client launch
 In the example below you will see an example of an application that sends a confirmation code and starts the client
@@ -47,17 +47,13 @@ async function sendCode (phone) {
     apiHash: API_HASH
   }, phone)
 }
-
-
-
 export function App () {
   const initialState = { phoneNumber: '', password: '', code: '' }
 
   const [{ phoneNumber, password, code }, setAuthInfo] = useState(initialState)
 
-
   function onInputChangeHandler ({ target: { name, value } }) {
-    setAuthInfo((authInfo) => ({ ...authInfo, [name]: value }))
+    setAuthInfo(authInfo => ({ ...authInfo, [name]: value }))
   }
 
   function onSendCodeHandler () {
@@ -76,27 +72,23 @@ export function App () {
         value={phoneNumber}
         onChange={onInputChangeHandler}
       />
-
       <input
         type="text"
         name="password"
         value={password}
         onChange={onInputChangeHandler}
       />
-
       <input
         type="button"
         value="start client"
         onClick={onSendCodeHandler} 
       />
-
       <input
         type="text"
         name="code"
         value={code}
         onChange={onInputChangeHandler}
       />
-
       <input
         type="button"
         value="insert code"
@@ -161,7 +153,7 @@ export function App (): JSX.Element {
   const [{ phoneNumber, password, code }, setAuthInfo] = useState<IInitialState>(initialState)
 
   function onInputChangeHandler ({ target: { name, value } }: BaseSyntheticEvent): void {
-    setAuthInfo((authInfo) => ({ ...authInfo, [name]: value }))
+    setAuthInfo(authInfo => ({ ...authInfo, [name]: value }))
   }
 
   async function onSendCodeHandler (): Promise<void> {
@@ -173,13 +165,13 @@ export function App (): JSX.Element {
   }
 
   async function passwordCallback (): Promise<string> {
-    return await new Promise<string>((resolve) => {
+    return await new Promise<string>(resolve => {
       resolve(password)
     })
   }
 
   async function codeCallback (): Promise<string> {
-    return await new Promise<string>((resolve) => {
+    return await new Promise<string>(resolve => {
       resolve(code)
     })
   }
@@ -192,24 +184,28 @@ export function App (): JSX.Element {
         value={phoneNumber}
         onChange={onInputChangeHandler}
       />
-
       <input
         type="text"
         name="password"
         value={password}
         onChange={onInputChangeHandler}
       />
-
-      <input type="button" value="start client" onClick={onSendCodeHandler} />
-
+      <input
+        type="button"
+        value="start client"
+        onClick={onSendCodeHandler}
+      />
       <input
         type="text"
         name="code"
         value={code}
         onChange={onInputChangeHandler}
       />
-
-      <input type="button" value="insert code" onClick={onStartClientHandler} />
+      <input
+        type="button"
+        value="insert code"
+        onClick={onStartClientHandler}
+      />
     </>
   )
 }
@@ -226,22 +222,20 @@ By making a few changes you can save the session
 
 ```js
 /*
-After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example
+After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example.
+Note that we must save only session, having a valid session, you can specify random API_ID and API_HASH
 */
 
 async function startClient (phoneNumber, password, phoneCode) {
   await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
-  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage, also you need to save API_ID and API_HASH
+  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
 }
 
-
 /*
-Now we can get the saved data and run the client without re-authorization
+Now we can get the saved session and run the client without re-authorization
 */
 
 const SESSION = new StringSession(JSON.parse(localStorage.getItem('session'))) // Get session from local storage
-const API_ID = Number(JSON.parse(localStorage.getItem('apiId'))) // Also get api id
-const API_HASH = JSON.parse(localStorage.getItem('apiHash')) // And api hash
 
 function createClient (session, apiId, apiHash) {
   return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 } )
@@ -256,21 +250,20 @@ const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a c
 
 ```ts
 /*
-After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example
+After successfully launching the client, you can call a function client.session.save() that returns the current session, and then save it to  local storage, for example.
+Note that we must save only session, having a valid session, you can specify random API_ID and API_HASH
 */
 
 async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
   await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
-  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage, also you need to save API_ID and API_HASH
+  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
 }
 
 /*
-Now we can get the saved data and run the client without re-authorization
+Now we can get the saved session and run the client without re-authorization
 */
 
 const SESSION = new StringSession(JSON.parse(localStorage.getItem('session') as string)) // Get session from local storage
-const API_ID = Number(JSON.parse(localStorage.getItem('apiId') as string)) as number // Also get api id
-const API_HASH = JSON.parse(localStorage.getItem('apiHash') as string) // And api hash
 
 function createClient ({ session, apiId, apiHash }: IApplicationData): TelegramClient {
   return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 } )
