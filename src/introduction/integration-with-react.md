@@ -16,7 +16,7 @@ import React, { useState } from 'react'
 import { TelegramClient } from 'telegram'
 import { StringSession } from 'telegram/sessions'
 
-const SESSION = new StringSession('')
+const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
 const API_ID = 00000000
 const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11'
 
@@ -110,7 +110,7 @@ import { TelegramClient } from 'telegram'
 import { type UserAuthParams } from 'telegram/client/auth'
 import { StringSession } from 'telegram/sessions'
 
-const SESSION = new StringSession('')
+const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
 const API_ID = 00000000
 const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11'
 
