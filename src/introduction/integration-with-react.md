@@ -279,7 +279,7 @@ const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a c
 
 ## Refactoring
 
-Creating a huge number of functions for working with API is a bad practice, so it's better to put all the logic of working with api into a class, it is also desirable to put it in a separate file
+Creating a huge number of functions for working with API is a bad practice, so it's better to put all the logic of working with API into a class, it is also desirable to put it in a separate file
 In the example below, we will consider an example of such a class and add a new function that sends messages
 
 ::::tabs
