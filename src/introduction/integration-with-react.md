@@ -4,6 +4,8 @@ In this article, we will look at the combination of gramjs and React
 
 After creating the project and installing all the necessary dependencies, you can use gramjs in your projects
 
+## Table of Contents
+
 ## Client launch
 In the example below you will see an example of an application that sends a confirmation code and starts the client
 
@@ -16,7 +18,7 @@ import React, { useState } from 'react'
 import { TelegramClient } from 'telegram'
 import { StringSession } from 'telegram/sessions'
 
-const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
+const SESSION = new StringSession('')
 const API_ID = 00000000
 const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11'
 
@@ -110,7 +112,7 @@ import { TelegramClient } from 'telegram'
 import { type UserAuthParams } from 'telegram/client/auth'
 import { StringSession } from 'telegram/sessions'
 
-const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
+const SESSION = new StringSession('')
 const API_ID = 00000000
 const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11'
 
@@ -270,6 +272,95 @@ function createClient ({ session, apiId, apiHash }: IApplicationData): TelegramC
 }
 
 const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a client using your application data
+```
+
+:::
+::::
+
+## Refactoring
+
+Creating a huge number of functions for working with api is a bad practice, so it's better to put all the logic of working with api into a class, it is also desirable to put it in a separate file
+In the example below, we will consider an example of such a class and add a new function that sends messages
+
+::::tabs
+:::tab{title="JavaScript"}
+
+```js
+async startClient (phoneNumber, password, phoneCode) {
+    await this.client.start({
+      phoneNumber,
+      password,
+      phoneCode,
+      onError: () => {}
+    })
+    console.log('Done')
+  }
+
+  async sendCode (phone) {
+    const { apiId, apiHash } = this
+
+    await this.client.connect() // Once you have called this function, there is no need to call it again every time you call the API
+    await this.client.sendCode({ apiId, apiHash }, phone)
+  }
+
+  async sendMessage (peer, message) {
+    await this.client.invoke(
+      new Api.messages.SendMessage({ peer, message })
+    )
+  }
+
+  createClient () {
+    const { session, apiId, apiHash } = this
+    return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 })
+  }
+}
+
+const client = new MyTelegramClient()
+```
+
+:::
+
+:::tab{title="TypeScript"}
+
+```ts
+class MyTelegramClient {
+  readonly session = new StringSession('')
+  private readonly apiId = 12324214
+  private readonly apiHash = 'assaf'
+  private readonly client: TelegramClient
+
+  constructor () {
+    this.client = this.createClient()
+  }
+
+  async startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
+    await this.client.start({
+      phoneNumber,
+      password,
+      phoneCode,
+      onError: () => {}
+    })
+    console.log('Done')
+  }
+
+  async sendCode (phone: string): Promise<void> {
+    const { apiId, apiHash } = this
+
+    await this.client.connect() // Once you have called this function, there is no need to call it again every time you call the API
+    await this.client.sendCode({ apiId, apiHash }, phone)
+  }
+
+  async sendMessage (peer: EntityLike, message: string): Promise<void> {
+    await this.client.invoke(
+      new Api.messages.SendMessage({ peer, message })
+    )
+  }
+
+  private createClient (): TelegramClient {
+    const { session, apiId, apiHash } = this
+    return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 })
+  }
+}
 ```
 
 :::
