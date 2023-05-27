@@ -279,7 +279,7 @@ const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a c
 
 ## Refactoring
 
-Creating a huge number of functions for working with api is a bad practice, so it's better to put all the logic of working with api into a class, it is also desirable to put it in a separate file
+Creating a huge number of functions for working with API is a bad practice, so it's better to put all the logic of working with api into a class, it is also desirable to put it in a separate file
 In the example below, we will consider an example of such a class and add a new function that sends messages
 
 ::::tabs
@@ -299,7 +299,7 @@ async startClient (phoneNumber, password, phoneCode) {
   async sendCode (phone) {
     const { apiId, apiHash } = this
 
-    await this.client.connect() // Once you have called this function, there is no need to call it again every time you call the API
+    await this.client.connect() // Once you have called this function, there is no need to call it again every time you call API
     await this.client.sendCode({ apiId, apiHash }, phone)
   }
 
@@ -346,7 +346,7 @@ class MyTelegramClient {
   async sendCode (phone: string): Promise<void> {
     const { apiId, apiHash } = this
 
-    await this.client.connect() // Once you have called this function, there is no need to call it again every time you call the API
+    await this.client.connect() // Once you have called this function, there is no need to call it again every time you call API
     await this.client.sendCode({ apiId, apiHash }, phone)
   }
 
