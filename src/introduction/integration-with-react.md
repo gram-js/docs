@@ -19,8 +19,8 @@ import { TelegramClient } from 'telegram'
 import { StringSession } from 'telegram/sessions'
 
 const SESSION = new StringSession('')
-const API_ID = 29653895 // put your API id here
-const API_HASH = '7a697a86bfec99dd0ab11d8285d68060' // put your API hash here
+const API_ID = 00000000 // put your API id here
+const API_HASH = '7a000a86bfec00dd0ab11d0000d00000' // put your API hash here
 
 const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 
