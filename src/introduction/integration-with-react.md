@@ -1,5 +1,4 @@
 # Integration with React
-
 In this article, we will look at the combination of gramjs and React
 
 After creating the project and installing all the necessary dependencies, you can use gramjs in your projects
@@ -231,3 +230,29 @@ const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries
 
 :::
 ::::
+
+## Catching errors
+In order to avoid crashes of the application, it is very important to catch errors in all critical parts of the application, for example in the case below
+
+```js
+async function clientStartHandler () {
+    await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+    localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
+    await client.sendMessage('me', { message: "You're successfully logged in!" })
+  }
+```
+
+For example, if you try to start the client using an incorrect phone number or send a message to a non-existent user, your application may break or work incorrectly. You can fix this by using try-catch construct and handling the error
+
+```js
+async function clientStartHandler () {
+    try {
+      await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+      localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
+      await client.sendMessage('me', { message: "You're successfully logged in!" })
+    } catch (error) {
+      console.dir(error)
+      // Error handling logic
+    }
+  }
+```
