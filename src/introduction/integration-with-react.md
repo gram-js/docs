@@ -1,8 +1,9 @@
 # Integration with React
-
 In this article, we will look at the combination of gramjs and React
 
 After creating the project and installing all the necessary dependencies, you can use gramjs in your projects
+
+## Table of Contents
 
 ## Client launch
 In the example below you will see an example of an application that sends a confirmation code and starts the client
@@ -17,51 +18,42 @@ import { TelegramClient } from 'telegram'
 import { StringSession } from 'telegram/sessions'
 
 const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
-const API_ID = 00000000
-const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11'
+const API_ID = 00000000 // put your API id here
+const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11' // put your API hash here
 
-function createClient (session, apiId, apiHash) {
-  return new TelegramClient(
-    session,
-    apiId,
-    apiHash,
-    { connectionRetries: 5 }
-  )
-}
+const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 
-const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a client using your application data
+const initialState = { phoneNumber: '', password: '', phoneCode: '' } // Initialize component initial state
 
-async function startClient (phoneNumber, password, phoneCode) {
-  await client.start({
-    phoneNumber,
-    password,
-    phoneCode: async () => await new Promise(resolve => { resolve(phoneCode) }),
-    onError: () => {}
-  })
-}
-
-async function sendCode (phone) {
-  await client.connect() // Connecting to the server
-  await client.sendCode({
-    apiId: API_ID,
-    apiHash: API_HASH
-  }, phone)
-}
 export function App () {
-  const initialState = { phoneNumber: '', password: '', code: '' }
+  const [{ phoneNumber, password, phoneCode }, setAuthInfo] = useState(initialState)
 
-  const [{ phoneNumber, password, code }, setAuthInfo] = useState(initialState)
-
-  function onInputChangeHandler ({ target: { name, value } }) {
-    setAuthInfo(authInfo => ({ ...authInfo, [name]: value }))
+  async function sendCodeHandler () {
+    await client.connect() // Connecting to the server
+    await client.sendCode(
+      {
+        apiId: API_ID,
+        apiHash: API_HASH
+      },
+      phoneNumber
+    )
   }
 
-  function onSendCodeHandler () {
-    sendCode(phoneNumber)
+  async function clientStartHandler () {
+    await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+    await client.sendMessage('me', { message: "You're successfully logged in!" })
   }
 
-  function onStartClientHandler () {
-    startClient(phoneNumber, password, code)
+  function inputChangeHandler ({ target: { name, value } }) {
+    setAuthInfo((authInfo) => ({ ...authInfo, [name]: value }))
+  }
+
+  function userAuthParamCallback (param) {
+    return async function () {
+      return await new (resolve => {
+        resolve(param)
+      })()
+    }
   }
 
   return (
@@ -70,30 +62,26 @@ export function App () {
         type="text"
         name="phoneNumber"
         value={phoneNumber}
-        onChange={onInputChangeHandler}
+        onChange={inputChangeHandler}
       />
+
       <input
         type="text"
         name="password"
         value={password}
-        onChange={onInputChangeHandler}
+        onChange={inputChangeHandler}
       />
-      <input
-        type="button"
-        value="start client"
-        onClick={onSendCodeHandler} 
-      />
+
+      <input type="button" value="start client" onClick={sendCodeHandler} />
+
       <input
         type="text"
-        name="code"
-        value={code}
-        onChange={onInputChangeHandler}
+        name="phoneCode"
+        value={phoneCode}
+        onChange={inputChangeHandler}
       />
-      <input
-        type="button"
-        value="insert code"
-        onClick={onStartClientHandler}
-      />
+
+      <input type="button" value="insert code" onClick={clientStartHandler} />
     </>
   )
 }
@@ -107,73 +95,51 @@ export function App () {
 import React, { type BaseSyntheticEvent, useState } from 'react'
 
 import { TelegramClient } from 'telegram'
-import { type UserAuthParams } from 'telegram/client/auth'
 import { StringSession } from 'telegram/sessions'
-
-const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
-const API_ID = 00000000
-const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11'
 
 interface IInitialState {
   phoneNumber: string
   password: string
-  code: string
+  phoneCode: string
 }
 
-interface IApplicationData {
-  session: StringSession
-  apiId: number
-  apiHash: string
-}
+const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
+const API_ID = 00000000 // put your API id here
+const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11' // put your API hash here
 
-function createClient ({ session, apiId, apiHash }: IApplicationData): TelegramClient {
-  return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 })
-}
+const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 
-const client = createClient({ session: SESSION, apiId: API_ID, apiHash: API_HASH }) // Immediately create a client using your application data
-
-async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
-  await client.start({phoneNumber, password, phoneCode, onError: () => {} })
-}
-
-async function sendCode (phone: string): Promise<void> {
-  await client.connect() // Connecting to the server
-  await client.sendCode(
-    {
-      apiId: API_ID,
-      apiHash: API_HASH
-    },
-    phone
-  )
-}
+const initialState: IInitialState = { phoneNumber: '', password: '', phoneCode: '' } // Initialize component initial state
 
 export function App (): JSX.Element {
-  const initialState: IInitialState = { phoneNumber: '', password: '', code: '' }
+  const [{ phoneNumber, password, phoneCode }, setAuthInfo] = useState<IInitialState>(initialState)
 
-  const [{ phoneNumber, password, code }, setAuthInfo] = useState<IInitialState>(initialState)
-
-  function onInputChangeHandler ({ target: { name, value } }: BaseSyntheticEvent): void {
-    setAuthInfo(authInfo => ({ ...authInfo, [name]: value }))
+  async function sendCodeHandler (): Promise<void> {
+    await client.connect() // Connecting to the server
+    await client.sendCode(
+      {
+        apiId: API_ID,
+        apiHash: API_HASH
+      },
+      phoneNumber
+    )
   }
 
-  async function onSendCodeHandler (): Promise<void> {
-    await sendCode(phoneNumber)
+  async function clientStartHandler (): Promise<void> {
+    await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+    await client.sendMessage('me', { message: "You're successfully logged in!" })
   }
 
-  async function onStartClientHandler (): Promise<void> {
-    await startClient({ phoneNumber, password: passwordCallback, phoneCode: codeCallback })
+  function inputChangeHandler ({ target: { name, value } }: BaseSyntheticEvent): void {
+    setAuthInfo((authInfo) => ({ ...authInfo, [name]: value }))
   }
 
-  async function passwordCallback (): Promise<string> {
-    return await new Promise<string>(resolve => {
-      resolve(password)
-    })
-  }
-
-  async function codeCallback (): Promise<string> {
-    return await new Promise<string>(resolve => {
-      resolve(code)
-    })
+  function userAuthParamCallback <T> (param: T): () => Promise<T> {
+    return async function () {
+      return await new Promise<T>(resolve => {
+        resolve(param)
+      })
+    }
   }
 
   return (
@@ -182,30 +148,26 @@ export function App (): JSX.Element {
         type="text"
         name="phoneNumber"
         value={phoneNumber}
-        onChange={onInputChangeHandler}
+        onChange={inputChangeHandler}
       />
+
       <input
         type="text"
         name="password"
         value={password}
-        onChange={onInputChangeHandler}
+        onChange={inputChangeHandler}
       />
-      <input
-        type="button"
-        value="start client"
-        onClick={onSendCodeHandler}
-      />
+
+      <input type="button" value="start client" onClick={sendCodeHandler} />
+
       <input
         type="text"
-        name="code"
-        value={code}
-        onChange={onInputChangeHandler}
+        name="phoneCode"
+        value={phoneCode}
+        onChange={inputChangeHandler}
       />
-      <input
-        type="button"
-        value="insert code"
-        onClick={onStartClientHandler}
-      />
+
+      <input type="button" value="insert code" onClick={clientStartHandler} />
     </>
   )
 }
@@ -226,10 +188,11 @@ After successfully launching the client, you can call a function client.session.
 Note that we must save only session, having a valid session, you can specify random API_ID and API_HASH
 */
 
-async function startClient (phoneNumber, password, phoneCode) {
-  await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
-  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
-}
+async function clientStartHandler () {
+    await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+    localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
+    await client.sendMessage('me', { message: "You're successfully logged in!" })
+  }
 
 /*
 Now we can get the saved session and run the client without re-authorization
@@ -237,11 +200,7 @@ Now we can get the saved session and run the client without re-authorization
 
 const SESSION = new StringSession(JSON.parse(localStorage.getItem('session'))) // Get session from local storage
 
-function createClient (session, apiId, apiHash) {
-  return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 } )
-}
-
-const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a client using your application data
+const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 ```
 
 :::
@@ -254,10 +213,11 @@ After successfully launching the client, you can call a function client.session.
 Note that we must save only session, having a valid session, you can specify random API_ID and API_HASH
 */
 
-async function startClient ({ phoneNumber, password, phoneCode }: Omit<UserAuthParams, 'onError'>): Promise<void> {
-  await client.start({ phoneNumber, password, phoneCode, onError: () => {} })
-  localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
-}
+async function clientStartHandler (): Promise<void> {
+    await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+    localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
+    await client.sendMessage('me', { message: "You're successfully logged in!" })
+  }
 
 /*
 Now we can get the saved session and run the client without re-authorization
@@ -265,12 +225,34 @@ Now we can get the saved session and run the client without re-authorization
 
 const SESSION = new StringSession(JSON.parse(localStorage.getItem('session') as string)) // Get session from local storage
 
-function createClient ({ session, apiId, apiHash }: IApplicationData): TelegramClient {
-  return new TelegramClient(session, apiId, apiHash, { connectionRetries: 5 } )
-}
-
-const client = createClient(SESSION, API_ID, API_HASH) // Immediately create a client using your application data
+const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 ```
 
 :::
 ::::
+
+## Catching errors
+In order to avoid crashes of the application, it is very important to catch errors in all critical parts of the application, for example in the case below
+
+```js
+async function clientStartHandler () {
+    await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+    localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
+    await client.sendMessage('me', { message: "You're successfully logged in!" })
+  }
+```
+
+For example, if you try to start the client using an incorrect phone number or send a message to a non-existent user, your application may break or work incorrectly. You can fix this by using try-catch construct and handling the error
+
+```js
+async function clientStartHandler () {
+    try {
+      await client.start({ phoneNumber, password: userAuthParamCallback(password), phoneCode: userAuthParamCallback(phoneCode), onError: () => {} })
+      localStorage.setItem('session', JSON.stringify(client.session.save())) // Save session to local storage
+      await client.sendMessage('me', { message: "You're successfully logged in!" })
+    } catch (error) {
+      console.dir(error)
+      // Error handling logic
+    }
+  }
+```
