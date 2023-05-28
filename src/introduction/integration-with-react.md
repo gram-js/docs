@@ -17,9 +17,9 @@ import React, { useState } from 'react'
 import { TelegramClient } from 'telegram'
 import { StringSession } from 'telegram/sessions'
 
-const SESSION = new StringSession('')
+const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
 const API_ID = 00000000 // put your API id here
-const API_HASH = '7a000a86bfec00dd0ab11d0000d00000' // put your API hash here
+const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11' // put your API hash here
 
 const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 
@@ -103,9 +103,9 @@ interface IInitialState {
   phoneCode: string
 }
 
-const SESSION = new StringSession('')
+const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
 const API_ID = 29653895 // put your API id here
-const API_HASH = '7a697a86bfec99dd0ab11d8285d68060' // put your API hash here
+const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11' // put your API hash here
 
 const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
 
