@@ -104,7 +104,7 @@ interface IInitialState {
 }
 
 const SESSION = new StringSession('') //create a new StringSession, also you can use StoreSession
-const API_ID = 29653895 // put your API id here
+const API_ID = 00000000 // put your API id here
 const API_HASH = '111eb4dc492d4ae475d575c00bf0aa11' // put your API hash here
 
 const client = new TelegramClient(SESSION, API_ID, API_HASH, { connectionRetries: 5 }) // Immediately create a client using your application data
