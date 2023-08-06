@@ -2,42 +2,41 @@
 
 Create a theme
 
+
+
 ## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession(""); // You should put your string session here
+const session = new StringSession(''); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  await client.connect(); // This assumes you have already authenticated with .start()
+    await client.connect() // This assumes you have already authenticated with .start()
 
-  const result = await client.invoke(
-    new Api.account.CreateTheme({
-      slug: "some string here",
-      title: "My very normal title",
-      document: new Api.InputDocument({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-        fileReference: Buffer.from("arbitrary data here"),
-      }),
-      settings: [
-        new Api.InputThemeSettings({
-          baseTheme: new Api.BaseThemeClassic({}),
-          accentColor: 43,
-          messageColorsAnimated: true,
-          outboxAccentColor: 43,
-          messageColors: [43],
-          wallpaper: new Api.InputWallPaper({
-            id: BigInt("-4156887774564"),
-            accessHash: BigInt("-4156887774564"),
-          }),
-          wallpaperSettings: new Api.WallPaperSettings({
+    const result = await client.invoke(new Api.account.CreateTheme({
+    slug: 'some string here',
+    title: 'My very normal title',
+    document: new Api.InputDocument({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564'),
+        fileReference: Buffer.from('arbitrary data here')
+    }),
+    settings: [new Api.InputThemeSettings({
+        baseTheme: new Api.BaseThemeClassic({}),
+        accentColor: 43,
+        messageColorsAnimated: true,
+        outboxAccentColor: 43,
+        messageColors: [43],
+        wallpaper: new Api.InputWallPaper({
+            id: BigInt('-4156887774564'),
+            accessHash: BigInt('-4156887774564')
+        }),
+        wallpaperSettings: new Api.WallPaperSettings({
             blur: true,
             motion: true,
             backgroundColor: 43,
@@ -45,51 +44,45 @@ const client = new TelegramClient(session, apiId, apiHash, {});
             thirdBackgroundColor: 43,
             fourthBackgroundColor: 43,
             intensity: 43,
-            rotation: 43,
-          }),
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+            rotation: 43
+        })
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession(""); // You should put your string session here
+const session = new StringSession(''); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  await client.connect(); // This assumes you have already authenticated with .start()
+    await client.connect() // This assumes you have already authenticated with .start()
 
-  const result: Api.Theme = await client.invoke(
-    new Api.account.CreateTheme({
-      slug: "some string here",
-      title: "My very normal title",
-      document: new Api.InputDocument({
-        id: BigInt("-4156887774564"),
-        accessHash: BigInt("-4156887774564"),
-        fileReference: Buffer.from("arbitrary data here"),
-      }),
-      settings: [
-        new Api.InputThemeSettings({
-          baseTheme: new Api.BaseThemeClassic({}),
-          accentColor: 43,
-          messageColorsAnimated: true,
-          outboxAccentColor: 43,
-          messageColors: [43],
-          wallpaper: new Api.InputWallPaper({
-            id: BigInt("-4156887774564"),
-            accessHash: BigInt("-4156887774564"),
-          }),
-          wallpaperSettings: new Api.WallPaperSettings({
+    const result: Api.Theme = await client.invoke(new Api.account.CreateTheme({
+    slug: 'some string here',
+    title: 'My very normal title',
+    document: new Api.InputDocument({
+        id: BigInt('-4156887774564'),
+        accessHash: BigInt('-4156887774564'),
+        fileReference: Buffer.from('arbitrary data here')
+    }),
+    settings: [new Api.InputThemeSettings({
+        baseTheme: new Api.BaseThemeClassic({}),
+        accentColor: 43,
+        messageColorsAnimated: true,
+        outboxAccentColor: 43,
+        messageColors: [43],
+        wallpaper: new Api.InputWallPaper({
+            id: BigInt('-4156887774564'),
+            accessHash: BigInt('-4156887774564')
+        }),
+        wallpaperSettings: new Api.WallPaperSettings({
             blur: true,
             motion: true,
             backgroundColor: 43,
@@ -97,41 +90,48 @@ const client = new TelegramClient(session, apiId, apiHash, {});
             thirdBackgroundColor: 43,
             fourthBackgroundColor: 43,
             intensity: 43,
-            rotation: 43,
-          }),
-        }),
-      ],
-    })
-  );
-  console.log(result); // prints the result
+            rotation: 43
+        })
+    })]
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
+
+
 ## Parameters
 
-|     Name     | Type                                                                                                                                                                                                        | Description                                                                                             |
-| :----------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-|  **flags**   | [#](https://core.telegram.org/type/%23)                                                                                                                                                                     | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) |
-|   **slug**   | [string](https://core.telegram.org/type/string)                                                                                                                                                             | Unique theme ID                                                                                         |
-|  **title**   | [string](https://core.telegram.org/type/string)                                                                                                                                                             | Theme name                                                                                              |
-| **document** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[InputDocument](https://core.telegram.org/type/InputDocument)                                                                | Theme file                                                                                              |
-| **settings** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).3?[Vector](https://core.telegram.org/type/Vector%20t)<[InputThemeSettings](https://core.telegram.org/type/InputThemeSettings)> | Theme settings                                                                                          |
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **slug** | [string](https://core.telegram.org/type/string) | Unique theme ID 
+| **title** | [string](https://core.telegram.org/type/string) | Theme name 
+| **document** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).2?[InputDocument](https://core.telegram.org/type/InputDocument) | Theme file 
+| **settings** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).3?[Vector](https://core.telegram.org/type/Vector%20t)<[InputThemeSettings](https://core.telegram.org/type/InputThemeSettings)> | Theme settings 
+
 
 ## Result
 
 [Theme](https://core.telegram.org/type/Theme)
 
+
+
 ## Possible errors
 
-| Code | Type               | Description                       |
-| :--: | ------------------ | --------------------------------- |
-| 400  | THEME_MIME_INVALID | The theme's MIME type is invalid. |
+| Code | Type | Description |
+| :--: | ---- | ----------- |
+
+| 400 | THEME\_MIME\_INVALID | The theme's MIME type is invalid. 
+
 
 ## Can bots use this method?
 
 No
 
 ## Related pages
+
+

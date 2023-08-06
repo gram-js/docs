@@ -2,74 +2,76 @@
 
 If the [peer settings](https://core.telegram.org/constructor/peerSettings) of a new user allow us to add them as contact, add that user as contact
 
+
+
 ## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession(""); // You should put your string session here
+const session = new StringSession(''); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  await client.connect(); // This assumes you have already authenticated with .start()
+    await client.connect() // This assumes you have already authenticated with .start()
 
-  const result = await client.invoke(
-    new Api.contacts.AcceptContact({
-      id: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result = await client.invoke(new Api.contacts.AcceptContact({
+    id: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession(""); // You should put your string session here
+const session = new StringSession(''); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  await client.connect(); // This assumes you have already authenticated with .start()
+    await client.connect() // This assumes you have already authenticated with .start()
 
-  const result: Api.Updates = await client.invoke(
-    new Api.contacts.AcceptContact({
-      id: "username",
-    })
-  );
-  console.log(result); // prints the result
+    const result: Api.Updates = await client.invoke(new Api.contacts.AcceptContact({
+    id: 'username'
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
+
+
 ## Parameters
 
-|  Name  | Type                                                  | Description                |
-| :----: | ----------------------------------------------------- | -------------------------- |
-| **id** | [InputUser](https://core.telegram.org/type/InputUser) | The user to add as contact |
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+
+| **id** | [InputUser](https://core.telegram.org/type/InputUser) | The user to add as contact 
+
 
 ## Result
 
 [Updates](https://core.telegram.org/type/Updates)
 
+
+
 ## Possible errors
 
-| Code | Type                | Description                         |
-| :--: | ------------------- | ----------------------------------- |
-| 400  | CONTACT_ADD_MISSING | Contact to add is missing.          |
-| 400  | CONTACT_ID_INVALID  | The provided contact ID is invalid. |
-| 400  | CONTACT_REQ_MISSING | Missing contact request.            |
-| 400  | MSG_ID_INVALID      | Invalid message ID provided.        |
+| Code | Type | Description |
+| :--: | ---- | ----------- |
+
+| 400 | CONTACT\_ADD\_MISSING | Contact to add is missing. 
+| 400 | CONTACT\_ID\_INVALID | The provided contact ID is invalid. 
+| 400 | CONTACT\_REQ\_MISSING | Missing contact request. 
+| 400 | MSG\_ID\_INVALID | Invalid message ID provided. 
+
 
 ## Can bots use this method?
 
@@ -80,3 +82,7 @@ No
 #### [peerSettings](https://core.telegram.org/constructor/peerSettings)
 
 List of actions that are possible when interacting with this user, to be shown as suggested actions in the chat bar
+
+
+
+

@@ -2,98 +2,108 @@
 
 Change media autodownload settings
 
+
+
 ## Example
 
 ::::tabs
 :::tab{title="JavaScript"}
-
 ```js
-const { Api, TelegramClient } = require("telegram");
-const { StringSession } = require("telegram/sessions");
+const {Api, TelegramClient} = require('telegram');
+const {StringSession} = require('telegram/sessions');
 
-const session = new StringSession(""); // You should put your string session here
+const session = new StringSession(''); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  await client.connect(); // This assumes you have already authenticated with .start()
+    await client.connect() // This assumes you have already authenticated with .start()
 
-  const result = await client.invoke(
-    new Api.account.SaveAutoDownloadSettings({
-      settings: new Api.AutoDownloadSettings({
+    const result = await client.invoke(new Api.account.SaveAutoDownloadSettings({
+    settings: new Api.AutoDownloadSettings({
         photoSizeMax: 43,
-        videoSizeMax: BigInt("-4156887774564"),
-        fileSizeMax: BigInt("-4156887774564"),
+        videoSizeMax: BigInt('-4156887774564'),
+        fileSizeMax: BigInt('-4156887774564'),
         videoUploadMaxbitrate: 43,
+        smallQueueActiveOperationsMax: 43,
+        largeQueueActiveOperationsMax: 43,
         disabled: true,
         videoPreloadLarge: true,
         audioPreloadNext: true,
         phonecallsLessData: true,
-      }),
-      low: true,
-      high: true,
-    })
-  );
-  console.log(result); // prints the result
+        storiesPreload: true
+    }),
+    low: true,
+    high: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 
 :::tab{title="TypeScript"}
-
 ```ts
-import { Api, TelegramClient } from "telegram";
-import { StringSession } from "telegram/sessions";
+import {Api, TelegramClient} from 'telegram';
+import {StringSession} from 'telegram/sessions';
 
-const session = new StringSession(""); // You should put your string session here
+const session = new StringSession(''); // You should put your string session here
 const client = new TelegramClient(session, apiId, apiHash, {});
 
 (async function run() {
-  await client.connect(); // This assumes you have already authenticated with .start()
+    await client.connect() // This assumes you have already authenticated with .start()
 
-  const result: Api.Bool = await client.invoke(
-    new Api.account.SaveAutoDownloadSettings({
-      settings: new Api.AutoDownloadSettings({
+    const result: Api.Bool = await client.invoke(new Api.account.SaveAutoDownloadSettings({
+    settings: new Api.AutoDownloadSettings({
         photoSizeMax: 43,
-        videoSizeMax: BigInt("-4156887774564"),
-        fileSizeMax: BigInt("-4156887774564"),
+        videoSizeMax: BigInt('-4156887774564'),
+        fileSizeMax: BigInt('-4156887774564'),
         videoUploadMaxbitrate: 43,
+        smallQueueActiveOperationsMax: 43,
+        largeQueueActiveOperationsMax: 43,
         disabled: true,
         videoPreloadLarge: true,
         audioPreloadNext: true,
         phonecallsLessData: true,
-      }),
-      low: true,
-      high: true,
-    })
-  );
-  console.log(result); // prints the result
+        storiesPreload: true
+    }),
+    low: true,
+    high: true
+}));
+    console.log(result); // prints the result
 })();
 ```
-
 :::
 ::::
 
+
+
 ## Parameters
 
-|     Name     | Type                                                                                                                              | Description                                                                                             |
-| :----------: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-|  **flags**   | [#](https://core.telegram.org/type/%23)                                                                                           | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) |
-|   **low**    | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to save media in the low data usage preset                                                      |
-|   **high**   | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether to save media in the high data usage preset                                                     |
-| **settings** | [AutoDownloadSettings](https://core.telegram.org/type/AutoDownloadSettings)                                                       | Media autodownload settings                                                                             |
+| Name | Type | Description |
+| :--: | ---- | ----------- |
+
+| **flags** | [#](https://core.telegram.org/type/%23) | Flags, see [TL conditional fields](https://core.telegram.org/mtproto/TL-combinators#conditional-fields) 
+| **low** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).0?[true](https://core.telegram.org/constructor/true) | Whether to save media in the low data usage preset 
+| **high** | [flags](https://core.telegram.org/mtproto/TL-combinators#conditional-fields).1?[true](https://core.telegram.org/constructor/true) | Whether to save media in the high data usage preset 
+| **settings** | [AutoDownloadSettings](https://core.telegram.org/type/AutoDownloadSettings) | Media autodownload settings 
+
 
 ## Result
 
 [Bool](https://core.telegram.org/type/Bool)
+
+
 
 ## Possible errors
 
 | Code | Type | Description |
 | :--: | ---- | ----------- |
 
+
+
 ## Can bots use this method?
 
 No
 
 ## Related pages
+
+
