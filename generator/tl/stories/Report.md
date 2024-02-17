@@ -19,7 +19,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result = await client.invoke(new Api.stories.Report({
-    userId: 'username',
+    peer: 'username',
     id: [43],
     reason: new Api.InputReportReasonSpam({}),
     message: 'Hello there!'
@@ -41,7 +41,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result: Api.Bool = await client.invoke(new Api.stories.Report({
-    userId: 'username',
+    peer: 'username',
     id: [43],
     reason: new Api.InputReportReasonSpam({}),
     message: 'Hello there!'

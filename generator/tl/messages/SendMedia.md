@@ -34,9 +34,17 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     randomId: BigInt('-4156887774564'),
     noforwards: true,
     updateStickersetsOrder: true,
+    invertMedia: true,
     replyTo: new Api.InputReplyToMessage({
         replyToMsgId: 43,
-        topMsgId: 43
+        topMsgId: 43,
+        replyToPeerId: 'username',
+        quoteText: 'some string here',
+        quoteEntities: [new Api.MessageEntityUnknown({
+            offset: 43,
+            length: 43
+        })],
+        quoteOffset: 43
     }),
     scheduleDate: 43,
     sendAs: 'username'
@@ -73,9 +81,17 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     randomId: BigInt('-4156887774564'),
     noforwards: true,
     updateStickersetsOrder: true,
+    invertMedia: true,
     replyTo: new Api.InputReplyToMessage({
         replyToMsgId: 43,
-        topMsgId: 43
+        topMsgId: 43,
+        replyToPeerId: 'username',
+        quoteText: 'some string here',
+        quoteEntities: [new Api.MessageEntityUnknown({
+            offset: 43,
+            length: 43
+        })],
+        quoteOffset: 43
     }),
     scheduleDate: 43,
     sendAs: 'username'

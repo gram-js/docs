@@ -19,7 +19,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result = await client.invoke(new Api.contacts.Block({
-    id: 'username'
+    id: 'username',
+    myStoriesFrom: true
 }));
     console.log(result); // prints the result
 })();
@@ -38,7 +39,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result: Api.Bool = await client.invoke(new Api.contacts.Block({
-    id: 'username'
+    id: 'username',
+    myStoriesFrom: true
 }));
     console.log(result); // prints the result
 })();

@@ -17,7 +17,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result = await client.invoke(new Api.stories.ReadStories({
-    userId: 'username',
+    peer: 'username',
     maxId: 0
 }));
     console.log(result); // prints the result
@@ -37,7 +37,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result: Api.Vector<int> = await client.invoke(new Api.stories.ReadStories({
-    userId: 'username',
+    peer: 'username',
     maxId: 0
 }));
     console.log(result); // prints the result
@@ -53,7 +53,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
-|userId|InputUser|No description found
+|peer|InputPeer|No description found
 |maxId|int|No description found
 
 

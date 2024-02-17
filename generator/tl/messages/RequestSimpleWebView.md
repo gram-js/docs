@@ -18,9 +18,11 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result = await client.invoke(new Api.messages.RequestSimpleWebView({
     bot: 'username',
-    url: 'some string here',
     platform: 'some string here',
     fromSwitchWebview: true,
+    fromSideMenu: true,
+    url: 'some string here',
+    startParam: 'some string here',
     themeParams: new Api.DataJSON({
         data: 'some string here'
     })
@@ -43,9 +45,11 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result: Api.SimpleWebViewResult = await client.invoke(new Api.messages.RequestSimpleWebView({
     bot: 'username',
-    url: 'some string here',
     platform: 'some string here',
     fromSwitchWebview: true,
+    fromSideMenu: true,
+    url: 'some string here',
+    startParam: 'some string here',
     themeParams: new Api.DataJSON({
         data: 'some string here'
     })
@@ -64,8 +68,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | :--: | ---- | ----------- |
 
 |fromSwitchWebview|true|No description found
+|fromSideMenu|true|No description found
 |bot|InputUser|No description found
 |url|string|No description found
+|startParam|string|No description found
 |themeParams|DataJSON|No description found
 |platform|string|No description found
 

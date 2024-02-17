@@ -17,6 +17,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result = await client.invoke(new Api.stories.EditStory({
+    peer: 'username',
     id: 43,
     media: new Api.InputMediaUploadedPhoto({
         file: await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1}),
@@ -28,6 +29,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         })],
         ttlSeconds: 43
     }),
+    mediaAreas: [new Api.MediaAreaVenue({
+        coordinates: new Api.MediaAreaCoordinates({
+            x: 8.24,
+            y: 8.24,
+            w: 8.24,
+            h: 8.24,
+            rotation: 8.24
+        }),
+        geo: new Api.GeoPoint({
+            long: 8.24,
+            lat: 8.24,
+            accessHash: BigInt('-4156887774564'),
+            accuracyRadius: 43
+        }),
+        title: 'My very normal title',
+        address: 'some string here',
+        provider: 'some string here',
+        venueId: 'some string here',
+        venueType: 'some string here'
+    })],
     caption: 'some string here',
     privacyRules: [new Api.InputPrivacyValueAllowContacts({})]
 }));
@@ -48,6 +69,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result: Api.Updates = await client.invoke(new Api.stories.EditStory({
+    peer: 'username',
     id: 43,
     media: new Api.InputMediaUploadedPhoto({
         file: await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1}),
@@ -59,6 +81,26 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         })],
         ttlSeconds: 43
     }),
+    mediaAreas: [new Api.MediaAreaVenue({
+        coordinates: new Api.MediaAreaCoordinates({
+            x: 8.24,
+            y: 8.24,
+            w: 8.24,
+            h: 8.24,
+            rotation: 8.24
+        }),
+        geo: new Api.GeoPoint({
+            long: 8.24,
+            lat: 8.24,
+            accessHash: BigInt('-4156887774564'),
+            accuracyRadius: 43
+        }),
+        title: 'My very normal title',
+        address: 'some string here',
+        provider: 'some string here',
+        venueId: 'some string here',
+        venueType: 'some string here'
+    })],
     caption: 'some string here',
     privacyRules: [new Api.InputPrivacyValueAllowContacts({})]
 }));
@@ -75,8 +117,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
+|peer|InputPeer|No description found
 |id|int|No description found
 |media|InputMedia|No description found
+|mediaAreas|MediaArea|No description found
 |caption|string|No description found
 |entities|MessageEntity|No description found
 |privacyRules|InputPrivacyRule|No description found

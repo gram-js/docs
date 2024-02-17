@@ -22,7 +22,9 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     settings: new Api.GlobalPrivacySettings({
         archiveAndMuteNewNoncontactPeers: true,
         keepArchivedUnmuted: true,
-        keepArchivedFolders: true
+        keepArchivedFolders: true,
+        hideReadMarks: true,
+        newNoncontactPeersRequirePremium: true
     })
 }));
     console.log(result); // prints the result
@@ -45,7 +47,9 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     settings: new Api.GlobalPrivacySettings({
         archiveAndMuteNewNoncontactPeers: true,
         keepArchivedUnmuted: true,
-        keepArchivedFolders: true
+        keepArchivedFolders: true,
+        hideReadMarks: true,
+        newNoncontactPeersRequirePremium: true
     })
 }));
     console.log(result); // prints the result

@@ -38,7 +38,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     await client.connect() // This assumes you have already authenticated with .start()
 
-    const result: Api.WebPage = await client.invoke(new Api.messages.GetWebPage({
+    const result: Api.messages.WebPage = await client.invoke(new Api.messages.GetWebPage({
     url: 'some string here',
     hash: 0
 }));

@@ -20,7 +20,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result = await client.invoke(new Api.contacts.GetBlocked({
     offset: 43,
-    limit: 100
+    limit: 100,
+    myStoriesFrom: true
 }));
     console.log(result); // prints the result
 })();
@@ -40,7 +41,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result: Api.contacts.Blocked = await client.invoke(new Api.contacts.GetBlocked({
     offset: 43,
-    limit: 100
+    limit: 100,
+    myStoriesFrom: true
 }));
     console.log(result); // prints the result
 })();

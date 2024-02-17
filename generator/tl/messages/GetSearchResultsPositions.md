@@ -22,7 +22,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     peer: 'username',
     filter: new Api.InputMessagesFilterPhotos({}),
     offsetId: 43,
-    limit: 100
+    limit: 100,
+    savedPeerId: 'username'
 }));
     console.log(result); // prints the result
 })();
@@ -44,7 +45,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     peer: 'username',
     filter: new Api.InputMessagesFilterPhotos({}),
     offsetId: 43,
-    limit: 100
+    limit: 100,
+    savedPeerId: 'username'
 }));
     console.log(result); // prints the result
 })();

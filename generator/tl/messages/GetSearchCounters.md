@@ -21,6 +21,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     const result = await client.invoke(new Api.messages.GetSearchCounters({
     peer: 'username',
     filters: [new Api.InputMessagesFilterPhotos({})],
+    savedPeerId: 'username',
     topMsgId: 43
 }));
     console.log(result); // prints the result
@@ -42,6 +43,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     const result: Api.Vector<messages.SearchCounter> = await client.invoke(new Api.messages.GetSearchCounters({
     peer: 'username',
     filters: [new Api.InputMessagesFilterPhotos({})],
+    savedPeerId: 'username',
     topMsgId: 43
 }));
     console.log(result); // prints the result

@@ -22,7 +22,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     phoneNumber: 'some string here',
     phoneCodeHash: 'some string here',
     firstName: 'some string here',
-    lastName: 'some string here'
+    lastName: 'some string here',
+    noJoinedNotifications: true
 }));
     console.log(result); // prints the result
 })();
@@ -44,7 +45,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     phoneNumber: 'some string here',
     phoneCodeHash: 'some string here',
     firstName: 'some string here',
-    lastName: 'some string here'
+    lastName: 'some string here',
+    noJoinedNotifications: true
 }));
     console.log(result); // prints the result
 })();

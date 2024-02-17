@@ -23,9 +23,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     const result = await client.invoke(new Api.stats.GetMessagePublicForwards({
     channel: 'username',
     msgId: 43,
-    offsetRate: 43,
-    offsetPeer: 'username',
-    offsetId: 43,
+    offset: 'some string here',
     limit: 100
 }));
     console.log(result); // prints the result
@@ -44,12 +42,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 (async function run() {
     await client.connect() // This assumes you have already authenticated with .start()
 
-    const result: Api.messages.Messages = await client.invoke(new Api.stats.GetMessagePublicForwards({
+    const result: Api.stats.PublicForwards = await client.invoke(new Api.stats.GetMessagePublicForwards({
     channel: 'username',
     msgId: 43,
-    offsetRate: 43,
-    offsetPeer: 'username',
-    offsetId: 43,
+    offset: 'some string here',
     limit: 100
 }));
     console.log(result); // prints the result

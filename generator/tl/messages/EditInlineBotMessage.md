@@ -25,6 +25,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         accessHash: BigInt('-4156887774564')
     }),
     noWebpage: true,
+    invertMedia: true,
     message: 'Hello there!',
     media: new Api.InputMediaUploadedPhoto({
         file: await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1}),
@@ -60,6 +61,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         accessHash: BigInt('-4156887774564')
     }),
     noWebpage: true,
+    invertMedia: true,
     message: 'Hello there!',
     media: new Api.InputMediaUploadedPhoto({
         file: await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1}),

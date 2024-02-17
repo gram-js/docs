@@ -29,7 +29,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         anonymous: true,
         manageCall: true,
         other: true,
-        manageTopics: true
+        manageTopics: true,
+        postStories: true,
+        editStories: true,
+        deleteStories: true
     })
 }));
     console.log(result); // prints the result
@@ -61,7 +64,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         anonymous: true,
         manageCall: true,
         other: true,
-        manageTopics: true
+        manageTopics: true,
+        postStories: true,
+        editStories: true,
+        deleteStories: true
     })
 }));
     console.log(result); // prints the result

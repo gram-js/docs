@@ -44,7 +44,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
             thirdBackgroundColor: 43,
             fourthBackgroundColor: 43,
             intensity: 43,
-            rotation: 43
+            rotation: 43,
+            emoticon: 'some string here'
         })
     })]
 }));
@@ -90,7 +91,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
             thirdBackgroundColor: 43,
             fourthBackgroundColor: 43,
             intensity: 43,
-            rotation: 43
+            rotation: 43,
+            emoticon: 'some string here'
         })
     })]
 }));

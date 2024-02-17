@@ -18,6 +18,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result = await client.invoke(new Api.messages.SetChatWallPaper({
     peer: 'username',
+    forBoth: true,
+    revert: true,
     wallpaper: new Api.InputWallPaper({
         id: BigInt('-4156887774564'),
         accessHash: BigInt('-4156887774564')
@@ -30,7 +32,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         thirdBackgroundColor: 43,
         fourthBackgroundColor: 43,
         intensity: 43,
-        rotation: 43
+        rotation: 43,
+        emoticon: 'some string here'
     }),
     id: 43
 }));
@@ -52,6 +55,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result: Api.Updates = await client.invoke(new Api.messages.SetChatWallPaper({
     peer: 'username',
+    forBoth: true,
+    revert: true,
     wallpaper: new Api.InputWallPaper({
         id: BigInt('-4156887774564'),
         accessHash: BigInt('-4156887774564')
@@ -64,7 +69,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         thirdBackgroundColor: 43,
         fourthBackgroundColor: 43,
         intensity: 43,
-        rotation: 43
+        rotation: 43,
+        emoticon: 'some string here'
     }),
     id: 43
 }));
@@ -81,6 +87,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
+|forBoth|true|No description found
+|revert|true|No description found
 |peer|InputPeer|No description found
 |wallpaper|InputWallPaper|No description found
 |settings|WallPaperSettings|No description found

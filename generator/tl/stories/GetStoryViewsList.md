@@ -17,10 +17,14 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result = await client.invoke(new Api.stories.GetStoryViewsList({
+    peer: 'username',
     id: 43,
-    offsetDate: 43,
-    offsetId: BigInt('-4156887774564'),
-    limit: 100
+    offset: 'some string here',
+    limit: 100,
+    justContacts: true,
+    reactionsFirst: true,
+    forwardsFirst: true,
+    q: 'some string here'
 }));
     console.log(result); // prints the result
 })();
@@ -39,10 +43,14 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result: Api.stories.StoryViewsList = await client.invoke(new Api.stories.GetStoryViewsList({
+    peer: 'username',
     id: 43,
-    offsetDate: 43,
-    offsetId: BigInt('-4156887774564'),
-    limit: 100
+    offset: 'some string here',
+    limit: 100,
+    justContacts: true,
+    reactionsFirst: true,
+    forwardsFirst: true,
+    q: 'some string here'
 }));
     console.log(result); // prints the result
 })();
@@ -57,9 +65,13 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
+|justContacts|true|No description found
+|reactionsFirst|true|No description found
+|forwardsFirst|true|No description found
+|peer|InputPeer|No description found
+|q|string|No description found
 |id|int|No description found
-|offsetDate|int|No description found
-|offsetId|long|No description found
+|offset|string|No description found
 |limit|int|No description found
 
 

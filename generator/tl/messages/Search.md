@@ -31,6 +31,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     minId: 0,
     hash: BigInt('-4156887774564'),
     fromId: 'username',
+    savedPeerId: 'username',
+    savedReaction: [new Api.ReactionEmoji({
+        emoticon: 'some string here'
+    })],
     topMsgId: 43
 }));
     console.log(result); // prints the result
@@ -62,6 +66,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     minId: 0,
     hash: BigInt('-4156887774564'),
     fromId: 'username',
+    savedPeerId: 'username',
+    savedReaction: [new Api.ReactionEmoji({
+        emoticon: 'some string here'
+    })],
     topMsgId: 43
 }));
     console.log(result); // prints the result

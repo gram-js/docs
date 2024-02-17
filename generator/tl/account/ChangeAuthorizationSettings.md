@@ -20,6 +20,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result = await client.invoke(new Api.account.ChangeAuthorizationSettings({
     hash: BigInt('-4156887774564'),
+    confirmed: true,
     encryptedRequestsDisabled: false,
     callRequestsDisabled: false
 }));
@@ -41,6 +42,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 
     const result: Api.Bool = await client.invoke(new Api.account.ChangeAuthorizationSettings({
     hash: BigInt('-4156887774564'),
+    confirmed: true,
     encryptedRequestsDisabled: false,
     callRequestsDisabled: false
 }));

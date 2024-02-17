@@ -17,6 +17,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result = await client.invoke(new Api.stories.GetStoriesViews({
+    peer: 'username',
     id: [43]
 }));
     console.log(result); // prints the result
@@ -36,6 +37,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     await client.connect() // This assumes you have already authenticated with .start()
 
     const result: Api.stories.StoryViews = await client.invoke(new Api.stories.GetStoriesViews({
+    peer: 'username',
     id: [43]
 }));
     console.log(result); // prints the result
@@ -51,6 +53,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 | Name | Type | Description |
 | :--: | ---- | ----------- |
 
+|peer|InputPeer|No description found
 |id|int|No description found
 
 

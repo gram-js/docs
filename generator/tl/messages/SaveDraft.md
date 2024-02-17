@@ -22,7 +22,28 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     peer: 'username',
     message: 'Hello there!',
     noWebpage: true,
-    topMsgId: 43
+    invertMedia: true,
+    replyTo: new Api.InputReplyToMessage({
+        replyToMsgId: 43,
+        topMsgId: 43,
+        replyToPeerId: 'username',
+        quoteText: 'some string here',
+        quoteEntities: [new Api.MessageEntityUnknown({
+            offset: 43,
+            length: 43
+        })],
+        quoteOffset: 43
+    }),
+    media: new Api.InputMediaUploadedPhoto({
+        file: await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1}),
+        spoiler: true,
+        stickers: [new Api.InputDocument({
+            id: BigInt('-4156887774564'),
+            accessHash: BigInt('-4156887774564'),
+            fileReference: Buffer.from('arbitrary data here')
+        })],
+        ttlSeconds: 43
+    })
 }));
     console.log(result); // prints the result
 })();
@@ -44,7 +65,28 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     peer: 'username',
     message: 'Hello there!',
     noWebpage: true,
-    topMsgId: 43
+    invertMedia: true,
+    replyTo: new Api.InputReplyToMessage({
+        replyToMsgId: 43,
+        topMsgId: 43,
+        replyToPeerId: 'username',
+        quoteText: 'some string here',
+        quoteEntities: [new Api.MessageEntityUnknown({
+            offset: 43,
+            length: 43
+        })],
+        quoteOffset: 43
+    }),
+    media: new Api.InputMediaUploadedPhoto({
+        file: await client.uploadFile({file:new CustomFile("file.bin", fs.statSync("../file.bin").size, "../file.bin"),workers:1}),
+        spoiler: true,
+        stickers: [new Api.InputDocument({
+            id: BigInt('-4156887774564'),
+            accessHash: BigInt('-4156887774564'),
+            fileReference: Buffer.from('arbitrary data here')
+        })],
+        ttlSeconds: 43
+    })
 }));
     console.log(result); // prints the result
 })();

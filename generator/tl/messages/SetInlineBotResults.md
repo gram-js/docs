@@ -24,7 +24,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         id: 'some string here',
         type: 'some string here',
         sendMessage: new Api.InputBotInlineMessageMediaAuto({
-            message: 'Hello there!'
+            message: 'Hello there!',
+            invertMedia: true
         }),
         title: 'My very normal title',
         description: 'some string here',
@@ -83,7 +84,8 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         id: 'some string here',
         type: 'some string here',
         sendMessage: new Api.InputBotInlineMessageMediaAuto({
-            message: 'Hello there!'
+            message: 'Hello there!',
+            invertMedia: true
         }),
         title: 'My very normal title',
         description: 'some string here',

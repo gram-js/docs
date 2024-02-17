@@ -33,7 +33,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         anonymous: true,
         manageCall: true,
         other: true,
-        manageTopics: true
+        manageTopics: true,
+        postStories: true,
+        editStories: true,
+        deleteStories: true
     }),
     rank: 'some string here'
 }));
@@ -68,7 +71,10 @@ const client = new TelegramClient(session, apiId, apiHash, {});
         anonymous: true,
         manageCall: true,
         other: true,
-        manageTopics: true
+        manageTopics: true,
+        postStories: true,
+        editStories: true,
+        deleteStories: true
     }),
     rank: 'some string here'
 }));

@@ -20,7 +20,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     peer: 'username',
     msgId: 43,
     buttonId: 43,
-    requestedPeer: 'username'
+    requestedPeers: ['username']
 }));
     console.log(result); // prints the result
 })();
@@ -42,7 +42,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
     peer: 'username',
     msgId: 43,
     buttonId: 43,
-    requestedPeer: 'username'
+    requestedPeers: ['username']
 }));
     console.log(result); // prints the result
 })();
@@ -60,7 +60,7 @@ const client = new TelegramClient(session, apiId, apiHash, {});
 |peer|InputPeer|No description found
 |msgId|int|No description found
 |buttonId|int|No description found
-|requestedPeer|InputPeer|No description found
+|requestedPeers|InputPeer|No description found
 
 
 ## Result
