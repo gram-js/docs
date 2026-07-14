@@ -50,3 +50,35 @@
  * Copyright (C) 2020 Oliver Nightingale
  * @license MIT
  */
+
+// Archive banner injection
+(function() {
+  function insertArchiveBanner() {
+    var banner = document.createElement('div');
+    banner.className = 'archive-banner';
+    banner.innerHTML =
+      '<strong>&#9888;&#65039; This project is archived and no longer maintained.</strong>' +
+      'Development continues in <a href="https://github.com/sanyok12345/teleproto">teleproto</a>,' +
+      ' an actively maintained fork. It\'s largely compatible with GramJS for most projects,' +
+      ' migration means little more than swapping the package:' +
+      '<pre><code>npm install teleproto</code></pre>' +
+      'See the <a href="https://docs.teleproto.dev/migrating-from-gramjs">migration guide</a> for details.' +
+      '<div class="archive-banner-links">&#128214; <a href="https://docs.teleproto.dev">Documentation</a>' +
+      ' &middot; &#128230; <a href="https://npmjs.com/package/teleproto">npm</a>' +
+      ' &middot; &#128172; <a href="https://t.me/teleproto">Community</a></div>';
+    var container = document.createElement('div');
+    container.className = 'container';
+    container.appendChild(banner);
+    var header = document.querySelector('header');
+    if (header && header.parentNode) {
+      header.parentNode.insertBefore(container, header.nextSibling);
+    } else {
+      document.body.insertBefore(container, document.body.firstChild);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertArchiveBanner);
+  } else {
+    insertArchiveBanner();
+  }
+})();
