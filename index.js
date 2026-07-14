@@ -236,6 +236,13 @@ glob("src/**/*.md", async (error, files) => {
           </span>
           <h1>GramJS</h1>
         </header>
+        <div class="archive-banner">
+          <strong>⚠️ This project is archived and no longer maintained.</strong>
+          Development continues in <a href="https://github.com/sanyok12345/teleproto">teleproto</a>, an actively maintained fork. It&#39;s largely compatible with GramJS for most projects, migration means little more than swapping the package:
+          <pre><code>npm install teleproto</code></pre>
+          See the <a href="https://docs.teleproto.dev/migrating-from-gramjs">migration guide</a> for details.
+          <div class="archive-banner-links">📖 <a href="https://docs.teleproto.dev">Documentation</a> &middot; 📦 <a href="https://npmjs.com/package/teleproto">npm</a> &middot; 💬 <a href="https://t.me/teleproto">Community</a></div>
+        </div>
         <main class="container page">
           <div class="sidebar">
             <ul>

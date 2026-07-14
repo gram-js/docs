@@ -3,6 +3,48 @@
   --icon-chevron-right-path: url(/static/chevron-right.svg);
 }
 
+.archive-banner {
+  background: #3d1a1a;
+  border: 2px solid #f85149;
+  border-left: 6px solid #f85149;
+  color: #e8e6e3;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.archive-banner strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #f85149;
+}
+
+.archive-banner a {
+  color: #58a6ff;
+  text-decoration: underline;
+}
+
+.archive-banner pre {
+  background: #1c1c1c;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.archive-banner code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9rem;
+}
+
+.archive-banner .archive-banner-links {
+  margin-top: 0.5rem;
+}
+
 :target {
   text-decoration: underline;
 }
